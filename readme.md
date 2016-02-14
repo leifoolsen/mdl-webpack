@@ -126,5 +126,5 @@ This project is still in it's early stages.
 
 As part of my work I review the usability of MDL as a SASS framework for both internal and public projects. 
 In the coming months we plan to use MDL in some of our internal projects. At the same time, I plan to expand this 
-project so that it can run as part of the real frontend project. In this way it will be easy for web designers to 
+project so that it can run as part of the actual frontend project. In this way it will be easy for web designers to 
 make changes in design and simultaneously verify that the changes are as expected for all aspects of the design.
