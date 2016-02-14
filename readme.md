@@ -12,7 +12,7 @@ frameworks and aims to optimize for cross-device use,  and offer an experience t
 
 
 ## What is included
-A Material Design Lite project showcasing all components in MDL version 1.1.0. You can use SASS variables to modify all  
+A Material Design Lite project showcasing all components in MDL version 1.1.1. You can use SASS variables to modify all  
 aspects of MDL - a typical use case is to configure fonts and color schemes. The project has selfhosting of font Roboto, 
 Material Icons and Material Design Iconic Font - you don't need any external references in HTML. 
 
