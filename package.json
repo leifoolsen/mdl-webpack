@@ -63,7 +63,7 @@
     "mdl",
     "material-design-lite"
   ],
-  "author": "LOL",
-  "license": "ISC",
+  "author": "Leif Olsen",
+  "license": "Apache-2.0",
   "private": true
 }
