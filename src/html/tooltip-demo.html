@@ -1,0 +1,59 @@
+<h5>Tooltips
+  <label class="mdl-button mdl-js-button mdl-button--icon">
+    <a href="http://www.getmdl.io/components/index.html#tooltips-section" target="_blank">
+      <i class="material-icons">local_library</i>
+    </a>
+  </label>
+</h5>
+
+<p>Useful information on hover.</p>
+
+<style>
+  .demo-tooltip-grid {
+    margin-top: 64px;;
+  }
+  .demo-tooltip-grid .mdl-cell {
+    text-align: center;
+  }
+  .demo-tooltip-grid .mdl-cell .icon {
+    font-size: 32px;
+  }
+  .demo-tooltip-grid .mdl-cell p {
+    margin-top: 32px;
+  }
+</style>
+
+<div class="mdl-grid demo-tooltip-grid">
+  <div class="mdl-cell mdl-cell--2-col">
+    <!-- Simple Tooltip -->
+    <div id="tt1" class="icon material-icons">add</div>
+    <div class="mdl-tooltip" for="tt1">
+      Follow
+    </div>
+    <p>Simple</p>
+  </div>
+  <div class="mdl-cell mdl-cell--2-col">
+    <!-- Large Tooltip -->
+    <div id="tt2" class="icon material-icons">print</div>
+    <div class="mdl-tooltip mdl-tooltip--large" for="tt2">
+      Print
+    </div>
+    <p>Large</p>
+  </div>
+  <div class="mdl-cell mdl-cell--2-col">
+    <!-- Rich Tooltip -->
+    <div id="tt3" class="icon material-icons">cloud_upload</div>
+    <div class="mdl-tooltip" for="tt3">
+      Upload <strong>file.zip</strong>
+    </div>
+    <p>Rich</p>
+  </div>
+  <div class="mdl-cell mdl-cell--2-col">
+    <!-- Multiline Tooltip -->
+    <div id="tt4" class="icon material-icons">share</div>
+    <div class="mdl-tooltip" for="tt4">
+      Share your content<br>via social media
+    </div>
+    <p>Multiple lines</p>
+  </div>
+</div>

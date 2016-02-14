@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Material Design Lite Webpack template</title>
+
+  <!-- Page styles -->
+  <link type="text/css" rel="stylesheet" href="/static/styles.css" />
+
+  <!-- HTML imports -->
+  <!-- <link rel="import" href="./foo.html"> -->
+
+</head>
+
+<body>
+  <!-- The drawer is always open in large screens. The header is always shown,
+  even in small screens. -->
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+
+    <header id="header" class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall my-layout__sticky-header">
+
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span id="header-title" class="mdl-layout-title">Material Design Lite</span>
+
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+
+        <!-- Search box (demo! not functional)-->
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+          <label class="mdl-button mdl-js-button mdl-button--icon" id="search-button" for="search-field">
+            <i class="material-icons">search</i>
+          </label>
+          <div class="mdl-textfield__expandable-holder">
+            <input class="mdl-textfield__input" type="text" name="q" value="" id="search-field" pattern=".{3,}"/>
+          </div>
+        </div>
+        <div  class="mdl-tooltip mdl-tooltip--large" for="search-button">Search demo. Not functional</div>
+
+        <label id="go-home" class="mdl-button mdl-js-button mdl-button--icon">
+          <a href="/">
+            <i class="material-icons">home</i>
+          </a>
+        </label>
+        <div class="mdl-tooltip mdl-tooltip--large" for="go-home">Home</div>
+
+        <label id="get-mdl-io" class="mdl-button mdl-js-button mdl-button--icon">
+          <a href="http://www.getmdl.io/index.html" target="_blank">
+            <i class="material-icons">local_library</i>
+          </a>
+        </label>
+        <div class="mdl-tooltip mdl-tooltip--large" for="get-mdl-io">Documentaion @ getmdl.io</div>
+
+        <button id="header-menu" class="mdl-button mdl-js-button mdl-button--icon">
+          <i class="material-icons">more_vert</i>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="header-menu">
+          <li class="mdl-menu__item">Some Action</li>
+          <li class="mdl-menu__item">Another Action</li>
+          <li disabled class="mdl-menu__item">Disabled Action</li>
+          <li class="mdl-menu__item">Yet Another Action</li>
+        </ul>
+        <div class="mdl-tooltip mdl-tooltip--large" for="header-menu">A header menu</div>
+
+      </div>
+    </header>
+
+    <aside id="drawer" class="mdl-layout__drawer">
+      <!--
+      <span class="mdl-layout-title"><a href="/"><img src="images/demo/organizing.png"/>Components</a></span>
+      -->
+
+      <ul id="accordion" class="mdlext-accordion mdlext-accordion--vertical" role="tablist" aria-multiselectable="false">
+        <li class="mdlext-accordion__panel" role="tabpanel" open>
+          <header class="mdlext-accordion__panel__title">
+            <a href="#"></a>
+            <h6>MDL Components</h6>
+          </header>
+          <nav class="mdl-navigation mdlext-accordion__panel__content">
+            <a class="mdl-navigation__link" href="html/badge-button-demo.html"><img src="images/demo/comp_badges.png"/>Badges and Buttons</a>
+            <a class="mdl-navigation__link" href="html/card-demo.html"><img src="images/demo/comp_cards.png"/>Cards</a>
+            <a class="mdl-navigation__link" href="html/dialog-demo.html"><img src="images/demo/comp_dialog.png"/>Dialogs</a>
+            <a class="mdl-navigation__link" href="html/layout-demo.html"><img src="images/demo/comp_layout.png"/>Layout</a>
+            <a class="mdl-navigation__link" href="html/lists-demo.html"><img src="images/demo/comp_lists.png"/>Lists</a>
+            <a class="mdl-navigation__link" href="html/loading-demo.html"><img src="images/demo/comp_loading.png"/>Loading</a>
+            <a class="mdl-navigation__link" href="html/menu-demo.html"><img src="images/demo/comp_menus.png"/>Menus</a>
+            <a class="mdl-navigation__link" href="html/snackbar-demo.html"><img src="images/demo/comp_snackbar.png"/>Snackbar</a>
+            <a class="mdl-navigation__link" href="html/toggle-slider-demo.html"><img src="images/demo/comp_toggles.png"/>Toggles and Sliders</a>
+            <a class="mdl-navigation__link" href="html/table-demo.html"><img src="images/demo/comp_tables.png"/>Tables</a>
+            <a class="mdl-navigation__link" href="html/textfield-demo.html"><img src="images/demo/comp_textfields.png"/>Text Fields</a>
+            <a class="mdl-navigation__link" href="html/tooltip-demo.html"><img src="images/demo/comp_tooltips.png"/>Tooltips</a>
+            <a class="mdl-navigation__link" href="html/typography-demo.html"><img src="images/demo/typewriter.png"/>Typography</a>
+            <a class="mdl-navigation__link" href="html/material-design-icons-font-demo.html"><i class="material-icons md-36">face</i>Icons</a>
+            <a class="mdl-navigation__link" href="html/palette-demo.html"><img src="images/demo/art-palette.png"/>Color Palettes</a>
+          </nav>
+        </li>
+        <li class="mdlext-accordion__panel">
+          <header class="mdlext-accordion__panel__title">
+            <a href="#"></a>
+            <h6>Custom Components</h6>
+          </header>
+          <nav class="mdl-navigation mdlext-accordion__panel__content">
+            <a class="mdl-navigation__link" href="html/accordion-demo.html"><i class="material-icons md-36">dns</i>Accordion</a>
+            <a class="mdl-navigation__link" href="html/bordered-fields-demo.html"><i class="material-icons md-36">input</i>Bordered Fields Theme</a>
+            <a class="mdl-navigation__link" href="html/details-tag-demo.html"><i class="material-icons md-36">details</i>&lt;details&gt; element polyfill</a>
+            <a class="mdl-navigation__link" href="html/select-element-demo.html"><i class="material-icons md-36">arrow_drop_down</i>&lt;select&gt; element</a>
+          </nav>
+        </li>
+        <li class="mdlext-accordion__panel">
+          <header class="mdlext-accordion__panel__title">
+            <a href="#"></a>
+            <h6>Experiments</h6>
+          </header>
+          <nav class="mdl-navigation mdlext-accordion__panel__content">
+            <a class="mdl-navigation__link" href="/#js"><img src="images/demo/js.svg"/>Render with JS</a>
+            <a class="mdl-navigation__link" href="html/flexbox-experiments.html"><i class="material-icons md-36">dns</i>Flexbox</a>
+          </nav>
+        </li>
+      </ul>
+    </aside>
+
+      <!-- Content goes here -->
+    <main id="content" class="mdl-layout__content my-layout__sticky-footer">
+
+      <section id="content-panel" class="my-page-content"></section>
+
+      <!-- Add spacer to push Sticky Footer down when not enough content -->
+      <div class="mdl-layout-spacer"></div>
+
+      <!-- Footer -->
+      <footer class="mdl-mini-footer">
+        <div class="mdl-mini-footer__left-section">
+          <div class="mdl-logo">Footer Title</div>
+          <ul class="mdl-mini-footer__link-list">
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Privacy & Terms</a></li>
+          </ul>
+        </div>
+        <div class="mdl-mini-footer__right-section" style="padding-top: 8px;">
+          <i class="material-icons">all_inclusive</i>
+          <i class="material-icons">share</i>
+          <i class="material-icons">arrow_back</i>
+          <i class="material-icons">arrow_forward</i>
+          <i class="material-icons">check</i>
+          <i class="material-icons">close</i>
+          <i class="material-icons">android</i>
+          <i class="material-icons">menu</i>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script type="text/javascript" src="/static/vendor.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/static/app.js" charset="utf-8"></script>
+</body>
+</html>

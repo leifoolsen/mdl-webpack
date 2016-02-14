@@ -1,0 +1,138 @@
+<h5>Layout
+  <label class="mdl-button mdl-js-button mdl-button--icon">
+    <a href="http://www.getmdl.io/components/index.html#layout-section" target="_blank">
+      <i class="material-icons">local_library</i>
+    </a>
+  </label>
+</h5>
+<p>Building blocks for constructing a page layout.</p>
+
+<h5>Grid
+  <label class="mdl-button mdl-js-button mdl-button--icon">
+    <a href="http://www.getmdl.io/components/index.html#layout-section/grid" target="_blank">
+      <i class="material-icons">local_library</i>
+    </a>
+  </label>
+</h5>
+<p>The Material Design Lite (MDL) grid component is a simplified method for laying out content for multiple screen
+  sizes. It reduces the usual coding burden required to correctly display blocks of content in a variety of display
+  conditions.</p>
+
+<style>
+  .demo-grid .mdl-grid {
+    padding: 0;
+  }
+  .demo-grid .mdl-cell {
+    background: rgb(63,81,181);
+    text-align: center;
+    color: white;
+    padding: 20px;
+  }
+  .demo-grid .mdl-cell:nth-child(odd) {
+    background: rgb(33,150,243);
+  }
+
+  .demo-grid-a .mdl-cell {
+    background: rgb(176,190,197);
+    color: #000;
+  }
+  .demo-grid-a .mdl-cell:nth-child(odd) {
+    background: rgb(69,90,100);
+    color: #fff;
+  }
+
+  .demo-grid-b .mdl-cell {
+    background: rgb(118,255,3);
+    color: #000;
+  }
+  .demo-grid-b .mdl-cell:nth-child(odd) {
+    background: rgb(244,67,54);
+    color: #fff;
+  }
+
+  .demo-grid-c .mdl-cell {
+    background: rgb(255,213,79);
+    color: #000;
+  }
+  .demo-grid-c .mdl-cell:nth-child(odd) {
+    background: rgb(165,214,167);
+    color: #000;
+  }
+</style>
+
+<div class="demo-grid">
+  <div class="mdl-grid mdl-grid--no-spacing">
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+    <div class="mdl-cell mdl-cell--1-col">1</div>
+  </div>
+
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--2-col">2</div>
+    <div class="mdl-cell mdl-cell--2-col">2</div>
+    <div class="mdl-cell mdl-cell--2-col">2</div>
+    <div class="mdl-cell mdl-cell--2-col">2</div>
+    <div class="mdl-cell mdl-cell--2-col">2</div>
+    <div class="mdl-cell mdl-cell--2-col">2</div>
+  </div>
+
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col">4</div>
+    <div class="mdl-cell mdl-cell--4-col">4</div>
+    <div class="mdl-cell mdl-cell--4-col">4</div>
+  </div>
+
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--6-col">6</div>
+    <div class="mdl-cell mdl-cell--6-col">6</div>
+  </div>
+</div>
+
+<div class="demo-grid demo-grid-a">
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--top">Top</div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">Middle</div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--bottom">Bottom</div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--stretch">Default (stretch)</div>
+    <div class="mdl-cell mdl-cell--3-col">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+      a type specimen book.
+    </div>
+  </div>
+</div>
+
+<div class="demo-grid demo-grid-b">
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">6 (8 tablet)</div>
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">4 (6 tablet)</div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">2 (4 phone)</div>
+  </div>
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet">4 (3 tablet)</div>
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone">4 (2 Phone)</div>
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">4 (4 phone)</div>
+  </div>
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">6 (8 tablet)</div>
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">4 (6 tablet)</div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">2 (4 phone)</div>
+  </div>
+</div>
+
+<div class="demo-grid demo-grid-c">
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--1-col-phone">4 (2 tablet, 1 phone)</div>
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--3-col-phone">6 (4 tablet, 3 phone)</div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--hide-phone">2 (2 tablet, hide phone)</div>
+  </div>
+</div>

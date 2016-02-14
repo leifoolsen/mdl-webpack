@@ -1,0 +1,102 @@
+/**
+ * Center an element horizontally and/or vertically using transform css property.
+ *
+ * Note 1: If possible, prefer flexbox instead of this
+ * Note 2: This method can cause elements to be blurry due to the element being placed on a “half pixel”.
+ * To fix this, the parent element should be set to preserve-3d using the "transform-style: preserve-3d" property/value
+ *
+ * Example
+ *  .container {
+ *    position: relative;
+ *    transform-style: preserve-3d;
+ *    min-height: 400px;
+ *    width: 100%;
+ *    background-color: red;
+ *  }
+ * .center-me {
+ *   @include center-element;
+ *   background-color: green;
+ * }
+ *
+ * <div class="container">
+ *   <div class="center-me">
+ *     <p>I'm centered</p>
+ *   </div>
+ * </div>
+ *
+ * With flexbox
+ * .container {
+ *    display: flex;
+ *    align-items: center;
+ *    justify-content: center;
+ *    min-height: 400px;
+ *    width: 100%;
+ *    background-color: red;
+ * }
+ * .center-me {
+ *   background-color: green;
+ * }
+ *
+
+ */
+
+@mixin center-element($horizontal: true, $vertical: true) {
+  position: absolute;
+
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+/*
+ * Modified from: http://blustemy.io/drawing-pure-css-arrows-with-mixins/
+ */
+@mixin arrow($direction: down, $base-width: 15px, $length: 10px, $color: inherit) {
+  content: '';
+  width: 0;
+  height: 0;
+  border: ($base-width / 2) solid transparent;
+
+  @if $direction == up {
+    border-top: none;
+    border-bottom-width: $length;
+    border-bottom-color: $color;
+  }
+  @else if $direction == right {
+    border-right: none;
+    border-left-width: $length;
+    border-left-color: $color;
+  }
+  @else if $direction == down {
+    border-top-width: $length;
+    border-bottom: none;
+    border-top-color: $color;
+  }
+  @else if $direction == left {
+    border-right-width: $length;
+    border-left: none;
+    border-right-color: $color;
+  }
+}
+
+
+/*
+ * Modified from: http://thesassway.com/intermediate/mixins-for-semi-transparent-colors
+ */
+@mixin alpha-attribute($attribute, $color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  #{$attribute}: $solid-color;
+  #{$attribute}: $color;
+}

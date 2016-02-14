@@ -1,0 +1,112 @@
+<h5>MDL Text Fields
+  <label class="mdl-button mdl-js-button mdl-button--icon">
+    <a href="http://www.getmdl.io/components/index.html#textfields-section" target="_blank">
+      <i class="material-icons">local_library</i>
+    </a>
+  </label>
+</h5>
+
+<p>Textual input components.</p>
+
+<style>
+  .textfield-demo-container {
+  }
+
+  .textfield-demo-container .mdl-cell {
+    padding: 0 4px 8px 0;
+  }
+
+  .textfield-demo-container .mdl-cell p {
+    margin-bottom: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  /* File input example */
+  .mdl-button--file input {
+    cursor: pointer;
+    height: 100%;
+    right: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 300px;
+    z-index: 4;
+  }
+</style>
+
+
+<div class = "textfield-demo-container">
+
+  <div class="mdl-grid mdl-grid--no-spacing">
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Text</p>
+      <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="text" id="mdl-sample1">
+        <label class="mdl-textfield__label" for="mdl-sample1">Text...</label>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Text numeric</p>
+      <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mdl-sample2">
+        <label class="mdl-textfield__label" for="mdl-sample2">Number...</label>
+        <span class="mdl-textfield__error">Input is not a number!</span>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Text with floating label, required field</p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="mdl-sample3" required>
+        <label class="mdl-textfield__label" for="mdl-sample3">Text...</label>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Numeric with floating label</p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mdl-sample4">
+        <label class="mdl-textfield__label" for="mdl-sample4">Number...</label>
+        <span class="mdl-textfield__error">Input is not a number!</span>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Disabled floating label</p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mdl-sample41" disabled value="123">
+        <label class="mdl-textfield__label" for="mdl-sample41">Number...</label>
+        <span class="mdl-textfield__error">Input is not a number!</span>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Expanding</p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="mdl-expandable-demo">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q" value="" id="mdl-expandable-demo" pattern=".{3,}" />
+          <label class="mdl-textfield__label" for="mdl-expandable-demo">Expandable Input</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--8-col">
+      <p>Multiple lines</p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+        <textarea class="mdl-textfield__input" rows= "3" id="mdl-sample5" ></textarea>
+        <label class="mdl-textfield__label">Text lines...</label>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+

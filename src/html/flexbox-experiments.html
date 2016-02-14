@@ -1,0 +1,703 @@
+<!--
+BEM: Blocks, Elements and Modifiers
+
+// Block component
+.btn {}
+
+// Element that depends upon the block
+.btn__price {}
+
+// Modifier that changes the style of the block
+.btn--orange {}
+.btn--big {}
+
+<a class="btn btn--big btn--orange" href="http://css-tricks.com">
+  <span class="btn__price">$9.99</span>
+  <span class="btn__text">Subscribe</span>
+</a>
+-->
+
+<h5>Flexbox Fundamentals @ <a href="https://egghead.io/lessons/misc-flexbox-fundamentals" target="_blank">egghead.io</a></h5>
+
+<p class="mdl-typography--body-2">Other resources:<br/>
+  <a href="https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties" target="_blank">A Visual Guide to CSS3 Flexbox Properties</a>,
+  <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">A Complete Guide to Flexbox</a>,
+  <a href="https://philipwalton.github.io/solved-by-flexbox/" target="_blank">Solved by Flexbox</a>,
+  <a href="http://www.sketchingwithcss.com/samplechapter/cheatsheet.html" target="_blank">THE ULTIMATE FLEXBOX CHEAT SHEET</a> .
+</p>
+
+<style>
+  .options {
+    display: flex;
+    flex-flow: column wrap;
+  }
+  .options > span {
+    font-weight: 700;
+    margin-top: 8px;
+  }
+
+
+  .basic.flex-container {
+    width: 40%;
+    height: 220px;
+    outline: 1px solid #000;
+    display: flex;                   /* flex        | inline-flex                                                                */
+    flex-direction: row;             /* row        <| row-reverse | column       | column-reverse                                */
+    flex-wrap: nowrap;               /* nowrap     <| wrap        | wrap-reverse                                                 */
+    justify-content: flex-start;     /* flex-start <| flex-end    | center       | space-between | space-around                  : Align items in Main Axis  */
+    align-items: center;             /* stretch    <| flex-start <| flex-end     | center        | baseline                      : Align items in Cross Axis */
+    align-content: space-between;    /* stretch    <| flex-start  | flex-end     | center        | space-between | space-around  : Extra space in Cross Axis */
+
+    /* flex-flow == flex-direction flex-wrap, e.g. flex-flow: row wrap */
+  }
+
+  .basic .flex-item {
+    padding: 0 32px;
+    font-size: 32px;
+    text-align: center;
+    line-height: 48px;
+    outline: 1px solid orange;
+
+    flex-basis: auto;       /* auto <| <length>                                            */
+    flex-grow: 0;           /* 0    <| <number>                                            */
+    flex-shrink: 0;         /* 0    <| <number>                                            */
+    order: 0;               /* 0    <| <number>                                            */
+    align-self: auto;       /* auto <| flex-start | flex-end | center | baseline | stretch */
+
+    /* flex == flex-basis flex-grow flex-shrink, e.g. flex: 50px 1 1; */
+  }
+  .basic .flex-item:active,
+  .basic .flex-item.active {
+    color: gold; background: red;
+  }
+  .basic .flex-item--hidden {
+    display: none;
+  }
+</style>
+
+<h5 style="margin-bottom: 0;">Flex Container</h5>
+<div id="flex-container-options" class="mdl-grid mdl-grid--no-spacing">
+  <div class="mdl-cell mdl-cell--2-col options">
+    <span>Display:</span>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="display-flex">
+      <input type="radio" class="mdl-radio__button" id="display-flex" name="display" value="flex" checked>
+      <span class="mdl-radio__label">flex</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="display-inline-flex">
+      <input type="radio" class="mdl-radio__button" id="display-inline-flex" name="display" value="inline-flex">
+      <span class="mdl-radio__label">inline-flex</span>
+    </label>
+  </div>
+
+  <div id="flex-direction" class="mdl-cell mdl-cell--2-col options">
+    <span>Flex direction:</span>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-direction-row">
+      <input type="radio" class="mdl-radio__button" id="flex-direction-row" name="flex-direction" value="row" checked>
+      <span class="mdl-radio__label">row (default)</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-direction-row-reverse">
+      <input type="radio" class="mdl-radio__button" id="flex-direction-row-reverse" name="flex-direction" value="row-reverse">
+      <span class="mdl-radio__label">row-reverse</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-direction-column">
+      <input type="radio" class="mdl-radio__button" id="flex-direction-column" name="flex-direction" value="column">
+      <span class="mdl-radio__label">column</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-direction-column-reverse">
+      <input type="radio" class="mdl-radio__button" id="flex-direction-column-reverse" name="flex-direction" value="column-reverse">
+      <span class="mdl-radio__label">column-reverse</span>
+    </label>
+    <div class="mdl-tooltip mdl-tooltip--bootm" for="flex-direction">
+      This property specifies how flex items are laid out in the flex container, by setting the direction of the flex
+      container’s main axis. They can be laid out in two main directions, like rows horizontally or like columns vertically.
+    </div>
+  </div>
+
+  <div id="flex-wrap" class="mdl-cell mdl-cell--2-col options">
+    <span>Flex wrap:</span>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-wrap-nowrap">
+      <input type="radio" class="mdl-radio__button" id="flex-wrap-nowrap" name="flex-wrap" value="nowrap" checked>
+      <span class="mdl-radio__label">nowrap (default)</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-wrap-wrap">
+      <input type="radio" class="mdl-radio__button" id="flex-wrap-wrap" name="flex-wrap" value="wrap">
+      <span class="mdl-radio__label">wrap</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-wrap-wrap-reverse">
+      <input type="radio" class="mdl-radio__button" id="flex-wrap-wrap-reverse" name="flex-wrap" value="wrap-reverse">
+      <span class="mdl-radio__label">wrap-reverse</span>
+    </label>
+    <div class="mdl-tooltip mdl-tooltip--bottom" for="flex-wrap">
+      The initial flexbox concept is the container to set its items in one single line. The flex-wrap property controls
+      if the flex container lay out its items in single or multiple lines, and the direction the new lines are stacked in.
+    </div>
+  </div>
+
+  <div id="justify-content" class="mdl-cell mdl-cell--2-col options">
+    <span>Justify content:</span>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="justify-content-flex-start">
+      <input type="radio" class="mdl-radio__button" id="justify-content-flex-start" name="justify-content" value="flex-start" checked>
+      <span class="mdl-radio__label">flex-start (default)</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="justify-content-flex-end">
+      <input type="radio" class="mdl-radio__button" id="justify-content-flex-end" name="justify-content" value="flex-end">
+      <span class="mdl-radio__label">flex-end</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="justify-content-center">
+      <input type="radio" class="mdl-radio__button" id="justify-content-center" name="justify-content" value="center">
+      <span class="mdl-radio__label">center</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="justify-content-space-between">
+      <input type="radio" class="mdl-radio__button" id="justify-content-space-between" name="justify-content" value="space-between">
+      <span class="mdl-radio__label">space-between</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="justify-content-space-around">
+      <input type="radio" class="mdl-radio__button" id="justify-content-space-around" name="justify-content" value="space-around">
+      <span class="mdl-radio__label">space-around</span>
+    </label>
+    <div class="mdl-tooltip mdl-tooltip--bottom" for="justify-content">
+      The justify-content property aligns flex items along the main axis of the current line of the flex container.
+      It helps distribute left free space when either all the flex items on a line are inflexible, or are flexible but
+      have reached their maximum size.
+    </div>
+  </div>
+
+  <div id="align-items" class="mdl-cell mdl-cell--2-col options">
+    <span>Align items:</span>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="align-items-flex-start">
+      <input type="radio" class="mdl-radio__button" id="align-items-flex-start" name="align-items" value="flex-start">
+      <span class="mdl-radio__label">flex-start</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="align-items-flex-end">
+      <input type="radio" class="mdl-radio__button" id="align-items-flex-end" name="align-items" value="flex-end">
+      <span class="mdl-radio__label">flex-end</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="align-items-center">
+      <input type="radio" class="mdl-radio__button" id="align-items-center" name="align-items" value="center" checked>
+      <span class="mdl-radio__label">center</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="align-items-stretch">
+      <input type="radio" class="mdl-radio__button" id="align-items-stretch" name="align-items" value="stretch">
+      <span class="mdl-radio__label">stretch (default)</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="align-items-baseline">
+      <input type="radio" class="mdl-radio__button" id="align-items-baseline" name="align-items" value="baseline">
+      <span class="mdl-radio__label">baseline</span>
+    </label>
+    <div class="mdl-tooltip mdl-tooltip--bottom" for="align-items">
+      Flex items can be aligned in the cross axis of the current line of the flex container, similar to justify-content
+      but in the perpendicular direction. This property sets the default alignment for all flex items, including
+      the anonymous ones.
+    </div>
+  </div>
+
+  <div id="align-content" class="mdl-cell mdl-cell--2-col options">
+    <span>Align content:</span>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="align-content-flex-start">
+      <input type="radio" class="mdl-radio__button" id="align-content-flex-start" name="align-content" value="flex-start">
+      <span class="mdl-radio__label">flex-start</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="align-content-flex-end">
+      <input type="radio" class="mdl-radio__button" id="align-content-flex-end" name="align-content" value="flex-end">
+      <span class="mdl-radio__label">flex-end</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="align-content-center">
+      <input type="radio" class="mdl-radio__button" id="align-content-center" name="align-content" value="center">
+      <span class="mdl-radio__label">center</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="align-content-stretch">
+      <input type="radio" class="mdl-radio__button" id="align-content-stretch" name="align-content" value="stretch">
+      <span class="mdl-radio__label">stretch (default)</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="align-content-space-between">
+      <input type="radio" class="mdl-radio__button" id="align-content-space-between" name="align-content" value="space-between" checked>
+      <span class="mdl-radio__label">space-between</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="align-content-space-around">
+      <input type="radio" class="mdl-radio__button" id="align-content-space-around" name="align-content" value="space-around">
+      <span class="mdl-radio__label">space-around</span>
+    </label>
+    <div class="mdl-tooltip" for="align-content">
+      The align-content property aligns a flex container’s lines within the flex container when there is extra space in
+      the cross-axis, similar to how justify-content aligns individual items within the main-axis.
+    </div>
+  </div>
+
+</div>
+
+<script>
+  (function() {
+    'use strict';
+    var flexContainer = document.querySelector('#egghead');
+
+    var r = document.querySelectorAll('#flex-container-options input[type="radio"]');
+    for(var i = 0; i < r.length; i++) {
+      r[i].onclick = function() {
+        flexContainer.style[this.name] = this.value;
+        //console.log(this.name, this.value);
+      };
+    }
+  }());
+</script>
+
+
+<h5 style="margin-top: 0; margin-bottom:0;">Flex Item</h5>
+<div id="flex-item-options" class="mdl-grid mdl-grid--no-spacing">
+  <div class="mdl-cell mdl-cell--2-col options">
+    <span>Height</span>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-height-auto">
+      <input type="radio" class="mdl-radio__button" id="flex-item-height-auto" name="height" value="auto" checked>
+      <span class="mdl-radio__label">auto</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-height-60px">
+      <input type="radio" class="mdl-radio__button" id="flex-item-height-60px" name="height" value="60px">
+      <span class="mdl-radio__label">60px</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-height-100px">
+      <input type="radio" class="mdl-radio__button" id="flex-item-height-100px" name="height" value="100px">
+      <span class="mdl-radio__label">100px</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-height-200px">
+      <input type="radio" class="mdl-radio__button" id="flex-item-height-200px" name="height" value="200px">
+      <span class="mdl-radio__label">200px</span>
+    </label>
+  </div>
+  <div class="mdl-cell mdl-cell--2-col options">
+    <span>Width</span>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-width-auto">
+      <input type="radio" class="mdl-radio__button" id="flex-item-width-auto" name="width" value="auto" checked>
+      <span class="mdl-radio__label">auto</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-width-60">
+      <input type="radio" class="mdl-radio__button" id="flex-item-width-60" name="width" value="60px">
+      <span class="mdl-radio__label">60px</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-width-100">
+      <input type="radio" class="mdl-radio__button" id="flex-item-width-100" name="width" value="100px">
+      <span class="mdl-radio__label">100px</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-width-200">
+      <input type="radio" class="mdl-radio__button" id="flex-item-width-200" name="width" value="200px">
+      <span class="mdl-radio__label">200px</span>
+    </label>
+  </div>
+  <div id="flex-basis" class="mdl-cell mdl-cell--2-col options">
+    <span>Flex basis</span>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-flex-basis-auto">
+      <input type="radio" class="mdl-radio__button" id="flex-item-flex-basis-auto" name="flex-basis" value="auto" checked>
+      <span class="mdl-radio__label">auto (default)</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-flex-basis-60px">
+      <input type="radio" class="mdl-radio__button" id="flex-item-flex-basis-60px" name="flex-basis" value="60px">
+      <span class="mdl-radio__label">60px</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-flex-basis-100px">
+      <input type="radio" class="mdl-radio__button" id="flex-item-flex-basis-100px" name="flex-basis" value="100px">
+      <span class="mdl-radio__label">100px</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-flex-basis-200px">
+      <input type="radio" class="mdl-radio__button" id="flex-item-flex-basis-200px" name="flex-basis" value="200px">
+      <span class="mdl-radio__label">200px</span>
+    </label>
+    <div class="mdl-tooltip mdl-tooltip--bottom" for="flex-basis">
+      This property takes the same values as the width and height properties, and specifies the initial main size of
+      the flex item, before free space is distributed according to the flex factors.
+    </div>
+  </div>
+  <div id="flex-grow" class="mdl-cell mdl-cell--2-col options">
+    <span>Flex grow</span>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-flex-grow-0">
+      <input type="radio" class="mdl-radio__button" id="flex-item-flex-grow-0" name="flex-grow" value="0" checked>
+      <span class="mdl-radio__label">0 (default)</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-flex-grow-1">
+      <input type="radio" class="mdl-radio__button" id="flex-item-flex-grow-1" name="flex-grow" value="1">
+      <span class="mdl-radio__label">1</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-flex-grow-2">
+      <input type="radio" class="mdl-radio__button" id="flex-item-flex-grow-2" name="flex-grow" value="2">
+      <span class="mdl-radio__label">2</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-flex-grow-3">
+      <input type="radio" class="mdl-radio__button" id="flex-item-flex-grow-3" name="flex-grow" value="3">
+      <span class="mdl-radio__label">3</span>
+    </label>
+    <div class="mdl-tooltip mdl-tooltip--bottom" for="flex-grow">
+      This property specifies the flex grow factor, which determines how much the flex item will grow relative to the
+      rest of the flex items in the flex container when positive free space is distributed.
+    </div>
+  </div>
+
+  <div id="flex-shrink" class="mdl-cell mdl-cell--2-col options">
+    <span>Flex shrink</span>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-flex-shrink-0">
+      <input type="radio" class="mdl-radio__button" id="flex-item-flex-shrink-0" name="flex-shrink" value="0" checked>
+      <span class="mdl-radio__label">0 (default)</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-flex-shrink-1">
+      <input type="radio" class="mdl-radio__button" id="flex-item-flex-shrink-1" name="flex-shrink" value="1">
+      <span class="mdl-radio__label">1</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-flex-shrink-2">
+      <input type="radio" class="mdl-radio__button" id="flex-item-flex-shrink-2" name="flex-shrink" value="2">
+      <span class="mdl-radio__label">2</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-flex-shrink-3">
+      <input type="radio" class="mdl-radio__button" id="flex-item-flex-shrink-3" name="flex-shrink" value="3">
+      <span class="mdl-radio__label">3</span>
+    </label>
+    <div class="mdl-tooltip mdl-tooltip--bottom" for="flex-shrink">
+      The flex-shrink specifies the flex shrink factor, which determines how much the flex item will shrink relative to
+      the rest of the flex items in the flex container when negative free space is distributed.
+    </div>
+  </div>
+
+  <div id="align-self" class="mdl-cell mdl-cell--2-col options">
+    <span>Align self</span>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-align-self-auto">
+      <input type="radio" class="mdl-radio__button" id="flex-item-align-self-auto" name="align-self" value="auto" checked>
+      <span class="mdl-radio__label">auto (default)</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-align-self-flex-start">
+      <input type="radio" class="mdl-radio__button" id="flex-item-align-self-flex-start" name="align-self" value="flex-start">
+      <span class="mdl-radio__label">flex-start</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-align-self-flex-end">
+      <input type="radio" class="mdl-radio__button" id="flex-item-align-self-flex-end" name="align-self" value="flex-end">
+      <span class="mdl-radio__label">flex-end</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-align-self-center">
+      <input type="radio" class="mdl-radio__button" id="flex-item-align-self-center" name="align-self" value="center">
+      <span class="mdl-radio__label">center</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-align-self-baseline">
+      <input type="radio" class="mdl-radio__button" id="flex-item-align-self-baseline" name="align-self" value="baseline">
+      <span class="mdl-radio__label">baseline</span>
+    </label>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-align-self-stretch">
+      <input type="radio" class="mdl-radio__button" id="flex-item-align-self-stretch" name="align-self" value="stretch">
+      <span class="mdl-radio__label">stretch</span>
+    </label>
+    <div class="mdl-tooltip mdl-tooltip--bottom" for="align-self">
+      This align-self property allows the default alignment (or the one specified by align-items) to be overridden
+      for individual flex items. Refer to align-items explanation for flex container to understand the available values.
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    'use strict';
+    var flexItems = document.querySelectorAll('#egghead > .flex-item');
+    var r = document.querySelectorAll('#flex-item-options input[type="radio"]');
+
+    for(var i = 0; i < r.length; i++) {
+      r[i].onclick = function() {
+        var active = document.querySelectorAll('#egghead > .flex-item.active');
+        if(active.length < 1) {
+          active = flexItems;
+        }
+        for(var f = 0; f < active.length; f++) {
+          active[f].style[this.name] = this.value;
+        }
+      };
+    }
+  }());
+</script>
+
+<br/>
+<p id="no-of-items" style="width:40%;"># Items <strong>5</strong>
+  <input class="mdl-slider mdl-js-slider" type="range" min="0" max="10" value="5" tabindex="0">
+</p>
+<div class="mdl-tooltip mdl-tooltip--top" for="no-of-items">
+  Number of items in grid
+</div>
+
+<script>
+  (function() {
+    'use strict';
+    var nItems = document.querySelector('#no-of-items strong');
+    var slider = document.querySelector('#no-of-items input');
+
+    slider.oninput = function() {
+      setNumberOfItems(this.value);
+    };
+    function setNumberOfItems(value) {
+      nItems.innerText = value;
+      var items = document.querySelectorAll('#egghead > .flex-item');
+      for(var n = 0; n < 10; n++) {
+        if(value > n) {
+          items[n].classList.remove('flex-item--hidden');
+        }
+        else {
+          items[n].classList.add('flex-item--hidden');
+        }
+      }
+    }
+  }());
+</script>
+
+<p id="item-order" style="width:40%;">Item order <strong>0</strong>
+  <input class="mdl-slider mdl-js-slider" type="range" min="0" max="10" value="0" tabindex="0">
+</p>
+<div class="mdl-tooltip mdl-tooltip--top" for="item-order">
+  The order property controls the order in which children of a flex container appear inside the flex container.
+  By default they are ordered as initially added in the flex container.
+</div>
+
+<script>
+  (function() {
+    'use strict';
+    var order = document.querySelector('#item-order strong');
+    var slider = document.querySelector('#item-order input');
+
+    slider.oninput = function() {
+      order.innerText = this.value;
+      var active = document.querySelectorAll('#egghead > .flex-item.active');
+      for(var f = 0; f < active.length; f++) {
+        active[f].style['order'] = this.value;
+      }
+    };
+  }());
+</script>
+
+<div id="egghead" class="basic flex-container">
+  <div class="flex-item">1</div>
+  <div class="flex-item">2</div>
+  <div class="flex-item">3</div>
+  <div class="flex-item">4</div>
+  <div class="flex-item">5</div>
+  <div class="flex-item flex-item--hidden">6</div>
+  <div class="flex-item flex-item--hidden">7</div>
+  <div class="flex-item flex-item--hidden">8</div>
+  <div class="flex-item flex-item--hidden">9</div>
+  <div class="flex-item flex-item--hidden">10</div>
+</div>
+<div class="mdl-tooltip mdl-tooltip--top" for="egghead">
+  Click on one or more items, then change flex item attributes.
+  If no items are selected then attributes will apply to all items.
+</div>
+
+
+<script>
+  (function() {
+    'use strict';
+    var flexItems = document.querySelectorAll('#egghead > .flex-item');
+    for(var i = 0; i < flexItems.length; i++) {
+      flexItems[i].onclick = function() {
+        this.classList.toggle('active');
+      };
+    }
+  }());
+</script>
+
+
+<!-- =============== -->
+<!-- Ordered columns -->
+<!-- =============== -->
+
+
+<h5>Ordered columns</h5>
+<style>
+
+  .ordered-columns.flex-container {
+    height: 302px;
+    border: 1px solid #000;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, .1);
+
+    display: flex;                   /* flex        | inline-flex                                                                */
+    flex-direction: column;          /* row        <| row-reverse | column       | column-reverse                                */
+    flex-wrap: wrap;                 /* nowrap     <| wrap        | wrap-reverse                                                 */
+    justify-content: flex-start;     /* flex-start <| flex-end    | center       | space-between | space-around                  : Align items in Main Axis  */
+    align-items: flex-start;         /* stretch    <| flex-start <| flex-end     | center        | baseline                      : Align items in Cross Axis */
+    align-content: flex-start;       /* stretch    <| flex-start  | flex-end     | center        | space-between | space-around  : Extra space in Cross Axis */
+  }
+  .ordered-columns .flex-item {
+    border: 2px solid dimgrey;
+    background: rgba(0, 0, 255, .1);
+    padding: 8px;
+    min-width: 100px;
+
+    align-self: flex-start;          /* auto <| flex-start | flex-end | center | baseline | stretch */
+  }
+</style>
+
+<section class="ordered-columns flex-container">
+  <div class="flex-item">
+    <p>1'st: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>2'nd: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>3'rd: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>4'th: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>5'th: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>6'th: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>7'th: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>8'th: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>9'th: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>10'th: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>11'th: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>12'th: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>13'th: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>14'th: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>15'th: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>16'th: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>17'th: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>18'th: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>19'th: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>20'th: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>21'st: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>22'nd: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>23'rd: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>24'th: Item</p>
+  </div>
+  <div class="flex-item">
+    <p>25'th: Item</p>
+  </div>
+</section>
+
+
+<!-- ================================ -->
+<!-- Header, Sidebar, Content, Footer -->
+<!-- ================================ -->
+
+<h5>Header, Sidebar, Content, Footer</h5>
+<p>Note: OSX Chrome only.</p>
+<style>
+  .flex-layout {
+    height: 400px;
+  }
+
+  .flex-layout .flex-container {
+    height: 100%;
+    border: 1px solid #000;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* align items in Main Axis  */
+    align-items: stretch;        /* align items in Cross Axis */
+    align-content: stretch;      /* Extra space in Cross Axis */
+  }
+
+  .flex-layout .flex-item {
+    border: 2px solid dimgrey;
+    background: gainsboro;
+    padding: 8px;
+  }
+
+  .flex-layout .flex-grow {
+    flex: 1; /* same as flex: 1 1 auto; */
+  }
+
+  .flex-layout .flex-item.header {
+    background: rgba(255, 0, 0, .1);
+  }
+  .flex-layout .flex-item.footer {
+    background: rgba(0, 255, 0, .1);
+  }
+  .flex-layout .flex-item.content {
+    background: rgba(0, 0, 255, .1);
+  }
+  .flex-layout .flex-sidebar {
+    background: rgba(255, 255, 0, .2);
+    width: 200px;
+    border: 1px solid red;
+  }
+
+  .flex-layout .flex-item--fill-area {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: flex-start; /* align items in Main Axis */
+    align-items: stretch;        /* align items in Cross Axis */
+    align-content: stretch;      /* Extra space in Cross Axis */
+  }
+  .flex-layout .fill-area-content {
+    background: rgba(0, 0, 0, .3);
+    border: 1px solid #000000;
+
+    /* Needed for when the area gets squished too far and there is content that can't be displayed */
+    overflow: auto;
+  }
+</style>
+
+<div class="flex-layout">
+  <div class="flex-container">
+    <header class="flex-item header">
+      <p>Header</p>
+    </header>
+    <div class="content flex-item flex-item--fill-area flex-grow">
+      <aside role="complementary" class="flex-sidebar">
+        Sidebar
+      </aside>
+      <section class="fill-area-content flex-grow">
+        <p>Content</p>
+        <p>Emulates height 100% with a horizontal flexbox with stretch</p>
+        <p>This box with a border should fill the blue area except for the padding (just to show the middle flexbox item).</p>
+        <p><a href="http://jsfiddle.net/MadLittleMods/LmYay/" target="_blank">Modified from</a></p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique
+          eget augue eget gravida. Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec
+          quam. Ut at libero in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna
+          vehicula metus, ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere
+          mauris, ac maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut
+          molestie arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+
+        <p>Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel justo.
+          Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis mattis
+          placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor neque
+          gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis blandit
+          leo ullamcorper vel.</p>
+      </section>
+    </div>
+    <footer class="flex-item footer">
+      <p>Footer</p>
+    </footer>
+  </div>
+</div>

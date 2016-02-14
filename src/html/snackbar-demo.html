@@ -1,0 +1,68 @@
+<h5>Snackbar
+  <label class="mdl-button mdl-js-button mdl-button--icon">
+    <a href="http://www.getmdl.io/components/index.html#snackbar-section" target="_blank">
+      <i class="material-icons">local_library</i>
+    </a>
+  </label>
+</h5>
+<p>Transient popup notifications.</p>
+
+<div class="mdl-grid mdl-grid--no-spacing">
+
+  <!-- List Items with action -->
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--1-col-tablet mdl-cell--hide-phone">
+  </div>
+
+  <div class="mdl-cell mdl-cell--6-col" style="text-align: center;">
+    <button id="demo-show-snackbar" class="mdl-button mdl-js-button mdl-button--raised" type="button">Show Snackbar</button>
+    <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+      <div class="mdl-snackbar__text"></div>
+      <button class="mdl-snackbar__action" type="button"></button>
+    </div>
+    <script>
+      (function() {
+        'use strict';
+        var snackbarContainer = document.querySelector('#demo-snackbar-example');
+        var showSnackbarButton = document.querySelector('#demo-show-snackbar');
+        var handler = function(event) {
+          showSnackbarButton.style.backgroundColor = '';
+        };
+        showSnackbarButton.addEventListener('click', function() {
+          'use strict';
+          showSnackbarButton.style.backgroundColor = '#' +
+            Math.floor(Math.random() * 0xFFFFFF).toString(16);
+          var data = {
+            message: 'Button color changed.',
+            timeout: 2000,
+            actionHandler: handler,
+            actionText: 'Undo'
+          };
+          snackbarContainer.MaterialSnackbar.showSnackbar(data);
+        });
+      }());
+    </script>
+
+    <button id="demo-show-toast" class="mdl-button mdl-js-button mdl-button--raised" type="button">Show Toast</button>
+    <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+      <div class="mdl-snackbar__text"></div>
+      <button class="mdl-snackbar__action" type="button"></button>
+    </div>
+    <script>
+      (function() {
+        'use strict';
+        window['counter'] = 0;
+        var snackbarContainer = document.querySelector('#demo-toast-example');
+        var showToastButton = document.querySelector('#demo-show-toast');
+        showToastButton.addEventListener('click', function() {
+          'use strict';
+          var data = {message: 'Example Message # ' + ++counter};
+          snackbarContainer.MaterialSnackbar.showSnackbar(data);
+        });
+      }());
+    </script>
+  </div>
+
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--1-col-tablet mdl-cell--hide-phone">
+  </div>
+
+</div> <!-- mdl-grid -->

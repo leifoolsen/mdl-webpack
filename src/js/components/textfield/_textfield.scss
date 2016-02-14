@@ -1,0 +1,172 @@
+/**
+ * Bordered textfields
+ * Modified from: http://codepen.io/prajwal078/pen/LVJZXz?editors=010
+ */
+
+@import "../../../../node_modules/material-design-lite/src/variables";
+@import "../../../../node_modules/material-design-lite/src/textfield/textfield";
+
+$bordered-input-text-border-radius: 3px !default;
+$bordered-input-text-border-width: 1px !default;
+
+
+// "Theme" for this styling
+.mdlext-bordered-textfields {
+
+  // Styling for the input element.
+  // Note: This styling also affects mdlext-selectfield! This is a (good or bad?) side effect of using inheritance.
+  .mdl-textfield {
+
+    &.is-dirty {
+      .mdl-textfield__input {
+        &:required {
+          border-color: $input-text-bottom-border-color;
+        }
+        &:focus,
+        &:required:focus {
+          border-color: #458ebd;
+        }
+      }
+    }
+    .mdl-textfield__input {
+      border: $bordered-input-text-border-width solid $input-text-bottom-border-color;
+      border-radius: $bordered-input-text-border-radius;
+
+      height: 48px; // TODO: use var
+      padding: 20px $input-text-padding 0;  // TODO: use var for padding-top
+
+      &:disabled {
+        color: $input-text-disabled-text-color;
+        background: rgba(228, 236, 243, 0.25); // TODO: use var
+        border: solid #c6ccd1 1px; // TODO: use var
+      }
+      &:required {
+        border-color: #e59617; // TODO: use var
+      }
+      &:focus,
+      &:required:focus {
+        border-color: #458ebd; // TODO: use var
+      }
+    }
+  }
+
+  // Styling for the label / floating label.
+  .mdl-textfield {
+
+    &.is-focused {
+      .mdl-textfield__label {
+        top: 25px; // TODO: use var
+      }
+    }
+    &.is-dirty {
+      .mdl-textfield__label {
+        top: 25px; // TODO: use var
+        visibility: visible;
+      }
+    }
+    .mdl-textfield__label {
+      padding-left: $input-text-padding;
+      top: 35px; // TODO: use var
+
+      // Hides the colored underline for the TextField.
+      &:after {
+        background-color: transparent !important;
+        visibility: hidden !important;
+      }
+    }
+  }
+
+  // Icon(s) inside textfield
+  .mdl-textfield {
+
+    &.mdl-textfield--icon,
+    &.mdl-textfield--icon-l,
+    &.mdl-textfield--icon-r {
+      & > i {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.4em; // TODO: Use var
+      }
+    }
+    &.mdl-textfield--icon,
+    &.mdl-textfield--icon-l {
+      & > i {
+        left: 4px; // TODO: Use var
+      }
+      .mdl-textfield__input {
+        padding-left: 30px; // TODO: Use var
+      }
+      .mdl-textfield__label {
+        left: 28px; // TODO: Use var
+      }
+    }
+    &.mdl-textfield--icon-r {
+      & > i:last-child {
+        left: auto;
+        right: 4px; // TODO: Use var
+      }
+      .mdl-textfield__input {
+        padding-right: 30px; // TODO: Use var
+      }
+      .mdl-textfield__label {
+        //right: 28px;         // TODO: Use var
+      }
+    }
+    &.is-disabled.mdl-textfield--icon > i,
+    &.is-disabled.mdl-textfield--icon-l > i,
+    &.is-disabled.mdl-textfield--icon-r > i {
+      color: $input-text-disabled-color;
+    }
+  }
+
+
+  // Button(s) inside textfield
+  .mdl-textfield {
+
+    &.mdl-textfield--button,
+    &.mdl-textfield--button-l,
+    &.mdl-textfield--button-r {
+      & > .mdl-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.4em; // TODO: Use var
+      }
+    }
+    &.mdl-textfield--button,
+    &.mdl-textfield--button-l {
+      & > .mdl-button {
+        left: 2px; // TODO: Use var
+      }
+      .mdl-textfield__input {
+        padding-left: 30px; // TODO: Use var
+      }
+      .mdl-textfield__label {
+        left: 28px; // TODO: Use var
+      }
+    }
+    &.mdl-textfield--button-r {
+      & > .mdl-button:last-child {
+        left: auto;
+        right: 2px; // TODO: Use var
+      }
+      .mdl-textfield__input {
+        padding-right: 30px; // TODO: Use var
+      }
+      .mdl-textfield__label {
+        //right: 28px;         // TODO: Use var
+      }
+    }
+    &.is-disabled.mdl-textfield--button > .mdl-button,
+    &.is-disabled.mdl-textfield--button-l > .mdl-button,
+    &.is-disabled.mdl-textfield--mdl-button-r > .mdl-button {
+      color: $input-text-disabled-color;
+    }
+  }
+
+}
+
+
+
+

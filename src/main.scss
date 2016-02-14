@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+// ------------------------------------------------------------------------------------------------------
+// Organizing SASS / CSS
+// See: http://sass-guidelin.es/#the-7-1-pattern
+// See: https://github.com/HugoGiraudel/sass-boilerplate/tree/master/stylesheets
+//
+// TODO: No global Sass context, as suggested by http://bensmithett.com/smarter-css-builds-with-webpack/
+// Only import what is strictly needed
+// ------------------------------------------------------------------------------------------------------
+
+
+// 1. Configuration and helpers
+@import 'stylesheets/utils/variables';
+
+// 2. Vendors
+@import
+  'stylesheets/vendors/material-design-icons',
+  '../node_modules/material-design-iconic-font/dist/css/material-design-iconic-font.css',
+  '../node_modules/roboto-fontface/css/roboto-fontface.css',
+  '../node_modules/material-design-lite/src/material-design-lite',
+  '../node_modules/dialog-polyfill/dialog-polyfill.css';
+
+// 3. Base stuff
+@import 'stylesheets/base/base';
+
+// 4. Layout-related sections
+@import 'stylesheets/layout/layout';
+
+// 5. Components
+@import
+  'js/components/accordion/accordion',
+  'js/components/select/selectfield',
+  'js/components/textfield/textfield';
+
+// 6. Page-specific styles
+@import 'stylesheets/pages/demo.css';
+
+// 7. Themes

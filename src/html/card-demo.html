@@ -1,0 +1,161 @@
+<h5>Cards
+  <label class="mdl-button mdl-js-button mdl-button--icon">
+    <a href="http://www.getmdl.io/components/index.html#cards-section" target="_blank">
+      <i class="material-icons">local_library</i>
+    </a>
+  </label>
+</h5>
+
+<p>Self-contained pieces of paper with data.</p>
+
+<style>
+  .demo-card-grid {
+    margin-top: 32px;
+  }
+  .demo-card-wide_container,
+  .demo-card-wide.mdl-card {
+    width: 100%;
+    max-width: 512px;
+  }
+  .demo-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background: url('../images/demo/welcome_card.jpg') center / cover;
+  }
+  .demo-card-wide > .mdl-card__menu {
+    color: #fff;
+  }
+
+  .demo-card-square.mdl-card {
+    width: 320px;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 320px;
+  }
+  .demo-card-square > .mdl-card__title {
+    color: #fff;
+    background:
+      url('../images/demo/dog.png') bottom right 15% no-repeat #46B6AC;
+  }
+
+  .demo-card-image.mdl-card {
+    width: 256px;
+    max-width: 100%;
+    height: 256px;
+    margin: 0 auto;
+    background: url('../images/demo/image_card.jpg') center / cover;
+  }
+  .demo-card-image > .mdl-card__actions {
+    height: 52px;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .demo-card-image__filename {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .demo-card-event.mdl-card {
+    width: 256px;
+    max-width: 100%;
+    height: 256px;
+    margin: 0 auto;
+    background: #3E4EB8;
+  }
+  .demo-card-event > .mdl-card__actions {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  .demo-card-event > .mdl-card__title {
+    align-items: flex-start;
+  }
+  .demo-card-event > .mdl-card__title > h4 {
+    margin-top: 0;
+  }
+  .demo-card-event > .mdl-card__actions {
+    display: flex;
+    box-sizing:border-box;
+    align-items: center;
+  }
+  .demo-card-event > .mdl-card__title,
+  .demo-card-event > .mdl-card__actions,
+  .demo-card-event > .mdl-card__actions > .mdl-button {
+    color: #fff;
+  }
+</style>
+
+<div class="mdl-grid mdl-grid--no-spacing demo-card-grid">
+  <div class="mdl-cell mdl-cell--12-col">
+    <div class="demo-card-wide_container">
+      <h5>Wide card with share menu button</h5>
+
+      <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">Welcome</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Mauris sagittis pellentesque lacus eleifend lacinia...
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Get Started
+          </a>
+        </div>
+        <div class="mdl-card__menu">
+          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+            <i class="material-icons">share</i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-cell mdl-cell--4-col">
+    <h5>Square card</h5>
+    <div class="demo-card-square mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title mdl-card--expand">
+        <h2 class="mdl-card__title-text">Update</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Aenan convallis.
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          View Updates
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+    <h5>Image card</h5>
+    <div class="demo-card-image mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title mdl-card--expand"></div>
+      <div class="mdl-card__actions">
+        <span class="demo-card-image__filename">Image.jpg</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+    <h5>Event card</h5>
+    <div class="demo-card-event mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title mdl-card--expand">
+        <h4>
+          Featured event:<br>
+          May 24, 2016<br>
+          7-11pm
+        </h4>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          Add to Calendar
+        </a>
+        <div class="mdl-layout-spacer"></div>
+        <i class="material-icons">event</i>
+      </div>
+    </div>
+  </div>
+</div>
