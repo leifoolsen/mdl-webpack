@@ -142,7 +142,7 @@ module.exports = {
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new CopyWebpackPlugin([
-      { from: 'node_modules/material-design-lite/dist/images', to: 'images/mdl' }
+      { from: 'node_modules/material-design-lite/src/images', to: 'images/mdl' }
     ])
 
     // The ProvidePlugin works by hooking into the parser, and adding a dependency whenever it sees an identifier

@@ -639,6 +639,8 @@
 * [Accordion to Full](http://codepen.io/bradfrost/pen/dlwBD)
 * [Flexbox accordion](http://codepen.io/aann/pen/dPqBML)
 * [Form Fields - MDL bordered fields](http://codepen.io/prajwal078/pen/LVJZXz)
+* [Animated clock (Pure CSS)](http://codepen.io/jantm/pen/qrnwF)
+
 
 ## Videos
 * [Creating a 3D Webpage Header with Material Design and Babylon](https://www.youtube.com/watch?v=IZ6fgcBkhg8)

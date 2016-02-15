@@ -111,7 +111,7 @@
       </pre>
 
       <p class="mdl-typography--body-2">Note 1:</p>
-      <p>There is no guarantee that the browser's implementation, or the polyfill implementation, of the <code>&lt;details&gt;</code>
+      <p>There is no guarantee that the browser's implementation, or the polyfill implementation, or the <code>&lt;details&gt;</code>
         element will respect it's child elements layout when toggeling the details. To preserve the child elements
         layout, <strong>always</strong> wrap the child elements inside a block element, e.g. <code>&lt;div&gt;</code>.</p>
 
@@ -166,7 +166,7 @@
 
       <p>If you load HTML fragments dynamically, e.g. in a single page application, then you must call the polyfill after loading the HTML.</p>
       <p><code>polyfillDetails(content)</code></p>
-      <p>Where <code>content</code> is the parent node of the loaded HTML fragment.</p>
+      <p>Where <code>content</code> is the parent node or the loaded HTML fragment.</p>
 
     </div>
   </details>
