@@ -162,10 +162,16 @@
 * [Bulletproof HTML5 &lt;details&gt; fallback using jQuery](https://mathiasbynens.be/notes/html5-details-jquery)
 
 ### Date picker
-* [Tether: A positioning engine to make overlays, tooltips and dropdowns better](https://github.com/HubSpot/tether/)
 * [Pikaday - A refreshing JavaScript Datepicker](https://github.com/dbushell/Pikaday)
 * [flatpickr - Super lightweight & elegant date picker](https://github.com/chmln/flatpickr)
 * [Material Datetime Picker](https://github.com/ripjar/material-datetime-picker)
+* [Tiny Date Picker](https://github.com/chrisdavies/tiny-date-picker)
+
+### Tooltip
+* [Tether: A positioning engine to make overlays, tooltips and dropdowns better](https://github.com/HubSpot/tether/)
+* [Drop: A library for creating dropdowns and other floating elements](https://github.com/HubSpot/drop)
+* [Tooltip: CSS Tooltips built on Tether](https://github.com/HubSpot/tooltip)
+* [Shepherd: Guide your users through a tour of your app](https://github.com/HubSpot/shepherd)
 
 ## Web Components
 * [What are web components and why are they important?](http://www.revillweb.com/articles/why-web-components-are-important/)
@@ -553,7 +559,8 @@
 * [Stacktrace.js - Framework-agnostic, micro-library for getting stack traces in all web browsers](http://www.stacktracejs.com/#!)
 
 ## Say Goodbye to JQery
-* [Lose the jQuery Bloat ­— DOM Manipulation with NodeList.js](http://www.sitepoint.com/dom-manipulation-with-nodelist-js/)
+* [YOU MIGHT NOT NEED JQUERY](http://youmightnotneedjquery.com/)
+* [Lose the jQuery Bloat — DOM Manipulation with NodeList.js](http://www.sitepoint.com/dom-manipulation-with-nodelist-js/)
 * [How to forget about jQuery and start using native JavaScript APIs](http://blog.romanliutikov.com/post/63383858003/how-to-forget-about-jquery-and-start-using-native)
 * [You Don't Need jQuery!](http://blog.garstasio.com/you-dont-need-jquery/selectors/)
 * [Native JavaScript Equivalents of jQuery Methods: the DOM and Forms](http://www.sitepoint.com/jquery-vs-raw-javascript-1-dom-forms/)
