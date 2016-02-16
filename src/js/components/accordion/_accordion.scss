@@ -17,7 +17,7 @@ ul.mdlext-accordion {
   list-style: none;
 }
 
-// Accordion has horizontal layout by default
+// By default an Accordion has horizontal layout
 .mdlext-accordion {
   width: 100%;   // Use a container to constrain width
   height: 100%;  // Use a container to constrain height
@@ -32,7 +32,7 @@ ul.mdlext-accordion {
     padding: 0;
     width: $mdlext-accordion-title-height;
     overflow: hidden;
-    transition: flex 0.2s ease-in;
+    transition: flex .15s ease-in;
     flex: 0 0 auto; // == flex: none;
     display: flex;
     flex-flow: row nowrap;
@@ -55,22 +55,34 @@ ul.mdlext-accordion {
       &:hover {
         background-color: $mdlext-accordion-title-background-color-hover;
       }
+      .mdlext-accordion__panel__title__transform {
+        white-space: nowrap;
+        margin: 0;
+        padding: 0 0 0 $mdlext-accordion-title-padding;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: $mdlext-accordion-title-height;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        transform: rotate(-90deg) translateY(100%);
+        transform-origin: bottom left;
+
+        //background-color: red;
+
+        > * {
+          margin: 0;
+          padding: 0;
+        }
+      }
     }
     &[open] .mdlext-accordion__panel__title {
       background-color: $mdlext-accordion-title-background-color-open;
       border-right: 1px solid $mdlext-accordion-title-border-color-open;
     }
+
     .mdlext-accordion__panel__title > {
-      * {
-        white-space: nowrap;
-        margin: 0;
-        padding: 0;
-        bottom: -$mdlext-accordion-title-padding;
-        left: $mdlext-accordion-title-padding;
-        transform: rotate(-90deg);
-        transform-origin: 0 0 0;
-        position: absolute;
-      }
       a {
         display: block;
         text-decoration: none;
@@ -78,6 +90,7 @@ ul.mdlext-accordion {
         //opacity: 0;
         font-size: 0;
         transform: rotate(0deg);
+        position: absolute;
         top: 2px;
         right: 2px;
         bottom: 2px;
@@ -92,7 +105,7 @@ ul.mdlext-accordion {
     }
     &[open] .mdlext-accordion__panel__content {
       overflow: auto;
-      animation: mdlext-accordion__panel-open .5s linear;
+      animation: mdlext-accordion__panel-open .4s linear;
     }
   }
 
@@ -108,8 +121,6 @@ ul.mdlext-accordion {
 
       .mdlext-accordion__panel__title {
         min-height: $mdlext-accordion-title-height;
-        display: flex;
-        align-items: center;
         border-right: 0;
         border-bottom: 1px solid $mdlext-accordion-title-border-color;
 
