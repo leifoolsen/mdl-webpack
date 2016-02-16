@@ -39,6 +39,7 @@
 * [10+ Free Design Resources For Android L & Google Material Design](https://365webresources.com/10-free-design-resources-android-l-google-material-design/)
 * [New to Material Design? 12 Principles You Need to Know](http://blogs.adobe.com/dreamweaver/2015/05/new-to-material-design-12-principles-you-need-to-know.html)
 * [Material design in the 2014 Google I/O app](http://android-developers.blogspot.se/2014/08/material-design-in-2014-google-io-app.html)
+* [Google's transforming material icons Deconstruction](http://cloudcannon.com/deconstructions/2014/12/05/material-design-delightful-details.html)
 
 ### Font
 * [Roboto @font-face kit](https://github.com/FontFaceKit/roboto)

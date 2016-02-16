@@ -2,8 +2,10 @@
  * Accordion
  * TODO: include css for icons
  */
+@import "../../../stylesheets/utils/mixins";
 
 $mdlext-accordion-title-padding               : 8px !default;
+$mdlext-accordion-title-icon-text-space: 8px !default;
 $mdlext-accordion-title-height                : 48px !default;
 $mdlext-accordion-title-color                 : #C0C0C0 !default;
 $mdlext-accordion-title-background-color      : rgba($mdlext-accordion-title-color, 0.3) !default;
@@ -11,7 +13,7 @@ $mdlext-accordion-title-background-color-hover: rgba($mdlext-accordion-title-col
 $mdlext-accordion-title-border-color          : rgba($mdlext-accordion-title-color, 0.5) !default;
 $mdlext-accordion-title-background-color-open : rgba($mdlext-accordion-title-color, 0.5) !default;
 $mdlext-accordion-title-border-color-open     : rgba($mdlext-accordion-title-color, 0.6) !default;
-$mdlext-accordion-content-padding             : 8px !default;
+$mdlext-accordion-content-padding             : $mdlext-accordion-title-padding !default;
 
 ul.mdlext-accordion {
   list-style: none;
@@ -55,6 +57,17 @@ ul.mdlext-accordion {
       &:hover {
         background-color: $mdlext-accordion-title-background-color-hover;
       }
+      > a {
+        text-decoration: none;
+        overflow: hidden;
+        font-size: 0;
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        bottom: 2px;
+        left: 2px;
+        z-index: 1;
+      }
       .mdlext-accordion__panel__title__transform {
         white-space: nowrap;
         margin: 0;
@@ -69,11 +82,13 @@ ul.mdlext-accordion {
         transform: rotate(-90deg) translateY(100%);
         transform-origin: bottom left;
 
-        //background-color: red;
-
         > * {
           margin: 0;
           padding: 0;
+        }
+        > img + *,
+        > .material-icons + * {
+          margin-left: $mdlext-accordion-title-icon-text-space;
         }
       }
     }
@@ -82,22 +97,6 @@ ul.mdlext-accordion {
       border-right: 1px solid $mdlext-accordion-title-border-color-open;
     }
 
-    .mdlext-accordion__panel__title > {
-      a {
-        display: block;
-        text-decoration: none;
-        overflow: hidden;
-        //opacity: 0;
-        font-size: 0;
-        transform: rotate(0deg);
-        position: absolute;
-        top: 2px;
-        right: 2px;
-        bottom: 2px;
-        left: 2px;
-        z-index: 1;
-      }
-    }
     .mdlext-accordion__panel__content {
       width: 100%;
       padding: $mdlext-accordion-content-padding;
@@ -120,23 +119,16 @@ ul.mdlext-accordion {
       flex-flow: column nowrap;
 
       .mdlext-accordion__panel__title {
+        height: $mdlext-accordion-title-height;
         min-height: $mdlext-accordion-title-height;
         border-right: 0;
         border-bottom: 1px solid $mdlext-accordion-title-border-color;
 
-        > {
-          * {
-            position: relative;
-            bottom: auto;
-            left: auto;
-            padding-left: $mdlext-accordion-title-padding;
-            transform: rotate(0deg);
-          }
-          a {
-            position: absolute;
-            left: 2px;
-            bottom: 2px;
-          }
+        .mdlext-accordion__panel__title__transform {
+          position: relative;
+          bottom: auto;
+          left: auto;
+          transform: rotate(0deg);
         }
       }
       &[open] {
