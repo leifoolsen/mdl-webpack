@@ -70,7 +70,7 @@ ul.mdlext-accordion {
       .mdlext-accordion__panel__title__transform {
         white-space: nowrap;
         margin: 0;
-        padding: 0 0 0 $mdlext-accordion-title-padding;
+        padding: 0 $mdlext-accordion-title-padding;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -84,15 +84,15 @@ ul.mdlext-accordion {
         > * {
           margin: 0;
           padding: 0;
+          flex: 1;
+        }
+        > i,
+        > img {
+          flex: 0;
         }
         > i + *,
         > img + * {
           margin-left: $mdlext-accordion-title-icon-text-space;
-          flex: 1;
-        }
-        i:last-child,
-        img:last-child {
-          margin-right: $mdlext-accordion-title-icon-text-space;
         }
       }
     }
