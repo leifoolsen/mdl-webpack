@@ -48,10 +48,16 @@ $material-design-iconfont-path: 'node_modules/material-design-icons/iconfont' !d
 
 
   // Rules for sizing the icon
+  &.md-12 {
+    font-size: 18px;
+  }
   &.md-18 {
     font-size: 18px;
   }
   &.md-24 {
+    font-size: 24px;
+  }
+  &.md-32 {
     font-size: 24px;
   }
   &.md-36 {

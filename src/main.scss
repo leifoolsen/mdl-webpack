@@ -14,8 +14,9 @@
 
 
 // 1. Configuration and helpers
-@import 'stylesheets/utils/variables';
-@import 'stylesheets/utils/mixins';
+@import
+  'stylesheets/utils/variables',
+  'stylesheets/utils/mixins';
 
 // 2. Vendors
 @import
@@ -28,14 +29,14 @@
 // 3. Base stuff
 @import 'stylesheets/base/base';
 
-// 4. Layout-related sections
-@import 'stylesheets/layout/layout';
-
-// 5. Components
+// 4. Components
 @import
   'js/components/accordion/accordion',
   'js/components/select/selectfield',
   'js/components/textfield/textfield';
+
+// 5. Layout-related sections
+@import 'stylesheets/layout/layout';
 
 // 6. Page-specific styles
 @import 'stylesheets/pages/demo.css';

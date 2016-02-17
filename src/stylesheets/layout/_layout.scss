@@ -77,6 +77,24 @@ body {
 }
 
 /* ---------------------
+ * Accordion
+ * --------------------- */
+.mdlext-accordion {
+
+  .mdlext-accordion__panel {
+
+    .mdlext-accordion__panel__title--state:after {
+      content: 'expand_more';
+    }
+    &[open] {
+      .mdlext-accordion__panel__title--state:after {
+        content: 'expand_less';
+      }
+    }
+  }
+}
+
+/* ---------------------
  * Drawer
  * --------------------- */
 
@@ -103,19 +121,18 @@ body {
     }
   }
 
+
   #accordion {
     .mdlext-accordion__panel {
 
       .mdlext-accordion__panel__title {
 
         .mdlext-accordion__panel__title__transform {
-
           img {
             width: 32px;
           }
         }
       }
-
       &:nth-child(1) {
 
         height: 64px;

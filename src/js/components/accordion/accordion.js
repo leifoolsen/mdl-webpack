@@ -36,9 +36,12 @@ export function initAccordion(accordionEl) {
     }
     header.addEventListener("click", ( function(event) {
       event.preventDefault();
-
-      if(!this.parentNode.hasAttribute('open')) {
-
+      let panel = this.parentNode;
+      if(panel.hasAttribute('open')) {
+        panel.removeAttribute('open');
+        this.removeAttribute('aria-expanded');
+      }
+      else {
         let openPanel = accordionEl.querySelector(`${accordionPanelClass}[open]`);
         if(openPanel) {
           openPanel.removeAttribute('open');
@@ -47,7 +50,7 @@ export function initAccordion(accordionEl) {
             h.removeAttribute('aria-expanded');
           }
         }
-        this.parentNode.setAttribute('open', '');
+        panel.setAttribute('open', '');
         this.setAttribute('aria-expanded', '');
       }
     }).bind(header), true);

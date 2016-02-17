@@ -96,19 +96,27 @@ ul.mdlext-accordion {
         }
       }
     }
-    &[open] .mdlext-accordion__panel__title {
-      background-color: $mdlext-accordion-title-background-color-open;
-      border-right: 1px solid $mdlext-accordion-title-border-color-open;
+    .mdlext-accordion__panel__title--state:after {
+      content: '+';  // Should be modifird by client
     }
-
     .mdlext-accordion__panel__content {
       width: 100%;
       padding: $mdlext-accordion-content-padding;
       overflow: hidden;  // Overflow hidden/auto can not be transitioned. Need a keyframe for that
     }
-    &[open] .mdlext-accordion__panel__content {
-      overflow: auto;
-      animation: mdlext-accordion__panel-open .4s linear;
+
+    &[open] {
+      .mdlext-accordion__panel__title {
+        background-color: $mdlext-accordion-title-background-color-open;
+        border-right: 1px solid $mdlext-accordion-title-border-color-open;
+      }
+      .mdlext-accordion__panel__title--state:after {
+        content: '-';
+      }
+      .mdlext-accordion__panel__content {
+        overflow: auto;
+        animation: mdlext-accordion__panel-open .4s linear;
+      }
     }
   }
 
