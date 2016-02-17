@@ -7,6 +7,9 @@
 //
 // TODO: No global Sass context, as suggested by http://bensmithett.com/smarter-css-builds-with-webpack/
 // Only import what is strictly needed
+//
+// To resolve modules path, e.g, @import '../../node_modules/<module>', we can prefix import with "~"
+// and let Webpack do the path resolving.
 // ------------------------------------------------------------------------------------------------------
 
 
