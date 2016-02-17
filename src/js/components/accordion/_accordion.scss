@@ -2,7 +2,6 @@
  * Accordion
  * TODO: include css for icons
  */
-@import "../../../stylesheets/utils/mixins";
 
 $mdlext-accordion-title-padding               : 8px !default;
 $mdlext-accordion-title-icon-text-space: 8px !default;
@@ -86,9 +85,15 @@ ul.mdlext-accordion {
           margin: 0;
           padding: 0;
         }
-        > img + *,
-        > .material-icons + * {
+        > i + *,
+        > img + * {
+          white-space: normal;
           margin-left: $mdlext-accordion-title-icon-text-space;
+          flex: 1;
+        }
+        i:last-child,
+        img:last-child {
+          margin-right: $mdlext-accordion-title-icon-text-space;
         }
       }
     }
@@ -126,6 +131,7 @@ ul.mdlext-accordion {
 
         .mdlext-accordion__panel__title__transform {
           position: relative;
+          width: 100%;
           bottom: auto;
           left: auto;
           transform: rotate(0deg);

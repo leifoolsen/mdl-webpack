@@ -5,9 +5,12 @@
  *   https://github.com/MEYVN-digital/mdl-selectfield
  *   https://github.com/mebibou/mdl-selectfield
  */
-@import "../../../../node_modules/material-design-lite/src/variables";
-@import "../../../../node_modules/material-design-lite/src/textfield/textfield";
-@import "../../../stylesheets/utils/mixins";
+
+// Can not use variable for @import path, see: https://github.com/sass/sass/issues/739
+// Import evrything i main.scss :-(
+//@import "../../../../node_modules/material-design-lite/src/variables";
+//@import "../../../../node_modules/material-design-lite/src/textfield/textfield";
+//@import "../../../stylesheets/utils/mixins";
 
 // NOTE:
 // Not shure if extending css classes is a good idea.
