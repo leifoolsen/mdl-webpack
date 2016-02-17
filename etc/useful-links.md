@@ -316,6 +316,8 @@
 * [How to Create Custom Events in JavaScript](http://www.sitepoint.com/javascript-custom-events/)
 * [JavaScript CustomEvent](https://davidwalsh.name/customevent)
 * [Detect, Undo And Redo DOM Changes With Mutation Observers](https://addyosmani.com/blog/mutation-observers/)
+* [Page router - Tiny Express-inspired client-side router](https://github.com/visionmedia/page.js)
+* [Director - a tiny and isomorphic URL router for JavaScript](https://github.com/flatiron/director)
 
 ### Animation
 * [requestAnimationFrame API: now with sub-millisecond precision](https://developers.google.com/web/updates/2012/05/requestAnimationFrame-API-now-with-sub-millisecond-precision)
