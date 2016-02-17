@@ -51,7 +51,7 @@ This project has a few custom components.
 
 
 ### Accordion Component
-<img src="./etc/flexbox-accordion.png"  style="height: 200px;" />
+<img src="./etc/flexbox-accordion.png" style="width:100%; max-width: 800px; margin: 0 auto;" />
 
 An accordion component is a collection of expandable panels associated with a common outer container. Panels consist of 
 a header and an associated content region or panel. The primary use of an Accordion is to present multiple sections of 
@@ -63,7 +63,7 @@ Credits: The Accordion component is based on this [CodePen](http://codepen.io/aa
 
 
 ### Bordered Input Fields Theme Component
-<img src="./etc/bordered-fields-theme.png" />
+<img src="./etc/bordered-fields-theme.png" style="width:100%; max-width: 800px; margin: 0 auto;"/>
 
 Demonstrates how you can create your own theme of MDL text fields.
 
@@ -71,7 +71,7 @@ Credits: The Bordered Fields Theme component is based on this [CodePen](http://c
 
 
 ### Select Element Component
-<img src="./etc/select-element.png" />
+<img src="./etc/select-element.png" style="width:100%; max-width: 800px; margin: 0 auto;" />
 
 The HTML ```<select>``` element represents a control that presents a menu of options. MDL does not provide it's own 
 component for the ```<select>``` element.
