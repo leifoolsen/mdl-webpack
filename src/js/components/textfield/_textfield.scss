@@ -5,8 +5,8 @@
 
 // Can not use variable for @import path, see: https://github.com/sass/sass/issues/739
 // Import evrything i main.scss :-(
-//@import "../../../../node_modules/material-design-lite/src/variables";
-//@import "../../../../node_modules/material-design-lite/src/textfield/textfield";
+//@import "~material-design-lite/src/variables";
+//@import "~material-design-lite/src/textfield/textfield";
 
 $bordered-input-text-border-radius: 3px !default;
 $bordered-input-text-border-width: 1px !default;

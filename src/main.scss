@@ -17,10 +17,10 @@
 // 2. Vendors
 @import
   'stylesheets/vendors/material-design-icons',
-  '../node_modules/material-design-iconic-font/dist/css/material-design-iconic-font.css',
-  '../node_modules/roboto-fontface/css/roboto-fontface.css',
-  '../node_modules/material-design-lite/src/material-design-lite',
-  '../node_modules/dialog-polyfill/dialog-polyfill.css';
+  '~material-design-iconic-font/dist/css/material-design-iconic-font.css',
+  '~roboto-fontface/css/roboto-fontface.css',
+  '~material-design-lite/src/material-design-lite',
+  '~dialog-polyfill/dialog-polyfill.css';
 
 // 3. Base stuff
 @import 'stylesheets/base/base';
