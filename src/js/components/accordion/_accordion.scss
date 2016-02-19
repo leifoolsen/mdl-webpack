@@ -96,8 +96,8 @@ ul.mdlext-accordion {
         }
       }
     }
-    .mdlext-accordion__panel__title--state:after {
-      content: '+';  // Should be modifird by client
+    .mdlext-accordion__panel__state:after {
+      content: '+';  // Should be modified by client
     }
     .mdlext-accordion__panel__content {
       width: 100%;
@@ -106,12 +106,12 @@ ul.mdlext-accordion {
     }
 
     &[open] {
+      .mdlext-accordion__panel__state:after {
+        content: '-';
+      }
       .mdlext-accordion__panel__title {
         background-color: $mdlext-accordion-title-background-color-open;
         border-right: 1px solid $mdlext-accordion-title-border-color-open;
-      }
-      .mdlext-accordion__panel__title--state:after {
-        content: '-';
       }
       .mdlext-accordion__panel__content {
         overflow: auto;

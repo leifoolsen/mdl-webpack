@@ -83,11 +83,11 @@ body {
 
   .mdlext-accordion__panel {
 
-    .mdlext-accordion__panel__title--state:after {
+    .mdlext-accordion__panel__state:after {
       content: 'expand_more';
     }
     &[open] {
-      .mdlext-accordion__panel__title--state:after {
+      .mdlext-accordion__panel__state:after {
         content: 'expand_less';
       }
     }
