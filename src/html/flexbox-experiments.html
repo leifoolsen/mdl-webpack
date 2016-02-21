@@ -36,7 +36,6 @@ BEM: Blocks, Elements and Modifiers
     margin-top: 8px;
   }
 
-
   .basic.flex-container {
     width: 40%;
     height: 220px;
@@ -52,11 +51,11 @@ BEM: Blocks, Elements and Modifiers
   }
 
   .basic .flex-item {
+    outline: 1px solid orange;
     padding: 0 32px;
     font-size: 32px;
     text-align: center;
     line-height: 48px;
-    outline: 1px solid orange;
 
     flex-basis: auto;       /* auto <| <length>                                            */
     flex-grow: 0;           /* 0    <| <number>                                            */
@@ -499,7 +498,6 @@ BEM: Blocks, Elements and Modifiers
 
 <h5>Ordered columns</h5>
 <style>
-
   .ordered-columns.flex-container {
     height: 302px;
     border: 1px solid #000;
@@ -600,6 +598,68 @@ BEM: Blocks, Elements and Modifiers
     <p>25'th: Item</p>
   </div>
 </section>
+
+
+<!-- ================================ -->
+<!-- Flexbox and margin-left:auto     -->
+<!-- ================================ -->
+<h5>Flexbox and margin auto</h5>
+<style>
+  .automargin-left.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid lightgrey;
+    padding: 20px;
+    height: 40px;
+    width: 500px;
+  }
+  .automargin-left .flex-item {
+    border: 2px solid dimgrey;
+    background: rgba(0, 0, 255, .1);
+    padding: 8px;
+    min-width: 100px;
+  }
+  .automargin-left .flex-item.flex-item--margin-left-auto {
+    margin-left: auto;
+  }
+
+
+  .automargin-top.flex-container {
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    border: 1px solid lightgrey;
+    padding: 20px;
+    height: 300px;
+    width: 120px;
+  }
+  .automargin-top .flex-item {
+    border: 2px solid dimgrey;
+    background: rgba(0, 0, 255, .1);
+    padding: 8px;
+    min-width: 100px;
+  }
+  .automargin-top .flex-item.flex-item--margin-top-auto {
+    margin-top: auto;
+  }
+
+</style>
+
+<p>The last item has <code>margin-left:auto</code></p>
+<div class="automargin-left flex-container">
+  <div class="flex-item">1</div>
+  <div class="flex-item">2</div>
+  <div class="flex-item flex-item--margin-left-auto">3</div>
+</div>
+
+<p style="margin-top: 16px;">The last item has <code>margin-top:auto</code></p>
+<div class="automargin-top flex-container">
+  <div class="flex-item">1</div>
+  <div class="flex-item">2</div>
+  <div class="flex-item flex-item--margin-top-auto">3</div>
+</div>
 
 
 <!-- ================================ -->
