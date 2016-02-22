@@ -1,0 +1,119 @@
+<h5>Adjacent Sibling Selector, A + B</h5>
+<style>
+  .selector-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid lightgrey;
+    padding: 20px;
+    height: 40px;
+    width: 500px;
+  }
+  .selector-container * {
+    border: 2px solid dimgrey;
+    padding: 8px;
+    margin: 0;
+    min-width: 50px;
+    height: 40px;
+    line-height: 20px;
+    text-align: center;
+  }
+  .selector-container span {
+    border: 0;
+  }
+  .selector-container i:first-child {
+    background: rgba(239, 154, 154, 0.6);
+  }
+  .selector-container i + div {
+    background: rgba(255, 224, 130, 0.6);
+  }
+  .selector-container i:last-child {
+    background: rgba(165, 214, 167, 0.4);
+  }
+
+  .selector-container .selector-container__first-preceding-sibling {
+    background: rgba(100, 10, 200, 0.6);
+  }
+  .selector-container .selector-container__second-preceding-sibling {
+    background: rgba(144, 202, 249, 0.4);
+  }
+</style>
+
+<ol>
+  <li>Style <code>i1</code> if it is the first child (<code>i:first-child</code>)</li>
+  <li>Style <code>div1</code> if there is an <code>&lt;i&gt;</code> element before <code>div1</code> using the Adjacent Sibling Selector (<code>A + B</code>)</li>
+  <li>Style the last <code>&lt;i&gt;</code> element if one is present (<code>i:last-child</code>)</li>
+  <li>Style <code>paragraph</code> and <code>div3</code> if an <code>&lt;i&gt;</code> element is the last element</li>
+  <li>There is no such ting as a preceding sibling element selector, e.g. <code>A - B</code>, so this is not possible with CSS</li>
+</ol>
+<div class="selector-container">
+  <i>i1</i>
+  <div>div1</div>
+  <div>div2</div>
+  <p>paragraph</p>
+  <div>div3</div>
+  <i>i2</i>
+</div>
+
+<h5>Preceding Sibling Selector, A - B, with a little help from JS</h5>
+<div id="js-selector-container" class="selector-container">
+  <i>i1</i>
+  <div>div1</div>
+  <div>div2</div>
+  <p>paragraph</p>
+  <div>div3</div>
+  <i>i2</i>
+</div>
+
+<h6>First <code>&lt;i&gt; element not present</code></h6>
+<div id="js-selector-container2" class="selector-container">
+  <span></span>  <!-- Just a placeholder for the i tag -->
+  <div>div1</div>
+  <div>div2</div>
+  <p>paragraph</p>
+  <div>div3</div>
+  <i>i2</i>
+</div>
+
+<h6>Last <code>&lt;i&gt; element not present</code></h6>
+<div id="js-selector-container3" class="selector-container">
+  <i>i1</i>
+  <div>div1</div>
+  <div>div2</div>
+  <p>paragraph</p>
+  <div>div3</div>
+  <span></span>  <!-- Just a placeholder for the i tag -->
+</div>
+
+<h6>No <code>&lt;i&gt; element present</code></h6>
+<div id="js-selector-container4" class="selector-container">
+  <span></span>  <!-- Just a placeholder for the i tag -->
+  <div>div1</div>
+  <div>div2</div>
+  <p>paragraph</p>
+  <div>div3</div>
+  <span></span>  <!-- Just a placeholder for the i tag -->
+</div>
+
+<script>
+  (function() {
+    'use strict';
+
+    stylePrecedingSibling('#js-selector-container');
+    stylePrecedingSibling('#js-selector-container1');
+    stylePrecedingSibling('#js-selector-container2');
+    stylePrecedingSibling('#js-selector-container3');
+    stylePrecedingSibling('#js-selector-container4');
+
+    function stylePrecedingSibling(containerId) {
+      var i = document.querySelector(`${containerId} i:last-child`);
+      if(i) {
+        var c = document.querySelector(containerId);
+        var n = c.childElementCount;
+        c.children[n-2].classList.add('selector-container__first-preceding-sibling');
+        c.children[n-3].classList.add('selector-container__second-preceding-sibling');
+      }
+    }
+
+  }());
+</script>
