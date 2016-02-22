@@ -4,6 +4,10 @@ const accordionClass      = '.mdlext-accordion';
 const accordionPanelClass = '.mdlext-accordion__panel';
 const accordionTitleClass = '.mdlext-accordion__panel__title';
 
+const VK_TAB = 9;
+const VK_ARROW_LEFT = 37;
+const VK_ARROW_RIGHT = 39;
+
 export function initAccordions(fromEl = document) {
   let n = 0;
   [...fromEl.querySelectorAll(`${accordionClass}:not(.is-upgraded)`)].forEach( accordion => {
@@ -54,5 +58,15 @@ export function initAccordion(accordionEl) {
         this.setAttribute('aria-expanded', '');
       }
     }).bind(header), true);
+
+    header.addEventListener('keydown', event => {
+      if (event.target === summary) {
+        if (event.keyCode === VK_TAB || event.keyCode === VK_ARROW_LEFT || event.keyCode === VK_ARROW_RIGHT) {
+          //event.preventDefault();
+          //event.stopPropagation();
+        }
+      }
+    }, true);
+
   });
 }
