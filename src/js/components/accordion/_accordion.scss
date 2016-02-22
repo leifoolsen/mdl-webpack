@@ -66,6 +66,10 @@ ul.mdlext-accordion {
         bottom: 2px;
         left: 2px;
         z-index: 1;
+
+        &:focus {
+          outline: thin solid $mdlext-accordion-title-color;
+        }
       }
       .mdlext-accordion__panel__title__transform {
         white-space: nowrap;
