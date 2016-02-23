@@ -8,8 +8,10 @@
 //       but could not figure out how that should work
 
 import 'custom-event';
-import promise from 'es6-promise'; promise.polyfill();
-import 'isomorphic-fetch'; // ... or import 'whatwg-fetch';
+
+//import promise from 'es6-promise'; promise.polyfill();      // Not needed anymore ??
+//import 'isomorphic-fetch'; // ... or import 'whatwg-fetch'; // Not needed anymore ??
+
 import 'dialog-polyfill/dialog-polyfill';
 import { polyfillDetails } from './js/polyfills/details/details';
 // End polyfills
