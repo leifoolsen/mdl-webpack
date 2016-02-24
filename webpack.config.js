@@ -69,12 +69,20 @@ module.exports = {
   module: {
     preLoaders: [
       {
+        loader: 'eslint',
         test: /\.js[x]?$/,
         include: [                     // ... or: exclude: /(node_modules|bower_components)/,
-          path.join(__dirname, 'src'),
-          path.join(__dirname, 'test')
-        ],
-        loaders: ['eslint']
+          path.join(__dirname, 'src/js'),
+          path.join(__dirname, 'src/test')
+        ]
+      },
+      {
+        loader: 'stylelint',
+        test: /\.s(a|c)ss$/,
+        include: [
+          path.join(__dirname, 'src/js'),
+          path.join(__dirname, 'src/stylesheets')
+        ]
       }
     ],
     loaders: [
@@ -165,7 +173,7 @@ module.exports = {
       'Promise': 'exports?global.Promise!es6-promise',
       'window.fetch': 'exports?self.fetch!whatwg-fetch',
       'CustomEvent' : 'custom-event'
-    }),
+    })
 
 
     // Do not use:
@@ -197,6 +205,14 @@ module.exports = {
       '/api/*': {
         target: 'http://localhost:8081',
         secure: false
+      }
+    }
+  },
+  stylelint: {
+    configFile: path.join(__dirname, './.stylelint.config.js'),
+    configOverrides: {
+      rules: {
+        // Your rule overrides here
       }
     }
   },

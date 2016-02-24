@@ -1,9 +1,23 @@
-var assert = require('assert');
-describe('Array', function() {
-  describe('#indexOf()', function () {
-    it('should return -1 when the value is not present', function () {
-      assert.equal(-1, [1,2,3].indexOf(5));
-      assert.equal(-1, [1,2,3].indexOf(0));
+import chai from 'chai';
+
+chai.expect();
+
+const expect = chai.expect;
+
+var foo;
+
+describe('Given an instance of Foo', function () {
+  before(function () {
+    foo = new Foo();
+  });
+  describe('when I need the name', function () {
+    it('should return the name', () => {
+      expect(foo.name).to.be.equal('bar');
     });
   });
 });
+
+
+class Foo {
+  name = 'bar';
+}

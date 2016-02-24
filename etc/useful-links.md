@@ -505,6 +505,8 @@
 * [testing-with-karma-webpack](http://slidedeck.io/pascalpp/testing-with-karma-webpack)
 * [Tutorial – write in ES6 and Sass on the front end with Webpack and Babel](http://tech.90min.com/?p=1340)
 * [JavaScript Design Patterns in ES 2015](http://joshbedo.github.io/JS-Design-Patterns/)
+* [Handle WebPack CSS imports when testing with Mocha and Babel](http://stackoverflow.com/questions/33881123/handle-webpack-css-imports-when-testing-with-mocha-and-babel)
+* [React TestUtils doesn't work with decorators or how to mock higher order functions using rewire](http://stackoverflow.com/questions/31553167/react-testutils-doesnt-work-with-decorators-or-how-to-mock-higher-order-functio)
 
 ### RxJS
 * [ReactiveX - The Observer pattern done right](http://reactivex.io/)
