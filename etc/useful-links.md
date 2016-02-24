@@ -91,6 +91,13 @@
 * [Webpack CSS Example](https://github.com/bensmithett/webpack-css-example)
 * [Faster SASS builds with Webpack](http://eng.localytics.com/faster-sass-builds-with-webpack/)
 
+### BEM
+* [BEM 101, CSS Tricks](https://css-tricks.com/bem-101/)
+* [Intro To BEM](http://css-max.com/intro-to-bem/)
+* [An Introduction to the BEM Methodology](http://webdesign.tutsplus.com/articles/an-introduction-to-the-bem-methodology--cms-19403)
+* [BEM CSS Presentation, Detroit Craftsman Guild](http://www.slideshare.net/BrianRitter2/bem-css-presentation-detroit-craftsman-guild)
+* [CSS Tricks: BEM 101](https://css-tricks.com/bem-101/)
+
 ### General CSS
 * [CSS Specificity: Things You Should Know](http://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/)
 * [Specifics on CSS Specificity](https://css-tricks.com/specifics-on-css-specificity/)
@@ -98,7 +105,6 @@
 * [Why I'm Excited About Native CSS Variables](http://philipwalton.com/articles/why-im-excited-about-native-css-variables/)
 * [CSS Tricks - :required](https://css-tricks.com/almanac/selectors/r/required/)
 * [Art and Science of Websites](http://www.himpfen.com/)
-* [BEM 101, CSS Tricks](https://css-tricks.com/bem-101/)
 * [Your Frontend Methodology Is All of Them: Atomic Design & Pattern Lab](https://www.phase2technology.com/blog/your-frontend-methodology-is-all-of-them-atomic-design-patternlab/)
 * [Speckyboy Design Magazine](http://speckyboy.com/)
 * [GUI Archives - free GUI resources for both the web and mobile](http://speckyboy.com/category/gui-2/)
@@ -110,9 +116,6 @@
 * [Ideas and Demos for Animating Article Headers](https://scotch.io/bar-talk/ideas-and-demos-for-animating-article-headers-on-scroll)
 * [Ettrics - Articles](http://ettrics.com/articles/)
 * [How do CSS triangles work?](http://stackoverflow.com/questions/7073484/how-do-css-triangles-work?rq=1)
-* [An Introduction to the BEM Methodology](http://webdesign.tutsplus.com/articles/an-introduction-to-the-bem-methodology--cms-19403)
-* [BEM CSS Presentation, Detroit Craftsman Guild](http://www.slideshare.net/BrianRitter2/bem-css-presentation-detroit-craftsman-guild)
-* [CSS Tricks: BEM 101](https://css-tricks.com/bem-101/)
 * [Using Modern CSS to Build a Responsive Image Grid](http://www.sitepoint.com/using-modern-css-to-build-a-responsive-image-grid/)
 * [Curated articles for designers and front-end developers: CSS Flexbox](http://heydesigner.com/css-flexbox/)
 * [CSSPLAY - Stu Nicols](http://www.cssplay.co.uk/)
@@ -134,6 +137,7 @@
 * [Animate.css - A cross-browser library of CSS animations.](https://github.com/daneden/animate.css)
 * [Move.js - CSS3 JavaScript animation framework.](https://github.com/visionmedia/move.js)
 * [Fancy FAQ page using CSS3 only](http://red-team-design.com/fancy-faq-page-using-css3-only/)
+* [CSS Tips For Better Web Typography](http://css-max.com/css-tips-for-better-web-typography/)
 
 ### Accordion
 * [css accordion using flexbox](http://stackoverflow.com/questions/25691500/css-accordion-using-flexbox)
@@ -308,7 +312,6 @@
 * [Simple ES6 Event Bus implementation](https://gist.github.com/willishq/feda4575ed0b8b7d2339)
 * [Micro-PubSub](https://github.com/yguan/micro-pubsub)
 * [pubsub.js - Like David Walsh's pubsub object but better](https://gist.github.com/JScott/cda54f715375a3ff294e)
-* [router.js](https://github.com/tildeio/router.js)
 * [DOMtastic - Small, fast, and modular DOM & Event library for modern browsers](https://github.com/webpro/DOMtastic)
 * [Using Mutation Observers to Watch for Element Availability](http://ryanmorr.com/using-mutation-observers-to-watch-for-element-availability/)
 * [polyfill-custom-event, es6](https://github.com/tuxsudo/polyfill-custom-event)
@@ -316,8 +319,14 @@
 * [How to Create Custom Events in JavaScript](http://www.sitepoint.com/javascript-custom-events/)
 * [JavaScript CustomEvent](https://davidwalsh.name/customevent)
 * [Detect, Undo And Redo DOM Changes With Mutation Observers](https://addyosmani.com/blog/mutation-observers/)
+* [router.js](https://github.com/tildeio/router.js)
 * [Page router - Tiny Express-inspired client-side router](https://github.com/visionmedia/page.js)
 * [Director - a tiny and isomorphic URL router for JavaScript](https://github.com/flatiron/director)
+* [page: Tiny Express-inspired client-side route](https://github.com/visionmedia/page.js)
+* [A modern JavaScript router in 100 lines](http://krasimirtsonev.com/blog/article/A-modern-JavaScript-router-in-100-lines-history-api-pushState-hash-url)
+* [Deep dive into client-side routing](http://krasimirtsonev.com/blog/article/deep-dive-into-client-side-routing-navigo-pushstate-hash)
+* [Dissection of Flux architecture or how to write your own](http://krasimirtsonev.com/blog/article/dissection-of-flux-architecture-or-how-to-write-your-own-react)
+
 
 ### Animation
 * [requestAnimationFrame API: now with sub-millisecond precision](https://developers.google.com/web/updates/2012/05/requestAnimationFrame-API-now-with-sub-millisecond-precision)
@@ -376,6 +385,7 @@
 * [Riot.js - A React-like user interface micro-library](https://github.com/riot/riot)
 * [rivets.js - Lightweight and powerful data binding + templating solution for building modern web applications.](http://rivetsjs.com/)
 * [Mithril: A Javascript Framework for Building Brilliant Applications](https://github.com/lhorie/mithril.js)
+* [Building Apps with Riot, ES6 and Webpack](http://blog.srackham.com/posts/riot-es6-webpack-apps/)
 
 ## NoeJS, Express
 * [Running scripts with npm](http://www.jayway.com/2014/03/28/running-scripts-with-npm/)
@@ -459,6 +469,14 @@
 * [Simple Webpack React Starter](https://github.com/cgreening/simple-webpack-react-starter)
 * [webpack-es6-config](https://www.npmjs.com/package/webpack-es6-config)
 * [Writing client-side ES6 with webpack](http://www.2ality.com/2015/04/webpack-es6.html)
+* [Conditionally Load Intl Polyfill with Webpack](http://ianobermiller.com/blog/2015/06/01/conditionally-load-intl-polyfill-webpack/)
+* [Using webpack with shims and polyfills](http://mts.io/2015/04/08/webpack-shims-polyfills/)
+* [From Require.js to Webpack – Part 2 (The How)](https://www.paypal-engineering.com/2015/08/07/1450/)
+* [webpack-config: Helps to load, extend and merge webpack configs](https://github.com/mdreizin/webpack-config)
+* [How to prevent moment.js from loading locales with webpack?](http://stackoverflow.com/questions/25384360/how-to-prevent-moment-js-from-loading-locales-with-webpack)
+* [How to polyfill Array.prototype.find using webpack ProvidePlugin?](http://stackoverflow.com/questions/34647413/how-to-polyfill-array-prototype-find-using-webpack-provideplugin)
+* [Never `import React from ‘react’` again, thanks to Webpack’s ProvidePlugin](https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.yz3zm9rjk)
+
 
 ## Lint
 * [Configuring ESLint](http://eslint.org/docs/user-guide/configuring.html)
@@ -478,7 +496,6 @@
 * [webpack-mocha-demo](https://github.com/jesseskinner/webpack-mocha-demo)
 * [Universal (isomorphic) boilerplate written in ES2015 for Node and the browser.](https://github.com/kflash/trolly)
 * [A modern React starter pack based on webpack](http://krasimirtsonev.com/blog/article/a-modern-react-starter-pack-based-on-webpack)
-* [From Karma to Mocha, with a taste of jsdom](https://medium.com/podio-engineering-blog/from-karma-to-mocha-with-a-taste-of-jsdom-c9c703a06b21#.gvhl3kd1e)
 * [Testing with webpack and Mocha](https://www.youtube.com/watch?v=_sLLjPzOrXI)
 * [Testing in ES6 with Mocha and Babel 6](http://jamesknelson.com/testing-in-es6-with-mocha-and-babel-6/)
 * [Setting up Unit Testing with Mocha and Chai](https://egghead.io/lessons/javascript-how-to-write-a-javascript-library-setting-up-unit-testing-with-mocha-and-chai)

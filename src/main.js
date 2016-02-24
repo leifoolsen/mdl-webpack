@@ -2,18 +2,13 @@
 
 
 // First import the polyfills
-// Note: Tried to use the webpack ProvidePlugin to add the polyfills as outlined
+// Note: Uses the webpack ProvidePlugin to add polyfills as outlined
 //       here: http://mts.io/2015/04/08/webpack-shims-polyfills,
 //       and here : https://gist.github.com/Couto/b29676dd1ab8714a818f
-//       but could not figure out how that should work
+//       We do not need to import the polyfills anymore!
+//       The dialog polyfill must be handled separateley, see App.run() method
 
-import 'custom-event';
-
-//import promise from 'es6-promise'; promise.polyfill();      // Not needed anymore ??
-//import 'isomorphic-fetch'; // ... or import 'whatwg-fetch'; // Not needed anymore ??
-
-import 'dialog-polyfill/dialog-polyfill';
-import { polyfillDetails } from './js/polyfills/details/details';
+import { polyfillDetails } from './js/polyfills/details/details'; // This polyfill is still a beta - so it remains here
 // End polyfills
 
 import { debounce } from 'core-decorators';
@@ -263,7 +258,9 @@ const pubsub = (doc => {
 })(document);
 
 
-class App {
+export default class App {
+  name = 'mdl-webpack';
+
   constructor() {
     this.header  = new Header();
     this.content = new Content();
@@ -292,7 +289,26 @@ class App {
     pubsub.publish('window.resized', { element: document.qs('#content') } );
   }
 
+
+  loadDialogPolyfillIfRequired() {
+    // Could not use webpack.ProvidePlugin to load the dialog polyfill.
+
+    if(!document.createElement('dialog').showModal) {
+      // Webpack parses the inside of require.ensure at build time to know that "dialog-polyfill/dialog-polyfill"
+      // should be bundled separately. You could get the same effect by passing
+      // ['dialog-polyfill/dialog-polyfill'] as the first argument.
+      // See: http://ianobermiller.com/blog/2015/06/01/conditionally-load-intl-polyfill-webpack/
+
+      require.ensure([], () => {
+        // Ensure only makes sure the module has been downloaded and parsed.
+        // Now we actually need to run it to install the polyfill.
+        require('dialog-polyfill/dialog-polyfill');
+      });
+    }
+  }
+
   run() {
+    this.loadDialogPolyfillIfRequired();
     this.content.index();
   }
 }

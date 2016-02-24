@@ -41,9 +41,15 @@ module.exports = {
       'babel-polyfill',                      // Babel requires some helper code to be run before your application,
                                              //   see: http://jamesknelson.com/webpack-made-simple-build-es6-less-with-autorefresh-in-26-lines/
                                              //   see: http://jamesknelson.com/using-es6-in-the-browser-with-babel-6-and-webpack/
+                                             //   Should I move babel-polyfill to vendor??
       path.join(__dirname, 'src/main.js')    // Add your application's scripts last
     ],
     vendor: [                                // Scripts packaged into 'vendor.js'
+      'core-decorators',
+      'whatwg-fetch',
+      'es6-promise',
+      'custom-event',
+      'dialog-polyfill',
       'moment',
       'material-design-lite/material'
       // +++ other 3'rd party
@@ -143,22 +149,25 @@ module.exports = {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new CopyWebpackPlugin([
       { from: 'node_modules/material-design-lite/src/images', to: 'images/mdl' }
-    ])
+    ]),
 
     // The ProvidePlugin works by hooking into the parser, and adding a dependency whenever it sees an identifier
     // matching a property name of the object it's instantiated with. So with this config, whenever the parser
     // hits fetch, it will add a dependency on whatwg-fetch.
-    // Note:
-    // Could not get this to work as outlined
-    // here: http://mts.io/2015/04/08/webpack-shims-polyfills/, https://gist.github.com/Couto/b29676dd1ab8714a818f
-    // Importing the polyfills i main.js works as expected.
+    // See: https://gist.github.com/Couto/b29676dd1ab8714a818f
     /*
     new webpack.ProvidePlugin({
-      Promise: 'imports?this=>global!exports?global.Promise!es6-promise',
-      fetch  : 'imports?this=>global!exports?global.fetch!isomorfic-fetch'
-    })
-
+      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch',
+      'Promise': 'exports?global.Promise!es6-promise'
+    }),
     */
+    new webpack.ProvidePlugin({
+      'Promise': 'exports?global.Promise!es6-promise',
+      'window.fetch': 'exports?self.fetch!whatwg-fetch',
+      'CustomEvent' : 'custom-event'
+    }),
+
+
     // Do not use:
     //   new webpack.HotModuleReplacementPlugin()
     //   new webpack.NoErrorsPlugin()
@@ -169,7 +178,7 @@ module.exports = {
   ],
   postcss: [
     autoprefixer({
-      browsers: ['last 3 versions']
+      browsers: ['last 2 versions']
     })
   ],
   devServer: {
