@@ -115,6 +115,7 @@
    * @public
    */
   MaterialExtSelectfield.prototype.checkFocus = function() {
+    /*eslint no-extra-boolean-cast: 0*/
     if (Boolean(this.element_.querySelector(':focus'))) {
       this.element_.classList.add(this.CssClasses_.IS_FOCUSED);
     } else {
@@ -245,6 +246,7 @@
 
   // The component registers itself. It can assume componentHandler is available
   // in the global scope.
+  /*eslint no-undef: 0*/
   componentHandler.register({
     constructor: MaterialExtSelectfield,
     classAsString: 'MaterialExtSelectfield',

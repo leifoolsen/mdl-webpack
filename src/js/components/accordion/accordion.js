@@ -44,7 +44,7 @@ export function initAccordion(accordionEl) {
     if(!header.parentNode.hasAttribute('open')) {
       header.setAttribute('aria-expanded', '');
     }
-    header.addEventListener("click", ( function(event) {
+    header.addEventListener('click', ( function(event) {
 
       event.preventDefault();
       event.stopPropagation();
@@ -121,7 +121,7 @@ export function initAccordion(accordionEl) {
               event.stopPropagation();
 
               // Trigger mouse click event for any attached listeners.
-              var evt = new MouseEvent("click", {
+              var evt = new MouseEvent('click', {
                 bubbles: true,
                 cancelable: true,
                 view: window

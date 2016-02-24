@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // Alias for (el||document).querySelector
 // See: https://github.com/stevermeister/bling.js
@@ -8,6 +8,7 @@ document.qs = document.querySelector.bind(document);
 Element.prototype.qs = function() {
   return this.querySelector.apply(this, arguments);
 };
+
 
 // Alias for (el||document).querySelectorAll
 // See: https://github.com/stevermeister/bling.js
@@ -32,9 +33,8 @@ Element.prototype.qsa = function() {
   return this.querySelectorAll.apply(this, arguments);
 };
 
-
 // Remove child element(s)
-function removeChilds(el, forceReflow=true) {
+function removeChilds(el, forceReflow = true) {
 
   // See: http://jsperf.com/empty-an-element/16
   while (el.lastChild) {
@@ -43,13 +43,14 @@ function removeChilds(el, forceReflow=true) {
   if(forceReflow) {
     // See: http://jsperf.com/force-reflow
     const d = el.style.display;
-    el.style.display = "none";
+
+    el.style.display = 'none';
     el.style.display = d;
   }
   return el;
 }
 
-Element.prototype.removeChilds = function(forceReflow=true) {
+Element.prototype.removeChilds = function (forceReflow = true) {
   return removeChilds(this, forceReflow);
 };
 

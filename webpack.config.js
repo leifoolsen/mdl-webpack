@@ -172,7 +172,8 @@ module.exports = {
     new webpack.ProvidePlugin({
       'Promise': 'exports?global.Promise!es6-promise',
       'window.fetch': 'exports?self.fetch!whatwg-fetch',
-      'CustomEvent' : 'custom-event'
+      'CustomEvent' : 'custom-event',
+      'dialogPolyfill': 'dialog-polyfill/dialog-polyfill'
     })
 
 
@@ -217,27 +218,6 @@ module.exports = {
     }
   },
   eslint: {
-    // See: http://eslint.org/docs/user-guide/configuring.html
-    // See: https://gist.github.com/nkbt/9efd4facb391edbf8048
-    'parser': 'babel-eslint',
-    'env': {
-      'browser': true,
-      'node': true,
-      'es6': true
-    },
-    'settings': {
-      'ecmascript': 7,
-      'jsx': true
-    },
-    'rules': {
-      'strict': 0,
-      'no-unused-vars': 2,
-      'camelcase': 1,
-      //'no-underscore-dangle': 1,
-      'indent': [1, 2],
-      'quotes': 0,
-      'linebreak-style': [2, 'unix'],
-      'semi': [2, 'always']
-    }
+    // .eslintrc
   }
 };

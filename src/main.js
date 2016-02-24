@@ -21,6 +21,8 @@ import './js/components/select/selectfield';
 
 import { initAccordions } from './js/components/accordion/accordion';
 
+
+
 class Header {
   titleClass = '.mdl-layout-title';
 
@@ -258,7 +260,7 @@ const pubsub = (doc => {
 })(document);
 
 
-export default class App {
+class App {
   name = 'mdl-webpack';
 
   constructor() {
@@ -302,7 +304,8 @@ export default class App {
       require.ensure([], () => {
         // Ensure only makes sure the module has been downloaded and parsed.
         // Now we actually need to run it to install the polyfill.
-        require('dialog-polyfill/dialog-polyfill');
+        let dialogPolyfill = require('dialog-polyfill/dialog-polyfill');
+        window['dialogPolyfill'] = dialogPolyfill;
       });
     }
   }
