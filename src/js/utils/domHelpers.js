@@ -5,8 +5,8 @@
 // See: https://github.com/kentcdodds/es6-todomvc/blob/master/js/helpers.js
 // See: http://stackoverflow.com/questions/34157329/queryselector-and-queryselectorall-alias
 document.qs = document.querySelector.bind(document);
-Element.prototype.qs = function() {
-  return this.querySelector.apply(this, arguments);
+Element.prototype.qs = function () {
+  return this.querySelector(...arguments);  //eslint-disable-line
 };
 
 
@@ -30,7 +30,7 @@ Element.prototype.qs = function() {
 //
 document.qsa = document.querySelectorAll.bind(document);
 Element.prototype.qsa = function() {
-  return this.querySelectorAll.apply(this, arguments);
+  return this.querySelectorAll(...arguments);  //eslint-disable-line
 };
 
 // Remove child element(s)

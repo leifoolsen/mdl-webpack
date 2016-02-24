@@ -49,16 +49,16 @@ export function initAccordion(accordionEl) {
       event.preventDefault();
       event.stopPropagation();
 
-      let panel = this.parentNode;
+      const panel = this.parentNode;
       if(panel.hasAttribute('open')) {
         panel.removeAttribute('open');
         this.removeAttribute('aria-expanded');
       }
       else {
-        let openPanel = accordionEl.querySelector(`${accordionPanelClass}[open]`);
+        const openPanel = accordionEl.querySelector(`${accordionPanelClass}[open]`);
         if(openPanel) {
           openPanel.removeAttribute('open');
-          let h = openPanel.querySelector(accordionTitleClass);
+          const h = openPanel.querySelector(accordionTitleClass);
           if(h) {
             h.removeAttribute('aria-expanded');
           }
@@ -121,7 +121,7 @@ export function initAccordion(accordionEl) {
               event.stopPropagation();
 
               // Trigger mouse click event for any attached listeners.
-              var evt = new MouseEvent('click', {
+              const evt = new MouseEvent('click', {
                 bubbles: true,
                 cancelable: true,
                 view: window

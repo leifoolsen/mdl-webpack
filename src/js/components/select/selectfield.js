@@ -13,7 +13,7 @@
    * @constructor
    * @param {HTMLElement} element The element that will be upgraded.
    */
-  var MaterialExtSelectfield = function MaterialExtSelectfield(element) {
+  const MaterialExtSelectfield = function MaterialExtSelectfield(element) {
     this.element_ = element;
     // Initialize instance.
     this.init();
@@ -196,8 +196,8 @@
    */
   MaterialExtSelectfield.prototype.init = function() {
     if (this.element_) {
-      this.label_ = this.element_.querySelector('.' + this.CssClasses_.LABEL);
-      this.select_ = this.element_.querySelector('.' + this.CssClasses_.INPUT);
+      this.label_ = this.element_.querySelector(`.${this.CssClasses_.LABEL}`);
+      this.select_ = this.element_.querySelector(`.${this.CssClasses_.INPUT}`);
 
       if (this.select_) {
         this.boundUpdateClassesHandler = this.updateClasses_.bind(this);
@@ -209,7 +209,7 @@
         this.select_.addEventListener('blur', this.boundBlurHandler);
         this.select_.addEventListener('reset', this.boundResetHandler);
 
-        var invalid = this.element_.classList.contains(this.CssClasses_.IS_INVALID);
+        const invalid = this.element_.classList.contains(this.CssClasses_.IS_INVALID);
         this.updateClasses_();
         this.element_.classList.add(this.CssClasses_.IS_UPGRADED);
 

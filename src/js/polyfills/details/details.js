@@ -175,7 +175,7 @@ export function polyfillDetails(fromEl = document) {
           event.stopPropagation();
 
           // Trigger mouse click event for any attached listeners.
-          var evt = new MouseEvent('click', {
+          const evt = new MouseEvent('click', {
             bubbles: true,
             cancelable: true,
             view: window
