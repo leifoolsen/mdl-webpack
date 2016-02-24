@@ -7,6 +7,7 @@
     "dev": "./node_modules/.bin/webpack-dev-server --hot --inline --module-bind --progress --color",
     "build": "NODE_ENV=production ./node_modules/.bin/webpack --progress --profile --colors",
     "dist": "NODE_ENV=production ./node_modules/.bin/webpack -p",
+    "eslint": "./node_modules/.bin/eslint ./src/js",
     "test": "./node_modules/.bin/mocha  --colors -w -r ignore-styles --compilers js:babel-core/register -r ./src/test/mocha.config.js ./src/test/**/*.spec.js"
   },
   "dependencies": {
