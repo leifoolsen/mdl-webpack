@@ -4,6 +4,7 @@ build/
 bundle/
 dist/
 logs/
+coverage/
 *.log
 *.tmp
 
