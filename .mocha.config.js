@@ -9,7 +9,12 @@ chai.use(sinonChai);
 chai.use(chaiAsPromised);
 
 global.sinon = sinon;
+
 global.expect = chai.expect;
+global.expect();             // Tell chai that we'll be using the "expect" style assertions
+
+//global.should = chai.should;
+//global.should();             // Tell chai that we'll be using the "should" style assertions
 
 global.document = jsdom.jsdom('<html><head><script></script></head><body></body></html>');
 global.window = document.defaultView;

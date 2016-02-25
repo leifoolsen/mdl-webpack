@@ -7,8 +7,10 @@
     "dev": "./node_modules/.bin/webpack-dev-server --hot --inline --module-bind --progress --color",
     "build": "NODE_ENV=production ./node_modules/.bin/webpack --progress --profile --colors",
     "dist": "NODE_ENV=production ./node_modules/.bin/webpack -p",
-    "eslint": "./node_modules/.bin/eslint ./src/js",
-    "test": "./node_modules/.bin/mocha  --colors -w -r ignore-styles --compilers js:babel-core/register -r ./src/test/mocha.config.js ./src/test/**/*.spec.js"
+    "lint": "./node_modules/.bin/eslint ./src/js",
+    "test": "./node_modules/.bin/mocha  --colors -w -r ignore-styles --compilers js:babel-core/register -r ./.mocha.config.js ./src/**/*.spec.js",
+    "test-coverage": "./node_modules/.bin/babel-node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --include ./src/js/**/*.js --check-coverage --report text -- --compilers js:babel-core/register --recursive -r ./.mocha.config.js ./src/**/*.spec.js",
+    "ci": "npm run lint && npm run test-coverage"
   },
   "dependencies": {
     "babel-polyfill": "^6.5.0",
@@ -44,11 +46,11 @@
     "html-loader": "^0.4.3",
     "ignore-styles": "^1.2.0",
     "imports-loader": "^0.6.5",
+    "istanbul": "^1.0.0-alpha.2",
     "jsdom": "^8.0.4",
     "material-design-iconic-font": "^2.2.0",
     "material-design-icons": "^2.2.0",
     "mocha": "^2.4.5",
-    "mocha-phantomjs-core": "^2.0.0",
     "node-sass": "^3.4.2",
     "null-loader": "^0.1.1",
     "postcss-loader": "^0.8.1",

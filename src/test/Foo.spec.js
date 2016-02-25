@@ -1,16 +1,14 @@
-import chai from 'chai';
-
-chai.expect();
-
-const expect = chai.expect;
+//import chai from 'chai';
+//const expect = chai.expect;
+//import { expect } from 'chai';
 
 var foo;
 
-describe('Given an instance of Foo', function () {
-  before(function () {
+describe('Given an instance of Foo', () => {
+  before( () => {
     foo = new Foo();
   });
-  describe('when I need the name', function () {
+  describe('when I need the name', () => {
     it('should return the name', () => {
       expect(foo.name).to.be.equal('bar');
     });
@@ -19,5 +17,6 @@ describe('Given an instance of Foo', function () {
 
 
 class Foo {
-  name = 'bar';
+  _name = 'bar';
+  get name() { return this._name; }
 }

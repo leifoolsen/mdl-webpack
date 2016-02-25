@@ -21,8 +21,6 @@ import './js/components/select/selectfield';
 
 import { initAccordions } from './js/components/accordion/accordion';
 
-
-
 class Header {
   titleClass = '.mdl-layout-title';
 

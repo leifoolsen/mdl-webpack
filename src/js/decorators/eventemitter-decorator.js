@@ -38,7 +38,7 @@ export default function EventEmitterDecorator (klass) {
     if (! EventEmitter.prototype[method]) { return; }
     klass.prototype[method] = function () {
       const emitter = getEmitter(this);
-      return emitter[method].apply(emitter, arguments);
+      return emitter[method].apply(emitter, arguments); //eslint-disable-line
     };
   });
 }

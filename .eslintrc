@@ -8,6 +8,8 @@
 {
   "extends":  "eslint:recommended",
 
+  "parser": "babel-eslint",
+
   "parserOptions": {
     "ecmaVersion": 6,
     "ecmaFeatures": {
@@ -39,7 +41,7 @@
     "indent": [2, 2, {"SwitchCase": 1}],
     "quotes": [2, "single"],
     "linebreak-style": [2, "unix"],
-    "semi": [2, "always"],
+    "semi": [1, "always"],
     "no-var": 1,
     "prefer-const": 1,
     "prefer-rest-params": 1,
