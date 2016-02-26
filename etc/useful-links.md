@@ -196,7 +196,8 @@
 * [10 Ways to Minimize Reflows and Improve Performance](http://www.sitepoint.com/10-ways-minimize-reflows-improve-performance/?utm_source=sitepoint&utm_medium=nextpost&utm_term=javascript)
 * [REFLOWS & REPAINTS: CSS PERFORMANCE MAKING YOUR JAVASCRIPT SLOW?](http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/)
 * [Removing Useless Nodes From the DOM](http://www.sitepoint.com/removing-useless-nodes-from-the-dom/)
-
+  [How to JavaScript? (or yet another JavaScript guide) Part 1 - Introduction](https://medium.com/@jun.hanamaki/how-to-javascript-or-yet-another-javascript-guide-part-1-introduction-a531a21facc6#.s8kj22wbp)
+  
 ### EcmaScript 2015/2016
 * [HTML templating with ES6 template strings](http://www.2ality.com/2015/01/template-strings-html.html)
 * [Getting Literal With ES6 Template Strings](https://developers.google.com/web/updates/2015/01/ES6-Template-Strings?hl=en)
@@ -685,7 +686,7 @@
 * [NodeJS and ES6](https://www.youtube.com/watch?v=PBLwtZRNh2M)
 * [Async JavaScript with Promises](https://www.youtube.com/watch?v=g90irqWEqd8)
 * [Creating Demo APIs with json-server](https://egghead.io/lessons/nodejs-creating-demo-apis-with-json-server)
-* [How to Write an Open Source JavaScript Library](https://egghead.io/lessons/javascript-how-to-write-a-javascript-library-introduction)
+* [Introduction to How to Write an Open Source JavaScript Library](https://egghead.io/lessons/javascript-how-to-write-a-javascript-library-introduction) 
 
 ## Etc
 * [Stop Writing Slow Javascript](http://ilikekillnerds.com/2015/02/stop-writing-slow-javascript/)
