@@ -9,8 +9,8 @@
     "build": "NODE_ENV=production ./node_modules/.bin/webpack --progress --profile --colors",
     "dist": "NODE_ENV=production ./node_modules/.bin/webpack -p",
     "lint": "./node_modules/.bin/eslint ./src/js",
-    "test": "./node_modules/.bin/mocha  --colors -w -r ignore-styles -R spec --compilers js:babel-core/register -r ./.mocha.config.js ./src/**/*.spec.js",
-    "test:coverage": "./node_modules/.bin/babel-node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --include ./src/js/**/*.js --exclude ./node_modules -- --compilers js:babel-core/register -R spec -r ./.mocha.config.js ./src/**/*.spec.js",
+    "test": "./node_modules/.bin/mocha  -w --opts ./mocha.opts './src/**/*.spec.js'",
+    "test:coverage": "./node_modules/.bin/babel-node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --include ./src/js/**/*.js -- --opts ./mocha.opts './src/**/*.spec.js'",
     "ci": "npm run lint && npm run test:coverage"
   },
   "dependencies": {

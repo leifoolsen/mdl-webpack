@@ -17,7 +17,9 @@ global.expect();             // Tell chai that we'll be using the "expect" style
 //global.should = chai.should;
 //global.should();             // Tell chai that we'll be using the "should" style assertions
 
-// Could use mocha-jsdom
+
+// Define some html to be our basic document
+// JSDOM will consume this and act as if we were in a browser
 global.document = jsdom.jsdom('<html><head><script></script></head><body></body></html>');
 global.window = document.defaultView;
 global.navigator = global.window.navigator;

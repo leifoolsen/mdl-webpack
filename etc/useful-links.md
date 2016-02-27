@@ -510,7 +510,10 @@
 * [React TestUtils doesn't work with decorators or how to mock higher order functions using rewire](http://stackoverflow.com/questions/31553167/react-testutils-doesnt-work-with-decorators-or-how-to-mock-higher-order-functio)
 * [Mocha + Chai.js unit testing for ES6 with Istanbul code coverage](https://onsen.io/blog/mocha-chaijs-unit-test-coverage-es6/)
 * [Handle WebPack CSS imports when testing with Mocha and Babel](http://stackoverflow.com/questions/33881123/handle-webpack-css-imports-when-testing-with-mocha-and-babel)
-
+* [Jasmine vs. Mocha, Chai, and Sinon](http://thejsguy.com/2015/01/12/jasmine-vs-mocha-chai-and-sinon.html)
+* [Tape: tap-producing test harness for node and browsers](https://github.com/substack/tape)
+* [Supertest: HTTP assertions made easy via super-agent](https://github.com/visionmedia/supertest)
+* [AVA: Futuristic test runner](https://github.com/sindresorhus/ava)
 
 ### RxJS
 * [ReactiveX - The Observer pattern done right](http://reactivex.io/)
@@ -717,7 +720,9 @@
 * [How to Implement HTML5 Local Storage](https://www.safaribooksonline.com/blog/2013/10/10/how-to-use-html5-local-storage/)
 * [Storing Data on The Client with LocalStorage](http://blog.teamtreehouse.com/storing-data-on-the-client-with-localstorage)
 * [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
-
-
+* [Scotch Media Tutorials](http://www.scotchmedia.com/tutorials/express/authentication/1/01)
+* [Essential JavaScript Links](https://github.com/ericelliott/essential-javascript-links#essential-javascript-links)
+* [The Two Pillars of JavaScript, part-1](https://medium.com/javascript-scene/the-two-pillars-of-javascript-ee6f3281e7f3#.ms1qqn7m3)
+* [The Two Pillars of JavaScript, part-2](https://medium.com/javascript-scene/the-two-pillars-of-javascript-pt-2-functional-programming-a63aa53a41a4#.dvmi7p4mq)
 
 

@@ -5,7 +5,7 @@ describe('mocha-jsdom tests', function () {
     expect(div.nodeName).eql('DIV')
   })
 
-  it('works', function () {
+  it('works', () => {
     document.body.innerHTML = '<div>hola</div>'
     const div = document.getElementsByTagName('div')[0]
     expect(div.innerHTML).eql('hola')

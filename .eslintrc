@@ -23,7 +23,6 @@
     "browser": true,     // browser global variables
     "node": true,        // Node.js global variables and Node.js-specific rules
     "mocha": true,       // adds all of the Mocha testing global variables
-    "phantomjs": true,   // phantomjs global variables
     "es6": true          // ECMAScript 6
   },
 
