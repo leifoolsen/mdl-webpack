@@ -1,5 +1,5 @@
 --colors
 --reporter spec
 --require ignore-styles
---require ./.mocha.config.js
+--require ./.test.config.js
 --compilers js:babel-core/register

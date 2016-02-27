@@ -8,6 +8,7 @@ import jsdom from 'jsdom'
 chai.use(sinonChai);
 chai.use(chaiAsPromised);
 
+// WTF!! Globas? Really! This stinks.
 global.sinon = sinon;
 
 global.expect = chai.expect;
