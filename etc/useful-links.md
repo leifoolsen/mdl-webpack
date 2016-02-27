@@ -255,6 +255,7 @@
 * [Mozilla - ES6 In Depth Articles](https://hacks.mozilla.org/category/es6-in-depth/)
 * [ES6 One Liners to Show Off](http://h3manth.com/new/blog/2014/es6-one-liners-to-show-off/)
 * [Lightweight ES6 Features That Pack A Punch](http://colintoh.com/blog/lightweight-es6-features)
+* [Top 10 ES6 Features Every Busy JavaScript Developer Must Know](http://webapplog.com/es6/)
 
 ### String template
 * [HTML templating with ES6 template strings](http://www.2ality.com/2015/01/template-strings-html.html)
@@ -377,8 +378,8 @@
 * [Lodash and ECMAScript 2015](https://blog.mariusschulz.com/2015/05/11/lodash-and-ecmascript-2015)
 * [Lodash: 10 Javascript Utility Functions That You Should Probably Stop Rewriting](http://colintoh.com/blog/lodash-10-javascript-utility-functions-stop-rewriting)
 * [Dom Diff](https://github.com/skatejs/dom-diff)
-* [Enumify - A JavaScript library for enums. To be used by transpiled ES6](https://github.com/rauschma/enumify)
 * [config.json](https://github.com/bulyshko/config.json)
+* [Contrasting Enterprise Node.js Frameworks: Hapi vs. Kraken vs. Sails.js vs. Loopback](http://www.capitalone.io/blog/contrasting-enterprise-nodejs-frameworks/)
 
 ### Frameworks
 * [Aurelia - next gen JavaScript client framework](http://aurelia.io/)
@@ -477,12 +478,16 @@
 * [How to prevent moment.js from loading locales with webpack?](http://stackoverflow.com/questions/25384360/how-to-prevent-moment-js-from-loading-locales-with-webpack)
 * [How to polyfill Array.prototype.find using webpack ProvidePlugin?](http://stackoverflow.com/questions/34647413/how-to-polyfill-array-prototype-find-using-webpack-provideplugin)
 * [Never `import React from ‘react’` again, thanks to Webpack’s ProvidePlugin](https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.yz3zm9rjk)
+* [Using webpack: How to build and distribute libraries via NPM using WebPack bundler](https://glebbahmutov.com/blog/using-webpack/)
 
 
 ## Lint
 * [Configuring ESLint](http://eslint.org/docs/user-guide/configuring.html)
 * [.eslintrc](https://gist.github.com/cletusw/e01a85e399ab563b1236)
 * [Linting in Webpack](http://survivejs.com/webpack_react/linting_in_webpack/)
+* [Auto-formatting JavaScript Code Style](https://medium.com/@addyosmani/auto-formatting-javascript-code-style-fe0f98a923b8#.78d0wbop8)
+* [JSCS — JavaScript Code Style](http://jscs.info/)
+
 
 ## Test
 * [Writing Jasmine Unit Tests In ES6](http://www.syntaxsuccess.com/viewarticle/writing-jasmine-unit-tests-in-es6)
@@ -511,9 +516,18 @@
 * [Mocha + Chai.js unit testing for ES6 with Istanbul code coverage](https://onsen.io/blog/mocha-chaijs-unit-test-coverage-es6/)
 * [Handle WebPack CSS imports when testing with Mocha and Babel](http://stackoverflow.com/questions/33881123/handle-webpack-css-imports-when-testing-with-mocha-and-babel)
 * [Jasmine vs. Mocha, Chai, and Sinon](http://thejsguy.com/2015/01/12/jasmine-vs-mocha-chai-and-sinon.html)
+* [Testing Node.js With Mocha and Chai](http://mherman.org/blog/2015/09/10/testing-node-js-with-mocha-and-chai/#.VtHTd5MrLXE)
+* [Run unit tests with Mocha](http://unitjs.com/guide/mocha.html)
+* [How To Use Mocha With Node.js For Test-Driven Development to Avoid Pain and Ship Products Faster](http://webapplog.com/tdd/)
+* [Writing Automated Tests with Mocha and Chai](http://www.zsoltnagy.eu/writing-automated-tests-with-mocha-and-chai/)
 * [Tape: tap-producing test harness for node and browsers](https://github.com/substack/tape)
 * [Supertest: HTTP assertions made easy via super-agent](https://github.com/visionmedia/supertest)
+* [Why I use Tape Instead of Mocha, and So Should You](https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4#.52krx4ngk)
+* [TAP & Tape, the awesome way to test JavaScript](http://www.macwright.org/2014/03/11/tape-is-cool.html)
+* [Tape: This guide covers the ins-and-outs of tape](https://ci.testling.com/guide/tape)
+* [Testing JavaScript Modules with Tape](https://ponyfoo.com/articles/testing-javascript-modules-with-tape)
 * [AVA: Futuristic test runner](https://github.com/sindresorhus/ava)
+
 
 ### RxJS
 * [ReactiveX - The Observer pattern done right](http://reactivex.io/)
@@ -538,6 +552,7 @@
 * [Cycle.js - A functional and reactive JavaScript framework for cleaner code](http://cycle.js.org/)
 * [ReactiveX - The Observer pattern done right](http://reactivex.io/)
 * [Becoming fully reactive: an in-depth explanation of Mobservable](https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254#.i4ku2stuj)
+* [Testing reactive code](https://glebbahmutov.com/blog/testing-reactive-code/)
 
 ## i18n
 * [i18n with tagged template strings in ECMAScript 6](http://jaysoo.ca/2014/03/20/i18n-with-es6-template-strings/)
@@ -724,5 +739,7 @@
 * [Essential JavaScript Links](https://github.com/ericelliott/essential-javascript-links#essential-javascript-links)
 * [The Two Pillars of JavaScript, part-1](https://medium.com/javascript-scene/the-two-pillars-of-javascript-ee6f3281e7f3#.ms1qqn7m3)
 * [The Two Pillars of JavaScript, part-2](https://medium.com/javascript-scene/the-two-pillars-of-javascript-pt-2-functional-programming-a63aa53a41a4#.dvmi7p4mq)
-
+* [Choosing Vanilla JavaScript in 2016](https://medium.com/vanilla-javascript/choosing-vanilla-javascript-in-2016-6f38a8302ee5#.ifkk49tto)
+* [Better world by better software](https://glebbahmutov.com/blog/)
+* [ponyfoo.com](https://ponyfoo.com/)
 

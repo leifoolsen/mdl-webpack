@@ -1,4 +1,6 @@
 'use strict';
+import 'babel-polyfill';
+import { expect } from 'chai';
 import Rectangle from './rectangle';
 
 describe('Rectangle', () => {
@@ -8,12 +10,15 @@ describe('Rectangle', () => {
       expect(() => {
         new Rectangle();
       }).to.throw(Error);
+
       expect(() => {
         new Rectangle(1.0);
       }).to.throw(Error);
+
       expect(() => {
         new Rectangle('foo', 'bar');
       }).to.throw(Error);
+
       expect(() => {
         new Rectangle(5, 7);
       }).to.not.throw(Error);
