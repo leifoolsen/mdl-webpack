@@ -16,7 +16,7 @@ import { throttle } from 'core-decorators';
 import moment from 'moment';
 import 'material-design-lite/material';
 
-import './js/utils/domHelpers';
+import {qs, qsa, removeChilds} from './js/utils/domHelpers';
 import './js/components/select/selectfield';
 
 import { initAccordions } from './js/components/accordion/accordion';
@@ -26,7 +26,7 @@ class Header {
 
   constructor(selector = '#header') {
     this.selector = selector;
-    this.headerEl = document.qs(this.selector);
+    this.headerEl = qs(this.selector);
     this.prevContentScrollTop = 0;
   }
 
@@ -70,7 +70,7 @@ class Header {
 
   updateTitle(event) {
     let anchor = event.detail.anchor;
-    let titleTag = this.headerEl.qs(this.titleClass);
+    let titleTag = qs(this.titleClass, this.headerEl);
     titleTag.textContent = anchor.textContent;
   }
 }
@@ -85,13 +85,13 @@ class Drawer {
 
   constructor(selector= '#drawer') {
     this.selector     = selector;
-    this.drawerEl     = document.qs(this.selector);
+    this.drawerEl     = qs(this.selector);
 
     initAccordions(this.drawerEl);
 
     this.navLinkQuery = `${this.accordionId} a.mdl-navigation__link`;
 
-    for (let anchor of document.qsa(this.navLinkQuery)) {
+    for (let anchor of qsa(this.navLinkQuery)) {
 
       anchor.addEventListener('click', event => {
         event.preventDefault();
@@ -111,7 +111,7 @@ class Drawer {
   }
 
   setActiveNavLink(navLinkEl) {
-    const currentNav = document.qs(`${this.accordionId} ${this.currentNavClass}`);
+    const currentNav = qs(`${this.accordionId} ${this.currentNavClass}`);
     if(currentNav) {
       currentNav.classList.remove(this.currentNavClassName);
     }
@@ -121,7 +121,7 @@ class Drawer {
   closeDrawerIfVisible() {
     // See: http://stackoverflow.com/questions/31536467/how-to-hide-drawer-upon-user-click
     // See: https://github.com/google/material-design-lite/blob/v1.0.6/material.js#L3234
-    const layout = document.qs(this.layoutClass);
+    const layout = qs(this.layoutClass);
     if(this.drawerEl.classList.contains(this.isVisibleClassName)) {
       layout.MaterialLayout.drawerToggleHandler_();
     }
@@ -140,7 +140,7 @@ class Content {
 
   constructor(selector = '#content') {
     this.selector = selector;
-    this.contentEl = document.qs(this.selector);
+    this.contentEl = qs(this.selector);
     this.contentEl.addEventListener('scroll', (event) => this.scroll(event));
   }
 
@@ -149,7 +149,7 @@ class Content {
   }
 
   show(event) {
-    let contentPanelEl = document.qs(this.contentPanelId);
+    let contentPanelEl = qs(this.contentPanelId);
     let href = event.detail.anchor.href;
 
     if(href.endsWith('/#js')) {
@@ -159,7 +159,7 @@ class Content {
       window.fetch(href, {method: 'get'})
         .then(response => response.text())
         .then(text => {
-          contentPanelEl.removeChilds();
+          removeChilds(contentPanelEl);
           contentPanelEl.insertAdjacentHTML('afterbegin', text);
 
           polyfillDetails(contentPanelEl);
@@ -167,7 +167,7 @@ class Content {
           // How do I call this directly from iported page??
           initAccordions(contentPanelEl);
 
-          [...contentPanelEl.qsa('script')].forEach(script => {
+          [...qsa('script', contentPanelEl)].forEach(script => {
             eval(script.innerHTML);
           });
 
@@ -198,8 +198,8 @@ class Content {
 
   renderWithJS() {
     // Messy code :-)
-    let contentPanel = document.qs(this.contentPanelId);
-    contentPanel.removeChilds();
+    let contentPanel = qs(this.contentPanelId);
+    removeChilds(contentPanel);
 
     const h1 = document.createElement('h1');
     h1.textContent = `${moment().format('YYYY-MM-DD HH:mm:ss')} - Yo MDL!`;
@@ -232,8 +232,8 @@ class Content {
   }
 
   index() {
-    let contentPanel = document.qs(this.contentPanelId);
-    contentPanel.removeChilds();
+    let contentPanel = qs(this.contentPanelId);
+    removeChilds(contentPanel);
 
     // Use require to fetch HTML. Es6 imports and exports must happen at the top level of js-file.
     const html = require('./html/home.html');
@@ -286,7 +286,7 @@ class App {
 
   @debounce
   static windowResize() {
-    pubsub.publish('window.resized', { element: document.qs('#content') } );
+    pubsub.publish('window.resized', { element: qs('#content') } );
   }
 
 
