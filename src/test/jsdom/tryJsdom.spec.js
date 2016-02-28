@@ -1,11 +1,17 @@
 'use strict';
 import 'babel-polyfill';
+import jsdomify from 'jsdomify';
 import { expect } from 'chai';
-import jsdom from 'jsdom'
 
-describe('mocha-jsdom tests', function () {
+describe('mocha-jsdom tests', () => {
 
-  let document = jsdom.jsdom();
+  before ( () => {
+    jsdomify.create()
+  })
+
+  after ( () => {
+    jsdomify.destroy()
+  })
 
   it('has document', () => {
     const div = document.createElement('div')

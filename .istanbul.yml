@@ -1,0 +1,9 @@
+verbose: false
+instrumentation:
+    root: ./src/js
+    excludes: ['webpack.config.js', '__test__']
+    include-all-sources: true
+    es-modules: true
+reporting:
+hooks:
+check:

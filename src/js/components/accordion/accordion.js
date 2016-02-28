@@ -17,7 +17,9 @@ const VK_ARROW_DOWN = 40;
 export function initAccordions(fromEl = document) {
   let n = 0;
   [...fromEl.querySelectorAll(`${accordionClass}:not(.is-upgraded)`)].forEach( accordion => {
-    if(initAccordion(accordion)) n++;
+    if(initAccordion(accordion)) {
+      n++;
+    }
   });
   return n;
 }
@@ -93,6 +95,7 @@ export function initAccordion(accordionEl) {
             break;
           }
 
+          /*jshint eqeqeq:false */
           if(panels[i] == panel) {
             if(event.keyCode === VK_ARROW_UP || event.keyCode === VK_ARROW_LEFT) {
               if(i > 0) {
@@ -145,5 +148,7 @@ export function initAccordion(accordionEl) {
 
 function focus(panel) {
   const a = panel.querySelector(`${accordionTitleClass} a`);
-  if(a) a.focus();
+  if(a) {
+    a.focus();
+  }
 }

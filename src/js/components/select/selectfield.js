@@ -247,6 +247,7 @@
   // The component registers itself. It can assume componentHandler is available
   // in the global scope.
   /*eslint no-undef: 0*/
+  /*jshint undef:false */
   componentHandler.register({
     constructor: MaterialExtSelectfield,
     classAsString: 'MaterialExtSelectfield',

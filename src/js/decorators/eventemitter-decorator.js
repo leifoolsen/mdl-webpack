@@ -1,3 +1,4 @@
+'use strict';
 /*
  * Copied from https://github.com/fand/EventEmitterDecorator
  * Could not get this to work with npm install.

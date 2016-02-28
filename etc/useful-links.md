@@ -527,7 +527,20 @@
 * [Tape: This guide covers the ins-and-outs of tape](https://ci.testling.com/guide/tape)
 * [Testing JavaScript Modules with Tape](https://ponyfoo.com/articles/testing-javascript-modules-with-tape)
 * [AVA: Futuristic test runner](https://github.com/sindresorhus/ava)
-
+* [Client-side testing with Mocha and Karma - ... or he horror of using Mocha](https://sean.is/writing/client-side-testing-with-mocha-and-karma/)
+* [espower-babel](https://github.com/power-assert-js/espower-babel)
+* [babel-plugin-espower](https://github.com/power-assert-js/babel-plugin-espower)
+* [Power Assert in JavaScript. Provides descriptive assertion messages through standard assert interfac](https://github.com/power-assert-js/power-assert)
+* [webpack-power-assert-jsdom-skeleton](https://github.com/sskyu/webpack-power-assert-jsdom-skeleton)
+* [jsdomify](https://github.com/dmatteo/jsdomify)
+* [WebpackJsdomTapePlugin](https://github.com/bloodyowl/webpack-jsdom-tape-plugin)
+* [Testing in Node.js with Mocha and Chai](http://code.tutsplus.com/tutorials/testing-in-nodejs--net-35018)
+* [White-box testing with Mocha and Sinon – Part I](http://techyugadi.net/nodejs/2015/03/18/mocha-and-sinon-part-i/)
+* [White-box testing with Mocha and Sinon – Part II](http://techyugadi.net/nodejs/2015/03/18/mocha-and-sinon-part-ii/)
+* [learn-istanbul](https://github.com/dwyl/learn-istanbul)
+* [Writing Automated Tests with Mocha and Chai](http://www.zsoltnagy.eu/writing-automated-tests-with-mocha-and-chai/)
+* [MAKE YOUR NODE.JS API BULLETPROOF: HOW TO TEST WITH MOCHA, CHAI, AND SUPERTEST](https://developmentnow.com/2015/02/05/make-your-node-js-api-bulletproof-how-to-test-with-mocha-chai-and-supertest/)
+* [WRITING, TESTING AND PUBLISHING JAVASCRIPT MODULES](http://tech.vg.no/2015/01/20/writing-testing-and-publishing-javascript-modules/)
 
 ### RxJS
 * [ReactiveX - The Observer pattern done right](http://reactivex.io/)
