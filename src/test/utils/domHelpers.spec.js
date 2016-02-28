@@ -126,6 +126,11 @@ describe('domHelpers', () => {
       expect(element.childNodes).to.have.lengthOf(0);
     });
 
+    after( () => {
+      // Restore fixture in case this suite is not the last to execute
+      jsdomify.clear();
+    });
+
   });
 
 });
