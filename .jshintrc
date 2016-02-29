@@ -17,5 +17,8 @@
   "strict": true,
   "sub": true,
   "laxbreak" : true,
-  "esversion": 6
+  "esversion": 6,
+  "globals": {
+    "componentHandler": true
+  }
 }
