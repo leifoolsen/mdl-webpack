@@ -116,6 +116,11 @@ describe('domHelpers', () => {
 
   describe('#removeChilds', () => {
 
+    after( () => {
+      // Restore fixture in case this suite is not the last to execute
+      jsdomify.clear();
+    });
+
     it('should remove child elements', () => {
       let element = removeChilds(qs('#mount'));
       expect(element.childNodes).to.have.lengthOf(0);
@@ -124,11 +129,6 @@ describe('domHelpers', () => {
     it('should remove child elements with reflow = false', () => {
       let element = removeChilds(qs('#mount'), false);
       expect(element.childNodes).to.have.lengthOf(0);
-    });
-
-    after( () => {
-      // Restore fixture in case this suite is not the last to execute
-      jsdomify.clear();
     });
 
   });
