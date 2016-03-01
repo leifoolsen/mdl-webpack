@@ -669,6 +669,7 @@
 * [3D Line Chart](http://codepen.io/yizzreel/pen/MaOwMg)
 * [The way to embed SVG](http://codepen.io/fecoder/pen/ogLbbN)
 * [Tutorial: Pinterest Type Layout with Material Design Lite and Masonry.js](http://www.pixelatingbits.com/tutorial-pinterest-type-layout-with-material-design-lite-and-masonry-js/)
+* [moduloColumns layout mode for Isotope 2](https://github.com/michieldewit/isotope-modulo-columns)
 * [Auto Hide Sticky Header - Snappy](http://codepen.io/macmengerink/pen/RPZwEB)
 * [ES2015 (ES6) pubsub](http://codepen.io/stevenbenisek/pen/qOmRye)
 * [LazyShow](http://codepen.io/tjbenton21/pen/doLvYx/)

@@ -3,6 +3,7 @@ import 'babel-polyfill';
 import requireUncached from 'require-uncached';
 import jsdomify from 'jsdomify';
 import { expect, assert } from 'chai';
+import sinon from 'sinon';
 import { qs, qsa } from '../../../js/utils/domHelpers';
 
 describe('MaterialExtSelectfield', () => {
@@ -17,13 +18,20 @@ describe('MaterialExtSelectfield', () => {
 <body>
   <div id='mount'>
     <div class="mdlext-selectfield mdlext-js-selectfield">
-      <select class="mdlext-selectfield__select" id="select-1" name="select-1">
+      <select class="mdlext-selectfield__select" id="select-1" name="select-1" autofocus >
         <option value=""></option>
         <option value="option1">option 1</option>
         <option value="option2">option 2</option>
         <option value="option3">option 3</option>
         <option value="option4">option 4</option>
         <option value="option5">option 5</option>
+      </select>
+      <label class="mdlext-selectfield__label" for="select-1">Profession</label>
+    </div>
+    <div class="mdlext-selectfield mdlext-js-selectfield">
+      <select class="mdlext-selectfield__select" id="select-2" name="select-2" disabled >
+        <option value=""></option>
+        <option value="option1">option 1</option>
       </select>
       <label class="mdlext-selectfield__label" for="select-1">Profession</label>
     </div>
@@ -35,7 +43,7 @@ describe('MaterialExtSelectfield', () => {
 
   const fragment = `
 <div class="mdlext-selectfield mdlext-js-selectfield">
-  <select class="mdlext-selectfield__select" id="select-country" name="select-country">
+  <select class="mdlext-selectfield__select" id="select-country" name="select-country" autofocus >
     <option value=""></option>
     <option value="option1">Norway</option>
     <option value="option2">Iceland</option>
@@ -128,11 +136,35 @@ describe('MaterialExtSelectfield', () => {
     expect(el.classList.contains('is-invalid')).to.equal(true);
   });
 
+  it('trigger events', () => {
+    const select = qs('#select-1');
+    assert.isNotNull(select);
+
+    spyOnEvent('change', select);
+    spyOnEvent('focus', select);
+    spyOnEvent('blur', select);
+    spyOnEvent('reset', select);
+  });
+
+  function spyOnEvent(name, target) {
+    let spy = sinon.spy();
+    target.addEventListener(name, spy);
+
+    const evt = new Event(name, {
+      bubbles: true,
+      cancelable: true,
+      view: window
+    });
+    target.dispatchEvent(evt);
+    target.removeEventListener(name, spy);
+    assert.isTrue(spy.calledOnce, `Expected event ${name} to fire once`);
+  }
+
   function createSingleLineSelectfield() {
-    var container = document.createElement('div');
-    var select = document.createElement('select');
-    var label = document.createElement('label');
-    var errorMessage = document.createElement('span');
+    const container = document.createElement('div');
+    const select = document.createElement('select');
+    const label = document.createElement('label');
+    const errorMessage = document.createElement('span');
     container.className = 'mdlext-selectfield mdlext-js-selectfield';
     select.className = 'mdlext-selectfield__select';
     select.id = 'select-testInput';

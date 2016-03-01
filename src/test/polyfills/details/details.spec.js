@@ -168,6 +168,7 @@ describe('details', () => {
     details.addEventListener('click', listener);
     triggerKeyboardEvent(details.firstElementChild, VK_ENTER);
     assert.isTrue(listener.calledOnce);
+    details.removeEventListener('click', listener);
   });
 
   function triggerKeyboardEvent(target, keyCode) {
