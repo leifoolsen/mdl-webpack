@@ -102,40 +102,43 @@ function injectCSS() {
     summary::-webkit-details-marker {
       display: none;
     }
-    */
+    */`;
 
-`;
+  if(document.querySelector('#details-polyfill-css') == null) {
+    const style = document.createElement('style');
+    style.id = 'details-polyfill-css';
+    style.textContent = css
+      .replace(/(\/\*([^*]|(\*+[^*\/]))*\*+\/)/gm, '') // remove comments from CSS, see: http://www.sitepoint.com/3-neat-tricks-with-regular-expressions/
+      .replace(/\s/gm, ' ');                        // replaces consecutive spaces with a single space
 
-  const style = document.createElement('style');
-  style.textContent = css
-    .replace(/(\/\*([^*]|(\*+[^*\/]))*\*+\/)/gm, '') // remove comments from CSS, see: http://www.sitepoint.com/3-neat-tricks-with-regular-expressions/
-    .replace( /\s/gm, ' ' );                        // replaces consecutive spaces with a single space
+    // WebKit hack
+    style.appendChild(document.createTextNode(''));
 
-  // WebKit hack :(
-  style.appendChild(document.createTextNode(''));
-
-  //console.log(style.textContent);
-
-  // Must be the first stylesheet so it does not override user css
-  document.head.insertBefore(style, document.head.firstChild);
-
-  return true;
+    // Must be the first stylesheet so it does not override user css
+    document.head.insertBefore(style, document.head.firstChild);
+    return true;
+  }
+  return false;
 }
 
+/**
+ * Polyfill for the <details> element
+ * @param fromEl
+ * @returns {boolean}
+ */
 export function polyfillDetails(fromEl = document) {
 
   if(hasNativeDetailsSupport) {
     return false;
   }
 
-
+  //[...fromEl.querySelectorAll('details')]
+  //.filter( details => !details.classList.contains('is-polyfilled') )
   [...fromEl.querySelectorAll('details:not(.is-polyfilled)')]
-  //.filter( details => !details.classList.contains('is-upgraded') )
   .forEach( details => {
 
     details.classList.add('is-polyfilled'); // flag to prevent doing this more than once
-
-    let summary = details.querySelector('summary:first-child');
+    let summary = [...details.childNodes].find( n => n.nodeName.toLowerCase() === 'summary');
 
     // If there is no child summary element, this polyfill
     // should provide its own legend; "Details"
@@ -151,21 +154,8 @@ export function polyfillDetails(fromEl = document) {
       details.insertBefore(summary, details.firstChild);
     }
 
+    // Should be focusable
     summary.tabIndex = 0;
-
-    // Respect layout of child elements!
-    // Chrome does not respect the child elements layout, so there is no need to implement this in the polyfill.
-    // Instead you should wrap the details child elements inside a <div> to preserve the child elements layout.
-    /*
-    let items = details.querySelectorAll('details > *:not(summary)');
-    if(items.length > 0) {
-      let newChild = document.createElement('div');
-      for (let i = 0; i < items.length; i++) {
-        newChild.appendChild(items[i]);
-      }
-      details.insertBefore(newChild, null);
-    }
-    */
 
     // Events
     summary.addEventListener('keydown', event => {
@@ -201,8 +191,15 @@ export function polyfillDetails(fromEl = document) {
   return true;
 }
 
-
+/*
 document.addEventListener('DOMContentLoaded', () => {
+  injectCSS();
+  polyfillDetails(document);
+});
+*/
+
+// MDL listens to this event, not DOMContentLoaded
+window.addEventListener('load', function() {
   injectCSS();
   polyfillDetails(document);
 });
