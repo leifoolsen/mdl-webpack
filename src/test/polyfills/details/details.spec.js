@@ -3,7 +3,11 @@ import 'babel-polyfill';
 import requireUncached from 'require-uncached';
 import jsdomify from 'jsdomify';
 import { expect, assert } from 'chai';
+import sinon from 'sinon';
 import { qs, qsa } from '../../../js/utils/domHelpers';
+
+const VK_ENTER = 13;
+const VK_SPACE = 32;
 
 describe('details', () => {
 
@@ -16,7 +20,7 @@ describe('details', () => {
 </head>
 <body>
   <div id='mount'>
-    <details role="group" open>
+    <details id="simple-details" role="group" open>
       <summary role="button">Summary</summary>
       <p>A paragraph</p>
     </details>
@@ -39,6 +43,9 @@ describe('details', () => {
     <details id="it-should-have-a-summary-element">
      <p>A paragraph but no summary element</p>
     </details>
+
+    <div id="hook">
+    </div>
   </div>
 </body>
 </html>`;
@@ -58,9 +65,9 @@ describe('details', () => {
     nativeSupport =  ('open' in document.createElement('details'));
 
     // Must load details polyfill after jsdom
-    Details = require('../../../js/polyfills/details/details');
+    Details = requireUncached('../../../js/polyfills/details/details');
 
-    // Do I need this: "Waiting for content to be loaded in jsdom"?, see: https://gist.github.com/chad3814/5059671
+    // Do I need this? "Waiting for content to be loaded in jsdom", see: https://gist.github.com/chad3814/5059671
 
   });
 
@@ -68,7 +75,13 @@ describe('details', () => {
     jsdomify.destroy()
   });
 
-  it('is polyfilled', () => {
+  it('injects CSS', () => {
+    if(!nativeSupport) {
+      assert.isNotNull(qs('#details-polyfill-css'));
+    }
+  });
+
+  it('adds class is-polyfilled', () => {
     if(!nativeSupport) {
       assert.isNotNull(qs('#details-polyfill-css'), 'Expected CSS for detials polyfill');
 
@@ -79,15 +92,90 @@ describe('details', () => {
   });
 
   it('is focusable', () => {
-    assert.isAtLeast(qs('summary').tabIndex, 0);
+    if(!nativeSupport) {
+      assert.isAtLeast(qs('summary').tabIndex, 0);
+    }
   });
 
-  it('makes summary to be first child', () => {
-    assert.equal(qs('#make-summary-to-be-first-child').firstElementChild.nodeName.toLowerCase(), 'summary');
+  it('makes summary element to be first child', () => {
+    if(!nativeSupport) {
+      assert.equal(qs('#make-summary-to-be-first-child').firstElementChild.nodeName.toLowerCase(), 'summary');
+    }
   });
 
   it('should add summary element if not present', () => {
-    assert.equal(qs('#it-should-have-a-summary-element').firstElementChild.nodeName.toLowerCase(), 'summary');
+    if(!nativeSupport) {
+      assert.equal(qs('#it-should-have-a-summary-element').firstElementChild.nodeName.toLowerCase(), 'summary');
+    }
   });
 
+  it('should polyfill successfully when a new details tag is appended to the DOM', () => {
+    if(!nativeSupport) {
+      let hook = qs('#hook');
+      hook.innerHTML = fragment;
+      Details.polyfillDetails(hook);
+      [...qsa('details', hook)].forEach(details => {
+        assert.isTrue(details.classList.contains('is-polyfilled'), 'Expected details element to have class "is-polyfilled"');
+      });
+    }
+  });
+
+  it('only polyfill once', () => {
+    if(!nativeSupport) {
+      Details.polyfillDetails();
+      let isPolyfilled = Details.polyfillDetails();
+      assert.isFalse(isPolyfilled);
+    }
+  });
+
+  it('should toggle open attribute whenn user clicks the summary tag', () => {
+    if(!nativeSupport) {
+      let details = qs('#simple-details');
+      assert.isTrue(details.hasAttribute('open'));
+
+      // Trigger mouse click event summary element.
+      const evt = new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      });
+      details.firstElementChild.dispatchEvent(evt);
+      assert.isFalse(details.hasAttribute('open'));
+    }
+  });
+
+  it('should toggle open on enter key', () => {
+    if(!nativeSupport) {
+      let details = qs('#it-has-nested-details');
+      let isOpen = details.hasAttribute('open');
+      triggerKeyboardEvent(details.firstElementChild, VK_ENTER);
+      assert.notEqual(isOpen, details.hasAttribute('open'));
+    }
+  });
+
+  it('should toggle open on space key', () => {
+    if(!nativeSupport) {
+      let details = qs('#it-has-nested-details');
+      let isOpen = details.hasAttribute('open');
+      triggerKeyboardEvent(details.firstElementChild, VK_SPACE);
+      assert.notEqual(isOpen, details.hasAttribute('open'));
+    }
+  });
+
+  it('should emit a click event when toggled', () => {
+    let details = qs('#it-has-nested-details');
+    let listener = sinon.spy();
+    details.addEventListener('click', listener);
+    triggerKeyboardEvent(details.firstElementChild, VK_ENTER);
+    assert.isTrue(listener.calledOnce);
+  });
+
+  function triggerKeyboardEvent(target, keyCode) {
+    var event = new KeyboardEvent('keydown', {
+      bubbles: true,
+      cancelable: true,
+      keyCode : keyCode
+    });
+    target.dispatchEvent(event);
+  }
 });

@@ -132,10 +132,11 @@ export function polyfillDetails(fromEl = document) {
     return false;
   }
 
+  let result = false;
+
   //[...fromEl.querySelectorAll('details')]
   //.filter( details => !details.classList.contains('is-polyfilled') )
-  [...fromEl.querySelectorAll('details:not(.is-polyfilled)')]
-  .forEach( details => {
+  [...fromEl.querySelectorAll('details:not(.is-polyfilled)')].forEach( details => {
 
     details.classList.add('is-polyfilled'); // flag to prevent doing this more than once
     let summary = [...details.childNodes].find( n => n.nodeName.toLowerCase() === 'summary');
@@ -186,9 +187,10 @@ export function polyfillDetails(fromEl = document) {
       }
     }, true);
 
+    result = true;
   });
 
-  return true;
+  return result;
 }
 
 /*
