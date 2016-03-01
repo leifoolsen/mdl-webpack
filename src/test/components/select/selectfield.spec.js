@@ -104,20 +104,52 @@ describe('MaterialExtSelectfield', () => {
     expect(el.MaterialExtSelectfield).to.be.a('object');
   });
 
+  it('should have public methods available via widget', () => {
+    const el = createSingleLineSelectfield();
+    componentHandler.upgradeElement(el, 'MaterialTextfield');
+    const methods = [
+      'checkDisabled',
+      'checkValidity',
+      'checkDirty',
+      'checkFocus',
+      'disable',
+      'enable',
+      'change'
+    ];
+    methods.forEach(function(item) {
+      expect(el.MaterialTextfield[item]).to.be.a('function');
+    });
+  });
+
+  it('should be invalid after upgrade if invalid previously', () => {
+    const el = createSingleLineSelectfield();
+    el.classList.add('is-invalid');
+    componentHandler.upgradeElement(el);
+    expect(el.classList.contains('is-invalid')).to.equal(true);
+  });
+
   function createSingleLineSelectfield() {
     var container = document.createElement('div');
-    var input = document.createElement('select');
+    var select = document.createElement('select');
     var label = document.createElement('label');
     var errorMessage = document.createElement('span');
     container.className = 'mdlext-selectfield mdlext-js-selectfield';
-    input.className = 'mdlext-selectfield__select';
-    input.id = 'select-testInput';
-    label.for = input.id;
+    select.className = 'mdlext-selectfield__select';
+    select.id = 'select-testInput';
+    label.for = select.id;
     label.className = 'mdlext-selectfield__label';
     label.text = 'Country';
     errorMessage.className = 'mdlext-selectfield__error';
-    errorMessage.text = 'Not a country.';
-    container.appendChild(input);
+    errorMessage.text = 'Nothing selected.';
+
+    let opt;
+    for (var i = 0; i < 5; i++) {
+      opt = document.createElement("option");
+      opt.value = `Option #${i}`;
+      opt.innerHTML = opt.value;
+      select.appendChild(opt);
+    }
+    container.appendChild(select);
     container.appendChild(label);
     container.appendChild(errorMessage);
     return container;

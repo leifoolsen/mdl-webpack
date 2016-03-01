@@ -122,6 +122,7 @@
       this.element_.classList.remove(this.CssClasses_.IS_FOCUSED);
     }
   };
+
   MaterialExtSelectfield.prototype['checkFocus'] = MaterialExtSelectfield.prototype.checkFocus;
 
 
@@ -139,6 +140,7 @@
       }
     }
   };
+
   MaterialExtSelectfield.prototype['checkValidity'] = MaterialExtSelectfield.prototype.checkValidity;
 
   /**
@@ -153,6 +155,7 @@
       this.element_.classList.remove(this.CssClasses_.IS_DIRTY);
     }
   };
+
   MaterialExtSelectfield.prototype['checkDirty'] = MaterialExtSelectfield.prototype.checkDirty;
 
   /**
@@ -164,6 +167,7 @@
     this.select_.disabled = true;
     this.updateClasses_();
   };
+
   MaterialExtSelectfield.prototype['disable'] = MaterialExtSelectfield.prototype.disable;
 
   /**
@@ -175,6 +179,7 @@
     this.select_.disabled = false;
     this.updateClasses_();
   };
+
   MaterialExtSelectfield.prototype['enable'] = MaterialExtSelectfield.prototype.enable;
 
   /**
@@ -184,9 +189,7 @@
    * @public
    */
   MaterialExtSelectfield.prototype.change = function(value) {
-    if (value) {
-      this.select_.value = value;
-    }
+    this.select_.value = value || '';
     this.updateClasses_();
   };
   MaterialExtSelectfield.prototype['change'] = MaterialExtSelectfield.prototype.change;
@@ -223,26 +226,6 @@
       }
     }
   };
-
-  MaterialExtSelectfield.prototype.mdlDowngrade_ = function() {
-    this.select_.removeEventListener('change', this.boundUpdateClassesHandler);
-    this.select_.removeEventListener('focus', this.boundFocusHandler);
-    this.select_.removeEventListener('blur', this.boundBlurHandler);
-    this.select_.removeEventListener('reset', this.boundBlurHandler);
-  };
-
-
-  /**
-   * Public alias for the downgrade method.
-   *
-   * @public
-   */
-  MaterialExtSelectfield.prototype.mdlDowngrade =
-    MaterialExtSelectfield.prototype.mdlDowngrade_;
-
-  MaterialExtSelectfield.prototype['mdlDowngrade'] =
-    MaterialExtSelectfield.prototype.mdlDowngrade;
-
 
   // The component registers itself. It can assume componentHandler is available
   // in the global scope.
