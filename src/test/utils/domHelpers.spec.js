@@ -11,24 +11,24 @@ describe('domHelpers', () => {
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Fixture</title>
 </head>
 <body>
-  <div id='mount'>
-    <p>Paragraph #1</p>
-    <p>Paragraph #2</p>
-    <section>
-      <p>Paragraph #3</p>
-      <p class='foo'>Paragraph #4</p>
-      <article>
-        <p>Paragraph #5</p>
-      </article>
-    </section>
-    <section>
-      <p>Paragraph #6</p>
-      <p class='foo'>Paragraph #7</p>
-    </section>
-  </div>
+<div id='mount'>
+  <p>Paragraph #1</p>
+  <p>Paragraph #2</p>
+  <section>
+    <p>Paragraph #3</p>
+    <p class='foo'>Paragraph #4</p>
+    <article>
+      <p>Paragraph #5</p>
+    </article>
+  </section>
+  <section>
+    <p>Paragraph #6</p>
+    <p class='foo'>Paragraph #7</p>
+  </section>
+</div>
 </body>
 </html>`;
 

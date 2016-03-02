@@ -16,37 +16,37 @@ describe('details', () => {
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Details Fixture</title>
 </head>
 <body>
-  <div id='mount'>
-    <details id="simple-details" role="group" open>
-      <summary role="button">Summary</summary>
-      <p>A paragraph</p>
+<div id='mount'>
+  <details id="simple-details" role="group" open>
+    <summary role="button">Summary</summary>
+    <p>A paragraph</p>
+  </details>
+
+  <details id="make-summary-to-be-first-child" role="group">
+    <p>A paragraph before summary</p>
+    <summary role="button">Summary</summary>
+  </details>
+
+  <details id="it-has-nested-details" role="group">
+    <summary role="button">Summary</summary>
+    <p>A paragraph</p>
+
+    <details role="group">
+      <summary role="button">Nested details</summary>
+      <div>A div</div>
     </details>
+  </details>
 
-    <details id="make-summary-to-be-first-child" role="group">
-      <p>A paragraph before summary</p>
-      <summary role="button">Summary</summary>
-    </details>
+  <details id="it-should-have-a-summary-element">
+   <p>A paragraph but no summary element</p>
+  </details>
 
-    <details id="it-has-nested-details" role="group">
-      <summary role="button">Summary</summary>
-      <p>A paragraph</p>
-
-      <details role="group">
-        <summary role="button">Nested details</summary>
-        <div>A div</div>
-      </details>
-    </details>
-
-    <details id="it-should-have-a-summary-element">
-     <p>A paragraph but no summary element</p>
-    </details>
-
-    <div id="hook">
-    </div>
+  <div id="hook">
   </div>
+</div>
 </body>
 </html>`;
 
@@ -81,7 +81,7 @@ describe('details', () => {
     }
   });
 
-  it('adds class is-polyfilled', () => {
+  it('polyfill add class is-polyfilled', () => {
     if(!nativeSupport) {
       assert.isNotNull(qs('#details-polyfill-css'), 'Expected CSS for detials polyfill');
 
@@ -120,7 +120,7 @@ describe('details', () => {
     }
   });
 
-  it('only polyfill once', () => {
+  it('should polyfill only once', () => {
     if(!nativeSupport) {
       Details.polyfillDetails();
       let isPolyfilled = Details.polyfillDetails();
@@ -128,7 +128,7 @@ describe('details', () => {
     }
   });
 
-  it('should toggle open attribute whenn user clicks the summary tag', () => {
+  it('toggles open attribute when user clicks the summary tag', () => {
     if(!nativeSupport) {
       let details = qs('#simple-details');
       assert.isTrue(details.hasAttribute('open'));
@@ -144,7 +144,7 @@ describe('details', () => {
     }
   });
 
-  it('should toggle open on enter key', () => {
+  it('toggles open on enter key', () => {
     if(!nativeSupport) {
       let details = qs('#it-has-nested-details');
       let isOpen = details.hasAttribute('open');
@@ -153,7 +153,7 @@ describe('details', () => {
     }
   });
 
-  it('should toggle open on space key', () => {
+  it('toggles open on space key', () => {
     if(!nativeSupport) {
       let details = qs('#it-has-nested-details');
       let isOpen = details.hasAttribute('open');
@@ -162,7 +162,7 @@ describe('details', () => {
     }
   });
 
-  it('should emit a click event when toggled', () => {
+  it('emits a click event when toggled via keyboard or mouse', () => {
     let details = qs('#it-has-nested-details');
     let listener = sinon.spy();
     details.addEventListener('click', listener);

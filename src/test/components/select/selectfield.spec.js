@@ -13,31 +13,31 @@ describe('MaterialExtSelectfield', () => {
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Select Fixture</title>
 </head>
 <body>
-  <div id='mount'>
-    <div class="mdlext-selectfield mdlext-js-selectfield">
-      <select class="mdlext-selectfield__select" id="select-1" name="select-1" autofocus >
-        <option value=""></option>
-        <option value="option1">option 1</option>
-        <option value="option2">option 2</option>
-        <option value="option3">option 3</option>
-        <option value="option4">option 4</option>
-        <option value="option5">option 5</option>
-      </select>
-      <label class="mdlext-selectfield__label" for="select-1">Profession</label>
-    </div>
-    <div class="mdlext-selectfield mdlext-js-selectfield">
-      <select class="mdlext-selectfield__select" id="select-2" name="select-2" disabled >
-        <option value=""></option>
-        <option value="option1">option 1</option>
-      </select>
-      <label class="mdlext-selectfield__label" for="select-1">Profession</label>
-    </div>
-    <div id="mount-2">
-    </div>
+<div id='mount'>
+  <div class="mdlext-selectfield mdlext-js-selectfield">
+    <select class="mdlext-selectfield__select" id="select-1" name="select-1" autofocus >
+      <option value=""></option>
+      <option value="option1">option 1</option>
+      <option value="option2">option 2</option>
+      <option value="option3">option 3</option>
+      <option value="option4">option 4</option>
+      <option value="option5">option 5</option>
+    </select>
+    <label class="mdlext-selectfield__label" for="select-1">Profession</label>
   </div>
+  <div class="mdlext-selectfield mdlext-js-selectfield">
+    <select class="mdlext-selectfield__select" id="select-2" name="select-2" disabled >
+      <option value=""></option>
+      <option value="option1">option 1</option>
+    </select>
+    <label class="mdlext-selectfield__label" for="select-1">Profession</label>
+  </div>
+  <div id="mount-2">
+  </div>
+</div>
 </body>
 </html>`;
 
@@ -79,6 +79,7 @@ describe('MaterialExtSelectfield', () => {
   it('should upgrade when DOM render', () => {
     const element = qs('#select-1');
     assert.isNotNull(element);
+    assert.isTrue(element.parentNode.classList.contains('is-upgraded'));
 
     const dataUpgraded = element.parentNode.getAttribute('data-upgraded');
     assert.isNotNull(dataUpgraded);

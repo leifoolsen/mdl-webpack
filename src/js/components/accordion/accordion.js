@@ -46,8 +46,8 @@ export function initAccordion(accordionEl) {
     if(!header.parentNode.hasAttribute('open')) {
       header.setAttribute('aria-expanded', '');
     }
-    header.addEventListener('click', ( function(event) {
 
+    header.addEventListener('click', ( function(event) {
       event.preventDefault();
       event.stopPropagation();
 
