@@ -25,6 +25,7 @@
 * [Material Design Lite WIKI](https://github.com/google/material-design-lite/wiki)
 * [Material Design Lite - Concise Style Guide](http://www.softwareapprentice.com/mdl-concise-styleguide/)
 * [Material Design Lite Encapsulated](https://github.com/genadis/encapsulated-mdl)
+* [Material Dashboard Lite](https://github.com/CreativeIT/getmdl-dashboard)
 
 ### Material
 * [Google web starter kit](https://github.com/google/web-starter-kit)
