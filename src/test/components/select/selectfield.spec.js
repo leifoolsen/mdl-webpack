@@ -115,7 +115,7 @@ describe('MaterialExtSelectfield', () => {
 
   it('should have public methods available via widget', () => {
     const el = createSingleLineSelectfield();
-    componentHandler.upgradeElement(el, 'MaterialTextfield');
+    componentHandler.upgradeElement(el, 'MaterialExtSelectfield');
     const methods = [
       'checkDisabled',
       'checkValidity',
@@ -126,7 +126,7 @@ describe('MaterialExtSelectfield', () => {
       'change'
     ];
     methods.forEach(function(item) {
-      expect(el.MaterialTextfield[item]).to.be.a('function');
+      expect(el.MaterialExtSelectfield[item]).to.be.a('function');
     });
   });
 
@@ -140,12 +140,25 @@ describe('MaterialExtSelectfield', () => {
   it('trigger events', () => {
     const select = qs('#select-1');
     assert.isNotNull(select);
-
     spyOnEvent('change', select);
     spyOnEvent('focus', select);
     spyOnEvent('blur', select);
     spyOnEvent('reset', select);
   });
+
+  it('can call public methodes', () => {
+    const el = qs('.mdlext-selectfield');
+    el.MaterialExtSelectfield.checkDisabled();
+    el.MaterialExtSelectfield.checkValidity();
+    el.MaterialExtSelectfield.checkDirty();
+    el.MaterialExtSelectfield.checkFocus();
+    el.MaterialExtSelectfield.disable();
+    el.MaterialExtSelectfield.enable();
+    el.MaterialExtSelectfield.checkFocus();
+    el.MaterialExtSelectfield.change('option2');
+    assert(true);
+  });
+
 
   function spyOnEvent(name, target) {
     let spy = sinon.spy();
@@ -176,7 +189,7 @@ describe('MaterialExtSelectfield', () => {
     errorMessage.text = 'Nothing selected.';
 
     let opt;
-    for (var i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) {
       opt = document.createElement("option");
       opt.value = `Option #${i}`;
       opt.innerHTML = opt.value;

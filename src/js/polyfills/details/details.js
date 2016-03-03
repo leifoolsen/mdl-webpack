@@ -104,7 +104,7 @@ function injectCSS() {
     }
     */`;
 
-  if(document.querySelector('#details-polyfill-css') == null) {
+  if(document.querySelector('#details-polyfill-css') === null) {
     const style = document.createElement('style');
     style.id = 'details-polyfill-css';
     style.textContent = css

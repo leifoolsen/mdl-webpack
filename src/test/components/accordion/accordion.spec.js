@@ -220,7 +220,6 @@ describe('Accordion', () => {
 
     const check = qsa('#horisontal-accordion .mdlext-accordion__panel[open]');
     assert.lengthOf(check, 1);
-
   });
 
   function spyOnKeyboardEvent(target, keyCode) {
