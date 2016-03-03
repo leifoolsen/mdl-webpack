@@ -1,6 +1,5 @@
 'use strict';
 import 'babel-polyfill';
-import requireUncached from 'require-uncached';
 import jsdomify from 'jsdomify';
 import { expect, assert } from 'chai';
 import sinon from 'sinon';
@@ -65,7 +64,7 @@ describe('details', () => {
     nativeSupport =  ('open' in document.createElement('details'));
 
     // Must load details polyfill after jsdom
-    Details = requireUncached('../../../js/polyfills/details/details');
+    Details = require('../../../js/polyfills/details/details');
 
     // Do I need this? "Waiting for content to be loaded in jsdom", see: https://gist.github.com/chad3814/5059671
 
@@ -81,7 +80,7 @@ describe('details', () => {
     }
   });
 
-  it('polyfill add class is-polyfilled', () => {
+  it('is polyfilled', () => {
     if(!nativeSupport) {
       assert.isNotNull(qs('#details-polyfill-css'), 'Expected CSS for detials polyfill');
 
@@ -103,7 +102,7 @@ describe('details', () => {
     }
   });
 
-  it('should add summary element if not present', () => {
+  it('adds a summary element if not present', () => {
     if(!nativeSupport) {
       assert.equal(qs('#it-should-have-a-summary-element').firstElementChild.nodeName.toLowerCase(), 'summary');
     }

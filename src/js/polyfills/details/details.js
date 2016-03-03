@@ -1,6 +1,12 @@
 'use strict';
 
 /**
+ * The &lt;details&gt; element specifies additional details that the user can view or hide on demand.
+ * The &lt;summary&gt; element defines a visible heading for the &lt;details&gt; element.
+ * The heading can be clicked to view/hide the details.
+ * The &lt;details&gt; element currently has very limited cross-browser support.
+ * This polyfill provides support for the &lt;detail&gt; element across all modern browsers,
+ *
  * Code copied/modified/inspired from/by:
  *   https://github.com/jordanaustin/Details-Expander
  *   https://github.com/chemerisuk/better-details-polyfill
@@ -10,6 +16,7 @@
  *   http://zogovic.com/post/21784525226/simple-html5-details-polyfill
  *   http://www.sitepoint.com/fixing-the-details-element/
  *   https://www.smashingmagazine.com/2014/11/complete-polyfill-html5-details-element/
+ *   http://mathiasbynens.be/notes/html5-details-jquery
  *   https://www.w3.org/TR/2011/WD-html5-author-20110705/the-details-element.html
  *   https://www.w3.org/TR/html-aria/#index-aria-group
  *   https://www.w3.org/WAI/GL/wiki/Using_aria-expanded_to_indicate_the_state_of_a_collapsible_element
@@ -19,7 +26,12 @@
 
 const VK_ENTER = 13;
 const VK_SPACE = 32;
-const hasNativeDetailsSupport =  ('open' in document.createElement('details'));
+const POLYFILL_CLASS = 'is-polyfilled';
+const POLYFILL_CLASS_NAME = `.${POLYFILL_CLASS}`;
+
+// For a full featured detection support see Mathias Bynens implementation: http://mathiasbynens.be/notes/html5-details-jquery
+// No need to suppport Chrome-10, so this should be sufficient
+const hasNativeDetailsSupport = ('open' in document.createElement('details'));
 
 function injectCSS() {
 
@@ -28,7 +40,7 @@ function injectCSS() {
   }
 
   /*
-    Modified from: https://github.com/jordanaustin/Details-Expander/blob/master/src/css/main.css
+    CSS Modified from: https://github.com/jordanaustin/Details-Expander/blob/master/src/css/main.css
 
     NOTE:
     These are defaults meant to mimic the default unstyled browser look.
@@ -123,8 +135,8 @@ function injectCSS() {
 
 /**
  * Polyfill for the <details> element
- * @param fromEl
- * @returns {boolean}
+ * @param fromEl where to start, default document node
+ * @returns {boolean} true i any details element has been polyfilled
  */
 export function polyfillDetails(fromEl = document) {
 
@@ -134,11 +146,9 @@ export function polyfillDetails(fromEl = document) {
 
   let result = false;
 
-  //[...fromEl.querySelectorAll('details')]
-  //.filter( details => !details.classList.contains('is-polyfilled') )
-  [...fromEl.querySelectorAll('details:not(.is-polyfilled)')].forEach( details => {
+  [...fromEl.querySelectorAll(`details:not(${POLYFILL_CLASS_NAME})`)].forEach( details => {
 
-    details.classList.add('is-polyfilled'); // flag to prevent doing this more than once
+    details.classList.add(POLYFILL_CLASS); // flag to prevent doing this more than once
     let summary = [...details.childNodes].find( n => n.nodeName.toLowerCase() === 'summary');
 
     // If there is no child summary element, this polyfill
