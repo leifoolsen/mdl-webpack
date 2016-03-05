@@ -8,7 +8,7 @@
 //       We do not need to import the polyfills anymore!
 //       The dialog polyfill must be handled separateley, see App.run() method
 
-import { polyfillDetails } from './js/polyfills/details/details'; // This polyfill is still a beta - so it remains here
+import { polyfillDetails } from 'lavu-details-polyfill';
 // End polyfills
 
 import { debounce } from 'core-decorators';

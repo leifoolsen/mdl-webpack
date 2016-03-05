@@ -85,40 +85,13 @@ Credits: The Select component is based on the following sources:
 
 ## Polyfills
 
+### Dialog Element Polyfill
+This project uses the GoogleChrome [```dialog-polyfill```](https://github.com/GoogleChrome/dialog-polyfill) package.
+You can find the usage instructions [here](https://github.com/GoogleChrome/dialog-polyfill#usage)
 
 ### Details Element Polyfill
-<img src="./etc/details-element.png"/>
-
-The ```<details>``` element specifies additional details that the user can view or hide on demand. The ```<summary>``` 
-element defines a visible heading for the ```<details>``` element. The heading can be clicked to view/hide the details.
-
-The ```<details>``` element currently has very limited cross-browser support. To ensure support across all modern browsers, 
-please consider using a polyfill or creating your own. I wrote my own polyfill using the following sources:
-
-* https://github.com/jordanaustin/Details-Expander
-* https://github.com/chemerisuk/better-details-polyfill
-* http://codepen.io/stevef/pen/jiCBE
-* http://blog.mxstbr.com/2015/06/html-details/
-* http://html5doctor.com/the-details-and-summary-elements/
-* http://zogovic.com/post/21784525226/simple-html5-details-polyfill
-* http://www.sitepoint.com/fixing-the-details-element/
-* https://www.smashingmagazine.com/2014/11/complete-polyfill-html5-details-element/
-
-
-#### How to use the polyfill
-Import the polyfill into your main javascript module.
-
-```javascript
-import { polyfillDetails } from './js/polyfills/details/details';
-```
-
-If you load HTML fragments dynamically, e.g. in a single page application, then you must call the polyfill after loading the HTML.
-
-```javascripy
-polyfillDetails(content);
-```
-
-Where ```content``` is the parent node of the loaded HTML fragment.
+This project uses the [```lavu-details-polyfill```](https://github.com/leifoolsen/lavu-details-polyfill) package. 
+You can find the usage instructions [here](https://github.com/leifoolsen/lavu-details-polyfill#usage).
 
 
 ##### NOTE
