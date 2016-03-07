@@ -14,21 +14,12 @@ const cssLoader = [
   'postcss-loader'
 ].join('!');
 
-const sassLoader = [
+const styleLoader = [
   'css-loader?sourceMap',
   'postcss-loader',
   'resolve-url-loader',
   'sass-loader?sourceMap&expanded'
 ].join('!');
-
-const folders = {
-  JS   : path.resolve(__dirname, 'src/js'),
-  CSS  : path.resolve(__dirname, 'src/stylesheets'),
-  HTML : path.resolve(__dirname, 'src/html'),
-  DIST : path.resolve(__dirname, 'dist'),
-  BOWER: path.resolve(__dirname, 'bower_components'),
-  NPM  : path.resolve(__dirname, 'node_modules')
-};
 
 module.exports = {
   debug: true,
@@ -111,7 +102,7 @@ module.exports = {
       {
         test: /\.scss$/,
         include: path.join(__dirname, 'src'),
-        loader: ExtractTextPlugin.extract('style-loader', sassLoader)
+        loader: ExtractTextPlugin.extract('style-loader', styleLoader)
       },
       {
         test: /\.css$/,

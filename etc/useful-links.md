@@ -26,6 +26,9 @@
 * [Material Design Lite - Concise Style Guide](http://www.softwareapprentice.com/mdl-concise-styleguide/)
 * [Material Design Lite Encapsulated](https://github.com/genadis/encapsulated-mdl)
 * [Material Dashboard Lite](https://github.com/CreativeIT/getmdl-dashboard)
+* [Gixx - mdl-components-ext](https://github.com/Gixx/mdl-components-ext)
+* [preact-mdl](https://github.com/developit/preact-mdl)
+
 
 ### Material
 * [Google web starter kit](https://github.com/google/web-starter-kit)
@@ -447,6 +450,7 @@
 * [Introduction to Webpack with practical examples](http://julienrenaux.fr/2015/03/30/introduction-to-webpack-with-practical-examples/)
 * [Setting Up a Front End Development Environment](http://www.dennyferra.com/setting-up-a-front-end-development-environment/)
 * [Developing with Webpack](http://survivejs.com/webpack_react/developing_with_webpack/)
+* [Developing with Webpack](http://survivejs.com/webpack/)
 * [webpack-howto](https://github.com/petehunt/webpack-howto)
 * [Creating a workflow with WebPack](http://christianalfoni.github.io/javascript/2014/12/13/did-you-know-webpack-and-react-is-awesome.html)
 * [advanced-webpack](https://github.com/jcreamer898/advanced-webpack)
