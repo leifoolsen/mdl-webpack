@@ -61,7 +61,7 @@
 /*
  * Modified from: http://blustemy.io/drawing-pure-css-arrows-with-mixins/
  */
-@mixin arrow($direction: down, $base-width: 15px, $length: 10px, $color: inherit) {
+@mixin mdlext_arrow($direction: down, $base-width: 15px, $length: 10px, $color: inherit) {
   content: '';
   width: 0;
   height: 0;
