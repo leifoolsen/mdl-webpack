@@ -1,6 +1,5 @@
 'use strict';
 
-
 // First import the polyfills
 // Note: Uses the webpack ProvidePlugin to add polyfills as outlined
 //       here: http://mts.io/2015/04/08/webpack-shims-polyfills,
@@ -15,9 +14,9 @@ import { debounce } from 'core-decorators';
 import { throttle } from 'core-decorators';
 import moment from 'moment';
 import 'material-design-lite/material';
+import 'mdl-ext';
 
 import {qs, qsa, removeChilds} from './js/utils/domHelpers';
-import './js/components/select/selectfield';
 
 import { initAccordions } from './js/components/accordion/accordion';
 

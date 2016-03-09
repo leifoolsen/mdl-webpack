@@ -25,6 +25,7 @@
   '~material-design-iconic-font/dist/css/material-design-iconic-font.css',
   '~roboto-fontface/css/roboto-fontface.css',
   '~material-design-lite/src/material-design-lite',
+  '~mdl-ext/src/selectfield/selectfield',
   '~dialog-polyfill/dialog-polyfill.css';
 
 // 3. Base stuff
@@ -33,7 +34,6 @@
 // 4. Components
 @import
   'js/components/accordion/accordion',
-  'js/components/select/selectfield',
   'js/components/textfield/textfield';
 
 // 5. Layout-related sections
