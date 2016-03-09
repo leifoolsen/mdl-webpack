@@ -42,7 +42,8 @@ module.exports = {
       'custom-event',
       'dialog-polyfill',
       'moment',
-      'material-design-lite/material'
+      'material-design-lite/material',
+      'mdl-ext'
       // +++ other 3'rd party
     ]
   },
