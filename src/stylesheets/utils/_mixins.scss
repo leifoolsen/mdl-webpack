@@ -59,38 +59,6 @@
 }
 
 /*
- * Modified from: http://blustemy.io/drawing-pure-css-arrows-with-mixins/
- */
-@mixin mdlext_arrow($direction: down, $base-width: 15px, $length: 10px, $color: inherit) {
-  content: '';
-  width: 0;
-  height: 0;
-  border: ($base-width / 2) solid transparent;
-
-  @if $direction == up {
-    border-top: none;
-    border-bottom-width: $length;
-    border-bottom-color: $color;
-  }
-  @else if $direction == right {
-    border-right: none;
-    border-left-width: $length;
-    border-left-color: $color;
-  }
-  @else if $direction == down {
-    border-top-width: $length;
-    border-bottom: none;
-    border-top-color: $color;
-  }
-  @else if $direction == left {
-    border-right-width: $length;
-    border-left: none;
-    border-right-color: $color;
-  }
-}
-
-
-/*
  * Modified from: http://thesassway.com/intermediate/mixins-for-semi-transparent-colors
  */
 @mixin alpha-attribute($attribute, $color, $background) {
