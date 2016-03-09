@@ -10,8 +10,7 @@
 import { polyfillDetails } from 'lavu-details-polyfill';
 // End polyfills
 
-import { debounce } from 'core-decorators';
-import { throttle } from 'core-decorators';
+import { debounce, throttle} from 'core-decorators';
 import moment from 'moment';
 import 'material-design-lite/material';
 import 'mdl-ext';
