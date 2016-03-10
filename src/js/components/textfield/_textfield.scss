@@ -4,35 +4,33 @@
  */
 
 // Can not use variable for @import path, see: https://github.com/sass/sass/issues/739
-// Import evrything i main.scss :-(
+// Import evrything in main.scss :-(
 //@import "material-design-lite/src/variables";
 //@import "material-design-lite/src/textfield/textfield";
 
-@import "../../../stylesheets/utils/mixins";
+$mdlext-bordered-field-border-radius: 3px !default;
+$mdlext-bordered-field-border-width: 1px !default;
+$mdlext-bordered-field-background-color: rgba(#ffffff, 0.1) !default;
+$mdlext-bordered-field-height: 48px !default;
+$mdlext-bordered-field-padding: $input-text-padding + 4px !default;
+$mdlext-bordered-field-padding-top: 20px !default;
+$mdlext-bordered-field-padding-bottom: 0 !default;
+$mdlext-bordered-field-focus-border-color: #458ebd !default;
+$mdlext-bordered-field-focus-background-color: rgba(#d9e8f1, 0.2) !default;
+$mdlext-bordered-field-disabled-border-color: rgba(#c6ccd1, 1) !default;
+$mdlext-bordered-field-disabled-background-color: rgba(228, 236, 243, 0.25) !default;
+$mdlext-bordered-field-required-border-color: rgba(#e59617, 1) !default;
+$mdlext-bordered-field-required-background-color: rgba(#f9ead0, 0.1) !default;
 
-$mdlext-bordered-input-border-radius: 3px !default;
-$mdlext-bordered-input-border-width: 1px !default;
-$mdlext-bordered-input-background-color: rgba(#ffffff, 0.1) !default;
-$mdlext-bordered-input-height: 48px !default;
-$mdlext-bordered-input-padding: $input-text-padding + 4px !default;
-$mdlext-bordered-input-padding-top: 20px !default;
-$mdlext-bordered-input-padding-bottom: 0 !default;
-$mdlext-bordered-input-focus-border-color: #458ebd !default;
-$mdlext-bordered-input-focus-background-color: rgba(#d9e8f1, 0.2) !default;
-$mdlext-bordered-input-disabled-border-color: #c6ccd1 !default;
-$mdlext-bordered-input-disabled-background-color: rgba(228, 236, 243, 0.25) !default;
-$mdlext-bordered-input-required-border-color: #e59617 !default;
-$mdlext-bordered-input-required-background-color: rgba(#f9ead0, 0.1) !default;
+$mdlext-bordered-field-label-top: 35px !default;
+$mdlext-bordered-field-label-focused-top: 20px !default;
 
-$mdlext-bordered-input-label-top: 35px !default;
-$mdlext-bordered-input-label-focused-top: 20px !default;
-
-$mdlext-bordered-input-icon-font-size: 1.4em !default;
-$mdlext-bordered-input-icon-left: 4px !default;
+$mdlext-bordered-field-icon-font-size: 1.4em !default;
+$mdlext-bordered-field-icon-left: 4px !default;
 
 
 // "Theme" for this styling
-.mdlext-bordered-textfields {
+.mdlext-bordered-fields {
 
   // Styling for the input element.
   // Note: This styling also affects mdlext-selectfield! This is a (good or bad?) side effect of using inheritance.
@@ -44,36 +42,36 @@ $mdlext-bordered-input-icon-left: 4px !default;
       .mdlext-selectfield__select {
         &:required {
           border-color: $input-text-bottom-border-color;
-          background-color: $mdlext-bordered-input-required-background-color;
+          background-color: $mdlext-bordered-field-required-background-color;
         }
         &:focus,
         &:required:focus {
-          border-color: $mdlext-bordered-input-focus-border-color;
-          background-color: $mdlext-bordered-input-focus-background-color;
+          border-color: $mdlext-bordered-field-focus-border-color;
+          background-color: $mdlext-bordered-field-focus-background-color;
         }
       }
     }
     .mdl-textfield__input,
     .mdlext-selectfield__select {
-      background-color: $mdlext-bordered-input-background-color;
-      border: $mdlext-bordered-input-border-width solid $input-text-bottom-border-color;
-      border-radius: $mdlext-bordered-input-border-radius;
-      height: $mdlext-bordered-input-height;
-      padding: $mdlext-bordered-input-padding-top $mdlext-bordered-input-padding $mdlext-bordered-input-padding-bottom $mdlext-bordered-input-padding;
+      background-color: $mdlext-bordered-field-background-color;
+      border: $mdlext-bordered-field-border-width solid $input-text-bottom-border-color;
+      border-radius: $mdlext-bordered-field-border-radius;
+      height: $mdlext-bordered-field-height;
+      padding: $mdlext-bordered-field-padding-top $mdlext-bordered-field-padding $mdlext-bordered-field-padding-bottom $mdlext-bordered-field-padding;
 
       &:disabled {
         color: $input-text-disabled-text-color;
-        background-color: $mdlext-bordered-input-disabled-background-color;
-        border-color: $mdlext-bordered-input-disabled-border-color;
+        background-color: $mdlext-bordered-field-disabled-background-color;
+        border-color: $mdlext-bordered-field-disabled-border-color;
       }
       &:required {
-        background-color: $mdlext-bordered-input-required-background-color;
-        border-color: $mdlext-bordered-input-required-border-color;
+        background-color: $mdlext-bordered-field-required-background-color;
+        border-color: $mdlext-bordered-field-required-border-color;
       }
       &:focus,
       &:required:focus {
-        background-color: $mdlext-bordered-input-focus-background-color;
-        border-color: $mdlext-bordered-input-focus-border-color;
+        background-color: $mdlext-bordered-field-focus-background-color;
+        border-color: $mdlext-bordered-field-focus-border-color;
       }
     }
     .mdlext-selectfield__select {
@@ -88,20 +86,20 @@ $mdlext-bordered-input-icon-left: 4px !default;
     &.is-focused {
       .mdl-textfield__label,
       .mdlext-selectfield__label {
-        top: $mdlext-bordered-input-label-focused-top;
+        top: $mdlext-bordered-field-label-focused-top;
       }
     }
     &.is-dirty {
       .mdl-textfield__label,
       .mdlext-selectfield__label {
-        top: $mdlext-bordered-input-label-focused-top;
+        top: $mdlext-bordered-field-label-focused-top;
         visibility: visible;
       }
     }
     .mdl-textfield__label,
     .mdlext-selectfield__label {
-      padding-left: $mdlext-bordered-input-padding;
-      top: $mdlext-bordered-input-label-top;
+      padding-left: $mdlext-bordered-field-padding;
+      top: $mdlext-bordered-field-label-top;
 
       // Hides the colored underline for the TextField.
       &:after {
@@ -121,10 +119,9 @@ $mdlext-bordered-input-icon-left: 4px !default;
   &.mdlext-field--icon-right {
     & > i,
     & > .mdl-button {
-      //position: absolute;
-      //top: 50%;
-      //transform: translateY(-50%);
-      @include center-element(false, true);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
   &.mdlext-field--icon-left {
