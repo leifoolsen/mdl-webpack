@@ -26,15 +26,14 @@
   '~roboto-fontface/css/roboto-fontface.css',
   '~material-design-lite/src/material-design-lite',
   '~mdl-ext/src/selectfield/selectfield',
+  '~mdl-ext/src/bordered-fields/bordered-fields',
   '~dialog-polyfill/dialog-polyfill.css';
 
 // 3. Base stuff
 @import 'stylesheets/base/base';
 
 // 4. Components
-@import
-  'js/components/accordion/accordion',
-  'js/components/textfield/textfield';
+@import 'js/components/accordion/accordion';
 
 // 5. Layout-related sections
 @import 'stylesheets/layout/layout';
