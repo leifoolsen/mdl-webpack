@@ -23,7 +23,7 @@
     "es6-promise": "^3.1.2",
     "lavu-details-polyfill": "0.1.0",
     "material-design-lite": "^1.1.2",
-    "mdl-ext": "0.0.1",
+    "mdl-ext": "0.1.0",
     "moment": "^2.11.2",
     "whatwg-fetch": "^0.11.0"
   },
