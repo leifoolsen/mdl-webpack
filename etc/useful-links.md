@@ -148,6 +148,7 @@
 * [CSS Accordion Slider](http://accordionslider.com/)
 * [CSS Script: Accordion](http://www.cssscript.com/categories/accordion/)
 * [18 Best HTML5 CSS3 Accordion Tabs and Menus](http://designscrazed.org/html5-css3-accordion-tabs/)
+* [Data List Accordian](http://codepen.io/cmcg/pen/eNmmNK)
 
 ### Modal
 * [dialog-polyfill.js is a polyfill for &lt;dialog&gt;](https://github.com/GoogleChrome/dialog-polyfill)

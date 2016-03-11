@@ -50,10 +50,24 @@
     <div class="mdl-cell mdl-cell--4-col">
       <p>Text with floating label, required field</p>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="sample3" required>
-        <label class="mdl-textfield__label" for="sample3">Text...</label>
+        <input class="mdl-textfield__input" type="text" id="sample3"  list="languages" placeholder="Select a language" required>
+        <label class="mdl-textfield__label" for="sample3">Programming language</label>
       </div>
     </div>
+    <datalist id="languages">
+      <option value="HTML">
+      <option value="CSS">
+      <option value="JavaScript">
+      <option value="Java">
+      <option value="Ruby">
+      <option value="PHP">
+      <option value="Go">
+      <option value="Erlang">
+      <option value="Python">
+      <option value="C">
+      <option value="C#">
+      <option value="C++">
+    </datalist>
 
     <div class="mdl-cell mdl-cell--4-col">
       <p>Numeric with floating label</p>

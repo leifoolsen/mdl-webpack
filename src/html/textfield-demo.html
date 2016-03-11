@@ -39,6 +39,21 @@
 
 <div class = "textfield-demo-container">
 
+  <datalist id="languages">
+    <option value="HTML">
+    <option value="CSS">
+    <option value="JavaScript">
+    <option value="Java">
+    <option value="Ruby">
+    <option value="PHP">
+    <option value="Go">
+    <option value="Erlang">
+    <option value="Python">
+    <option value="C">
+    <option value="C#">
+    <option value="C++">
+  </datalist>
+
   <div class="mdl-grid mdl-grid--no-spacing">
 
     <div class="mdl-cell mdl-cell--4-col">
@@ -61,8 +76,8 @@
     <div class="mdl-cell mdl-cell--4-col">
       <p>Text with floating label, required field</p>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="mdl-sample3" required>
-        <label class="mdl-textfield__label" for="mdl-sample3">Text...</label>
+        <input class="mdl-textfield__input" type="text" id="mdl-sample3"  list="languages" placeholder="Select a programming language" required>
+        <label class="mdl-textfield__label" for="mdl-sample3">Programming Language</label>
       </div>
     </div>
 
