@@ -183,6 +183,10 @@
 * [Tooltip: CSS Tooltips built on Tether](https://github.com/HubSpot/tooltip)
 * [Shepherd: Guide your users through a tour of your app](https://github.com/HubSpot/shepherd)
 
+### Datalist
+* [Awesomplete: Ultra lightweight, customizable, simple autocomplete widget with zero dependencies.](http://www.sitepoint.com/javascript-autocomplete-widget-awesomplete/)
+* [Building a JavaScript Autocomplete Widget with Awesomplete](http://www.sitepoint.com/javascript-autocomplete-widget-awesomplete/)
+
 ## Web Components
 * [What are web components and why are they important?](http://www.revillweb.com/articles/why-web-components-are-important/)
 * [HTML Imports](http://webcomponents.org/polyfills/html-imports/)
