@@ -15,7 +15,7 @@
     "ci": "npm run lint && npm run test:coverage"
   },
   "dependencies": {
-    "babel-polyfill": "6.6.1",
+    "babel-polyfill": "6.7.2",
     "babel-runtime": "6.6.1",
     "core-decorators": "^0.11.0",
     "custom-event": "^1.0.0",
@@ -23,14 +23,14 @@
     "es6-promise": "^3.1.2",
     "lavu-details-polyfill": "0.1.0",
     "material-design-lite": "1.1.2",
-    "mdl-ext": "0.2.0-beta.0",
+    "mdl-ext": "0.2.1",
     "moment": "^2.12.0",
     "whatwg-fetch": "^0.11.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.3",
     "babel-cli": "6.6.5",
-    "babel-core": "6.7.0",
+    "babel-core": "6.7.2",
     "babel-eslint": "^5.0.0",
     "babel-loader": "6.2.4",
     "babel-plugin-syntax-decorators": "^6.5.0",

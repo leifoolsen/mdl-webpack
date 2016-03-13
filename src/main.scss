@@ -20,14 +20,13 @@
 
 // 2. Vendors
 @import
-  '~material-design-icons/iconfont/material-icons.css',
+  '../node_modules/material-design-icons/iconfont/material-icons.css',
   'stylesheets/vendors/material-design-icons',
-  '~material-design-iconic-font/dist/css/material-design-iconic-font.css',
-  '~roboto-fontface/css/roboto-fontface.css',
-  '~material-design-lite/src/material-design-lite',
-  '~mdl-ext/src/selectfield/selectfield',
-  '~mdl-ext/src/bordered-fields/bordered-fields',
-  '~dialog-polyfill/dialog-polyfill.css';
+  '../node_modules/material-design-iconic-font/dist/css/material-design-iconic-font.css',
+  '../node_modules/roboto-fontface/css/roboto-fontface.css',
+  '../node_modules/material-design-lite/src/material-design-lite',
+  '../node_modules/mdl-ext/src/mdl-ext',
+  '../node_modules/dialog-polyfill/dialog-polyfill.css';
 
 // 3. Base stuff
 @import 'stylesheets/base/base';

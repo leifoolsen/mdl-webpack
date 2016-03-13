@@ -123,8 +123,8 @@ module.exports = {
           name: '/images/[name].[ext]'
         }
       },
-      {test: /\.gif/, loader: 'url-loader?limit=8192&mimetype=image/gif&name=/images/[name].[ext]'},
-      {test: /\.png/, loader: 'url-loader?limit=8192&mimetype=image/png&name=/images/[name].[ext]'},
+      { test: /\.gif/, loader: 'url-loader?limit=8192&mimetype=image/gif&name=/images/[name].[ext]' },
+      { test: /\.png/, loader: 'url-loader?limit=8192&mimetype=image/png&name=/images/[name].[ext]' },
       { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=100000&minetype=application/font-woff" },
       { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader?limit=100000" }
     ]
@@ -177,6 +177,12 @@ module.exports = {
     //
     // see: https://github.com/webpack/docs/wiki/hot-module-replacement-with-webpack
   ],
+  sassLoader: {
+    includePaths: [
+      path.resolve(__dirname, './node_modules'),
+      path.resolve(__dirname, './src')
+    ]
+  },
   postcss: [
     autoprefixer({
       browsers: ['last 2 versions']
