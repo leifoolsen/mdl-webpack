@@ -28,7 +28,7 @@
 * [Material Dashboard Lite](https://github.com/CreativeIT/getmdl-dashboard)
 * [Gixx - mdl-components-ext](https://github.com/Gixx/mdl-components-ext)
 * [preact-mdl](https://github.com/developit/preact-mdl)
-
+* [mdl-webpack-boilerplate](https://github.com/shprink/mdl-webpack-boilerplate)
 
 ### Material
 * [Google web starter kit](https://github.com/google/web-starter-kit)
@@ -574,7 +574,6 @@
 * [Rxmq.js - JavaScript pub/sub library based on RxJS](https://github.com/rxmqjs/rxmq.js)
 * [Flyd - The modular, KISS, functional reactive programming library for JavaScript.](https://github.com/paldepind/flyd)
 * [Cycle.js - A functional and reactive JavaScript framework for cleaner code](http://cycle.js.org/)
-* [ReactiveX - The Observer pattern done right](http://reactivex.io/)
 * [Becoming fully reactive: an in-depth explanation of Mobservable](https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254#.i4ku2stuj)
 * [Testing reactive code](https://glebbahmutov.com/blog/testing-reactive-code/)
 
