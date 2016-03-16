@@ -125,9 +125,9 @@ body {
   #accordion {
     .mdlext-accordion__panel {
 
-      .mdlext-accordion__panel__title {
+      .mdlext-accordion__panel__header {
 
-        .mdlext-accordion__panel__title__transform {
+        .mdlext-accordion__panel__header__transform {
           img {
             width: 32px;
           }
@@ -137,11 +137,11 @@ body {
 
         height: 64px;
 
-        .mdlext-accordion__panel__title {
+        .mdlext-accordion__panel__header {
           height: 64px;
           min-height: 64px;
 
-          .mdlext-accordion__panel__title__transform {
+          .mdlext-accordion__panel__header__transform {
             height: 64px;
 
             img {
@@ -157,7 +157,7 @@ body {
       padding: 0;
     }
 
-    .mdlext-accordion__panel[open] .mdlext-accordion__panel__title {
+    .mdlext-accordion__panel[open] .mdlext-accordion__panel__header {
       background: rgba(144, 202, 249, 0.5);
     }
   }

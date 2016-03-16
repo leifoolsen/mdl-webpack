@@ -29,6 +29,8 @@
 * [Gixx - mdl-components-ext](https://github.com/Gixx/mdl-components-ext)
 * [preact-mdl](https://github.com/developit/preact-mdl)
 * [mdl-webpack-boilerplate](https://github.com/shprink/mdl-webpack-boilerplate)
+* [Accordion needed? #221](https://github.com/google/material-design-lite/issues/221)
+* [Implemented date picker component #4187](https://github.com/google/material-design-lite/pull/4187/)
 
 ### Material
 * [Google web starter kit](https://github.com/google/web-starter-kit)
