@@ -31,6 +31,7 @@
 * [mdl-webpack-boilerplate](https://github.com/shprink/mdl-webpack-boilerplate)
 * [Accordion needed? #221](https://github.com/google/material-design-lite/issues/221)
 * [Implemented date picker component #4187](https://github.com/google/material-design-lite/pull/4187/)
+* [http://www.sitepoint.com/practical-introduction-material-design-lite-google/](A Practical Introduction to Material Design Lite by Google)
 
 ### Material
 * [Google web starter kit](https://github.com/google/web-starter-kit)
