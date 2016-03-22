@@ -718,6 +718,9 @@
 * [Flexbox accordion](http://codepen.io/aann/pen/dPqBML)
 * [Form Fields - MDL bordered fields](http://codepen.io/prajwal078/pen/LVJZXz)
 * [Animated clock (Pure CSS)](http://codepen.io/jantm/pen/qrnwF)
+* [CSS "Crop" Image to Square](http://codepen.io/KristinB/pen/tdKvL)
+* [responsive layout with aspect ratios and items spanning rows](http://codepen.io/kewh/pen/eAmxr)
+* [Modern HTML5 Lightbox in 12 Lines of JavaScript](http://codepen.io/dudleystorey/pen/bNdvym)
 
 
 ## Videos
