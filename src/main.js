@@ -8,6 +8,10 @@
 //       The dialog polyfill must be handled separateley, see App.run() method
 
 import { polyfillDetails } from 'lavu-details-polyfill';
+
+//import { eqjs } from 'eq.js';  // Does not work
+const eqjs = require('eq.js');
+
 // End polyfills
 
 import { debounce, throttle} from 'core-decorators';
@@ -16,8 +20,6 @@ import 'material-design-lite/material';
 import 'mdl-ext';
 
 import {qs, qsa, removeChilds} from './js/utils/domHelpers';
-
-import { initAccordions } from './js/components/accordion/accordion';
 
 class Header {
   titleClass = '.mdl-layout-title';
@@ -84,8 +86,6 @@ class Drawer {
   constructor(selector= '#drawer') {
     this.selector     = selector;
     this.drawerEl     = qs(this.selector);
-
-    initAccordions(this.drawerEl);
 
     this.navLinkQuery = `${this.accordionId} a.mdl-navigation__link`;
 
@@ -160,14 +160,14 @@ class Content {
           removeChilds(contentPanelEl);
           contentPanelEl.insertAdjacentHTML('afterbegin', text);
 
-          polyfillDetails(contentPanelEl);
-
-          // How do I call this directly from iported page??
-          initAccordions(contentPanelEl);
-
           [...qsa('script', contentPanelEl)].forEach(script => {
             eval(script.innerHTML);
           });
+
+          polyfillDetails(contentPanelEl);
+
+          eqjs.refreshNodes();
+          eqjs.query(undefined, true);
 
           this.contentChange();
         })

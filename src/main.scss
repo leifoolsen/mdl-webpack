@@ -14,25 +14,23 @@
 
 
 // 1. Configuration and helpers
-@import
-  'stylesheets/utils/variables',
-  'stylesheets/utils/mixins';
+@import 'stylesheets/utils/variables';
+@import 'stylesheets/utils/mixins';
 
 // 2. Vendors
-@import
-  '../node_modules/material-design-icons/iconfont/material-icons.css',
-  'stylesheets/vendors/material-design-icons',
-  '../node_modules/material-design-iconic-font/dist/css/material-design-iconic-font.css',
-  '../node_modules/roboto-fontface/css/roboto-fontface.css',
-  '../node_modules/material-design-lite/src/material-design-lite',
-  '../node_modules/mdl-ext/src/mdl-ext',
-  '../node_modules/dialog-polyfill/dialog-polyfill.css';
+@import '../node_modules/material-design-icons/iconfont/material-icons.css';
+@import 'stylesheets/vendors/material-design-icons';
+@import '../node_modules/material-design-iconic-font/dist/css/material-design-iconic-font.css';
+@import '../node_modules/roboto-fontface/css/roboto-fontface.css';
+@import '../node_modules/material-design-lite/src/material-design-lite';
+@import '../node_modules/dialog-polyfill/dialog-polyfill.css';
+
+@import '../node_modules/mdl-ext/src/mdl-ext-eqjs';
 
 // 3. Base stuff
 @import 'stylesheets/base/base';
 
-// 4. Components
-@import 'js/components/accordion/accordion';
+// 4. Internal Components
 
 // 5. Layout-related sections
 @import 'stylesheets/layout/layout';
