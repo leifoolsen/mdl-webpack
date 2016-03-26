@@ -1,0 +1,118 @@
+<h5>Grid</h5>
+
+<style>
+  .demo-grid {
+    margin-bottom: 16px;
+  }
+  .demo-grid .mdl-grid,
+  .demo-grid .mdlext-grid {
+    /*padding: 0;*/
+  }
+  .demo-grid .mdl-cell,
+  .demo-grid .mdlext-cell {
+    background: rgb(63,81,181);
+    text-align: center;
+    color: white;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+  }
+  .demo-grid .mdl-cell:nth-child(odd),
+  .demo-grid .mdlext-cell:nth-child(odd) {
+    background: rgb(33,150,243);
+  }
+  .demo-grid-c .mdl-cell,
+  .demo-grid-c .mdlext-cell {
+    background: rgb(255,213,79);
+    color: #000;
+    border: 0;
+  }
+  .demo-grid-c .mdl-cell:nth-child(odd),
+  .demo-grid-c .mdlext-cell:nth-child(odd) {
+    background: rgb(165,214,167);
+    color: #000;
+  }
+</style>
+
+
+<p>Element queries vs Media Queries. Drag the slider to see the effect</p>
+
+<p id="grid-container-width" style="text-align: center;">
+  <strong>100</strong>%
+  <input class="mdl-slider mdl-js-slider" type="range" min="50" max="100" value="100" step="10" tabindex="0">
+</p>
+
+<div style="border: 1px solid #dddddd;">
+  <div id="grid-container" style="margin: 0 auto;">
+
+    <h5>mdlext-grid, using element queries</h5>
+    <div class="demo-grid">
+      <div class="mdlext-grid mdlext-grid--no-spacing">
+        <div class="mdlext-cell mdlext-cell--1-col mdlext-cell--2-col-tablet">1</div>
+        <div class="mdlext-cell mdlext-cell--1-col mdlext-cell--2-col-tablet">1</div>
+        <div class="mdlext-cell mdlext-cell--1-col mdlext-cell--2-col-tablet">1</div>
+        <div class="mdlext-cell mdlext-cell--1-col mdlext-cell--2-col-tablet">1</div>
+        <div class="mdlext-cell mdlext-cell--1-col mdlext-cell--2-col-tablet">1</div>
+        <div class="mdlext-cell mdlext-cell--1-col mdlext-cell--2-col-tablet">1</div>
+        <div class="mdlext-cell mdlext-cell--1-col mdlext-cell--2-col-tablet">1</div>
+        <div class="mdlext-cell mdlext-cell--1-col mdlext-cell--2-col-tablet">1</div>
+        <div class="mdlext-cell mdlext-cell--1-col mdlext-cell--2-col-tablet">1</div>
+        <div class="mdlext-cell mdlext-cell--1-col mdlext-cell--2-col-tablet">1</div>
+        <div class="mdlext-cell mdlext-cell--1-col mdlext-cell--2-col-tablet">1</div>
+        <div class="mdlext-cell mdlext-cell--1-col mdlext-cell--2-col-tablet">1</div>
+      </div>
+    </div>
+
+    <div class="demo-grid demo-grid-c">
+      <div class="mdlext-grid mdlext-grid--no-spacing">
+        <div class="mdlext-cell mdlext-cell--4-col mdlext-cell--2-col-tablet mdlext-cell--1-col-phone">4 (2 tablet, 1 phone)</div>
+        <div class="mdlext-cell mdlext-cell--6-col mdlext-cell--4-col-tablet mdlext-cell--3-col-phone">6 (4 tablet, 3 phone)</div>
+        <div class="mdlext-cell mdlext-cell--2-col mdlext-cell--2-col-tablet mdlext-cell--hide-phone">2 (2 tablet, hide phone)</div>
+      </div>
+    </div>
+
+
+    <h5>mdl-grid, using media queries</h5>
+    <div class="demo-grid">
+      <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--2-col-tablet">1</div>
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--2-col-tablet">1</div>
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--2-col-tablet">1</div>
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--2-col-tablet">1</div>
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--2-col-tablet">1</div>
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--2-col-tablet">1</div>
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--2-col-tablet">1</div>
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--2-col-tablet">1</div>
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--2-col-tablet">1</div>
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--2-col-tablet">1</div>
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--2-col-tablet">1</div>
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--2-col-tablet">1</div>
+      </div>
+    </div>
+
+    <div class="demo-grid demo-grid-c">
+      <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--1-col-phone">4 (2 tablet, 1 phone)</div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--3-col-phone">6 (4 tablet, 3 phone)</div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--hide-phone">2 (2 tablet, hide phone)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    'use strict';
+    var widthLabel = document.querySelector('#grid-container-width strong');
+    var slider = document.querySelector('#grid-container-width input');
+
+    slider.oninput = function() {
+      setWidth(this.value);
+    };
+    function setWidth(value) {
+      widthLabel.innerText = value;
+      document.querySelector('#grid-container').style.width = value + '%';
+      eqjs.refreshNodes();
+      eqjs.query(undefined, true);
+    }
+  }());
+</script>

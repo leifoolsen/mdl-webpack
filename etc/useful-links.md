@@ -492,6 +492,8 @@
 * [How to polyfill Array.prototype.find using webpack ProvidePlugin?](http://stackoverflow.com/questions/34647413/how-to-polyfill-array-prototype-find-using-webpack-provideplugin)
 * [Never `import React from ‘react’` again, thanks to Webpack’s ProvidePlugin](https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.yz3zm9rjk)
 * [Using webpack: How to build and distribute libraries via NPM using WebPack bundler](https://glebbahmutov.com/blog/using-webpack/)
+* [Sample wepack config](https://github.com/colindresj/sample-webpack-config)
+* [Webpack Declarative](http://alexfedoseev.com/post/66/webpack-declarative-way)
 
 
 ## Lint
