@@ -9,8 +9,9 @@
 
 import { polyfillDetails } from 'lavu-details-polyfill';
 
-//import { eqjs } from 'eq.js';  // Does not work
-const eqjs = require('eq.js');
+//const eqjs = require('eq.js');
+import eqjs from 'eq.js';
+window.eqjs = eqjs;        // Put in global scope - for use with script in page
 
 // End polyfills
 

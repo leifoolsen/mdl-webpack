@@ -97,6 +97,7 @@
 * [Tutorial – write in ES6 and Sass on the front end with Webpack and Babel](http://tech.90min.com/?p=1340)
 * [Webpack CSS Example](https://github.com/bensmithett/webpack-css-example)
 * [Faster SASS builds with Webpack](http://eng.localytics.com/faster-sass-builds-with-webpack/)
+* [FUN WITH SASS & FONT ICONS](http://jaydenseric.com/blog/fun-with-sass-and-font-icons)
 
 ### BEM
 * [BEM 101, CSS Tricks](https://css-tricks.com/bem-101/)
@@ -167,6 +168,8 @@
 * [HTML5 Dialog tag with polyfill](http://codepen.io/getonlineamit/pen/LCbop)
 * [ShowModalDialog Polyfill](https://github.com/niutech/showModalDialog)
 * [Native Modal Windows in HTML5: Using the dialog Element](http://thenewcode.com/957/Native-Modal-Windows-in-HTML5-Using-the-dialog-Element)
+* [css-modal](https://github.com/drublic/css-modal)
+* [Responsive Modal Design - Material Design Modals](https://codepen.io/ettrics/pen/Jdjdzp)
 
 ### Details element
 * [Fixing the details Element](http://www.sitepoint.com/fixing-the-details-element/)
@@ -392,7 +395,7 @@
 * [Dom Diff](https://github.com/skatejs/dom-diff)
 * [config.json](https://github.com/bulyshko/config.json)
 * [Contrasting Enterprise Node.js Frameworks: Hapi vs. Kraken vs. Sails.js vs. Loopback](http://www.capitalone.io/blog/contrasting-enterprise-nodejs-frameworks/)
-
+* [Slideout.js - A touch slideout navigation menu for your mobile web apps.](https://github.com/Mango/slideout)
 ### Frameworks
 * [Aurelia - next gen JavaScript client framework](http://aurelia.io/)
 * [aurelia-material - Aurelia wrapper for Material Design Lite.](https://github.com/redpelicans/aurelia-material)
@@ -723,6 +726,7 @@
 * [CSS "Crop" Image to Square](http://codepen.io/KristinB/pen/tdKvL)
 * [responsive layout with aspect ratios and items spanning rows](http://codepen.io/kewh/pen/eAmxr)
 * [Modern HTML5 Lightbox in 12 Lines of JavaScript](http://codepen.io/dudleystorey/pen/bNdvym)
+* [Rounded Avatar](http://codepen.io/mikefowler/pen/nwEbK)
 
 
 ## Videos
