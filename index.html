@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mdl-webpack by leifoolsen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Mdl-webpack</h1>
+      <h2 class="project-tagline">A Google Material Design Lite project built with NPM and Webpack using SASS and EcmaScript 2015/2016</h2>
+      <a href="https://github.com/leifoolsen/mdl-webpack" class="btn">View on GitHub</a>
+      <a href="https://github.com/leifoolsen/mdl-webpack/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/leifoolsen/mdl-webpack/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="mdl-webpack" class="anchor" href="#mdl-webpack" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MDL Webpack</h1>
+
+<p>A <a href="http://www.getmdl.io/index.html">Google Material Design Lite</a> project built with NPM and Webpack using SASS and EcmaScript 2015/2016.</p>
+
+<p><img src="./etc/mdl-webpack.png"></p>
+
+<p>Material Design is a design language developed by Google. Expanding upon the "card" motifs 
+that debuted in Google Now, Material Design makes more liberal use of grid-based layouts, responsive animations and 
+transitions, padding, and depth effects such as lighting and shadows.</p>
+
+<p>Material Design Lite lets you add a Material Design look and feel to your websites. It doesn’t rely on any JavaScript 
+frameworks and aims to optimize for cross-device use,  and offer an experience that is immediately accessible</p>
+
+<h2>
+<a id="what-is-included" class="anchor" href="#what-is-included" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What is included</h2>
+
+<p>A Material Design Lite project showcasing all components in MDL version 1.1.2. You can use SASS variables to modify all<br>
+aspects of MDL - a typical use case is to configure fonts and color schemes. The project has selfhosting of font Roboto, 
+Material Icons and Material Design Iconic Font - you don't need any external references in HTML. </p>
+
+<p>A few custom components are also hosted in this project (later they should move to their own repo).</p>
+
+<h2>
+<a id="why" class="anchor" href="#why" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why</h2>
+
+<p>Material Design Lite is a great SASS/CSS framework, but the pre built themes was not sufficient for my use. SASS with
+Webpack provides control with all aspects of MDL and makes it easy to customize the design.</p>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting started</h2>
+
+<ul>
+<li>
+<a href="https://nodejs.org/en/">NodeJS</a> version 4.x or 5.x must be installed in advance and it is assumed that you have basic knowledge of NodeJS.</li>
+<li>Fork, clone or download ZIP</li>
+<li>CD to project root folder</li>
+<li>Install project dependencies: <code>npm install</code>
+</li>
+<li>Start the project in development mode: <code>npm run dev</code>
+</li>
+<li>Open a browser an hit: <code>http://localhost:8080/webpack-dev-server/</code>
+</li>
+<li>Import the project into an IDE of your choice</li>
+<li>Open: <code>./src/stylesheets/utils/_variables.scss</code> </li>
+<li>In the <code>/* ==========  Color &amp; Themes  ========== */</code> section add the following code:</li>
+</ul>
+
+<div class="highlight highlight-source-sass"><pre><span class="pl-v">$color-primary</span>: <span class="pl-s">"63,63,63"</span>;
+<span class="pl-v">$color-primary-dark</span>: <span class="pl-s">"43,43,43"</span>;
+<span class="pl-v">$color-primary-contrast</span>: <span class="pl-s">"114,160,224"</span>;
+<span class="pl-v">$color-accent</span>: <span class="pl-s">"69,97,136"</span>;
+<span class="pl-v">$color-accent-contrast</span>: <span class="pl-s">"255,255,255"</span>;</pre></div>
+
+<ul>
+<li>Save the modified file.</li>
+<li>If the Webpack Dev Server is running, you will (almost) immediately see the changes in your browser.</li>
+</ul>
+
+<h2>
+<a id="custom-components" class="anchor" href="#custom-components" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custom components</h2>
+
+<p>This project has a few custom components. </p>
+
+<h3>
+<a id="accordion-component" class="anchor" href="#accordion-component" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Accordion Component</h3>
+
+<p><img src="./etc/flexbox-accordion.png"></p>
+
+<p>An accordion component is a collection of expandable panels associated with a common outer container. Panels consist of 
+a header and an associated content region or panel. The primary use of an Accordion is to present multiple sections of 
+content on a single page without scrolling, where all of the sections are peers in the application or object hierarchy. 
+The general look is similar to a tree where each root tree node is an expandable accordion header. The user navigates 
+and makes the contents of each panel visible (or not) by interacting with the Accordion Header.</p>
+
+<p>Credits: The Accordion component is based on this <a href="http://codepen.io/aann/pen/dPqBML">CodePen</a></p>
+
+<h3>
+<a id="bordered-input-fields-theme-component" class="anchor" href="#bordered-input-fields-theme-component" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bordered Input Fields Theme Component</h3>
+
+<p><img src="./etc/bordered-fields-theme.png"></p>
+
+<p>Demonstrates how you can create your own theme of MDL text fields.</p>
+
+<p>Credits: The Bordered Fields Theme component is based on this <a href="http://codepen.io/prajwal078/pen/LVJZXz">CodePen</a></p>
+
+<h3>
+<a id="select-element-component" class="anchor" href="#select-element-component" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Select Element Component</h3>
+
+<p><img src="./etc/select-element.png"></p>
+
+<p>The HTML <code>&lt;select&gt;</code> element represents a control that presents a menu of options. MDL does not provide it's own 
+component for the <code>&lt;select&gt;</code> element.</p>
+
+<p>Credits: The Select component is based on the following sources:</p>
+
+<ul>
+<li>
+<a href="https://github.com/mebibou/mdl-selectfield">Material Design Lite selectfield component</a> </li>
+<li><a href="https://github.com/MEYVN-digital/mdl-selectfield">mdl-selectfield</a></li>
+<li><a href="http://codepen.io/michaelschofield/pen/qEzWaM">Simple Material Design Login, with select field</a></li>
+<li><a href="http://codepen.io/pudgereyem/pen/PqBxQx">Material Design &lt;select&gt; element, css only</a></li>
+</ul>
+
+<h2>
+<a id="polyfills" class="anchor" href="#polyfills" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Polyfills</h2>
+
+<h3>
+<a id="dialog-element-polyfill" class="anchor" href="#dialog-element-polyfill" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dialog Element Polyfill</h3>
+
+<p>This project uses the GoogleChrome <a href="https://github.com/GoogleChrome/dialog-polyfill"><code>dialog-polyfill</code></a> package.
+You can find the usage instructions <a href="https://github.com/GoogleChrome/dialog-polyfill#usage">here</a></p>
+
+<h3>
+<a id="details-element-polyfill" class="anchor" href="#details-element-polyfill" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Details Element Polyfill</h3>
+
+<p>This project uses the <a href="https://github.com/leifoolsen/lavu-details-polyfill"><code>lavu-details-polyfill</code></a> package. 
+You can find the usage instructions <a href="https://github.com/leifoolsen/lavu-details-polyfill#usage">here</a>.</p>
+
+<h5>
+<a id="note" class="anchor" href="#note" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NOTE</h5>
+
+<p>This project is still in it's early stages.</p>
+
+<p>As part of my work I review the usability of MDL as a SASS framework for both internal and public projects. 
+In the coming months we plan to use MDL in some of our internal projects. At the same time, I plan to expand this 
+project so that it can run as part of the actual frontend project. In this way it will be easy for web designers to 
+make changes in design and simultaneously verify that the changes are as expected for all aspects of the design.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/leifoolsen/mdl-webpack">Mdl-webpack</a> is maintained by <a href="https://github.com/leifoolsen">leifoolsen</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
