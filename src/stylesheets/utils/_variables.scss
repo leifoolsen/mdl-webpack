@@ -12,29 +12,167 @@ $image_path: '/static/images/mdl';  // See: webpack.config.js CopyWebpackPlugin
 
 
 /* ==========  Color & Themes  ========== */
-/*
-$color-primary: "63,63,63";
-$color-primary-dark: "43,43,43";
-$color-primary-contrast: "114,160,224";
-$color-accent: "69,97,136";
-$color-accent-contrast: "255,255,255";
-*/
+$color-primary: 0, 188, 212;
+$color-secondary: 255, 82, 82;
+$color-baby-blue: 116, 199, 209;
+$color-cerulean: 80, 150, 215;
+$color-mint: 96, 196, 150;
+$color-white: 255, 255, 255;
+$color-black: 0, 0, 0;
+
+$background-color: #4e4e4e;
+$background-color-header: #242424;
+
+
+/* ==========  Typography  ========== */
+
+/* ==========  Components  ========== */
+
+/* ==========  Standard Buttons  ========== */
+
+// Default button colors.
+$button-secondary-color: unquote("rgb(#{$color-white})");
+
+// Colored button colors.
+$button-primary-color-alt: unquote("rgb(#{$color-secondary})");
+
+// Disabled button colors.
+$button-primary-color-disabled: #6b6b6b;
+$button-secondary-color-disabled: unquote("rgba(#{$color-white}, 0.3)");
+
+// FAB colors and sizes.
+$button-fab-color-alt: unquote("rgb(#{$color-secondary})");
+$button-fab-text-color-alt: #ffffff;
+$button-fab-hover-color-alt: #ff4c4c;
+$button-fab-active-color-alt: #f23d3d;
+
+/* ==========  Icon Toggles  ========== */
+
+/* ==========  Radio Buttons  ========== */
+
+/* ==========  Ripple effect  ========== */
+
+/* ==========  Layout  ========== */
+$layout-nav-color: #202020;
+
+// Drawer
+$layout-drawer-bg-color: #202020;
+$layout-drawer-navigation-link-active-background: unquote("rgba(#{$color-black}, 0.25)");
+$layout-drawer-navigation-link-active-color: unquote("rgb(#{$color-primary})");
+
+// Header
+$layout-header-text-color: unquote("rgb(#{$color-primary})");
+
+/* ==========  Content Tabs  ========== */
+
+/* ==========  Checkboxes  ========== */
+
+/* ==========  Switches  ========== */
+
+/* ==========  Spinner  ========== */
 
 /* ==========  Text fields  ========== */
 
+/* ==========  Card  ========== */
+$card-background-color: $background-color;
+$card-text-color: unquote("rgba(#{$color-white}, 0.8)");
+$card-supporting-text-text-color: unquote("rgba(#{$color-white}, 0.8)");
+$card-subtitle-color: unquote("rgba(#{$color-white}, 0.5)");
+
+/* ==========  Sliders ========== */
+
+/* ========== Progress ========== */
+$progress-main-color: unquote("rgb(#{$color-secondary})");
+$progress-secondary-color: unquote("rgba(#{$color-white}, 0.4)");
+
+/* ==========  List ========== */
+
+/* ==========  Item ========== */
+
+// Default Item Colors
+$default-item-focus-bg-color: unquote("rgba(#{$color-black}, 0.15)");
+$default-item-active-bg-color: unquote("rgba(#{$color-black}, 0.15)");
+$default-item-hover-bg-color: unquote("rgba(#{$color-black}, 0.2)");
+
+/* ==========  Dropdown menu ========== */
+$default-dropdown-bg-color: $background-color;
+
+/* ==========  Tooltips  ========== */
+$tooltip-background-color: rgba(#353535, 0.9);
+
+/* ==========  Footer  ========== */
 
 /* TEXTFIELD */
 
+/* SWITCH */
+
+/* SPINNER */
+
+/* RADIO */
+
+/* MENU */
+
+/* LIST */
+$list-border: 0;
+$list-bottom-padding: 16px;
+$list-avatar-text-left-distance: 64px;
+$list-icon-text-left-distance: 56px;
+$list-avatar-size: 32px;
+$list-two-line-height: 64px;
+
+/* LAYOUT */
+$layout-header-mobile-indent: 16px;
+$layout-header-desktop-indent: 16px;
+
+/* ICON TOGGLE */
+
+/* FOOTER */
+
+/* CHECKBOX */
+$checkbox-button-size: 18px;
+
+/* CARD */
+/* Card dimensions */
+$card-height: auto;
+$card-width: auto;
+$card-title-font-size: 24px;
+$card-title-text-font-weight: 400;
+$card-vertical-padding: 20px;
+
+/* BUTTON */
+$button-font-weigth: 400;
+
+/* ANIMATION */
+
+/* PROGRESS */
+
+/* BADGE */
+$badge-color: unquote("rgb(#{$color-white})");
+$badge-background: unquote("rgb(#{$color-primary})");
+
+/* SHADOWS */
 
 /* GRID */
-$grid-desktop-gutter: 12px;
+$grid-desktop-gutter: 6px;
 $grid-desktop-margin: 12px;
 
-$grid-tablet-gutter: 8px;
+$grid-tablet-gutter: 4px;
 $grid-tablet-margin: 8px;
 
-$grid-phone-gutter: 4px;
+$grid-phone-gutter: 2px;
 $grid-phone-margin: 4px;
+
+/* DATA TABLE */
+
+/* DIALOG */
+
+/* SNACKBAR */
+
+/* TOOLTIP */
+$tooltip-font-size: 12px;
+$table-tooltip-vertical-padding: 5px;
+$table-tooltip-horizontal-padding: 8px;
+
 
 
 /* -----------------------------------------------
