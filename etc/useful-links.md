@@ -15,7 +15,7 @@
 * [Material Design Themes](http://materialdesignthemes.com/)
 * [Material Design Lite Tutorial](http://www.tutorialspoint.com/materialdesignlite/index.htm)
 * [Material Design Lite - Layouts](http://www.tutorialspoint.com/materialdesignlite/materialdesignlite_layouts.htm)
-* [Material Design Lite selectfield component](https://github.com/mebibou/mdl-selectfield) 
+* [Material Design Lite selectfield component](https://github.com/mebibou/mdl-selectfield)
 * [Material Design LiteのNAVIGATION LAYOUTSの](http://keiwt.hatenablog.com/entry/2015/09/15/163808)
 * [Creating an MDL theme](http://mdlhut.com/2015/08/creating-an-mdl-theme/)
 * [Sass Variables for Material Design's Colour Palette](http://www.himpfen.com/sass-variables-material-design/)
@@ -205,14 +205,25 @@
 * [html-template-tag](https://github.com/AntonioVdlC/html-template-tag)
 * [html-template-to-dom](https://github.com/medikoo/html-template-to-dom)
 * [Web Components, by Bill Stavroulakis](http://bstavroulakis.com/blog/web/web-components-html-templates/)
+* [WebBlock.js - Create expressive and powerful web components with virtual dom](https://github.com/richardanaya/webblock)
+* [incremental-dom - An in-place DOM diffing library](https://github.com/google/incremental-dom)
+* [HTML5 Imports: Embedding an HTML File Inside Another HTML File](http://www.onextrapixel.com/2014/09/01/html5-imports-embedding-an-html-file-inside-another-html-file/)
+* [An Introduction to HTML Imports (Tutorial)](http://www.sitepoint.com/introduction-html-imports-tutorial/)
+* [Polymer: Vulcanize all the things!](https://zisismaras.me/polymer/2015/04/02/polymer-vulcanize.html)
+* [Concatenating Web Components with Vulcanize](https://www.polymer-project.org/0.5/articles/concatenating-web-components.html)
+* [Polymer/vulcanize](https://github.com/Polymer/vulcanize)
+* [k2wanko/fly-vulcanize](https://github.com/k2wanko/fly-vulcanize)
+* [Vulcanize loader for webpack](https://github.com/aitoroses/vulcanize-loader)
+* [vulcanize-demos](https://github.com/blackstone86/vulcanize-demos)
 
 ## JS
 * [Minimizing browser reflow](https://developers.google.com/speed/articles/reflow)
 * [10 Ways to Minimize Reflows and Improve Performance](http://www.sitepoint.com/10-ways-minimize-reflows-improve-performance/?utm_source=sitepoint&utm_medium=nextpost&utm_term=javascript)
 * [REFLOWS & REPAINTS: CSS PERFORMANCE MAKING YOUR JAVASCRIPT SLOW?](http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/)
 * [Removing Useless Nodes From the DOM](http://www.sitepoint.com/removing-useless-nodes-from-the-dom/)
-  [How to JavaScript? (or yet another JavaScript guide) Part 1 - Introduction](https://medium.com/@jun.hanamaki/how-to-javascript-or-yet-another-javascript-guide-part-1-introduction-a531a21facc6#.s8kj22wbp)
-  
+* [How to JavaScript? (or yet another JavaScript guide) Part 1 - Introduction](https://medium.com/@jun.hanamaki/how-to-javascript-or-yet-another-javascript-guide-part-1-introduction-a531a21facc6#.s8kj22wbp)
+* [Superhero.js](http://superherojs.com/)
+
 ### EcmaScript 2015/2016
 * [HTML templating with ES6 template strings](http://www.2ality.com/2015/01/template-strings-html.html)
 * [Getting Literal With ES6 Template Strings](https://developers.google.com/web/updates/2015/01/ES6-Template-Strings?hl=en)
@@ -271,6 +282,7 @@
 * [ES6 One Liners to Show Off](http://h3manth.com/new/blog/2014/es6-one-liners-to-show-off/)
 * [Lightweight ES6 Features That Pack A Punch](http://colintoh.com/blog/lightweight-es6-features)
 * [Top 10 ES6 Features Every Busy JavaScript Developer Must Know](http://webapplog.com/es6/)
+* [Learning ES2015 : Getting Started](http://abdulapopoola.com/category/learning-2/)
 
 ### String template
 * [HTML templating with ES6 template strings](http://www.2ality.com/2015/01/template-strings-html.html)
@@ -297,6 +309,8 @@
 * [Using ES7 Decorators with Babel 6](http://technologyadvice.github.io/es7-decorators-babel6/)
 * [ES 7 decorators to reduce boilerplate when creating custom HTML elements.](https://github.com/patrickarlt/custom-element-decorators)
 * [7 Patterns to Refactor JavaScript Applications: Decorators](https://blog.engineyard.com/2015/7-patterns-refactor-javascript-decorators)
+* [The decorator pattern in JavaScript using closures, monkey patching, prototypes, proxies and 'middleware'](http://nickmeldrum.com/blog/decorators-in-javascript-using-monkey-patching-closures-prototypes-proxies-and-middleware?utm_source=javascriptweekly&utm_medium=email)
+
 
 ### Promises and Generators
 * [JavaScript Promises](http://www.html5rocks.com/en/tutorials/es6/promises/)
@@ -343,6 +357,8 @@
 * [A modern JavaScript router in 100 lines](http://krasimirtsonev.com/blog/article/A-modern-JavaScript-router-in-100-lines-history-api-pushState-hash-url)
 * [Deep dive into client-side routing](http://krasimirtsonev.com/blog/article/deep-dive-into-client-side-routing-navigo-pushstate-hash)
 * [Dissection of Flux architecture or how to write your own](http://krasimirtsonev.com/blog/article/dissection-of-flux-architecture-or-how-to-write-your-own-react)
+* [rxjs-pubsub](https://github.com/richardanaya/rxjs-pubsub)
+* [dual-emitter - EventEmitter done right and no dependencies. For nodejs and the browser (>= IE8). Can emit custom or DOM events.](https://github.com/tunnckoCore/dual-emitter)
 
 
 ### Animation
@@ -386,6 +402,7 @@
 * [Web Experience Toolkit, Collaborative open source project led by the Government of Canada](https://github.com/wet-boew)
 * [Web Experience Toolkit: polyfills](http://wet-boew.github.io/wet-boew/docs/ref/polyfills-en.html)
 * [Feature Detection and Styling For The HTML5 details Element](http://thenewcode.com/680/Feature-Detection-and-Styling-For-The-HTML5-details-Element)
+* [position: sticky polyfill](https://github.com/wilddeer/stickyfill)
 
 ### Libraries
 * [Enumify - A JavaScript library for enums. To be used by transpiled ES6](https://github.com/rauschma/enumify)
@@ -396,6 +413,10 @@
 * [config.json](https://github.com/bulyshko/config.json)
 * [Contrasting Enterprise Node.js Frameworks: Hapi vs. Kraken vs. Sails.js vs. Loopback](http://www.capitalone.io/blog/contrasting-enterprise-nodejs-frameworks/)
 * [Slideout.js - A touch slideout navigation menu for your mobile web apps.](https://github.com/Mango/slideout)
+* [interact.js - JavaScript drag and drop, resizing and multi-touch gestures with inertia and snapping for modern browsers](https://github.com/taye/interact.js)
+* [hammer.js - A javascript library for multi-touch gestures](https://github.com/hammerjs/hammer.js)
+* [incremental-dom - An in-place DOM diffing library](https://github.com/google/incremental-dom)
+
 ### Frameworks
 * [Aurelia - next gen JavaScript client framework](http://aurelia.io/)
 * [aurelia-material - Aurelia wrapper for Material Design Lite.](https://github.com/redpelicans/aurelia-material)
@@ -403,6 +424,8 @@
 * [rivets.js - Lightweight and powerful data binding + templating solution for building modern web applications.](http://rivetsjs.com/)
 * [Mithril: A Javascript Framework for Building Brilliant Applications](https://github.com/lhorie/mithril.js)
 * [Building Apps with Riot, ES6 and Webpack](http://blog.srackham.com/posts/riot-es6-webpack-apps/)
+* [ES6 Single Page App](https://github.com/dondido/es6-single-page-app)
+* [incremental-dom - An in-place DOM diffing library](https://github.com/google/incremental-dom)
 
 ## NoeJS, Express
 * [Running scripts with npm](http://www.jayway.com/2014/03/28/running-scripts-with-npm/)
@@ -584,6 +607,8 @@
 * [Cycle.js - A functional and reactive JavaScript framework for cleaner code](http://cycle.js.org/)
 * [Becoming fully reactive: an in-depth explanation of Mobservable](https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254#.i4ku2stuj)
 * [Testing reactive code](https://glebbahmutov.com/blog/testing-reactive-code/)
+* [rxjs-pubsub](https://github.com/richardanaya/rxjs-pubsub)
+
 
 ## i18n
 * [i18n with tagged template strings in ECMAScript 6](http://jaysoo.ca/2014/03/20/i18n-with-es6-template-strings/)
@@ -591,7 +616,6 @@
 * [Globalize](https://github.com/jquery/globalize)
 
 ## HATEOAS
-* [hyperagent.js - A HAL client for JavaScript http://weluse.github.io/hyperagent](https://github.com/weluse/hyperagent)
 
 ### Logging / Error handlng
 * [Capture and report JavaScript errors with window.onerror](http://blog.getsentry.com/2016/01/04/client-javascript-reporting-window-onerror.html)
@@ -742,7 +766,7 @@
 * [NodeJS and ES6](https://www.youtube.com/watch?v=PBLwtZRNh2M)
 * [Async JavaScript with Promises](https://www.youtube.com/watch?v=g90irqWEqd8)
 * [Creating Demo APIs with json-server](https://egghead.io/lessons/nodejs-creating-demo-apis-with-json-server)
-* [Introduction to How to Write an Open Source JavaScript Library](https://egghead.io/lessons/javascript-how-to-write-a-javascript-library-introduction) 
+* [Introduction to How to Write an Open Source JavaScript Library](https://egghead.io/lessons/javascript-how-to-write-a-javascript-library-introduction)
 
 ## Etc
 * [Stop Writing Slow Javascript](http://ilikekillnerds.com/2015/02/stop-writing-slow-javascript/)
@@ -778,4 +802,3 @@
 * [Choosing Vanilla JavaScript in 2016](https://medium.com/vanilla-javascript/choosing-vanilla-javascript-in-2016-6f38a8302ee5#.ifkk49tto)
 * [Better world by better software](https://glebbahmutov.com/blog/)
 * [ponyfoo.com](https://ponyfoo.com/)
-

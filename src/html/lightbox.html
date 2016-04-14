@@ -368,7 +368,6 @@
 </p>
 
 
-<script type="text/javascript" src="../../../demo/mdl-iframe-loader.js" charset="utf-8"></script>
 <script>
   'use strict';
 
@@ -422,6 +421,7 @@
       if (!('showModal' in dialog)) {
         dialogPolyfill.registerDialog(dialog);
       }
+
     }
 
     var currentSlide = null;
@@ -437,7 +437,7 @@
 
     lightbox.addEventListener('action', function(e) {
       if(e.detail.action === 'close') {
-        dialog.close();
+        if(dialog.open) dialog.close();
       }
       else if(e.detail.action === 'select') {
         var figcaption = lightbox.querySelector('figure figcaption');
