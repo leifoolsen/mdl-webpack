@@ -1,0 +1,11 @@
+.mdl-progress {
+  > .bufferbar {
+    background: {
+      image: none;
+      color: $progress-secondary-color;
+    }
+  }
+  &:focus {
+    outline: none;
+  }
+}

@@ -174,8 +174,12 @@ body {
   margin-left: 0;
 }
 
+#drawer .mdl-navigation a.mdl-navigation__link:hover {
+  color: black;  // // Quick hack: maybe fix later
+}
 #drawer .mdl-navigation a.mdl-navigation__link.mdl-navigation__link--current:hover {
   background-color: black;  // // Quick hack: maybe fix later
+  color: white;  // // Quick hack: maybe fix later
 }
 
 .mdl-layout__header {

@@ -16,6 +16,7 @@
 // 1. Configuration and helpers
 @import '../node_modules/material-design-lite/src/variables';
 @import '../node_modules/material-design-lite/src/color-definitions';
+@import 'stylesheets/mdl/variables';
 @import 'stylesheets/utils/variables';
 @import 'stylesheets/utils/mixins';
 
@@ -26,10 +27,10 @@
 @import '../node_modules/roboto-fontface/css/roboto-fontface.css';
 @import '../node_modules/dialog-polyfill/dialog-polyfill.css';
 @import '../node_modules/material-design-lite/src/material-design-lite';
-
 @import '../node_modules/mdl-ext/src/mdl-ext-eqjs';
 
 // 3. Base stuff
+@import 'stylesheets/mdl/mdl';
 @import 'stylesheets/base/base';
 
 // 4. Internal Components

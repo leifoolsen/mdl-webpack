@@ -1,0 +1,5 @@
+.mdl-textfield {
+  .mdl-textfield__input {
+    @include typo-textfield-input;
+  }
+}
