@@ -30,8 +30,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.3.4",
-    "babel-cli": "6.6.5",
-    "babel-core": "6.7.4",
+    "babel-cli": "6.7.5",
+    "babel-core": "6.7.6",
     "babel-eslint": "^6.0.0-beta.6",
     "babel-loader": "6.2.4",
     "babel-plugin-syntax-decorators": "^6.5.0",
