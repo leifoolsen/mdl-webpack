@@ -216,6 +216,6 @@ module.exports = {
     }
   },
   eslint: {
-    // .eslintrc
+    // Uses '.eslintrc'
   }
 };
