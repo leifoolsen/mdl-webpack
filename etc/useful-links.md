@@ -29,8 +29,6 @@
 * [Gixx - mdl-components-ext](https://github.com/Gixx/mdl-components-ext)
 * [preact-mdl](https://github.com/developit/preact-mdl)
 * [mdl-webpack-boilerplate](https://github.com/shprink/mdl-webpack-boilerplate)
-* [Accordion needed? #221](https://github.com/google/material-design-lite/issues/221)
-* [Implemented date picker component #4187](https://github.com/google/material-design-lite/pull/4187/)
 * [http://www.sitepoint.com/practical-introduction-material-design-lite-google/](A Practical Introduction to Material Design Lite by Google)
 
 ### Material
@@ -170,6 +168,7 @@
 * [Native Modal Windows in HTML5: Using the dialog Element](http://thenewcode.com/957/Native-Modal-Windows-in-HTML5-Using-the-dialog-Element)
 * [css-modal](https://github.com/drublic/css-modal)
 * [Responsive Modal Design - Material Design Modals](https://codepen.io/ettrics/pen/Jdjdzp)
+* [Material Photo Gallery](https://github.com/ettrics/material-photo-gallery)
 
 ### Details element
 * [Fixing the details Element](http://www.sitepoint.com/fixing-the-details-element/)
@@ -182,6 +181,9 @@
 * [flatpickr - Super lightweight & elegant date picker](https://github.com/chmln/flatpickr)
 * [Material Datetime Picker](https://github.com/ripjar/material-datetime-picker)
 * [Tiny Date Picker](https://github.com/chrisdavies/tiny-date-picker)
+* [Pickers](http://codepen.io/Cel/pen/QwrVjL)
+* [Calendar Skin](http://codepen.io/anasnakawa/pen/pytIE)
+* [Calendar without tables](http://codepen.io/the-teacher/pen/Dkahu)
 
 ### Tooltip
 * [Tether: A positioning engine to make overlays, tooltips and dropdowns better](https://github.com/HubSpot/tether/)
@@ -378,6 +380,7 @@
 * [paulcpederson/scroll.js](https://gist.github.com/paulcpederson/7f9375b5d66120e5c7b3)
 * [Animate.css - A cross-browser library of CSS animations.](https://github.com/daneden/animate.css)
 * [Move.js - CSS3 JavaScript animation framework.](https://github.com/visionmedia/move.js)
+* [3 stunning CSS animation effects that will captivate your users](http://www.webdesignerdepot.com/2014/04/3-stunning-css-animation-effects-that-will-captivate-your-users/)
 
 ### Polyfills
 * [Polyfill.js: A library to make creating CSS polyfills much easier.](https://github.com/philipwalton/polyfill/)
@@ -403,6 +406,18 @@
 * [Web Experience Toolkit: polyfills](http://wet-boew.github.io/wet-boew/docs/ref/polyfills-en.html)
 * [Feature Detection and Styling For The HTML5 details Element](http://thenewcode.com/680/Feature-Detection-and-Styling-For-The-HTML5-details-Element)
 * [position: sticky polyfill](https://github.com/wilddeer/stickyfill)
+* [eqjs](https://github.com/Snugug/eq.js)
+* [Use element queries today with eq.js](http://fourkitchens.com/blog/article/use-element-queries-today-eqjs)
+* [Why Element Queries Matter](http://hugogiraudel.com/2014/04/22/why-element-queries-matter/)
+* [Element query grid](http://codepen.io/nicmarson/pen/xtAvF)
+* [Element Queries](https://snugug.com/musings/element-queries/)
+* [EQCSS - An Element Query Polyfill](http://codepen.io/tomhodgins/pen/YXgaao)
+* [EQCSS - A CSS Extension for Element Queries & More](http://elementqueries.com/)
+* [Use $parent with EQCSS today in IE8+](http://codepen.io/tomhodgins/pen/adbzRM)
+* [Using values from JS in your Element Queries](http://codepen.io/tomhodgins/pen/MKWOWW)
+* [EQCSS - Element Queries for CSS](http://codepen.io/tomhodgins/pen/YXgaao)
+* [Calendar with Element Queries](http://codepen.io/tomhodgins/pen/mJrZxP)
+* [Responsive Content with Element Queries](http://codepen.io/tomhodgins/pen/Lpmmzy)
 
 ### Libraries
 * [Enumify - A JavaScript library for enums. To be used by transpiled ES6](https://github.com/rauschma/enumify)
@@ -751,6 +766,24 @@
 * [responsive layout with aspect ratios and items spanning rows](http://codepen.io/kewh/pen/eAmxr)
 * [Modern HTML5 Lightbox in 12 Lines of JavaScript](http://codepen.io/dudleystorey/pen/bNdvym)
 * [Rounded Avatar](http://codepen.io/mikefowler/pen/nwEbK)
+* [Basic Theme Switcher](http://codepen.io/tomhodgins/pen/RaMYxg)
+* [JS Tooltips](http://codepen.io/tomhodgins/pen/dYrxNV)
+* [Swipe mobile layout](http://codepen.io/adam2326/pen/QwQmEX)
+* ["Spread of cards" responsive carousel - 3.0](http://codepen.io/pixelthing/pen/OPmWrE)
+* [Carousel](http://codepen.io/vinniedauer/pen/qdEraG)
+* [Vanilla JS Carousel](http://codepen.io/subhaze/pen/BdEbn)
+* [Flexbox Carousel](http://codepen.io/nickawalsh/pen/gzwhq)
+* [Responsive Carousel](http://codepen.io/ryanmorr/pen/rVGoee)
+* [Infinite Carousel Phase #1](http://codepen.io/randombrad/pen/wdvDr)
+* [Swipe Carousel](http://codepen.io/bdang/pen/pJyYEO)
+* [3D Carousel Experiment](http://codepen.io/oyeharry/pen/gynJC)
+* [3-up Carousel](http://codepen.io/bradfrost/pen/pgjav)
+* [Overflow Carousel](http://codepen.io/bradfrost/pen/Kdeoi)
+* [Image slider / fader](http://codepen.io/edwardpayton/pen/wGykK)
+* [Image Slider With Drag To Switch](http://codepen.io/AlexEmashev/pen/xZWNeV)
+* [Circle Image:hover](http://codepen.io/hans/pen/hanBu)
+* [dragging elements with JavaScript, mouse events](http://codepen.io/rachsmith/pen/vLMKvz)
+* [CSS3 Animated Swipe Gallery](http://codepen.io/mattjburrows/pen/GFCKL)
 
 
 ## Videos

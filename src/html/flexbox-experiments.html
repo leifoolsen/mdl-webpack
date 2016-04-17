@@ -491,6 +491,43 @@ BEM: Blocks, Elements and Modifiers
 </script>
 
 
+<!-- ==================== -->
+<!-- Test spesific layout -->
+<!-- ==================== -->
+<h5>Test spesific layout</h5>
+<style>
+  .spesific {
+    margin-top: 32px;
+    border: 1px solid #000;
+    height: 200px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .spesific-item {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+
+    flex-shrink: 0;
+  }
+</style>
+
+<div class="spesific">
+  <div class="spesific-item">1</div>
+  <div class="spesific-item">2</div>
+  <div class="spesific-item">3</div>
+  <div class="spesific-item">4</div>
+  <div class="spesific-item">5</div>
+  <div class="spesific-item">6</div>
+  <div class="spesific-item">7</div>
+  <div class="spesific-item">8</div>
+  <div class="spesific-item">9</div>
+  <div class="spesific-item">10</div>
+</div>
+
+
 <!-- =============== -->
 <!-- Ordered columns -->
 <!-- =============== -->
