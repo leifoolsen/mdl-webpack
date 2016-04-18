@@ -68,7 +68,6 @@
 * [Color Palettes Color Schemes](http://www.color-hex.com/color-palettes/)
 * [Sketch app plugin for displaying Google Material Design color palette.](https://github.com/t32k/material-design-color-palette)
 * [Material Design Color Palette](https://github.com/zavoloklom/material-design-color-palette)
-* [material palette](https://www.materialpalette.com/)
 * [4 Tools for Creating Brilliant Material Design Color Pallets](http://materialdesignblog.com/tools-for-creating-brilliant-material-design-color-pallets/)
 * [sankk.in / material mixer](http://www.sankk.in/material-mixer/)
 * [COLORS - A nicer color palette for the web.](http://clrs.cc/)
