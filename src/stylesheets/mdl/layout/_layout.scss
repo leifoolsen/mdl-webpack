@@ -25,8 +25,9 @@ main {
       }
       &:hover {
         color: $layout-drawer-navigation-link-active-color;
+
         .material-icons {
-          color: $layout-drawer-navigation-link-active-color;
+          //color: $layout-drawer-navigation-link-active-color;
         }
       }
     }

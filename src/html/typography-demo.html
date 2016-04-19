@@ -8,7 +8,7 @@
 
 <style>
   .demo-page--typography {
-    color: rgba(0, 0, 0, 0.87);
+    /*color: rgba(0, 0, 0, 0.87);*/
   }
 
   .demo-page--typography table th {
@@ -57,9 +57,40 @@
 <p class="mdl-typography--body-1">There are certain scenarios where the larger Subhead style should be used instead
   of the smaller Body style. Some of those instances include when information is presented as small snippets or when
   titles are paired with lines of Body-styled text.</p>
-<p class="mdl-typography--body-1">Text from
+<p class="mdl-typography--body-1">Text copied from
   <a target="_blank" href="https://www.google.com/design/spec/style/typography.html#typography-standard-styles">
     Material Design by Google</a></p>
+
+
+<div class="demo-preview-block">
+  <h1>Base font</h1>
+
+  <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+    <p>Material Design Lite start’s with a base font of</p>
+    <ul>
+      <li>A size of 14px</li>
+      <li>A weight of 400</li>
+      <li>A line height of 20px</li>
+    </ul>
+  </div>
+
+  <p class="mdl-typography--body-1">Regular 14px (Device), Regular 13px (Desktop)</p>
+  <p class="mdl-typography--body-1-force-preferred-font">Regular 14px (Device), Regular 13px (Desktop)</p>
+  <p class="mdl-typography--body-2">Medium 14px (Device), Medium 13px (Desktop)</p>
+  <p class="mdl-typography--body-2-color-contrast">Body with color contrast</p>
+  <p class="mdl-typography--body-2-force-preferred-font">Medium 14px (Device), Medium 13px (Desktop)</p>
+
+  <h1>Headings</h1>
+
+  <h1>h1 (56px) <small>Subtitle</small></h1>
+  <h2>h2 (45px) <small>Subtitle</small></h2>
+  <h3>h3 (34px) <small>Subtitle</small></h3>
+  <h4>h4 (24px) <small>Subtitle</small></h4>
+  <h5>h5 (20px) <small>Subtitle</small></h5>
+  <h6>h6 (16px) <small>Subtitle</small></h6>
+</div>
+
+
 
 <div class="demo-preview-block demo-page--typography">
   <table>
@@ -126,23 +157,15 @@
 
     <tr>
       <th class="mdl-typography--caption-color-contrast">$color-primary-dark</th>
-      <td class="demo-color-primary-dark"></td>
+      <td class="demo-color-primary-dark demo-color-primary-contrast">$color-primary-dark $color-primary-contrast</td>
     </tr>
     <tr>
       <th class="mdl-typography--caption-color-contrast">$color-primary</th>
-      <td class="demo-color-primary"></td>
+      <td class="demo-color-primary demo-color-primary-contrast">$color-primary $color-primary-contrast</td>
     </tr>
     <tr>
       <th class="mdl-typography--caption-color-contrast">$color-accent</th>
-      <td class="demo-color-accent"></td>
-    </tr>
-    <tr>
-      <th class="mdl-typography--caption-color-contrast">$color-primary-contrast</th>
-      <td class="demo-color-primary demo-color-primary-contrast">$color-primary-contrast</td>
-    </tr>
-    <tr>
-      <th class="mdl-typography--caption-color-contrast">$color-accent-contrast</th>
-      <td class="demo-color-accent demo-color-accent-contrast">$color-accent-contrast</td>
+      <td class="demo-color-accent demo-color-accent-contrast">$color-accent $color-accent-contrast</td>
     </tr>
   </table>
 </div>
@@ -314,38 +337,3 @@
 </div>
 
 
-<div class="demo-preview-block">
-  <div class="mdl-card__supporting-text">
-    <h1 class="">H1 heading</h1>
-  </div>
-  <div class="mdl-card__supporting-text">
-    <h2 class="mdl-color-text--primary">H2 - Primary Color</h2>
-  </div>
-  <div class="mdl-card__supporting-text" style="background-color: #00b9d8">
-    <h3 class="mdl-color-text--primary-contrast">H3 - Primary Color Contrast</h3>
-  </div>
-  <div class="mdl-card__supporting-text">
-    <h4 class="mdl-color-text--primary-dark">H4 - Primary Color Dark</h4>
-  </div>
-  <div class="mdl-card__supporting-text">
-    <h5 class="mdl-color-text--accent">H5 - Accent Color</h5>
-  </div>
-  <div class="mdl-card__supporting-text">
-    <h6 class="">H6</h6>
-  </div>
-  <div class="mdl-card__supporting-text">
-    <span class="mdl-typography--display-1">Display 1</span>
-  </div>
-  <div class="mdl-card__supporting-text">
-    <span class="mdl-typography--display-1-color-contrast">Display 1 Color Contrast</span>
-  </div>
-  <div class="mdl-card__supporting-text">
-    <span class="mdl-typography--display-2">Display 2</span>
-  </div>
-  <div class="mdl-card__supporting-text">
-    <span class="mdl-typography--display-3">Display 3</span>
-  </div>
-  <div class="mdl-card__supporting-text">
-    <span class="mdl-typography--display-4">Display 4</span>
-  </div>
-</div>

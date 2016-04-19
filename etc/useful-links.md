@@ -73,6 +73,7 @@
 * [COLORS - A nicer color palette for the web.](http://clrs.cc/)
 * [How to Change the Color of an MDL Component](http://mdlhut.com/2015/08/how-to-change-the-color-of-an-mdl-component/)
 * [Google-Material-UI-Color-Palette, Sass Maps of the Google Material UI Color Palette](https://github.com/nilskaspersson/Google-Material-UI-Color-Palette)
+* [Free Material Icon Set](https://www.behance.net/gallery/24629579/Free-Material-Icon-Set)
 
 ### Flexbox
 * [A Visual Guide to CSS3 Flexbox Properties](https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties)
