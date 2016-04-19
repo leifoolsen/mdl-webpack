@@ -784,7 +784,7 @@
 * [Circle Image:hover](http://codepen.io/hans/pen/hanBu)
 * [dragging elements with JavaScript, mouse events](http://codepen.io/rachsmith/pen/vLMKvz)
 * [CSS3 Animated Swipe Gallery](http://codepen.io/mattjburrows/pen/GFCKL)
-
+* [MDL-Table - Search and Sort using](http://codepen.io/ryanjgill/pen/ojRxXE)
 
 ## Videos
 * [Creating a 3D Webpage Header with Material Design and Babylon](https://www.youtube.com/watch?v=IZ6fgcBkhg8)

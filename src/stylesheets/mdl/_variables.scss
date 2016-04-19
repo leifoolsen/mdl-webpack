@@ -1,13 +1,32 @@
+
+// Pallette
+$ske-window-background-color:    "255,255,255" !default; //#FFFFFF
+$ske-window-navigationbar-color: "0,0,0"       !default; //#000000
+$ske-primary-color-dark:         "25,118,210"  !default; //#1976D2
+$ske-primary-color:              "33,150,243"  !default; //#2196F3
+$ske-primary-color-light:        "187,222,251" !default; //#BBDEFB
+$ske-primary-color-text:         "255,255,255" !default; //#FFFFFF
+$ske-accent-color:               "3,169,244"   !default; //#03A9F4
+$ske-primary-text-color:         "33,33,33"    !default; //#212121
+$ske-secondary-text-color:       "114,114,114" !default; //#727272
+$ske-divider-color:              "182,182,182" !default; //#B6B6B6
+
 /* -----------------------------------------------
  * Override Material Design Lite variables
  * ----------------------------------------------- */
 
 /* ==========  TYPOGRAPHY  ========== */
+$preferred_font: 'Roboto', 'Helvetica', 'Arial', sans-serif !default;
+$performance_font: 'Helvetica', 'Arial', sans-serif !default;
 
 /* ==========  IMAGES  ========== */
 
 /* ==========  Color & Themes  ========== */
-
+$color-primary: $ske-primary-color;
+$color-primary-dark: $ske-primary-color-dark;
+$color-accent: $ske-accent-color;
+$color-primary-contrast: $ske-primary-color-text;
+$color-accent-contrast: $ske-primary-color-text;
 
 /* ==========  Typography  ========== */
 
@@ -58,9 +77,14 @@
 /* ==========  Text fields  ========== */
 
 /* ==========  Card  ========== */
-//$card-text-color: unquote("rgba(#{$color-white}, 0.8)");
+//$card-text-color: unquote("rgba(#{$color-primary-contrast}, 1.0)");
+//$card-background-color: unquote("rgb(#{$color-white})") !default;
 //$card-supporting-text-text-color: unquote("rgba(#{$color-white}, 0.8)");
 //$card-subtitle-color: unquote("rgba(#{$color-white}, 0.5)");
+
+$mdlext-card-title-background-color: unquote("rgb(#{$color-primary})");
+$mdlext-card-title-text-color: unquote("rgb(#{$color-primary-contrast})");
+
 
 /* ==========  Sliders ========== */
 
@@ -104,8 +128,8 @@ $list-avatar-size: 32px;
 $list-two-line-height: 64px;
 
 /* LAYOUT */
-$layout-header-mobile-indent: 16px;
-$layout-header-desktop-indent: 16px;
+//$layout-header-mobile-indent: 16px;
+//$layout-header-desktop-indent: 16px;
 
 /* ICON TOGGLE */
 
@@ -137,13 +161,13 @@ $button-font-weigth: 400;
 
 /* GRID */
 $grid-desktop-gutter: 6px;
-$grid-desktop-margin: 12px;
+$grid-desktop-margin: 6px;
 
 $grid-tablet-gutter: 4px;
-$grid-tablet-margin: 8px;
+$grid-tablet-margin: 4px;
 
 $grid-phone-gutter: 2px;
-$grid-phone-margin: 4px;
+$grid-phone-margin: 2px;
 
 /* DATA TABLE */
 $data-table-column-spacing: 16px;

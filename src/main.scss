@@ -13,28 +13,9 @@
 // ------------------------------------------------------------------------------------------------------
 
 
-// Pallette generated from: http://www.materialpalette.com/blue/light-blue
-$ske-window-background-color:    "255,255,255" !default; //#FFFFFF
-$ske-window-navigationbar-color: "0,0,0"       !default; //#000000
-$ske-primary-color-dark:         "25,118,210"  !default; //#1976D2
-$ske-primary-color:              "33,150,243"  !default; //#2196F3
-$ske-primary-color-light:        "187,222,251" !default; //#BBDEFB
-$ske-primary-color-text:         "255,255,255" !default; //#FFFFFF
-$ske-accent-color:               "3,169,244"   !default; //#03A9F4
-$ske-primary-text-color:         "33,33,33"    !default; //#212121
-$ske-secondary-text-color:       "114,114,114" !default; //#727272
-$ske-divider-color:              "182,182,182" !default; //#B6B6B6
-
-$color-primary: $ske-primary-color;
-$color-primary-dark: $ske-primary-color-dark;
-$color-accent: $ske-accent-color;
-$color-primary-contrast: $ske-primary-color-text;
-$color-accent-contrast: $ske-primary-color-text;
-
-
 // 1. Configuration and helpers
-@import '../node_modules/material-design-lite/src/variables';  //@import '../node_modules/material-design-lite/src/color-definitions';
 @import 'stylesheets/mdl/variables';
+@import '../node_modules/material-design-lite/src/variables';  //@import '../node_modules/material-design-lite/src/color-definitions';
 @import 'stylesheets/utils/variables';
 @import 'stylesheets/utils/mixins';
 

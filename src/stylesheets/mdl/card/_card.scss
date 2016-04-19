@@ -1,3 +1,7 @@
+.mdl-card__title {
+  background-color: $mdlext-card-title-background-color;
+  color: $mdlext-card-title-text-color;
+}
 .mdl-card__supporting-text {
   width: calc(100% - #{$card-horizontal-padding*2});
 }
