@@ -211,7 +211,7 @@
     </div>
 
     <div class="mdl-card__supporting-text">
-      This card has "display: inline-flex;". Works as long as the image element is the widest element
+      This card has "display: inline-flex;". Works as long as the image element is the widest element. Click on the heart to see the effect.
     </div>
 
     <footer class="mdl-card__actions mdl-card--border">
@@ -219,12 +219,22 @@
         Read more
       </a>
       <div class="mdl-layout-spacer"></div>
-      <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+      <button class="mdl-button mdl-button--icon mdl-button--colored" id="card-inline-flex-effect"><i class="material-icons">favorite</i></button>
       <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
     </footer>
   </div>
 </div>
 
+<script>
+  (function() {
+    'use strict';
+    var button = document.querySelector('#card-inline-flex-effect');
+    button.onclick = function() {
+      var element = button.parentNode.parentNode.querySelector('.mdl-card__supporting-text');
+      element.innerHTML = 'A shorter supporting text!';
+    };
+  }());
+</script>
 
 <div class="demo-card-container">
 

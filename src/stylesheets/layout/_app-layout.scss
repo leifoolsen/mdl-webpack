@@ -3,31 +3,38 @@
  * --------------------- */
 
 // colors
-$white   : #fff;
-$white_0 : rgba(255,255,255,0);
-$white_10: rgba(255,255,255,0.1);
-$white_30: rgba(255,255,255,0.3);
-$white_96: rgba(255,255,255,0.96);
+$app_white: unquote("rgb(#{$color-white})");
+$app_white_0: $app_white;
+$app_white_10: unquote("rgba(#{$color-white}, 0.1)");
+$app_white_30: unquote("rgba(#{$color-white}, 0.3)");
+$app_white_96: unquote("rgba(#{$color-white}, 0.96)");
 
 //urls
-$bg_url: url(transparent.jpg);
+$app_bg_url: url(transparent.jpg);
 
 body {
-  background: linear-gradient(to bottom, $white_96 0, $white_96 100%), $bg_url center / cover;
-  // background: linear-gradient(to bottom,rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.96) 100%), url('transparent.jpg') center / cover;
+  background: linear-gradient(to bottom, $app_white_96 0, $app_white_96 100%), $app_bg_url center / cover;
+  overflow:hidden;
+}
+
+/* ---------------------
+ * Header
+ * --------------------- */
+.mdl-layout__header,
+.mdl-layout__header > .mdl-layout__drawer-button[aria-expanded] {
+  color: black;  // // Quick hack: maybe fix later
 }
 
 /* ---------------------
  * Sticky header
  * --------------------- */
-
-*:not(.is-small-screen) .my-layout__sticky-header {
+*:not(.is-small-screen) .app-layout__sticky-header {
   position: absolute;
   overflow: visible;
-  background: linear-gradient(to bottom, $white_30 0, $white_10 100%);
+  background: linear-gradient(to bottom, $app_white_30 0, $app_white_10 100%);
 
   &.is-scroll {
-    background: linear-gradient(to bottom, $white_96 100%, $white_0 100%);
+    background: linear-gradient(to bottom, $app_white_96 100%, $app_white_0 100%);
   }
 
   .mdl-layout__drawer-button {
@@ -39,10 +46,9 @@ body {
   }
 }
 
-.is-small-screen .my-layout__sticky-header {
+.is-small-screen .app-layout__sticky-header {
   .mdl-layout__drawer-button {
     visibility: visible;
-    color: black;    // Quick hack: maybe fix later
   }
   .mdl-layout__header-row {
     padding-left: 56px;  // Should be an application wide var
@@ -50,47 +56,28 @@ body {
 }
 
 /* ---------------------
- * Sticky footer
+ * Content
  * --------------------- */
 
-// Change the layout__content class to Flex (instead of inline-block) to allow spacer to work.
-// See: https://github.com/google/material-design-lite/issues/913
-
-.mdl-layout__content.my-layout__sticky-footer {
+.mdl-layout__content {
+  // Change the layout__content class to Flex (instead of inline-block) to allow spacer to work.
+  // See: https://github.com/google/material-design-lite/issues/913
   display: flex;
   flex-flow: column nowrap;
-
-  & > *:not(.mdl-layout-spacer) {
-    flex: none;
-  }
-
-  & > .mdl-mini-footer {
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-top: 16px;
-    background-color: transparent;
-
-    .mdl-mini-footer__left-section .mdl-logo {
-      color: #2e2e2e;  // Quick hack: maybe fix later
-    }
-  }
 }
 
+
 /* ---------------------
- * Accordion
+ * Footer
  * --------------------- */
-.mdlext-accordion {
+.mdl-mini-footer {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 16px;
+  background-color: transparent;
 
-  .mdlext-accordion__panel {
-
-    .mdlext-accordion__panel__state:after {
-      content: 'expand_more';
-    }
-    &[open] {
-      .mdlext-accordion__panel__state:after {
-        content: 'expand_less';
-      }
-    }
+  .mdl-mini-footer__left-section .mdl-logo {
+    color: #2e2e2e;  // Quick hack: maybe fix later
   }
 }
 
@@ -103,7 +90,7 @@ body {
   background-color: transparent;
 
   &.is-visible {
-    background-color: $white;
+    background-color: $app_white;
   }
 
   .mdl-navigation a.mdl-navigation__link {
@@ -114,10 +101,10 @@ body {
     i,
     img {
       width: 32px;
-      margin-left: 0px;
       margin-right: 8px;
       margin-top: -8px;
       margin-bottom: -8px;
+      margin-left: 0px;
     }
   }
 
@@ -182,12 +169,9 @@ body {
   color: white;  // // Quick hack: maybe fix later
 }
 
-.mdl-layout__header {
-  color: black;  // // Quick hack: maybe fix later
-}
-
 /* ---------------------
  * Content
+ * TODO: remove
  * --------------------- */
 .my-page-content {
   box-sizing: border-box;
@@ -200,3 +184,23 @@ body {
 .my-page-content > h5:first-child {
   margin-top: 12px;
 }
+
+
+/* ---------------------
+ * Accordion
+ * --------------------- */
+.mdlext-accordion {
+
+  .mdlext-accordion__panel {
+
+    .mdlext-accordion__panel__state:after {
+      content: 'expand_more'; // Default material icon
+    }
+    &[open] {
+      .mdlext-accordion__panel__state:after {
+        content: 'expand_less'; // Default material icon
+      }
+    }
+  }
+}
+

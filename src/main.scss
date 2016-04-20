@@ -5,18 +5,36 @@
 // See: http://sass-guidelin.es/#the-7-1-pattern
 // See: https://github.com/HugoGiraudel/sass-boilerplate/tree/master/stylesheets
 //
-// TODO: No global Sass context, as suggested by http://bensmithett.com/smarter-css-builds-with-webpack/
-// Only import what is strictly needed
-//
 // To resolve modules path, e.g, @import '../../node_modules/<module>', we can prefix import with "~"
 // and let Webpack do the path resolving.
 // ------------------------------------------------------------------------------------------------------
+
+/* -----------------------------------------------
+ * Override Material Design Icons variables
+ * ----------------------------------------------- */
+// A list of available icon font names can be found here: https://www.google.com/design/icons/
+$material-design-iconfont-path: '../node_modules/material-design-icons/iconfont';
+
+
+/* -----------------------------------------------
+ * Override Material Design Iconic Font variables
+ * ----------------------------------------------- */
+// A list of available icons can be found here: http://zavoloklom.github.io/material-design-iconic-font/
+$zmdi-font-path : '../node_modules/material-design-iconic-font/dist/fonts';
+
+
+/* ==========  TYPOGRAPHY  ========== */
+$preferred_font: 'Roboto-Light', 'Helvetica', 'Arial', sans-serif;
+$performance_font: 'Helvetica', 'Arial', sans-serif !default;
+
+
+/* ==========  IMAGES  ========== */
+$image_path: '/static/images/mdl';  // See: webpack.config.js CopyWebpackPlugin
 
 
 // 1. Configuration and helpers
 @import 'stylesheets/mdl/variables';
 @import '../node_modules/material-design-lite/src/variables';  //@import '../node_modules/material-design-lite/src/color-definitions';
-@import 'stylesheets/utils/variables';
 @import 'stylesheets/utils/mixins';
 
 // 2. Vendors
@@ -35,9 +53,8 @@
 // 4. Internal Components
 
 // 5. Layout-related sections
-@import 'stylesheets/layout/layout';
+@import 'stylesheets/layout/app-layout';
 
 // 6. Page-specific styles
-@import 'stylesheets/pages/demo.css';
 
 // 7. Themes

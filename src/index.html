@@ -16,12 +16,12 @@
 
 </head>
 
-<body style = "overflow:hidden">
+<body>
   <!-- The drawer is always open in large screens. The header is always shown,
   even in small screens. -->
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
 
-    <header id="header" class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall my-layout__sticky-header">
+    <header id="header" class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall app-layout__sticky-header">
 
       <div class="mdl-layout__header-row">
         <!-- Title -->
@@ -133,9 +133,11 @@
     </aside>
 
       <!-- Content goes here -->
-    <main id="content" class="mdl-layout__content my-layout__sticky-footer">
+    <main id="content" class="mdl-layout__content">
 
-      <section id="content-panel" class="my-page-content"></section>
+      <section id="content-panel" class="my-page-content">
+        <!-- -->
+      </section>
 
       <!-- Add spacer to push Sticky Footer down when not enough content -->
       <div class="mdl-layout-spacer"></div>

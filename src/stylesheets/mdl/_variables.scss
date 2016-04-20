@@ -1,5 +1,18 @@
 
 // Pallette
+/*
+$ske-window-background-color:    #FFFFFF !default;
+$ske-window-navigationbar-color: #000000 !default;
+$ske-primary-color-dark:         #1976D2 !default;
+$ske-primary-color:              #2196F3 !default;
+$ske-primary-color-light:        #BBDEFB !default;
+$ske-primary-color-text:         #FFFFFF !default;
+$ske-accent-color:               #03A9F4 !default;
+$ske-primary-text-color:         #212121 !default;
+$ske-secondary-text-color:       #727272 !default;
+$ske-divider-color:              #B6B6B6 !default;
+*/
+
 $ske-window-background-color:    "255,255,255" !default; //#FFFFFF
 $ske-window-navigationbar-color: "0,0,0"       !default; //#000000
 $ske-primary-color-dark:         "25,118,210"  !default; //#1976D2
@@ -10,6 +23,7 @@ $ske-accent-color:               "3,169,244"   !default; //#03A9F4
 $ske-primary-text-color:         "33,33,33"    !default; //#212121
 $ske-secondary-text-color:       "114,114,114" !default; //#727272
 $ske-divider-color:              "182,182,182" !default; //#B6B6B6
+
 
 /* -----------------------------------------------
  * Override Material Design Lite variables
@@ -83,6 +97,8 @@ $color-accent-contrast: $ske-primary-color-text;
 //$card-subtitle-color: unquote("rgba(#{$color-white}, 0.5)");
 $card-image-placeholder-color: rgba(255, 255, 255, 0);
 
+// $card-text-color is only applied to .mdl-card__title.
+// Other text colors are inherited
 
 /* ==========  Sliders ========== */
 
