@@ -81,9 +81,7 @@ $color-accent-contrast: $ske-primary-color-text;
 //$card-background-color: unquote("rgb(#{$color-white})") !default;
 //$card-supporting-text-text-color: unquote("rgba(#{$color-white}, 0.8)");
 //$card-subtitle-color: unquote("rgba(#{$color-white}, 0.5)");
-
-$mdlext-card-title-background-color: unquote("rgb(#{$color-primary})");
-$mdlext-card-title-text-color: unquote("rgb(#{$color-primary-contrast})");
+$card-image-placeholder-color: rgba(255, 255, 255, 0);
 
 
 /* ==========  Sliders ========== */
@@ -178,5 +176,3 @@ $data-table-column-spacing: 16px;
 
 /* TOOLTIP */
 $tooltip-font-size: 12px;
-$table-tooltip-vertical-padding: 5px;
-$table-tooltip-horizontal-padding: 8px;
