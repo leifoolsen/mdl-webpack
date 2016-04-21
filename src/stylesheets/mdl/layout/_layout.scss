@@ -1,7 +1,6 @@
 .mdl-layout {
 }
 
-
 // Drawer.
 .mdl-layout__drawer {
 
@@ -27,8 +26,6 @@
     }
   }
 }
-
-
 .mdl-layout__drawer-button {
   // Remove "annoying" focus ring
   outline: none;
@@ -39,7 +36,6 @@
     text-shadow: 0 0 0 #000;
   }
 }
-
 .mdl-layout__content {
   // Change the layout__content class to Flex (instead of inline-block) to allow spacer to work.
   // See: https://github.com/google/material-design-lite/issues/913

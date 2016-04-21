@@ -3,6 +3,8 @@ import 'babel-polyfill';
 import { expect } from 'chai';
 import Rectangle from './rectangle';
 
+
+// https://onsen.io/blog/mocha-chaijs-unit-test-coverage-es6/
 describe('Rectangle', () => {
 
   describe('#constructor()', () => {

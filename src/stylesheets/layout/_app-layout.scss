@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------
- * App Layout
+ * Application Layout
  * ---------------------------------------------------------- */
 
 // colors
@@ -88,7 +88,6 @@ body {
         }
       }
       &:nth-child(1) {
-
         height: $layout-desktop-header-height;
 
         .mdlext-accordion__panel__header {
@@ -149,7 +148,6 @@ body {
  * Accordion
  * --------------------- */
 .mdlext-accordion {
-
   .mdlext-accordion__panel {
 
     .mdlext-accordion__panel__state:after {
@@ -170,16 +168,13 @@ body {
   .mdl-layout__drawer-button {
     left: -$padding / 2;
   }
-
   .mdl-layout__title,
   .mdl-layout-title {
     margin-left: -$padding / 2;
   }
-
   #content-panel {
     padding: 0 $padding / 2;
   }
-
   .mdl-mini-footer {
     padding: 0 $padding / 2;
 
@@ -188,5 +183,3 @@ body {
     }
   }
 }
-
-

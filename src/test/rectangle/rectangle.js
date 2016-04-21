@@ -3,6 +3,7 @@
 // ES6 introduces "classes". For people familiar with
 // object oriented languages such as Java as C++ this
 // is nothing out of the ordinary.
+// // https://onsen.io/blog/mocha-chaijs-unit-test-coverage-es6/
 
 class Rectangle {
   // The constructor will be executed if you initiate a
