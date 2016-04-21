@@ -1,6 +1,6 @@
-/* ---------------------
- * Layout
- * --------------------- */
+/* ----------------------------------------------------------
+ * App Layout
+ * ---------------------------------------------------------- */
 
 // colors
 $app_white: unquote("rgb(#{$color-white})");
@@ -17,13 +17,6 @@ body {
   overflow:hidden;
 }
 
-/* ---------------------
- * Header
- * --------------------- */
-.mdl-layout__header,
-.mdl-layout__header > .mdl-layout__drawer-button[aria-expanded] {
-  color: black;  // // Quick hack: maybe fix later
-}
 
 /* ---------------------
  * Sticky header
@@ -42,7 +35,7 @@ body {
   }
 
   .mdl-layout__header-row {
-    padding-left: 16px; // Should be an application wide var
+    padding-left: $padding;
   }
 }
 
@@ -51,41 +44,15 @@ body {
     visibility: visible;
   }
   .mdl-layout__header-row {
-    padding-left: 56px;  // Should be an application wide var
+    padding-left: $padding + $layout-drawer-button-mobile-size;
   }
 }
 
-/* ---------------------
- * Content
- * --------------------- */
-
-.mdl-layout__content {
-  // Change the layout__content class to Flex (instead of inline-block) to allow spacer to work.
-  // See: https://github.com/google/material-design-lite/issues/913
-  display: flex;
-  flex-flow: column nowrap;
-}
-
-
-/* ---------------------
- * Footer
- * --------------------- */
-.mdl-mini-footer {
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: 16px;
-  background-color: transparent;
-
-  .mdl-mini-footer__left-section .mdl-logo {
-    color: #2e2e2e;  // Quick hack: maybe fix later
-  }
-}
 
 /* ---------------------
  * Drawer
  * --------------------- */
 
-//.mdl-layout__drawer {
 #drawer {
   background-color: transparent;
 
@@ -94,8 +61,6 @@ body {
   }
 
   .mdl-navigation a.mdl-navigation__link {
-    display: flex;
-    align-items: center;
     padding-right: 0;
 
     i,
@@ -106,8 +71,10 @@ body {
       margin-bottom: -8px;
       margin-left: 0px;
     }
+    i {
+      text-indent: -2px;
+    }
   }
-
 
   #accordion {
     .mdlext-accordion__panel {
@@ -122,14 +89,14 @@ body {
       }
       &:nth-child(1) {
 
-        height: 64px;
+        height: $layout-desktop-header-height;
 
         .mdlext-accordion__panel__header {
-          height: 64px;
-          min-height: 64px;
+          height: $layout-desktop-header-height;
+          min-height: $layout-desktop-header-height;
 
           .mdlext-accordion__panel__header__transform {
-            height: 64px;
+            height: $layout-desktop-header-height;
 
             img {
               margin-top: -8px;
@@ -138,7 +105,6 @@ body {
         }
       }
     }
-
 
     .mdlext-accordion__panel__content {
       padding: 0;
@@ -155,34 +121,27 @@ body {
   }
 }
 
-.is-small-screen #drawer .mdl-layout-title a img,
-.is-small-screen #drawer .mdl-navigation a.mdl-navigation__link i,
-.is-small-screen #drawer .mdl-navigation a.mdl-navigation__link img {
-  margin-left: 0;
-}
+/* ---------------------
+ * Content
+ * --------------------- */
+#content-panel {
+  margin: $layout-desktop-header-height 0 0 0;
+  padding: 0 $padding;
 
-#drawer .mdl-navigation a.mdl-navigation__link:hover {
-  color: black;  // // Quick hack: maybe fix later
-}
-#drawer .mdl-navigation a.mdl-navigation__link.mdl-navigation__link--current:hover {
-  background-color: black;  // // Quick hack: maybe fix later
-  color: white;  // // Quick hack: maybe fix later
+  & > h1:first-child {
+    margin-top: 4px;
+  }
+  & > h5:first-child {
+    margin-top: 12px;
+  }
 }
 
 /* ---------------------
- * Content
- * TODO: remove
+ * Footer
  * --------------------- */
-.my-page-content {
-  box-sizing: border-box;
-  margin: 64px 0 0 0;  // 64px only if sticky-header. Use a variable for this
-  padding: 0 16px;
-}
-.my-page-content > h1:first-child {
-  margin-top: 4px;
-}
-.my-page-content > h5:first-child {
-  margin-top: 12px;
+.mdl-mini-footer {
+  background-color: transparent;
+  color: unquote("rgba(#{$color-primary}, 0.6)");
 }
 
 
@@ -203,4 +162,26 @@ body {
     }
   }
 }
+
+
+////////// Phone - decrease padding //////////
+@media (max-width: $grid-tablet-breakpoint - 1) {
+
+  .mdl-layout__drawer-button {
+    left: -$padding / 2;
+  }
+
+  #content-panel {
+    padding: 0 $padding / 2;
+  }
+
+  .mdl-mini-footer {
+    padding: 0 $padding / 2;
+
+    & .mdl-logo {
+      padding-right: 4px;
+    }
+  }
+}
+
 

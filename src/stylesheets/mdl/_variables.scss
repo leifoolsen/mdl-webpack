@@ -70,15 +70,14 @@ $color-accent-contrast: $ske-primary-color-text;
 /* ==========  Ripple effect  ========== */
 
 /* ==========  Layout  ========== */
-//$layout-nav-color: #202020;
 
 // Drawer
-//$layout-drawer-bg-color: #202020;
-//$layout-drawer-navigation-link-active-background: unquote("rgba(#{$color-black}, 0.25)");
-//$layout-drawer-navigation-link-active-color: unquote("rgb(#{$color-primary})");
+$layout-drawer-navigation-link-active-background: unquote("rgba(#{$color-black}, 0.25)");
+$layout-drawer-navigation-link-active-color: unquote("rgb(#{$color-primary-dark})");
 
 // Header
-//$layout-header-text-color: unquote("rgb(#{$color-primary})");
+$layout-header-text-color: unquote("rgba(#{$color-black}, 0.9)");
+
 
 /* ==========  Content Tabs  ========== */
 
@@ -142,12 +141,12 @@ $list-avatar-size: 32px;
 $list-two-line-height: 64px;
 
 /* LAYOUT */
-//$layout-header-mobile-indent: 16px;
-//$layout-header-desktop-indent: 16px;
+$layout-header-desktop-indent: 16px;
 
 /* ICON TOGGLE */
 
 /* FOOTER */
+
 
 /* CHECKBOX */
 $checkbox-button-size: 18px;

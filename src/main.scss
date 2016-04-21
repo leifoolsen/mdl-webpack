@@ -33,8 +33,9 @@ $image_path: '/static/images/mdl';  // See: webpack.config.js CopyWebpackPlugin
 
 
 // 1. Configuration and helpers
+@import '../node_modules/material-design-lite/src/color-definitions';
 @import 'stylesheets/mdl/variables';
-@import '../node_modules/material-design-lite/src/variables';  //@import '../node_modules/material-design-lite/src/color-definitions';
+@import '../node_modules/material-design-lite/src/variables';
 @import 'stylesheets/utils/mixins';
 
 // 2. Vendors

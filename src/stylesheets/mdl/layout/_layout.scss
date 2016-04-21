@@ -1,85 +1,48 @@
-/*
 .mdl-layout {
 }
 
-main {
-  background-size: cover;
-}
 
-.mdl-layout__header {
-}
-
+// Drawer.
 .mdl-layout__drawer {
-  border: none;
 
   & .mdl-navigation {
 
     & .mdl-navigation__link {
-      position: relative;
-      border-left: 3px solid transparent;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        background-color: $layout-nav-color;
+      }
 
       &--current {
-        .material-icons {
-          color: $layout-drawer-navigation-link-active-color;
-        }
-        border-color: $layout-drawer-navigation-link-active-color;
-      }
-      &:hover {
+        background-color: $layout-drawer-navigation-link-active-background;
         color: $layout-drawer-navigation-link-active-color;
 
-        .material-icons {
-          //color: $layout-drawer-navigation-link-active-color;
+        &:hover {
+          background-color: $layout-drawer-navigation-link-active-background;
+          color: $layout-drawer-navigation-link-active-color;
         }
       }
     }
   }
 }
 
-.mdl-layout__header-row {
 
-  .mdl-textfield {
-    padding: 23px 0;
-  }
-  .mdl-button--icon {
-    &:hover {
-    }
-  }
-  .material-icons.mdl-badge {
-    cursor: pointer;
-    overflow: visible;
-    text-align: center;
-    min-width: 0;
-    &:hover {
-    }
-    &.mdl-badge--overlap {
-      &:after {
-        top: -3px;
-        right: -8px;
-      }
-    }
+.mdl-layout__drawer-button {
+  // Remove "annoying" focus ring
+  outline: none;
+
+  // Mozilla, remove focusring
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
   }
 }
 
-@media screen and (max-width: $layout-screen-size-threshold) {
-  .mdl-layout--fixed-drawer {
-    main {
-      margin-right: 0;
-    }
-    & > .mdl-layout__content {
-      margin-left: 0;
-    }
-    & > .mdl-layout__drawer {
-      transform: translateX(-$layout-drawer-width - 10px);
-      &.is-visible {
-        transform: translateX(0) !important;
-      }
-    }
-    & > .mdl-layout__drawer {
-      header {
-        height: $layout-header-mobile-row-height;
-        line-height: $layout-header-mobile-row-height;
-      }
-    }
-  }
+.mdl-layout__content {
+  // Change the layout__content class to Flex (instead of inline-block) to allow spacer to work.
+  // See: https://github.com/google/material-design-lite/issues/913
+  display: flex;
+  flex-flow: column nowrap;
 }
-*/
