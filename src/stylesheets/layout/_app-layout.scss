@@ -171,6 +171,11 @@ body {
     left: -$padding / 2;
   }
 
+  .mdl-layout__title,
+  .mdl-layout-title {
+    margin-left: -$padding / 2;
+  }
+
   #content-panel {
     padding: 0 $padding / 2;
   }
