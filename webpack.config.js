@@ -67,7 +67,8 @@ module.exports = {
           path.join(__dirname, 'src/js'),
           path.join(__dirname, 'src/test')
         ]
-      },
+      }
+      /* Temporarly disabled due to conflict in stylelint packages
       {
         loader: 'stylelint',
         test: /\.s(a|c)ss$/,
@@ -76,6 +77,7 @@ module.exports = {
           path.join(__dirname, 'src/stylesheets')
         ]
       }
+      */
     ],
     loaders: [
       {
@@ -207,6 +209,7 @@ module.exports = {
       }
     }
   },
+  /* Temporarly disabled due to conflict in stylelint packages
   stylelint: {
     configFile: path.join(__dirname, './.stylelint.config.js'),
     configOverrides: {
@@ -215,7 +218,8 @@ module.exports = {
       }
     }
   },
+  */
   eslint: {
-    // Uses '.eslintrc'
+    // Config in '.eslintrc'
   }
 };

@@ -388,33 +388,33 @@
     var dialogHtml = `
 <dialog id="lightbox-dialog" class="mdlext-dialog">
   <div id="lightbox" class="mdlext-lightbox mdlext-js-lightbox mdl-card mdl-shadow--4dp">
-    <div class="mdl-card__menu">
-      <button action="close" class="mdl-button mdl-button--icon mdl-js-button" title="Close">
+    <div class="mdl-card__menu mdl-color-text--white mdl-typography--body-2-color-contrast">
+      <button data-action="close" class="mdl-button mdl-button--icon mdl-js-button" title="Close">
         <i class="material-icons">close</i>
       </button>
     </div>
     <figure class="mdl-card__title">
       <img src="" alt>
-      <figcaption action="select">Details</figcaption>
+      <figcaption data-action="select">Details</figcaption>
     </figure>
-    <footer action="select" class="mdl-card__actions mdl-card--border">
+    <footer data-action="select" class="mdl-card__actions mdl-card--border">
       <div class="mdl-card__supporting-text">
         Image title
       </div>
       <nav>
-        <button action="first" class="mdl-button mdl-button--icon mdl-js-button" title="First">
+        <button data-action="first" class="mdl-button mdl-button--icon mdl-js-button" title="First">
           <i class="material-icons">first_page</i>
         </button>
-        <button action="prev" class="mdl-button mdl-button--icon mdl-js-button" title="Previous">
+        <button data-action="prev" class="mdl-button mdl-button--icon mdl-js-button" title="Previous">
           <i class="material-icons">chevron_left</i>
         </button>
-        <button action="next" class="mdl-button mdl-button--icon mdl-js-button" title="Next">
+        <button data-action="next" class="mdl-button mdl-button--icon mdl-js-button" title="Next">
           <i class="material-icons">chevron_right</i>
         </button>
-        <button action="last" class="mdl-button mdl-button--icon mdl-js-button" title="Last">
+        <button data-action="last" class="mdl-button mdl-button--icon mdl-js-button" title="Last">
           <i class="material-icons">last_page</i>
         </button>
-        <button action="select" class="mdl-button mdl-button--icon mdl-js-button" title="Details">
+        <button data-action="select" class="mdl-button mdl-button--icon mdl-js-button" title="Details">
           <i class="material-icons">info_outline</i>
         </button>
       </nav>
