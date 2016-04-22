@@ -54,6 +54,7 @@ $image_path: '/static/images/mdl';  // See: webpack.config.js CopyWebpackPlugin
 // 4. Internal Components
 
 // 5. Layout-related sections
+@import 'stylesheets/mdl/themes/themes';
 @import 'stylesheets/layout/app-layout';
 
 // 6. Page-specific styles
