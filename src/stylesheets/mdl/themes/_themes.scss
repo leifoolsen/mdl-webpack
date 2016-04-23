@@ -1,2 +1,111 @@
+// Light Palette.
+$mdlext-light-color-black:                     #000000 !default;
+$mdlext-light-color-white:                     #FFFFFF !default;
+
+$mdlext-light-content-background-color:        #FAFAFA !default;                                // background color on content (paper/card) background
+$mdlext-light-text-color-primary:              rgba($mdlext-light-color-black, 0.87) !default;  // text color on content (paper/card) background
+$mdlext-light-text-color-secondary:            rgba($mdlext-light-color-black, 0.54) !default;  // text color on content (paper/card) background
+$mdlext-light-text-color-disabled:             rgba($mdlext-light-color-black, 0.38) !default;  // disabled text, hint text, and icons
+$mdlext-light-divider-color:                   rgba($mdlext-light-color-black, 0.12) !default;  // -> $card-border-color
+$mdlext-light-color-primary:                   #F5F5F5 !default;
+$mdlext-light-color-primary-dark:              #E0E0E0 !default;
+$mdlext-light-color-primary-light:             #8BC34A !default;                                // Fallback color
+$mdlext-light-color-primary-contrast:          #000000 !default;                                // text color on primary/primary dark background
+$mdlext-light-color-accent:                    #FFC107 !default;
+$mdlext-light-color-accent-contrast:           $mdlext-light-color-white !default;
+
+// Anchor
+$mdlext-light-text-link-color:                 rgba($mdlext-light-color-accent, 0.87);
+
+// Badge
+$mdlext-light-badge-color:                     $mdlext-light-color-accent-contrast !default;
+$mdlext-light-badge-color-inverse:             $mdlext-light-color-accent !default;
+$mdlext-light-badge-background:                $mdlext-light-color-accent !default;
+$mdlext-light-badge-background-inverse:        $mdlext-light-color-accent-contrast !default;
+
+// Default button colors.
+$mdlext-light-button-primary-color:            rgba(#9E9E9E, 0.20) !default; // Grey-500
+$mdlext-light-button-secondary-color:          $mdlext-light-color-black !default;
+$mdlext-light-button-hover-color:              $mdlext-light-button-primary-color !default;
+$mdlext-light-button-active-color:             rgba(#9E9E9E, 0.40) !default;
+$mdlext-light-button-focus-color:              rgba($mdlext-light-color-black, 0.12) !default;
+
+// Colored button colors.
+$mdlext-light-button-primary-color-alt:        $mdlext-light-color-primary-light !default; //$mdlext-light-color-primary-contrast !default; //$mdlext-light-color-primary !default;
+$mdlext-light-button-secondary-color-alt:      $mdlext-light-color-primary !default; //$mdlext-light-color-primary-contrast !default;
+$mdlext-light-button-hover-color-alt:          darken($mdlext-light-color-primary-light, 10%) !default; //$mdlext-light-color-primary !default;
+$mdlext-light-button-active-color-alt:         darken($mdlext-light-color-primary-light, 10%) !default; //$mdlext-light-color-primary !default;
+$mdlext-light-button-focus-color-alt:          $mdlext-light-button-focus-color !default;
+
+// Ripple color for colored raised buttons.
+$mdlext-light-button-ripple-color-alt:         $mdlext-light-color-primary-contrast !default;
+
+// Disabled button colors.
+$mdlext-light-button-primary-color-disabled:   rgba($mdlext-light-color-black, 0.12) !default;
+$mdlext-light-button-secondary-color-disabled: rgba($mdlext-light-color-black, 0.26) !default;
+
+// FAB colors and sizes.
+$mdlext-light-button-fab-color-alt:            $mdlext-light-color-accent !default;
+$mdlext-light-button-fab-hover-color-alt:      $mdlext-light-color-accent !default;
+$mdlext-light-button-fab-active-color-alt:     $mdlext-light-color-accent !default;
+$mdlext-light-button-fab-text-color-alt:       $mdlext-light-color-accent-contrast !default;
+$mdlext-light-button-fab-ripple-color-alt:     $mdlext-light-color-accent-contrast !default;
+
+
+
+
+// Dark Palette.
+$mdlext-dark-color-black:                      #000000 !default;
+$mdlext-dark-color-white:                      #FFFFFF !default;
+$mdlext-dark-content-background-color:         #303030 !default;              // background color on content (paper/card) background
+$mdlext-dark-text-color-primary:               rgba(#FFFFFF, 1.00) !default;  // text color on content (paper/card) background
+$mdlext-dark-text-color-secondary:             rgba(#FFFFFF, 0.70) !default;  // text color on content (paper/card) background
+$mdlext-dark-text-color-disabled:              rgba(#FFFFFF, 0.50) !default;  // disabled text, hint text, and icons
+$mdlext-dark-divider-color:                    rgba(#FFFFFF, 0.12) !default;  // -> $card-border-color
+$mdlext-dark-color-primary:                    #212121 !default;
+$mdlext-dark-color-primary-dark:               #000000 !default;
+$mdlext-dark-color-primary-light:              #607D8B !default;              // Fallback color
+$mdlext-dark-color-primary-contrast:           #FFFFFF !default;              // text color on primary/primary dark background
+$mdlext-dark-color-accent:                     #FF5722 !default;
+$mdlext-dark-color-accent-contrast:            #FFFFFF !default;
+
+// Anchor
+$mdlext-dark-text-link-color:                  $mdlext-dark-color-accent;
+
+// Badge
+$mdlext-dark-badge-color:                      $mdlext-dark-color-accent-contrast !default;
+$mdlext-dark-badge-color-inverse:              $mdlext-dark-color-accent !default;
+$mdlext-dark-badge-background:                 $mdlext-dark-color-accent !default;
+$mdlext-dark-badge-background-inverse:         $mdlext-dark-color-accent-contrast !default;
+
+// Default button colors.
+$mdlext-dark-button-primary-color:             rgba(#9E9E9E, 0.20) !default; // Grey-500
+$mdlext-dark-button-secondary-color:           $mdlext-dark-color-white !default;
+$mdlext-dark-button-hover-color:               $mdlext-dark-button-primary-color !default;
+$mdlext-dark-button-active-color:              rgba(#9E9E9E, 0.40) !default;
+$mdlext-dark-button-focus-color:               rgba($mdlext-dark-color-black, 0.12) !default;
+
+// Colored button colors.
+$mdlext-dark-button-primary-color-alt:         $mdlext-dark-color-primary-light !default; //$mdlext-dark-color-primary !default;
+$mdlext-dark-button-secondary-color-alt:       $mdlext-dark-color-primary-contrast !default;
+$mdlext-dark-button-hover-color-alt:           darken($mdlext-dark-color-primary-light, 10%) !default; //$mdlext-dark-color-primary !default;
+$mdlext-dark-button-active-color-alt:          darken($mdlext-dark-color-primary-light, 10%) !default; //$mdlext-dark-color-primary !default;
+$mdlext-dark-button-focus-color-alt:           $mdlext-dark-button-focus-color !default;
+
+// Ripple color for colored raised buttons.
+$mdlext-dark-button-ripple-color-alt:          $mdlext-dark-color-primary-contrast !default;
+
+// Disabled button colors.
+$mdlext-dark-button-primary-color-disabled:    rgba($mdlext-dark-color-white, 0.12) !default;
+$mdlext-dark-button-secondary-color-disabled:  rgba($mdlext-dark-color-white, 0.26) !default;
+
+// FAB colors and sizes.
+$mdlext-dark-button-fab-color-alt:             $mdlext-dark-color-accent !default;
+$mdlext-dark-button-fab-hover-color-alt:       $mdlext-dark-color-accent !default;
+$mdlext-dark-button-fab-active-color-alt:      $mdlext-dark-color-accent !default;
+$mdlext-dark-button-fab-text-color-alt:        $mdlext-dark-color-accent-contrast !default;
+$mdlext-dark-button-fab-ripple-color-alt:      $mdlext-dark-color-accent-contrast !default;
+
+
 @import "light-theme";
 @import "dark-theme";

@@ -55,3 +55,189 @@
   }
 }
 
+// mdl/src/badge/_badge.scss
+// ---------------------------
+.mdlext-dark-theme {
+  .mdl-badge {
+
+    &[data-badge]:after {
+      background: $mdlext-light-badge-background;
+      color: $mdlext-light-badge-color;
+    }
+
+    &.mdl-badge--no-background {
+      &[data-badge]:after {
+        color: $mdlext-light-badge-color-inverse;
+        background: $mdlext-light-badge-background-inverse;
+      }
+    }
+  }
+}
+
+
+// mdl/src/button/_button.scss
+// ---------------------------
+.mdlext-dark-theme {
+
+  .mdl-button {
+    background: transparent;
+    color: $mdlext-dark-button-secondary-color;
+
+    &:hover {
+      background-color: $mdlext-dark-button-hover-color;
+    }
+
+    &:focus:not(:active) {
+      background-color: $mdlext-dark-button-focus-color;
+    }
+
+    &:active {
+      background-color: $mdlext-dark-button-active-color;
+    }
+
+    &.mdl-button--colored {
+      color: $mdlext-dark-button-primary-color-alt;
+
+      &:focus:not(:active) {
+        background-color: $mdlext-dark-button-focus-color-alt;
+      }
+    }
+  }
+
+  // Raised buttons
+  .mdl-button--raised {
+    background: $mdlext-dark-button-primary-color;
+
+    &:active {
+      background-color: $mdlext-dark-button-active-color;
+    }
+
+    &:focus:not(:active) {
+      background-color: $mdlext-dark-button-active-color;
+    }
+
+    &.mdl-button--colored {
+      background: $mdlext-dark-button-primary-color-alt;
+      color: $mdlext-dark-button-secondary-color-alt;
+
+      &:hover {
+        background-color: $mdlext-dark-button-hover-color-alt;
+      }
+
+      &:active {
+        background-color: $mdlext-dark-button-active-color-alt;
+      }
+
+      &:focus:not(:active) {
+        background-color: $mdlext-dark-button-active-color-alt;
+      }
+
+      & .mdl-ripple {
+        background: $mdlext-dark-button-ripple-color-alt;
+      }
+    }
+  }
+
+
+  // FABs
+  .mdl-button--fab {
+    background: $mdlext-dark-button-primary-color;
+
+    &:active {
+      background-color: $mdlext-dark-button-active-color;
+    }
+
+    &:focus:not(:active) {
+      background-color: $mdlext-dark-button-active-color;
+    }
+
+    &.mdl-button--colored {
+      background: $mdlext-dark-button-fab-color-alt;
+      color: $mdlext-dark-button-fab-text-color-alt;
+
+      &:hover {
+        background-color: $mdlext-dark-button-fab-hover-color-alt;
+      }
+
+      &:focus:not(:active) {
+        background-color: $mdlext-dark-button-fab-active-color-alt;
+      }
+
+      &:active {
+        background-color: $mdlext-dark-button-fab-active-color-alt;
+      }
+
+      & .mdl-ripple {
+        background: $mdlext-dark-button-fab-ripple-color-alt;
+      }
+    }
+  }
+
+
+  // Icon buttons
+  .mdl-button--icon {
+    color: inherit;
+  }
+
+  // Colorized buttons
+
+  .mdl-button--primary.mdl-button--primary {
+    color: $mdlext-dark-button-primary-color-alt;
+
+    & .mdl-ripple {
+      background: $mdlext-dark-button-secondary-color-alt;
+    }
+    &.mdl-button--raised, &.mdl-button--fab {
+      color: $mdlext-dark-button-secondary-color-alt;
+      background-color: $mdlext-dark-button-primary-color-alt;
+    }
+  }
+
+  .mdl-button--accent.mdl-button--accent {
+    color: $mdlext-dark-button-fab-color-alt;
+
+    & .mdl-ripple {
+      background: $mdlext-dark-button-fab-text-color-alt;
+    }
+    &.mdl-button--raised, &.mdl-button--fab {
+      color: $mdlext-dark-button-fab-text-color-alt;
+      background-color: $mdlext-dark-button-fab-color-alt;
+    }
+  }
+
+  // Disabled buttons
+
+  .mdl-button {
+    // Bump up specificity by using [disabled] twice.
+    &[disabled][disabled],
+    &.mdl-button--disabled.mdl-button--disabled {
+      color: $mdlext-dark-button-secondary-color-disabled;
+      background-color: transparent;
+    }
+
+    &--fab {
+      // Bump up specificity by using [disabled] twice.
+      &[disabled][disabled],
+      &.mdl-button--disabled.mdl-button--disabled {
+        background-color: $mdlext-dark-button-primary-color-disabled;
+        color: $mdlext-dark-button-secondary-color-disabled;
+      }
+    }
+
+    &--raised {
+      // Bump up specificity by using [disabled] twice.
+      &[disabled][disabled],
+      &.mdl-button--disabled.mdl-button--disabled {
+        background-color: $mdlext-dark-button-primary-color-disabled;
+        color: $mdlext-dark-button-secondary-color-disabled;
+      }
+    }
+    &--colored {
+      // Bump up specificity by using [disabled] twice.
+      &[disabled][disabled],
+      &.mdl-button--disabled.mdl-button--disabled {
+        color: $mdlext-dark-button-secondary-color-disabled;
+      }
+    }
+  }
+}

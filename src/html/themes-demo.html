@@ -1,46 +1,44 @@
 <h5>Themes</h5>
 <style>
   .demo-theme-container {
-    margin: 0 auto 16px;
+    margin: 0 auto 32px;
     max-width: 800px;
   }
 
-  .demo-theme-container table th {
+  .demo-theme-container table,
+  .demo-card-grid table {
+    width: 100%
+  }
+  .demo-theme-container table th,
+  .demo-card-grid table th {
     padding-right: 40px;
     vertical-align: middle;
     text-align: left;
+    width: 30%;
   }
-  .demo-theme-container section {
+  .demo-theme-container section,
+  .demo-card-grid section {
     margin: 0 16px;
   }
 </style>
 
 
 
-<div class="mdl-grid demo-card-grid">
+<div class="mdl-grid demo-card-grid" style="margin-bottom: 32px;">
 
-  <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+  <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
     <div class="mdl-card  mdlext-light-theme mdl-shadow--2dp">
       <header class="mdl-card__title mdl-color--primary mdl-color-text--primary-contrast">
         <h2 class="mdl-card__title-text">Light theme</h2>
       </header>
-      <div class="mdl-color--primary-dark mdl-color-text--primary-contrast" style="padding-left: 16px">
-        Primary dark color
-      </div>
-      <div class="mdl-color--accent mdl-color-text--accent-contrast" style="padding-left: 16px">
-        Accent color
-      </div>
-
-      <section style="padding: 0 16px">
+      <section>
         <h1>Base font</h1>
-
         <p>Material Design Lite start’s with a base font of</p>
         <ul>
           <li>A size of 14px</li>
           <li>A weight of 400</li>
           <li>A line height of 20px</li>
         </ul>
-
         <p class="mdl-typography--body-1">Regular 14px (Device), Regular 13px (Desktop)</p>
         <p class="mdl-typography--body-1-force-preferred-font">Regular 14px (Device), Regular 13px (Desktop)</p>
         <p class="mdl-typography--body-2">Medium 14px (Device), Medium 13px (Desktop)</p>
@@ -48,16 +46,122 @@
         <p class="mdl-typography--body-2-force-preferred-font">Medium 14px (Device), Medium 13px (Desktop)</p>
         <p><a href="#" onclick="return false">An anchor</a></p>
       </section>
+      <section>
+        <table>
+          <tr>
+            <th class="mdl-typography--caption-color-contrast">primary-dark</th>
+            <td class="mdl-color--primary-dark mdl-color-text--primary-contrast">primary dark</td>
+          </tr>
+          <tr>
+            <th class="mdl-typography--caption-color-contrast">primary</th>
+            <td class="mdl-color--primary mdl-color-text--primary-contrast">primary</td>
+          </tr>
+          <tr>
+            <th class="mdl-typography--caption-color-contrast">accent</th>
+            <td class="mdl-color--accent mdl-color-text--accent-contrast">accent</td>
+          </tr>
+          <tr>
+            <th class="mdl-typography--caption-color-contrast">primary-dark</th>
+            <td class="mdl-color--primary-contrast mdl-color-text--primary-dark">primary dark, inverted</td>
+          </tr>
+          <tr>
+            <th class="mdl-typography--caption-color-contrast">primary</th>
+            <td class="mdl-color--primary-contrast mdl-color-text--primary">primary, inverted</td>
+          </tr>
+          <tr>
+            <th class="mdl-typography--caption-color-contrast">accent</th>
+            <td class="mdl-color--accent-contrast mdl-color-text--accent">accent, inverted</td>
+          </tr>
+        </table>
+      </section>
 
       <div class="mdl-card__supporting-text">
         Card Supporting Text
       </div>
 
+      <section>
+        <span class="mdl-badge" data-badge="4">Inbox</span>
+        <span class="material-icons mdl-badge" data-badge="1">account_box</span>
+        <span class="mdl-badge" data-badge="♥">Mood</span>
+        <span class="material-icons mdl-badge" data-badge="♥">account_box</span>
+        <a href="/" class="mdl-badge" data-badge="5">Inbox</a>
+      </section>
+
+      <section>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+          <i class="material-icons">add</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab">
+          <i class="material-icons">add</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab" disabled>
+          <i class="material-icons">add</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+          <i class="material-icons">add</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+          <i class="material-icons">add</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" disabled>
+          <i class="material-icons">add</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised">
+          Raised
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised" disabled>
+          Disabled
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+          Colored
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+          Accent
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+          <i class="material-icons">settings</i>&nbsp;Settings
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect animated bounce">
+          <i class="material-icons">favorite</i>&nbsp;Fav
+        </button>
+        <button class="mdl-button mdl-js-button">
+          Flat
+        </button>
+        <button class="mdl-button mdl-js-button" disabled>
+          Disabled
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--primary">
+          Colored
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--accent">
+          Accent
+        </button>
+        <button class="mdl-button mdl-js-button">
+          <i class="material-icons">snooze</i>&nbsp;Ring, ring...
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--icon">
+          <i class="material-icons">mood</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+          <i class="material-icons">mood</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-color--lime mdl-button--accent">
+          <i class="material-icons">cloud</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-color--deep-orange-100 mdl-js-ripple-effect">
+          <i class="material-icons">settings</i>&nbsp;Settings
+        </button>
+      </section>
+
       <footer class="mdl-card__actions mdl-card--border">
         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
           Read more
         </a>
+        <a class="mdl-button mdl-js-button">
+          Read less
+        </a>
         <div class="mdl-layout-spacer"></div>
+        <button class="mdl-button mdl-button--icon"><i class="material-icons">radio</i></button>
         <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
         <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
       </footer>
@@ -65,20 +169,15 @@
 
   </div>
 
+
+
   <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
 
     <div class="mdl-card  mdlext-dark-theme mdl-shadow--2dp">
       <header class="mdl-card__title mdl-color--primary mdl-color-text--primary-contrast">
-        <h2 class="mdl-card__title-text">Dark theme (primary color)</h2>
+        <h2 class="mdl-card__title-text">Dark theme</h2>
       </header>
-      <div class="mdl-color--primary-dark mdl-color-text--primary-contrast" style="padding-left: 16px">
-        Primary dark color
-      </div>
-      <div class="mdl-color--accent mdl-color-text--accent-contrast" style="padding-left: 16px">
-        Accent color
-      </div>
-
-      <section style="padding: 0 16px">
+      <section>
         <h1>Base font</h1>
         <p>Material Design Lite start’s with a base font of</p>
         <ul>
@@ -93,15 +192,122 @@
         <p class="mdl-typography--body-2-force-preferred-font">Medium 14px (Device), Medium 13px (Desktop)</p>
         <p><a href="#" onclick="return false">An anchor</a></p>
       </section>
+      <section>
+        <table>
+          <tr>
+            <th class="mdl-typography--caption-color-contrast">primary-dark</th>
+            <td class="mdl-color--primary-dark mdl-color-text--primary-contrast">primary dark</td>
+          </tr>
+          <tr>
+            <th class="mdl-typography--caption-color-contrast">primary</th>
+            <td class="mdl-color--primary mdl-color-text--primary-contrast">primary</td>
+          </tr>
+          <tr>
+            <th class="mdl-typography--caption-color-contrast">accent</th>
+            <td class="mdl-color--accent mdl-color-text--accent-contrast">accent</td>
+          </tr>
+          <tr>
+            <th class="mdl-typography--caption-color-contrast">primary-dark</th>
+            <td class="mdl-color--primary-contrast mdl-color-text--primary-dark">primary dark, inverted</td>
+          </tr>
+          <tr>
+            <th class="mdl-typography--caption-color-contrast">primary</th>
+            <td class="mdl-color--primary-contrast mdl-color-text--primary">primary, inverted</td>
+          </tr>
+          <tr>
+            <th class="mdl-typography--caption-color-contrast">accent</th>
+            <td class="mdl-color--accent-contrast mdl-color-text--accent">accent, inverted</td>
+          </tr>
+        </table>
+      </section>
+
       <div class="mdl-card__supporting-text">
         Card Supporting Text
       </div>
+
+      <section>
+        <span class="mdl-badge" data-badge="4">Inbox</span>
+        <span class="material-icons mdl-badge" data-badge="1">account_box</span>
+        <span class="mdl-badge" data-badge="♥">Mood</span>
+        <span class="material-icons mdl-badge" data-badge="♥">account_box</span>
+        <a href="/" class="mdl-badge" data-badge="5">Inbox</a>
+      </section>
+
+      <section>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+          <i class="material-icons">add</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab">
+          <i class="material-icons">add</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab" disabled>
+          <i class="material-icons">add</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+          <i class="material-icons">add</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+          <i class="material-icons">add</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" disabled>
+          <i class="material-icons">add</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised">
+          Raised
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised" disabled>
+          Disabled
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+          Colored
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+          Accent
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+          <i class="material-icons">settings</i>&nbsp;Settings
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect animated bounce">
+          <i class="material-icons">favorite</i>&nbsp;Fav
+        </button>
+        <button class="mdl-button mdl-js-button">
+          Flat
+        </button>
+        <button class="mdl-button mdl-js-button" disabled>
+          Disabled
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--primary">
+          Colored
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--accent">
+          Accent
+        </button>
+        <button class="mdl-button mdl-js-button">
+          <i class="material-icons">snooze</i>&nbsp;Ring, ring...
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--icon">
+          <i class="material-icons">mood</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+          <i class="material-icons">mood</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-color--lime mdl-button--accent">
+          <i class="material-icons">cloud</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-color--deep-orange-100 mdl-js-ripple-effect">
+          <i class="material-icons">settings</i>&nbsp;Settings
+        </button>
+      </section>
 
       <footer class="mdl-card__actions mdl-card--border">
         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
           Read more
         </a>
+        <a class="mdl-button mdl-js-button">
+          Read less
+        </a>
         <div class="mdl-layout-spacer"></div>
+        <button class="mdl-button mdl-button--icon"><i class="material-icons">radio</i></button>
         <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
         <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
       </footer>
@@ -110,8 +316,6 @@
   </div>
 
 </div>
-
-
 
 
 
@@ -184,18 +388,6 @@
 
       <tr>
         <th class="mdl-typography--caption-color-contrast">primary-dark</th>
-        <td class="mdl-color--primary-contrast mdl-color-text--primary-dark">mdl-color--primary-contrast mdl-color-text--primary-dark</td>
-      </tr>
-      <tr>
-        <th class="mdl-typography--caption-color-contrast">primary</th>
-        <td class="mdl-color--primary-contrast mdl-color-text--primary">mdl-color-text--primary</td>
-      </tr>
-      <tr>
-        <th class="mdl-typography--caption-color-contrast">accent</th>
-        <td class="mdl-color--accent-contrast mdl-color-text--accent">mdl-color--accent-contrast mdl-color-text--accent</td>
-      </tr>
-      <tr>
-        <th class="mdl-typography--caption-color-contrast">primary-dark</th>
         <td class="mdl-color--primary-dark mdl-color-text--primary-contrast">mdl-color--primary-dark mdl-color-text--primary-contrast</td>
       </tr>
       <tr>
@@ -205,6 +397,18 @@
       <tr>
         <th class="mdl-typography--caption-color-contrast">accent</th>
         <td class="mdl-color--accent mdl-color-text--accent-contrast">mdl-color--accent mdl-color-text--accent-contrast</td>
+      </tr>
+      <tr>
+        <th class="mdl-typography--caption-color-contrast">primary-dark</th>
+        <td class="mdl-color--primary-contrast mdl-color-text--primary-dark">mdl-color--primary-contrast mdl-color-text--primary-dark</td>
+      </tr>
+      <tr>
+        <th class="mdl-typography--caption-color-contrast">primary</th>
+        <td class="mdl-color--primary-contrast mdl-color-text--primary">mdl-color-text--primary</td>
+      </tr>
+      <tr>
+        <th class="mdl-typography--caption-color-contrast">accent</th>
+        <td class="mdl-color--accent-contrast mdl-color-text--accent">mdl-color--accent-contrast mdl-color-text--accent</td>
       </tr>
     </table>
   </section>
@@ -306,18 +510,6 @@
 
       <tr>
         <th class="mdl-typography--caption-color-contrast">primary-dark</th>
-        <td class="mdl-color--primary-contrast mdl-color-text--primary-dark">mdl-color--primary-contrast mdl-color-text--primary-dark</td>
-      </tr>
-      <tr>
-        <th class="mdl-typography--caption-color-contrast">primary</th>
-        <td class="mdl-color--primary-contrast mdl-color-text--primary">mdl-color-text--primary</td>
-      </tr>
-      <tr>
-        <th class="mdl-typography--caption-color-contrast">accent</th>
-        <td class="mdl-color--accent-contrast mdl-color-text--accent">mdl-color--accent-contrast mdl-color-text--accent</td>
-      </tr>
-      <tr>
-        <th class="mdl-typography--caption-color-contrast">primary-dark</th>
         <td class="mdl-color--primary-dark mdl-color-text--primary-contrast">mdl-color--primary-dark mdl-color-text--primary-contrast</td>
       </tr>
       <tr>
@@ -327,6 +519,18 @@
       <tr>
         <th class="mdl-typography--caption-color-contrast">accent</th>
         <td class="mdl-color--accent mdl-color-text--accent-contrast">mdl-color--accent mdl-color-text--accent-contrast</td>
+      </tr>
+      <tr>
+        <th class="mdl-typography--caption-color-contrast">primary-dark</th>
+        <td class="mdl-color--primary-contrast mdl-color-text--primary-dark">mdl-color--primary-contrast mdl-color-text--primary-dark</td>
+      </tr>
+      <tr>
+        <th class="mdl-typography--caption-color-contrast">primary</th>
+        <td class="mdl-color--primary-contrast mdl-color-text--primary">mdl-color-text--primary</td>
+      </tr>
+      <tr>
+        <th class="mdl-typography--caption-color-contrast">accent</th>
+        <td class="mdl-color--accent-contrast mdl-color-text--accent">mdl-color--accent-contrast mdl-color-text--accent</td>
       </tr>
     </table>
   </section>

@@ -2,56 +2,29 @@
 // Default Palette (duplicated for visual inspection of colors in IDE).
 $_mdlext-window-background-color: #FFFFFF !default;
 $_mdlext-content-background-color:#FFFFFF !default;  // background color on content (paper/card) background
-$_mdlext-text-color-primary:      #212121 !default;  // text color on content (paper/card) background
-$_mdlext-text-color-secondary:    #727272 !default;  // text color on content (paper/card) background
+$_mdlext-text-color-primary:      rgba(#000000, 0.87) !default;  // text color on content (paper/card) background
+$_mdlext-text-color-secondary:    rgba(#000000, 0.54) !default;  // text color on content (paper/card) background
+$_mdlext-text-color-disabled:     rgba(#000000, 0.38) !default;  // disabled text, hint text, and icons
+$_mdlext-divider-color:           rgba(#000000, 0.12) !default;  // -> $card-border-color
 $_mdlext-color-primary:           #2196F3 !default;
 $_mdlext-color-primary-dark:      #1976D2 !default;
-$_mdlext-color-primary-light:     #BBDEFB !default;  // text color on primary/primary dark background
 $_mdlext-color-primary-contrast:  #FFFFFF !default;  // text color on primary/primary dark background
 $_mdlext-color-accent:            #03A9F4 !default;
 $_mdlext-color-accent-contrast:   #FFFFFF !default;
-$_mdlext-divider-color:           #B6B6B6 !default;  // -> $card-border-color
 $_mdlext-text-link-color:         $_mdlext-color-accent !default;
 
 $mdlext-window-background-color: "255,255,255" !default;
 $mdlext-content-background-color:"255,255,255" !default;
-$mdlext-text-color-primary:      "33,33,33"    !default;
-$mdlext-text-color-secondary:    "114,114,114" !default;
+$mdlext-text-color-primary:      "0,0,0"       !default;
+$mdlext-text-color-secondary:    "0,0,0"       !default;
+$mdlext-text-color-disabled:     "0,0,0"       !default;
+$mdlext-divider-color:           "0,0,0"       !default;
 $mdlext-color-primary:           "33,150,243"  !default;
 $mdlext-color-primary-dark:      "25,118,210"  !default;
-$mdlext-color-primary-light:     "187,222,251" !default;
 $mdlext-color-primary-contrast:  "255,255,255" !default;
 $mdlext-color-accent:            "3,169,244"   !default;
 $mdlext-color-accent-contrast:   "255,255,255" !default;
-$mdlext-divider-color:           "182,182,182" !default;
 $mdlext-text-link-color:         $mdlext-color-accent;
-
-// Light Palette.
-$mdlext-light-content-background-color:#F6F6F6 !default;  // background color on content (paper/card) background
-$mdlext-light-text-color-primary:      #212121 !default;  // text color on content (paper/card) background
-$mdlext-light-text-color-secondary:    #727272 !default;  // text color on content (paper/card) background
-$mdlext-light-color-primary:           #9E9E9E !default;
-$mdlext-light-color-primary-dark:      #616161 !default;
-$mdlext-light-color-primary-light:     #F5F5F5 !default;  // text color on primary/primary dark background
-$mdlext-light-color-primary-contrast:  #FFFFFF !default;  // text color on primary/primary dark background
-$mdlext-light-color-accent:            #FFC107 !default;
-$mdlext-light-color-accent-contrast:   #FFFFFF !default;
-$mdlext-light-divider-color:           #B6B6B6 !default;  // -> $card-border-color
-$mdlext-light-text-link-color:         $mdlext-light-color-accent;
-
-// Dark Palette.
-$mdlext-dark-content-background-color:#554F4F !default;  // background color on content (paper/card) background
-$mdlext-dark-text-color-primary:      #DBDBDB !default;  // text color on content (paper/card) background
-$mdlext-dark-text-color-secondary:    #BBBBBB !default;  // text color on content (paper/card) background
-$mdlext-dark-color-primary:           #4CAF50 !default;
-$mdlext-dark-color-primary-dark:      #388E3C !default;
-$mdlext-dark-color-primary-light:     #C8E6C9 !default;  // text color on primary/primary dark background
-$mdlext-dark-color-primary-contrast:  #FFFFFF !default;  // text color on primary/primary dark background
-$mdlext-dark-color-accent:            #8ACCFF !default;
-$mdlext-dark-color-accent-contrast:   #FFFFFF !default;
-$mdlext-dark-divider-color:           #B6B6B6 !default;  // -> $card-border-color
-$mdlext-dark-text-link-color:         $mdlext-dark-color-accent;
-
 
 
 /* -----------------------------------------------
@@ -77,28 +50,13 @@ $color-accent-contrast: $mdlext-color-accent-contrast;
 // text-color-secondary. For light themes, use text-color-primary-inverse
 // and text-color-secondary-inverse.
 
-$text-color-primary: unquote("rgba(#{$mdlext-text-color-primary}, 1)");
+$text-color-primary: unquote("rgba(#{$mdlext-text-color-primary}, 0.87)");
 $text-link-color: unquote("rgb(#{$color-accent})");
 
 
 /* ==========  Components  ========== */
 
 /* ==========  Standard Buttons  ========== */
-
-// Default button colors.
-//$button-secondary-color: unquote("rgb(#{$color-white})");
-
-// Colored button colors.
-//$button-primary-color-alt: unquote("rgb(#{$color-secondary})");
-
-// Disabled button colors.
-//$button-primary-color-disabled: #6b6b6b;
-//$button-secondary-color-disabled: unquote("rgba(#{$color-white}, 0.3)");
-
-
-// FAB colors and sizes.
-//$button-fab-color-alt: unquote("rgb(#{$color-secondary})");
-
 
 /* ==========  Icon Toggles  ========== */
 
@@ -127,10 +85,6 @@ $layout-header-text-color: unquote("rgba(#{$color-black}, 0.9)");
 /* ==========  Text fields  ========== */
 
 /* ==========  Card  ========== */
-//$card-text-color: unquote("rgba(#{$color-primary-contrast}, 1.0)");
-//$card-background-color: unquote("rgb(#{$color-white})") !default;
-//$card-supporting-text-text-color: unquote("rgba(#{$color-white}, 0.8)");
-//$card-subtitle-color: unquote("rgba(#{$color-white}, 0.5)");
 $card-image-placeholder-color: rgba(255, 255, 255, 0);
 
 // $card-text-color is only applied to .mdl-card__title.
@@ -139,17 +93,12 @@ $card-image-placeholder-color: rgba(255, 255, 255, 0);
 /* ==========  Sliders ========== */
 
 /* ========== Progress ========== */
-//$progress-main-color: unquote("rgb(#{$color-secondary})");
-//$progress-secondary-color: unquote("rgba(#{$color-white}, 0.4)");
 
 /* ==========  List ========== */
 
 /* ==========  Item ========== */
 
 // Default Item Colors
-//$default-item-focus-bg-color: unquote("rgba(#{$color-black}, 0.15)");
-//$default-item-active-bg-color: unquote("rgba(#{$color-black}, 0.15)");
-//$default-item-hover-bg-color: unquote("rgba(#{$color-black}, 0.2)");
 
 /* ==========  Dropdown menu ========== */
 
@@ -204,8 +153,6 @@ $button-font-weigth: 400;
 /* PROGRESS */
 
 /* BADGE */
-//$badge-color: unquote("rgb(#{$color-white})");
-//$badge-background: unquote("rgb(#{$color-primary})");
 
 /* SHADOWS */
 
