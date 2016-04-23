@@ -5,12 +5,12 @@
     /*max-width: 800px;*/
   }
 
-  .demo-theme-container table,
-  .demo-card-grid table {
+  .demo-theme-container table.info,
+  .demo-card-grid table.info {
     width: 100%
   }
-  .demo-theme-container table th,
-  .demo-card-grid table th {
+  .demo-theme-container table.info th,
+  .demo-card-grid table.info th {
     padding-right: 40px;
     vertical-align: middle;
     text-align: left;
@@ -63,6 +63,33 @@
     overflow: hidden;
   }
 
+
+  .demo-menu {
+    padding-top: 16px;
+    max-width: 300px;
+  }
+  .demo-menu-container {
+    position: relative;
+    width: 100%;
+  }
+  .demo-menu-bar {
+    box-sizing: border-box;
+    height: 64px;
+    width: 100%;
+    padding: 16px;
+  }
+  .demo-menu-background-light {
+    background: white;
+    height: 148px;
+    width: 100%;
+  }
+  .demo-menu-background-dark {
+    background: #212121;
+    height: 148px;
+    width: 100%;
+  }
+
+
 </style>
 
 
@@ -76,7 +103,7 @@
         <h2 class="mdl-card__title-text">Light theme</h2>
       </header>
       <section>
-        <table>
+        <table class="info">
           <tr>
             <th class="mdl-typography--caption-color-contrast">primary-dark</th>
             <td class="mdl-color--primary-dark mdl-color-text--primary-contrast">primary dark</td>
@@ -132,7 +159,7 @@
         <h2 class="mdl-card__title-text">Dark theme</h2>
       </header>
       <section>
-        <table>
+        <table class="info">
           <tr>
             <th class="mdl-typography--caption-color-contrast">primary-dark</th>
             <td class="mdl-color--primary-dark mdl-color-text--primary-contrast">primary dark</td>
@@ -189,7 +216,7 @@
 <div class="demo-theme-container mdlext-light-theme">
 
   <section>
-    <table>
+    <table class="info">
       <tr>
         <th class="mdl-typography--caption-color-contrast">.mdl-typography--</th>
         <td class="mdl-typography--title">Scale &amp; Basic Styles</td>
@@ -387,6 +414,54 @@
 
   </section>
 
+
+  <!-- Selectfield -->
+  <section style="margin-bottom: 16px;">
+    <div class="mdl-grid mdl-grid--no-spacing">
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdlext-selectfield mdlext-js-selectfield">
+          <select class="mdlext-selectfield__select" id="mdl-professsion3" name="mdl-professsion3">
+            <option value=""></option>
+            <option value="option1">option 1</option>
+            <option value="option2">option 2</option>
+            <option value="option3">option 3</option>
+            <option value="option4">option 4</option>
+            <option value="option5">option 5</option>
+          </select>
+          <label class="mdlext-selectfield__label" for="mdl-professsion3">Profession</label>
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdlext-selectfield mdlext-js-selectfield mdlext-selectfield--floating-label">
+          <select class="mdlext-selectfield__select" id="mdl-professsion" name="mdl-professsion">
+            <option value=""></option>
+            <option value="option1">option 1</option>
+            <option value="option2">option 2</option>
+            <option value="option3">option 3</option>
+            <option value="option4">option 4</option>
+            <option value="option5">option 5</option>
+          </select>
+          <label class="mdlext-selectfield__label" for="mdl-professsion">Profession</label>
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdlext-selectfield mdlext-js-selectfield mdlext-selectfield--floating-label">
+          <select class="mdlext-selectfield__select" id="mdl-professsion2" name="mdl-professsion2" disabled>
+            <option value=""></option>
+            <option value="option1">option 1</option>
+            <option value="option2">option 2</option>
+            <option value="option3">option 3</option>
+            <option value="option4">option 4</option>
+            <option value="option5">option 5</option>
+          </select>
+          <label class="mdlext-selectfield__label" for="mdl-professsion2">Profession</label>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Badges -->
   <section>
@@ -613,50 +688,6 @@
   </section>
 
 
-  <!-- Native toggles -->
-  <section>
-    <div class="mdl-grid demo-toggle-grid">
-      <div class="mdl-cell mdl-cell--2-col">
-        <label for="native-checkbox-1">
-          <input type="checkbox" id="native-checkbox-1" checked>
-          <span>Checkbox</span>
-        </label>
-      </div>
-      <div class="mdl-cell mdl-cell--2-col">
-        <label for="native-checkbox-2">
-          <input type="checkbox" id="native-checkbox-2">
-          <span>Checkbox</span>
-        </label>
-      </div>
-      <div class="mdl-cell mdl-cell--2-col">
-        <label for="native-checkbox-3">
-          <input type="checkbox" id="native-checkbox-3" checked disabled>
-          <span>Checkbox</span>
-        </label>
-      </div>
-
-      <div class="mdl-cell mdl-cell--2-col">
-        <label for="native-option-1">
-          <input type="radio" id="native-option-1" name="native-options" value="1" checked>
-          <span>First</span>
-        </label>
-      </div>
-      <div class="mdl-cell mdl-cell--2-col">
-        <label for="native-option-2">
-          <input type="radio" id="native-option-2" name="native-options" value="2">
-          <span>Second</span>
-        </label>
-      </div>
-      <div class="mdl-cell mdl-cell--2-col">
-        <label for="native-option-3">
-          <input type="radio" id="native-option-3" name="native-options" value="3" disabled>
-          <span class="mdl-radio__label">Third</span>
-        </label>
-      </div>
-    </div>
-  </section>
-
-
   <!-- Sliders -->
   <section>
     <div class="mdl-grid demo-slider-grid">
@@ -672,18 +703,72 @@
     </div>
   </section>
 
+
+  <!-- Data table -->
+  <section>
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+      <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">Materials</th>
+        <th>Quantity</th>
+        <th>Unit price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+        <td>25</td>
+        <td>$2.90</td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+        <td>50</td>
+        <td>$1.25</td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+        <td>10</td>
+        <td>$2.35</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+  <!-- Menu -->
+  <section>
+    <div class="demo-menu demo-menu__lower-left">
+      <div class="demo-menu-container mdl-shadow--2dp mdl-color--primary-dark mdl-color-text--primary-contrast">
+        <div class="demo-menu-bar">
+          <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
+            <li class="mdl-menu__item">Some Action</li>
+            <li class="mdl-menu__item">Another Action</li>
+            <li disabled class="mdl-menu__item">Disabled Action</li>
+            <li class="mdl-menu__item">Yet Another Action</li>
+          </ul>
+
+          <span>Lower left</span>
+
+        </div>
+        <div class="demo-menu-background-light"></div>
+      </div>
+    </div>
+  </section>
 </div>
 
 
 
 
-
+<!-- Dark theme -->
 
 
 <div class="demo-theme-container mdlext-dark-theme">
 
   <section>
-    <table>
+    <table class="info">
       <tr>
         <th class="mdl-typography--caption-color-contrast">.mdl-typography--</th>
         <td class="mdl-typography--title">Scale &amp; Basic Styles</td>
@@ -879,6 +964,56 @@
 
     </div>
 
+  </section>
+
+
+
+  <!-- Selectfield -->
+  <section style="margin-bottom: 16px;">
+    <div class="mdl-grid mdl-grid--no-spacing">
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdlext-selectfield mdlext-js-selectfield">
+          <select class="mdlext-selectfield__select" id="mdl-professsion23" name="mdl-professsion3">
+            <option value=""></option>
+            <option value="option1">option 1</option>
+            <option value="option2">option 2</option>
+            <option value="option3">option 3</option>
+            <option value="option4">option 4</option>
+            <option value="option5">option 5</option>
+          </select>
+          <label class="mdlext-selectfield__label" for="mdl-professsion23">Profession</label>
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdlext-selectfield mdlext-js-selectfield mdlext-selectfield--floating-label">
+          <select class="mdlext-selectfield__select" id="mdl-professsion20" name="mdl-professsion20">
+            <option value=""></option>
+            <option value="option1">option 1</option>
+            <option value="option2">option 2</option>
+            <option value="option3">option 3</option>
+            <option value="option4">option 4</option>
+            <option value="option5">option 5</option>
+          </select>
+          <label class="mdlext-selectfield__label" for="mdl-professsion20">Profession</label>
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdlext-selectfield mdlext-js-selectfield mdlext-selectfield--floating-label">
+          <select class="mdlext-selectfield__select" id="mdl-professsion22" name="mdl-professsion22" disabled>
+            <option value=""></option>
+            <option value="option1">option 1</option>
+            <option value="option2">option 2</option>
+            <option value="option3">option 3</option>
+            <option value="option4">option 4</option>
+            <option value="option5">option 5</option>
+          </select>
+          <label class="mdlext-selectfield__label" for="mdl-professsion22">Profession</label>
+        </div>
+      </div>
+    </div>
   </section>
 
 
@@ -1108,49 +1243,6 @@
   </section>
 
 
-  <!-- Native toggles -->
-  <section>
-    <div class="mdl-grid demo-toggle-grid">
-      <div class="mdl-cell mdl-cell--2-col">
-        <label for="native-checkbox-21">
-          <input type="checkbox" id="native-checkbox-21" checked>
-          <span>Checkbox</span>
-        </label>
-      </div>
-      <div class="mdl-cell mdl-cell--2-col">
-        <label for="native-checkbox-22">
-          <input type="checkbox" id="native-checkbox-22">
-          <span>Checkbox</span>
-        </label>
-      </div>
-      <div class="mdl-cell mdl-cell--2-col">
-        <label for="native-checkbox-23">
-          <input type="checkbox" id="native-checkbox-23" checked disabled>
-          <span>Checkbox</span>
-        </label>
-      </div>
-
-      <div class="mdl-cell mdl-cell--2-col">
-        <label for="native-option-21">
-          <input type="radio" id="native-option-21" name="native-options2" value="1" checked>
-          <span>First</span>
-        </label>
-      </div>
-      <div class="mdl-cell mdl-cell--2-col">
-        <label for="native-option-22">
-          <input type="radio" id="native-option-22" name="native-options2" value="2">
-          <span>Second</span>
-        </label>
-      </div>
-      <div class="mdl-cell mdl-cell--2-col">
-        <label for="native-option-23">
-          <input type="radio" id="native-option-23" name="native-options2" value="3" disabled>
-          <span class="mdl-radio__label">Third</span>
-        </label>
-      </div>
-    </div>
-  </section>
-
 
   <!-- Sliders -->
   <section>
@@ -1167,5 +1259,60 @@
     </div>
   </section>
 
+
+  <!-- Data table -->
+  <section>
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+      <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">Materials</th>
+        <th>Quantity</th>
+        <th>Unit price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+        <td>25</td>
+        <td>$2.90</td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+        <td>50</td>
+        <td>$1.25</td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+        <td>10</td>
+        <td>$2.35</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+  <!-- Menu -->
+  <section>
+    <div class="demo-menu">
+      <div class="demo-menu-container mdl-shadow--2dp mdl-color--primary-dark mdl-color-text--primary-contrast">
+        <div class="demo-menu-background-dark"></div>
+        <div class="demo-menu-bar">
+          <button id="demo-menu-top-left" class="mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">more_vert</i>
+          </button>
+
+          <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+              for="demo-menu-top-left">
+            <li class="mdl-menu__item">Some Action</li>
+            <li class="mdl-menu__item">Another Action</li>
+            <li disabled class="mdl-menu__item">Disabled Action</li>
+            <li class="mdl-menu__item">Yet Another Action</li>
+          </ul>
+
+          <span>Top left</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </div>

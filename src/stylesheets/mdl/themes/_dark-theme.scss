@@ -648,3 +648,90 @@
   }
 
 }
+
+
+// mdl/src/data-table/_data-table.scss
+// -----------------------------------
+.mdlext-dark-theme {
+
+  .mdl-data-table {
+    border-color: $mdlext-dark-data-table-dividers;
+    background-color: $mdlext-dark-data-table-background-color;
+
+    tbody {
+      tr {
+        &.is-selected {
+          background-color: $mdlext-dark-data-table-selection-color;
+        }
+
+        &:hover {
+          background-color: $mdlext-dark-data-table-hover-color;
+        }
+      }
+    }
+
+    th {
+      color: $mdlext-dark-data-table-header-color;
+
+      &.mdl-data-table__header--sorted-ascending,
+      &.mdl-data-table__header--sorted-descending {
+        color: $mdlext-dark-data-table-header-sorted-color;
+
+        &:hover {
+          &:before {
+            color: $mdlext-dark-data-table-header-sorted-icon-hover-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// mdl/src/menu/_menu.scss
+// -----------------------------------
+.mdlext-dark-theme {
+
+  .mdl-menu__outline {
+    background: $mdlext-dark-default-dropdown-bg-color;
+  }
+
+  .mdl-menu__item {
+    color: $mdlext-dark-default-item-text-color;
+    background-color: transparent;
+    outline-color: $mdlext-dark-default-item-outline-color;
+
+    &--full-bleed-divider {
+      border-bottom-color: $mdlext-dark-default-item-divider-color;
+    }
+
+    &[disabled], &[data-mdl-disabled] {
+      color: $mdlext-dark-disabled-item-text-color;
+      background-color: transparent;
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      &:focus {
+        background-color: transparent;
+      }
+
+      & .mdl-ripple {
+        background: transparent;
+      }
+    }
+
+    &:hover {
+      background-color: $mdlext-dark-default-item-hover-bg-color;
+    }
+
+    &:focus {
+      background-color: $mdlext-dark-default-item-focus-bg-color;
+    }
+
+    &:active {
+      background-color: $mdlext-dark-default-item-active-bg-color;
+    }
+  }
+}

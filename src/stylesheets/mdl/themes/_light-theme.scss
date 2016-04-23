@@ -648,5 +648,91 @@
   .mdl-switch.is-disabled .mdl-switch__ripple-container .mdl-ripple {
     background: transparent;
   }
+}
 
+
+// mdl/src/data-table/_data-table.scss
+// -----------------------------------
+.mdlext-light-theme {
+
+  .mdl-data-table {
+    border-color: $mdlext-light-data-table-dividers;
+    background-color: $mdlext-light-data-table-background-color;
+
+    tbody {
+      tr {
+        &.is-selected {
+          background-color: $mdlext-light-data-table-selection-color;
+        }
+
+        &:hover {
+          background-color: $mdlext-light-data-table-hover-color;
+        }
+      }
+    }
+
+    th {
+      color: $data-table-header-color;
+
+      &.mdl-data-table__header--sorted-ascending,
+      &.mdl-data-table__header--sorted-descending {
+        color: $mdlext-light-data-table-header-sorted-color;
+
+        &:hover {
+          &:before {
+            color: $mdlext-light-data-table-header-sorted-icon-hover-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// mdl/src/menu/_menu.scss
+// -----------------------------------
+.mdlext-light-theme {
+
+  .mdl-menu__outline {
+    background: $mdlext-light-default-dropdown-bg-color;
+  }
+
+  .mdl-menu__item {
+    color: $mdlext-light-default-item-text-color;
+    background-color: transparent;
+    outline-color: $mdlext-light-default-item-outline-color;
+
+    &--full-bleed-divider {
+      border-bottom-color: $mdlext-light-default-item-divider-color;
+    }
+
+    &[disabled], &[data-mdl-disabled] {
+      color: $mdlext-light-disabled-item-text-color;
+      background-color: transparent;
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      &:focus {
+        background-color: transparent;
+      }
+
+      & .mdl-ripple {
+        background: transparent;
+      }
+    }
+
+    &:hover {
+      background-color: $mdlext-light-default-item-hover-bg-color;
+    }
+
+    &:focus {
+      background-color: $mdlext-light-default-item-focus-bg-color;
+    }
+
+    &:active {
+      background-color: $mdlext-light-default-item-active-bg-color;
+    }
+  }
 }
