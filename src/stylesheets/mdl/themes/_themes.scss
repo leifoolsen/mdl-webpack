@@ -1,4 +1,6 @@
+// -------------------------------------------
 // Light Palette.
+// -------------------------------------------
 $mdlext-light-color-black:                     #000000 !default;
 $mdlext-light-color-white:                     #FFFFFF !default;
 
@@ -52,9 +54,59 @@ $mdlext-light-button-fab-text-color-alt:       $mdlext-light-color-accent-contra
 $mdlext-light-button-fab-ripple-color-alt:     $mdlext-light-color-accent-contrast !default;
 
 
+// Slider
+$mdlext-light-range-bg-color:                  rgba($mdlext-light-color-black, 0.26) !default;
+$mdlext-light-range-color:                     $mdlext-light-color-primary-light !default;
+$mdlext-light-range-faded-color:               rgba($mdlext-light-color-primary-light, 0.26) !default;
+$mdlext-light-range-bg-focus-color:            rgba($mdlext-light-color-black, 0.12) !default;
+
+// Textfields
+$mdlext-light-input-text-background-color:     transparent !default;
+$mdlext-light-input-text-label-color:          rgba($mdlext-light-color-black, 0.26) !default;
+$mdlext-light-input-text-bottom-border-color:  rgba($mdlext-light-color-black, 0.12) !default;
+$mdlext-light-input-text-highlight-color:      $mdlext-light-color-primary-light !default;
+$mdlext-light-input-text-disabled-color:       $mdlext-light-input-text-bottom-border-color !default;
+$mdlext-light-input-text-disabled-text-color:  $mdlext-light-input-text-label-color !default;
+$mdlext-light-input-text-error-color:          #D32F2F !default;
 
 
+// Checkboxes
+$mdlext-light-checkbox-color:                  $mdlext-light-color-primary-light !default;
+$mdlext-light-checkbox-off-color:              rgba($mdlext-light-color-black, 0.54) !default;
+$mdlext-light-checkbox-disabled-color:         rgba($mdlext-light-color-black, 0.26) !default;
+$mdlext-light-checkbox-focus-color:            rgba($mdlext-light-color-primary-light, 0.26) !default;
+//$mdlext-light-checkbox-image-path:             $image_path;
+
+
+// Icon Toggles
+$mdlext-light-icon-toggle-color:               #616161 !default;
+$mdlext-light-icon-toggle-focus-color:         $mdlext-light-button-focus-color !default;
+$mdlext-light-icon-toggle-checked-color:       $mdlext-light-color-primary-light !default;
+$mdlext-light-icon-toggle-checked-focus-color: rgba($mdlext-light-color-primary-light, 0.26) !default;
+$mdlext-light-icon-toggle-disabled-color:      rgba($mdlext-light-color-black, 0.26) !default;
+
+// Radio Buttons
+$mdlext-light-radio-color:                     $mdlext-light-color-primary-light !default;
+$mdlext-light-radio-off-color:                 rgba($mdlext-light-color-black, 0.54) !default;
+$mdlext-light-radio-disabled-color:            rgba($mdlext-light-color-black, 0.26) !default;
+
+
+// Switches
+$mdlext-light-switch-color:                    $mdlext-light-color-primary-light !default;
+$mdlext-light-switch-faded-color:              rgba($mdlext-light-color-primary-light, 0.26) !default;
+$mdlext-light-switch-thumb-color:              $mdlext-light-switch-color !default;
+$mdlext-light-switch-track-color:              rgba($mdlext-light-color-primary-light, 0.5) !default;
+
+$mdlext-light-switch-off-thumb-color:          #FAFAFA !default;
+$mdlext-light-switch-off-track-color:          rgba($mdlext-light-color-black, 0.26) !default;
+$mdlext-light-switch-disabled-thumb-color:     #BDBDBD !default;
+$mdlext-light-switch-disabled-track-color:     rgba($mdlext-light-color-black, 0.12) !default;
+
+
+
+// -------------------------------------------
 // Dark Palette.
+// -------------------------------------------
 $mdlext-dark-color-black:                      #000000 !default;
 $mdlext-dark-color-white:                      #FFFFFF !default;
 $mdlext-dark-content-background-color:         #303030 !default;              // background color on content (paper/card) background
@@ -107,5 +159,50 @@ $mdlext-dark-button-fab-text-color-alt:        $mdlext-dark-color-accent-contras
 $mdlext-dark-button-fab-ripple-color-alt:      $mdlext-dark-color-accent-contrast !default;
 
 
-@import "light-theme";
-@import "dark-theme";
+// Slider
+$mdlext-dark-range-bg-color:                   rgba($mdlext-dark-color-white, 0.50) !default;
+$mdlext-dark-range-color:                      $mdlext-dark-color-primary-light !default;
+$mdlext-dark-range-faded-color:                rgba($mdlext-dark-color-primary-light, 0.26) !default;
+$mdlext-dark-range-bg-focus-color:             rgba($mdlext-dark-color-white, 0.26) !default;
+
+
+// Textfields
+$mdlext-dark-input-text-background-color:     transparent !default;
+$mdlext-dark-input-text-label-color:          rgba($mdlext-dark-color-white, 0.50) !default;
+$mdlext-dark-input-text-bottom-border-color:  rgba($mdlext-dark-color-white, 0.26) !default;
+$mdlext-dark-input-text-highlight-color:      $mdlext-dark-color-primary-light !default;
+$mdlext-dark-input-text-disabled-color:       $mdlext-dark-input-text-bottom-border-color !default;
+$mdlext-dark-input-text-disabled-text-color:  $mdlext-dark-input-text-label-color !default;
+$mdlext-dark-input-text-error-color:          #D32F2F !default;
+
+
+// Checkboxes
+$mdlext-dark-checkbox-color:                  $mdlext-dark-color-primary-light !default;
+$mdlext-dark-checkbox-off-color:              rgba($mdlext-dark-color-white, 0.50) !default;
+$mdlext-dark-checkbox-disabled-color:         rgba($mdlext-dark-color-white, 0.26) !default;
+$mdlext-dark-checkbox-focus-color:            rgba($mdlext-dark-color-primary-light, 0.26) !default;
+
+
+// Icon Toggles
+$mdlext-dark-icon-toggle-color:               #616161 !default;
+$mdlext-dark-icon-toggle-focus-color:         $mdlext-dark-button-focus-color !default;
+$mdlext-dark-icon-toggle-checked-color:       $mdlext-dark-color-primary-light !default;
+$mdlext-dark-icon-toggle-checked-focus-color: rgba($mdlext-dark-color-primary-light, 0.26) !default;
+$mdlext-dark-icon-toggle-disabled-color:      rgba($mdlext-dark-color-white, 0.50) !default;
+
+// Radio Buttons
+$mdlext-dark-radio-color:                     $mdlext-dark-color-primary-light !default;
+$mdlext-dark-radio-off-color:                 rgba($mdlext-dark-color-white, 0.50) !default;
+$mdlext-dark-radio-disabled-color:            rgba($mdlext-dark-color-white, 0.26) !default;
+
+
+// Switches
+$mdlext-dark-switch-color:                    $mdlext-dark-color-primary-light !default;
+$mdlext-dark-switch-faded-color:              rgba($mdlext-dark-color-primary-light, 0.26) !default;
+$mdlext-dark-switch-thumb-color:              $mdlext-dark-switch-color !default;
+$mdlext-dark-switch-track-color:              rgba($mdlext-dark-color-primary-light, 0.5) !default;
+
+$mdlext-dark-switch-off-thumb-color:          #FAFAFA !default;
+$mdlext-dark-switch-off-track-color:          rgba($mdlext-dark-color-white, 0.26) !default;
+$mdlext-dark-switch-disabled-thumb-color:     #BDBDBD !default;
+$mdlext-dark-switch-disabled-track-color:     rgba($mdlext-dark-color-white, 0.12) !default;

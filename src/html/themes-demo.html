@@ -2,7 +2,7 @@
 <style>
   .demo-theme-container {
     margin: 0 auto 32px;
-    max-width: 800px;
+    /*max-width: 800px;*/
   }
 
   .demo-theme-container table,
@@ -20,32 +20,61 @@
   .demo-card-grid section {
     margin: 0 16px;
   }
+
+  .demo-badge-grid {
+  }
+  .demo-badge-grid .mdl-cell {
+    text-align: center;
+  }
+  .demo-badge-grid .mdl-cell p {
+    margin-top: 32px;
+  }
+
+  .demo-button-grid {
+  }
+  .demo-button-grid .mdl-cell {
+    text-align: center;
+    padding: 12px 4px;
+  }
+
+  .demo-toggle-grid {
+  }
+  .demo-toggle-grid .mdl-cell p {
+    margin-top: 16px;
+  }
+
+  .demo-slider-grid  {
+  }
+  .demo-slider-grid p {
+    margin-top: 16px;
+  }
+
+  .textfield-demo-container {
+  }
+
+  .textfield-demo-container .mdl-cell {
+    padding: 0 4px 8px 0;
+  }
+
+  .textfield-demo-container .mdl-cell p {
+    margin-bottom: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
 </style>
+
 
 
 
 <div class="mdl-grid demo-card-grid" style="margin-bottom: 32px;">
 
-  <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+  <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
     <div class="mdl-card  mdlext-light-theme mdl-shadow--2dp">
       <header class="mdl-card__title mdl-color--primary mdl-color-text--primary-contrast">
         <h2 class="mdl-card__title-text">Light theme</h2>
       </header>
-      <section>
-        <h1>Base font</h1>
-        <p>Material Design Lite start’s with a base font of</p>
-        <ul>
-          <li>A size of 14px</li>
-          <li>A weight of 400</li>
-          <li>A line height of 20px</li>
-        </ul>
-        <p class="mdl-typography--body-1">Regular 14px (Device), Regular 13px (Desktop)</p>
-        <p class="mdl-typography--body-1-force-preferred-font">Regular 14px (Device), Regular 13px (Desktop)</p>
-        <p class="mdl-typography--body-2">Medium 14px (Device), Medium 13px (Desktop)</p>
-        <p class="mdl-typography--body-2-color-contrast">Body with color contrast</p>
-        <p class="mdl-typography--body-2-force-preferred-font">Medium 14px (Device), Medium 13px (Desktop)</p>
-        <p><a href="#" onclick="return false">An anchor</a></p>
-      </section>
       <section>
         <table>
           <tr>
@@ -78,80 +107,6 @@
       <div class="mdl-card__supporting-text">
         Card Supporting Text
       </div>
-
-      <section>
-        <span class="mdl-badge" data-badge="4">Inbox</span>
-        <span class="material-icons mdl-badge" data-badge="1">account_box</span>
-        <span class="mdl-badge" data-badge="♥">Mood</span>
-        <span class="material-icons mdl-badge" data-badge="♥">account_box</span>
-        <a href="/" class="mdl-badge" data-badge="5">Inbox</a>
-      </section>
-
-      <section>
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-          <i class="material-icons">add</i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--fab">
-          <i class="material-icons">add</i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--fab" disabled>
-          <i class="material-icons">add</i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
-          <i class="material-icons">add</i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-          <i class="material-icons">add</i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" disabled>
-          <i class="material-icons">add</i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--raised">
-          Raised
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--raised" disabled>
-          Disabled
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-          Colored
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
-          Accent
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
-          <i class="material-icons">settings</i>&nbsp;Settings
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect animated bounce">
-          <i class="material-icons">favorite</i>&nbsp;Fav
-        </button>
-        <button class="mdl-button mdl-js-button">
-          Flat
-        </button>
-        <button class="mdl-button mdl-js-button" disabled>
-          Disabled
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--primary">
-          Colored
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--accent">
-          Accent
-        </button>
-        <button class="mdl-button mdl-js-button">
-          <i class="material-icons">snooze</i>&nbsp;Ring, ring...
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--icon">
-          <i class="material-icons">mood</i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
-          <i class="material-icons">mood</i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-color--lime mdl-button--accent">
-          <i class="material-icons">cloud</i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-color--deep-orange-100 mdl-js-ripple-effect">
-          <i class="material-icons">settings</i>&nbsp;Settings
-        </button>
-      </section>
 
       <footer class="mdl-card__actions mdl-card--border">
         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
@@ -170,28 +125,12 @@
   </div>
 
 
-
-  <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+  <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
 
     <div class="mdl-card  mdlext-dark-theme mdl-shadow--2dp">
       <header class="mdl-card__title mdl-color--primary mdl-color-text--primary-contrast">
         <h2 class="mdl-card__title-text">Dark theme</h2>
       </header>
-      <section>
-        <h1>Base font</h1>
-        <p>Material Design Lite start’s with a base font of</p>
-        <ul>
-          <li>A size of 14px</li>
-          <li>A weight of 400</li>
-          <li>A line height of 20px</li>
-        </ul>
-        <p class="mdl-typography--body-1">Regular 14px (Device), Regular 13px (Desktop)</p>
-        <p class="mdl-typography--body-1-force-preferred-font">Regular 14px (Device), Regular 13px (Desktop)</p>
-        <p class="mdl-typography--body-2">Medium 14px (Device), Medium 13px (Desktop)</p>
-        <p class="mdl-typography--body-2-color-contrast">Body with color contrast</p>
-        <p class="mdl-typography--body-2-force-preferred-font">Medium 14px (Device), Medium 13px (Desktop)</p>
-        <p><a href="#" onclick="return false">An anchor</a></p>
-      </section>
       <section>
         <table>
           <tr>
@@ -224,80 +163,6 @@
       <div class="mdl-card__supporting-text">
         Card Supporting Text
       </div>
-
-      <section>
-        <span class="mdl-badge" data-badge="4">Inbox</span>
-        <span class="material-icons mdl-badge" data-badge="1">account_box</span>
-        <span class="mdl-badge" data-badge="♥">Mood</span>
-        <span class="material-icons mdl-badge" data-badge="♥">account_box</span>
-        <a href="/" class="mdl-badge" data-badge="5">Inbox</a>
-      </section>
-
-      <section>
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-          <i class="material-icons">add</i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--fab">
-          <i class="material-icons">add</i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--fab" disabled>
-          <i class="material-icons">add</i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
-          <i class="material-icons">add</i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-          <i class="material-icons">add</i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" disabled>
-          <i class="material-icons">add</i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--raised">
-          Raised
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--raised" disabled>
-          Disabled
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-          Colored
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
-          Accent
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
-          <i class="material-icons">settings</i>&nbsp;Settings
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect animated bounce">
-          <i class="material-icons">favorite</i>&nbsp;Fav
-        </button>
-        <button class="mdl-button mdl-js-button">
-          Flat
-        </button>
-        <button class="mdl-button mdl-js-button" disabled>
-          Disabled
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--primary">
-          Colored
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--accent">
-          Accent
-        </button>
-        <button class="mdl-button mdl-js-button">
-          <i class="material-icons">snooze</i>&nbsp;Ring, ring...
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--icon">
-          <i class="material-icons">mood</i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
-          <i class="material-icons">mood</i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-color--lime mdl-button--accent">
-          <i class="material-icons">cloud</i>
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-color--deep-orange-100 mdl-js-ripple-effect">
-          <i class="material-icons">settings</i>&nbsp;Settings
-        </button>
-      </section>
 
       <footer class="mdl-card__actions mdl-card--border">
         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
@@ -439,7 +304,379 @@
     <h6>h6 (16px) <small>Subtitle</small></h6>
   </section>
 
+
+  <!-- textfields -->
+  <section class = "textfield-demo-container">
+
+    <datalist id="languages1">
+      <option value="Groovy">
+      <option value="HTML">
+      <option value="CSS">
+      <option value="JavaScript">
+      <option value="Java">
+      <option value="Ruby">
+      <option value="PHP">
+      <option value="Go">
+      <option value="Erlang">
+      <option value="Python">
+      <option value="C">
+      <option value="C#">
+      <option value="C++">
+    </datalist>
+
+    <div class="mdl-grid mdl-grid--no-spacing">
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" id="mdl-sample11">
+          <label class="mdl-textfield__label" for="mdl-sample11">Text...</label>
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mdl-sample12">
+          <label class="mdl-textfield__label" for="mdl-sample12">Number...</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="mdl-sample13"  list="languages1" placeholder="Select a programming language" required>
+          <label class="mdl-textfield__label" for="mdl-sample13">Programming Language</label>
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mdl-sample14">
+          <label class="mdl-textfield__label" for="mdl-sample14">Number...</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mdl-sample141" disabled value="123">
+          <label class="mdl-textfield__label" for="mdl-sample141">Number...</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
+          <label class="mdl-button mdl-js-button mdl-button--icon" for="mdl-expandable-demo1">
+            <i class="material-icons">search</i>
+          </label>
+          <div class="mdl-textfield__expandable-holder">
+            <input class="mdl-textfield__input" type="text" name="q" value="" id="mdl-expandable-demo1" pattern=".{3,}" />
+            <label class="mdl-textfield__label" for="mdl-expandable-demo1">Expandable Input</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--8-col">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+          <textarea class="mdl-textfield__input" rows= "3" id="mdl-sample15" ></textarea>
+          <label class="mdl-textfield__label">Text lines...</label>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Badges -->
+  <section>
+    <div class="mdl-grid demo-badge-grid">
+      <div class="mdl-cell mdl-cell--2-col">
+        <span class="mdl-badge" data-badge="4">Inbox</span>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <span class="material-icons mdl-badge" data-badge="1">account_box</span>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <span class="mdl-badge" data-badge="♥">Mood</span>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <span class="material-icons mdl-badge" data-badge="♥">account_box</span>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <a href="#" onclick="return false" class="mdl-badge" data-badge="5">Inbox</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Buttons -->
+  <section>
+    <div class="mdl-grid demo-button-grid">
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+          <i class="material-icons">add</i>
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--fab">
+          <i class="material-icons">add</i>
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--fab" disabled>
+          <i class="material-icons">add</i>
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+          <i class="material-icons">add</i>
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+          <i class="material-icons">add</i>
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" disabled>
+          <i class="material-icons">add</i>
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--raised">
+          Raised
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--raised" disabled>
+          Disabled
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+          Colored
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+          Accent
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+          <i class="material-icons">settings</i>&nbsp;Settings
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect animated bounce">
+          <i class="material-icons">favorite</i>&nbsp;Fav
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button">
+          Flat
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button" disabled>
+          Disabled
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--primary">
+          Colored
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--accent">
+          Accent
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button">
+          <i class="material-icons">snooze</i>&nbsp;Ring, ring...
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--icon">
+          <i class="material-icons">mood</i>
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+          <i class="material-icons">mood</i>
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-color--lime mdl-button--accent">
+          <i class="material-icons">cloud</i>
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-color--deep-orange-100 mdl-js-ripple-effect">
+          <i class="material-icons">settings</i>&nbsp;Settings
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Toggles -->
+  <section>
+    <div class="mdl-grid demo-toggle-grid">
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+          <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked>
+          <span class="mdl-checkbox__label">Checkbox</span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
+          <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
+          <span class="mdl-checkbox__label">Checkbox</span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-3">
+          <input type="checkbox" id="checkbox-3" class="mdl-checkbox__input" checked disabled>
+          <span class="mdl-checkbox__label">Checkbox</span>
+        </label>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+          <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
+          <span class="mdl-radio__label">First</span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+          <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+          <span class="mdl-radio__label">Second</span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+          <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3" disabled>
+          <span class="mdl-radio__label">Third</span>
+        </label>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect" for="icon-toggle-1">
+          <input type="checkbox" id="icon-toggle-1" class="mdl-icon-toggle__input" checked>
+          <i class="mdl-icon-toggle__label material-icons">format_bold</i>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect" for="icon-toggle-2">
+          <input type="checkbox" id="icon-toggle-2" class="mdl-icon-toggle__input">
+          <i class="mdl-icon-toggle__label material-icons">format_italic</i>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect" for="icon-toggle-3">
+          <input type="checkbox" id="icon-toggle-3" class="mdl-icon-toggle__input" disabled>
+          <i class="mdl-icon-toggle__label material-icons">format_italic</i>
+        </label>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+          <input type="checkbox" id="switch-1" class="mdl-switch__input" checked>
+          <span class="mdl-switch__label"></span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
+          <input type="checkbox" id="switch-2" class="mdl-switch__input">
+          <span class="mdl-switch__label"></span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-3">
+          <input type="checkbox" id="switch-3" class="mdl-switch__input" disabled>
+          <span class="mdl-switch__label"></span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Native toggles -->
+  <section>
+    <div class="mdl-grid demo-toggle-grid">
+      <div class="mdl-cell mdl-cell--2-col">
+        <label for="native-checkbox-1">
+          <input type="checkbox" id="native-checkbox-1" checked>
+          <span>Checkbox</span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label for="native-checkbox-2">
+          <input type="checkbox" id="native-checkbox-2">
+          <span>Checkbox</span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label for="native-checkbox-3">
+          <input type="checkbox" id="native-checkbox-3" checked disabled>
+          <span>Checkbox</span>
+        </label>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col">
+        <label for="native-option-1">
+          <input type="radio" id="native-option-1" name="native-options" value="1" checked>
+          <span>First</span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label for="native-option-2">
+          <input type="radio" id="native-option-2" name="native-options" value="2">
+          <span>Second</span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label for="native-option-3">
+          <input type="radio" id="native-option-3" name="native-options" value="3" disabled>
+          <span class="mdl-radio__label">Third</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Sliders -->
+  <section>
+    <div class="mdl-grid demo-slider-grid">
+      <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone">
+        <!-- Default Slider -->
+        <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0">
+      </div>
+
+      <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone">
+        <!-- Slider with Starting Value -->
+        <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="25">
+      </div>
+    </div>
+  </section>
+
 </div>
+
+
+
+
 
 
 
@@ -560,5 +797,375 @@
     <h5>h5 (20px) <small>Subtitle</small></h5>
     <h6>h6 (16px) <small>Subtitle</small></h6>
   </section>
+
+
+  <!-- textfields -->
+  <section class = "textfield-demo-container">
+
+    <datalist id="languages2">
+      <option value="Groovy">
+      <option value="HTML">
+      <option value="CSS">
+      <option value="JavaScript">
+      <option value="Java">
+      <option value="Ruby">
+      <option value="PHP">
+      <option value="Go">
+      <option value="Erlang">
+      <option value="Python">
+      <option value="C">
+      <option value="C#">
+      <option value="C++">
+    </datalist>
+
+    <div class="mdl-grid mdl-grid--no-spacing">
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" id="mdl-sample21">
+          <label class="mdl-textfield__label" for="mdl-sample21">Text...</label>
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mdl-sample22">
+          <label class="mdl-textfield__label" for="mdl-sample22">Number...</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="mdl-sample23"  list="languages2" placeholder="Select a programming language" required>
+          <label class="mdl-textfield__label" for="mdl-sample23">Programming Language</label>
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mdl-sample24">
+          <label class="mdl-textfield__label" for="mdl-sample24">Number...</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mdl-sample241" disabled value="123">
+          <label class="mdl-textfield__label" for="mdl-sample241">Number...</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
+          <label class="mdl-button mdl-js-button mdl-button--icon" for="mdl-expandable-demo2">
+            <i class="material-icons">search</i>
+          </label>
+          <div class="mdl-textfield__expandable-holder">
+            <input class="mdl-textfield__input" type="text" name="q" value="" id="mdl-expandable-demo2" pattern=".{3,}" />
+            <label class="mdl-textfield__label" for="mdl-expandable-demo2">Expandable Input</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--8-col">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+          <textarea class="mdl-textfield__input" rows= "3" id="mdl-sample25" ></textarea>
+          <label class="mdl-textfield__label">Text lines...</label>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Badges -->
+  <section>
+    <div class="mdl-grid demo-badge-grid">
+      <div class="mdl-cell mdl-cell--2-col">
+        <span class="mdl-badge" data-badge="4">Inbox</span>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <span class="material-icons mdl-badge" data-badge="1">account_box</span>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <span class="mdl-badge" data-badge="♥">Mood</span>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <span class="material-icons mdl-badge" data-badge="♥">account_box</span>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <a href="#" onclick="return false" class="mdl-badge" data-badge="5">Inbox</a>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Buttons -->
+  <section>
+    <div class="mdl-grid demo-button-grid">
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+          <i class="material-icons">add</i>
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--fab">
+          <i class="material-icons">add</i>
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--fab" disabled>
+          <i class="material-icons">add</i>
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+          <i class="material-icons">add</i>
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+          <i class="material-icons">add</i>
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" disabled>
+          <i class="material-icons">add</i>
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--raised">
+          Raised
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--raised" disabled>
+          Disabled
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+          Colored
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+          Accent
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+          <i class="material-icons">settings</i>&nbsp;Settings
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect animated bounce">
+          <i class="material-icons">favorite</i>&nbsp;Fav
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button">
+          Flat
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button" disabled>
+          Disabled
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--primary">
+          Colored
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--accent">
+          Accent
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button">
+          <i class="material-icons">snooze</i>&nbsp;Ring, ring...
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--icon">
+          <i class="material-icons">mood</i>
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+          <i class="material-icons">mood</i>
+        </button>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-color--lime mdl-button--accent">
+          <i class="material-icons">cloud</i>
+        </button>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-color--deep-orange-100 mdl-js-ripple-effect">
+          <i class="material-icons">settings</i>&nbsp;Settings
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toggles -->
+  <section>
+    <div class="mdl-grid demo-toggle-grid">
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-21">
+          <input type="checkbox" id="checkbox-21" class="mdl-checkbox__input" checked>
+          <span class="mdl-checkbox__label">Checkbox</span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-22">
+          <input type="checkbox" id="checkbox-22" class="mdl-checkbox__input">
+          <span class="mdl-checkbox__label">Checkbox</span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-23">
+          <input type="checkbox" id="checkbox-23" class="mdl-checkbox__input" checked disabled>
+          <span class="mdl-checkbox__label">Checkbox</span>
+        </label>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-21">
+          <input type="radio" id="option-21" class="mdl-radio__button" name="options2" value="1" checked>
+          <span class="mdl-radio__label">First</span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-22">
+          <input type="radio" id="option-22" class="mdl-radio__button" name="options2" value="2">
+          <span class="mdl-radio__label">Second</span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-23">
+          <input type="radio" id="option-23" class="mdl-radio__button" name="options2" value="3" disabled>
+          <span class="mdl-radio__label">Third</span>
+        </label>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect" for="icon-toggle-21">
+          <input type="checkbox" id="icon-toggle-21" class="mdl-icon-toggle__input" checked>
+          <i class="mdl-icon-toggle__label material-icons">format_bold</i>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect" for="icon-toggle-22">
+          <input type="checkbox" id="icon-toggle-22" class="mdl-icon-toggle__input">
+          <i class="mdl-icon-toggle__label material-icons">format_italic</i>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect" for="icon-toggle-23">
+          <input type="checkbox" id="icon-toggle-23" class="mdl-icon-toggle__input" disabled>
+          <i class="mdl-icon-toggle__label material-icons">format_italic</i>
+        </label>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-21">
+          <input type="checkbox" id="switch-21" class="mdl-switch__input" checked>
+          <span class="mdl-switch__label"></span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-22">
+          <input type="checkbox" id="switch-22" class="mdl-switch__input">
+          <span class="mdl-switch__label"></span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-23">
+          <input type="checkbox" id="switch-23" class="mdl-switch__input" disabled>
+          <span class="mdl-switch__label"></span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Native toggles -->
+  <section>
+    <div class="mdl-grid demo-toggle-grid">
+      <div class="mdl-cell mdl-cell--2-col">
+        <label for="native-checkbox-21">
+          <input type="checkbox" id="native-checkbox-21" checked>
+          <span>Checkbox</span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label for="native-checkbox-22">
+          <input type="checkbox" id="native-checkbox-22">
+          <span>Checkbox</span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label for="native-checkbox-23">
+          <input type="checkbox" id="native-checkbox-23" checked disabled>
+          <span>Checkbox</span>
+        </label>
+      </div>
+
+      <div class="mdl-cell mdl-cell--2-col">
+        <label for="native-option-21">
+          <input type="radio" id="native-option-21" name="native-options2" value="1" checked>
+          <span>First</span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label for="native-option-22">
+          <input type="radio" id="native-option-22" name="native-options2" value="2">
+          <span>Second</span>
+        </label>
+      </div>
+      <div class="mdl-cell mdl-cell--2-col">
+        <label for="native-option-23">
+          <input type="radio" id="native-option-23" name="native-options2" value="3" disabled>
+          <span class="mdl-radio__label">Third</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Sliders -->
+  <section>
+    <div class="mdl-grid demo-slider-grid">
+      <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone">
+        <!-- Default Slider -->
+        <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0">
+      </div>
+
+      <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone">
+        <!-- Slider with Starting Value -->
+        <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="25">
+      </div>
+    </div>
+  </section>
+
 
 </div>

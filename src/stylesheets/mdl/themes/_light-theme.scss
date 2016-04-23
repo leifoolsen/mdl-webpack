@@ -1,3 +1,5 @@
+@import "themes";
+
 .mdlext-light-theme {
   background-color: $mdlext-light-content-background-color;
   color: $mdlext-light-text-color-primary;
@@ -245,3 +247,406 @@
   }
 }
 
+// mdl/src/slider/_slider.scss
+// ---------------------------
+.mdlext-light-theme {
+  .mdl-slider {
+
+    &.is-upgraded {
+      background: transparent;
+      color: $mdlext-light-range-color;
+
+      &::-webkit-slider-runnable-track {
+        background: transparent;
+      }
+
+      &::-moz-range-track {
+        background: transparent;
+      }
+
+      &::-ms-track {
+        background: none;
+        color: transparent;
+      }
+
+      &::-ms-fill-lower {
+        background: linear-gradient(to right,
+          transparent,
+          transparent 16px,
+          $mdlext-light-range-color 16px,
+          $mdlext-light-range-color 0);
+      }
+
+      &::-ms-fill-upper {
+        background: linear-gradient(to left,
+          transparent,
+          transparent 16px,
+          $mdlext-light-range-bg-color 16px,
+          $mdlext-light-range-bg-color 0);
+      }
+
+
+      &::-webkit-slider-thumb {
+        background: $mdlext-light-range-color;
+      }
+
+      &::-moz-range-thumb {
+        background: $mdlext-light-range-color;
+      }
+
+      &:focus:not(:active)::-webkit-slider-thumb {
+        box-shadow: 0 0 0 10px $mdlext-light-range-faded-color;
+      }
+
+      &:focus:not(:active)::-moz-range-thumb {
+        box-shadow: 0 0 0 10px $mdlext-light-range-faded-color;
+      }
+
+      &:active::-webkit-slider-thumb {
+        background: $mdlext-light-range-color;
+      }
+
+      &:active::-moz-range-thumb {
+        background: $mdlext-light-range-color;
+      }
+
+      &::-ms-thumb {
+        background: $mdlext-light-range-color;
+      }
+
+      &:focus:not(:active)::-ms-thumb {
+        background: radial-gradient(circle closest-side,
+          $mdlext-light-range-color 0%,
+          $mdlext-light-range-color 37.5%,
+          $mdlext-light-range-faded-color 37.5%,
+          $mdlext-light-range-faded-color 100%);
+      }
+
+      &:active::-ms-thumb {
+        background: $mdlext-light-range-color;
+      }
+
+
+      &.is-lowest-value::-webkit-slider-thumb {
+        background: transparent;
+      }
+
+      &.is-lowest-value::-moz-range-thumb {
+        background: transparent;
+      }
+
+      &.is-lowest-value:focus:not(:active)::-webkit-slider-thumb {
+        background: $mdlext-light-range-bg-focus-color;
+      }
+
+      &.is-lowest-value:focus:not(:active)::-moz-range-thumb {
+        background: $mdlext-light-range-bg-focus-color;
+      }
+
+      &.is-lowest-value::-ms-thumb {
+        background: radial-gradient(circle closest-side,
+          transparent 0%,
+          transparent 66.67%,
+          $mdlext-light-range-bg-color 66.67%,
+          $mdlext-light-range-bg-color 100%);
+      }
+
+      &.is-lowest-value:focus:not(:active)::-ms-thumb {
+        background: radial-gradient(circle closest-side,
+          $mdlext-light-range-bg-focus-color 0%,
+          $mdlext-light-range-bg-focus-color 25%,
+          $mdlext-light-range-bg-color 25%,
+          $mdlext-light-range-bg-color 37.5%,
+          $mdlext-light-range-bg-focus-color 37.5%,
+          $mdlext-light-range-bg-focus-color 100%);
+      }
+
+      &.is-lowest-value:active::-ms-thumb {
+        background: radial-gradient(circle closest-side,
+          transparent 0%,
+          transparent 77.78%,
+          $mdlext-light-range-bg-color 77.78%,
+          $mdlext-light-range-bg-color 100%);
+      }
+
+      &.is-lowest-value::-ms-fill-lower {
+        background: transparent;
+      }
+
+      &:disabled:focus::-webkit-slider-thumb,
+      &:disabled:active::-webkit-slider-thumb,
+      &:disabled::-webkit-slider-thumb {
+        background: $mdlext-light-range-bg-color;
+      }
+
+      &:disabled:focus::-moz-range-thumb,
+      &:disabled:active::-moz-range-thumb,
+      &:disabled::-moz-range-thumb {
+        background: $mdlext-light-range-bg-color;
+      }
+
+      &:disabled +
+      .mdl-slider__background-flex > .mdl-slider__background-lower {
+        background-color: $mdlext-light-range-bg-color;
+      }
+
+      &.is-lowest-value:disabled:focus::-webkit-slider-thumb,
+      &.is-lowest-value:disabled:active::-webkit-slider-thumb,
+      &.is-lowest-value:disabled::-webkit-slider-thumb {
+        background: transparent;
+      }
+
+      &.is-lowest-value:disabled:focus::-moz-range-thumb,
+      &.is-lowest-value:disabled:active::-moz-range-thumb,
+      &.is-lowest-value:disabled::-moz-range-thumb {
+        border: 3px solid $mdlext-light-range-bg-color;
+        background: transparent;
+      }
+
+      &:disabled:focus::-ms-thumb,
+      &:disabled:active::-ms-thumb,
+      &:disabled::-ms-thumb {
+        background: $mdlext-light-range-bg-color;
+      }
+
+      &.is-lowest-value:disabled:focus::-ms-thumb,
+      &.is-lowest-value:disabled:active::-ms-thumb,
+      &.is-lowest-value:disabled::-ms-thumb {
+        background: radial-gradient(circle closest-side,
+          transparent 0%,
+          transparent 50%,
+          $mdlext-light-range-bg-color 50%,
+          $mdlext-light-range-bg-color 100%);
+      }
+
+      &:disabled::-ms-fill-lower {
+        background: linear-gradient(to right,
+          transparent,
+          transparent 25px,
+          $mdlext-light-range-bg-color 25px,
+          $mdlext-light-range-bg-color 0);
+      }
+    }
+  }
+
+  .mdl-slider__background-flex {
+    background: transparent;
+  }
+
+  .mdl-slider__background-lower {
+    background: $mdlext-light-range-color;
+  }
+
+  // This one styles the upper part of the slider track.
+  .mdl-slider__background-upper {
+    background: $mdlext-light-range-bg-color;
+  }
+}
+
+
+// mdl/src/textfield/_textfield.scss
+// -----------------------------------
+.mdlext-light-theme {
+
+  .mdl-textfield__input {
+    border-bottom-color: $mdlext-light-input-text-bottom-border-color;
+  }
+  .mdl-textfield.is-invalid .mdl-textfield__input {
+    border-color: $mdlext-light-input-text-error-color;
+  }
+  fieldset[disabled] .mdl-textfield .mdl-textfield__input,
+  .mdl-textfield.is-disabled .mdl-textfield__input {
+    background-color: transparent;
+    border-bottom-color: $mdlext-light-input-text-disabled-color;
+    color: $mdlext-light-input-text-disabled-text-color;
+  }
+  .mdl-textfield__label {
+    color: $mdlext-light-input-text-label-color;
+  }
+  .mdl-textfield__label:after {
+    background-color: $mdlext-light-input-text-highlight-color;
+  }
+  fieldset[disabled] .mdl-textfield .mdl-textfield__label,
+  .mdl-textfield.is-disabled.is-disabled .mdl-textfield__label {
+    color: $mdlext-light-input-text-disabled-text-color;
+  }
+  .mdl-textfield--floating-label.is-focused .mdl-textfield__label,
+  .mdl-textfield--floating-label.is-dirty .mdl-textfield__label,
+  .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
+    color: $mdlext-light-input-text-highlight-color;
+  }
+  .mdl-textfield--floating-label.is-invalid .mdl-textfield__label {
+    color: $mdlext-light-input-text-error-color;
+  }
+  .mdl-textfield.is-invalid .mdl-textfield__label:after {
+    background-color: $mdlext-light-input-text-error-color;
+  }
+  .mdl-textfield__error {
+    color: $mdlext-light-input-text-error-color;
+  }
+}
+
+
+// mdl/src/checkbox/_checkbox.scss
+// -----------------------------------
+.mdlext-light-theme {
+
+  .mdl-checkbox__box-outline {
+    border-color: $mdlext-light-checkbox-off-color;
+  }
+  .mdl-checkbox.is-checked .mdl-checkbox__box-outline {
+    border-color: $mdlext-light-checkbox-color;
+  }
+  fieldset[disabled] .mdl-checkbox .mdl-checkbox__box-outline,
+  .mdl-checkbox.is-disabled .mdl-checkbox__box-outline {
+    border-color: $mdlext-light-checkbox-disabled-color;
+  }
+
+  .mdl-checkbox__focus-helper {
+    background-color: transparent;
+  }
+  .mdl-checkbox.is-focused.is-checked .mdl-checkbox__focus-helper {
+    box-shadow: 0 0 0px ($checkbox-button-size / 2) $mdlext-light-checkbox-focus-color;
+    background-color: $mdlext-light-checkbox-focus-color;
+  }
+
+  .mdl-checkbox__tick-outline {
+    background: transparent;
+  }
+  .mdl-checkbox.is-checked .mdl-checkbox__tick-outline {
+    background-color: $mdlext-light-checkbox-color;
+  }
+  fieldset[disabled] .mdl-checkbox.is-checked .mdl-checkbox__tick-outline,
+  .mdl-checkbox.is-checked.is-disabled .mdl-checkbox__tick-outline {
+    background-color: $mdlext-light-checkbox-disabled-color;
+  }
+
+  fieldset[disabled] .mdl-checkbox .mdl-checkbox__label,
+  .mdl-checkbox.is-disabled .mdl-checkbox__label {
+    color: $mdlext-light-checkbox-disabled-color;
+  }
+
+  .mdl-checkbox__ripple-container .mdl-ripple {
+    background: $mdlext-light-checkbox-color;
+  }
+  fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
+  .mdl-checkbox.is-disabled .mdl-checkbox__ripple-container .mdl-ripple {
+    background: transparent;
+  }
+
+}
+
+// mdl/src/radio/_radio.scss
+// -----------------------------------
+.mdlext-light-theme {
+  .mdl-radio__outer-circle {
+    border-color: $mdlext-light-radio-off-color;
+  }
+  .mdl-radio.is-checked .mdl-radio__outer-circle {
+    border-color: $mdlext-light-radio-color;
+  }
+  .mdl-radio__outer-circle fieldset[disabled] .mdl-radio,
+  .mdl-radio.is-disabled .mdl-radio__outer-circle {
+    border-color: $mdlext-light-radio-disabled-color;
+  }
+
+  .mdl-radio__inner-circle {
+    background: $mdlext-light-radio-color;
+  }
+  fieldset[disabled] .mdl-radio .mdl-radio__inner-circle,
+  .mdl-radio.is-disabled .mdl-radio__inner-circle {
+    background: $mdlext-light-radio-disabled-color;
+  }
+
+  fieldset[disabled] .mdl-radio .mdl-radio__label,
+  .mdl-radio.is-disabled .mdl-radio__label {
+    color: $mdlext-light-radio-disabled-color;
+  }
+
+  .mdl-radio__ripple-container .mdl-ripple {
+    background: $mdlext-light-radio-color;
+  }
+  fieldset[disabled] .mdl-radio .mdl-radio__ripple-container .mdl-ripple,
+  .mdl-radio.is-disabled .mdl-radio__ripple-container .mdl-ripple {
+    background: transparent;
+  }
+}
+
+// mdl/src/icon-togglr/_icon-toggle.scss
+// ---------------------------------------
+.mdlext-light-theme {
+  .mdl-icon-toggle__label {
+    color: $mdlext-light-icon-toggle-color;
+  }
+  .mdl-icon-toggle.is-checked .mdl-icon-toggle__label {
+    color: $mdlext-light-icon-toggle-checked-color;
+  }
+  .mdl-icon-toggle.is-disabled .mdl-icon-toggle__label {
+    color: $mdlext-light-icon-toggle-disabled-color;
+  }
+  .mdl-icon-toggle.is-focused .mdl-icon-toggle__label {
+    background-color: $mdlext-light-icon-toggle-focus-color;
+  }
+  .mdl-icon-toggle.is-focused.is-checked .mdl-icon-toggle__label {
+    background-color: $mdlext-light-icon-toggle-checked-focus-color;
+  }
+  .mdl-icon-toggle__ripple-container .mdl-ripple {
+    background: $mdlext-light-icon-toggle-color;
+  }
+  .mdl-icon-toggle.is-disabled .mdl-icon-toggle__ripple-container .mdl-ripple {
+    background: transparent;
+  }
+}
+
+
+// mdl/src/switch/_switch.scss
+// -----------------------------------
+.mdlext-light-theme {
+
+  .mdl-switch__track {
+    background: $mdlext-light-switch-off-track-color;
+  }
+  .mdl-switch.is-checked .mdl-switch__track {
+    background: $mdlext-light-switch-track-color;
+  }
+  .mdl-switch__track fieldset[disabled] .mdl-switch,
+  .mdl-switch.is-disabled .mdl-switch__track {
+    background: $mdlext-light-switch-disabled-track-color;
+  }
+
+  .mdl-switch__thumb {
+    background: $mdlext-light-switch-off-thumb-color;
+  }
+  .mdl-switch.is-checked .mdl-switch__thumb {
+    background: $mdlext-light-switch-thumb-color;
+  }
+  .mdl-switch__thumb fieldset[disabled] .mdl-switch,
+  .mdl-switch.is-disabled .mdl-switch__thumb {
+    background: $mdlext-light-switch-disabled-thumb-color;
+  }
+
+  .mdl-switch__focus-helper {
+    background-color: transparent;
+  }
+  .mdl-switch.is-focused .mdl-switch__focus-helper {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .mdl-switch.is-focused.is-checked .mdl-switch__focus-helper {
+    box-shadow: 0 0 0px (($switch-ripple-size - $switch-helper-size) / 2) $mdlext-light-switch-faded-color;
+    background-color: $mdlext-light-switch-faded-color;
+  }
+
+  .mdl-switch__label fieldset[disabled] .mdl-switch,
+  .mdl-switch.is-disabled .mdl-switch__label {
+    color: $mdlext-light-switch-disabled-thumb-color;
+  }
+
+  .mdl-switch__ripple-container .mdl-ripple {
+    background: $mdlext-light-switch-color;
+  }
+  fieldset[disabled] .mdl-switch .mdl-switch__ripple-container .mdl-ripple,
+  .mdl-switch.is-disabled .mdl-switch__ripple-container .mdl-ripple {
+    background: transparent;
+  }
+
+}
