@@ -36,7 +36,6 @@ $image_path: '/static/images/mdl';  // See: webpack.config.js CopyWebpackPlugin
 @import '../node_modules/material-design-lite/src/color-definitions';
 @import 'stylesheets/mdl/variables';
 @import '../node_modules/material-design-lite/src/variables';
-@import 'stylesheets/mdl/themes/themes';
 @import 'stylesheets/utils/mixins';
 
 // 2. Vendors
@@ -55,8 +54,6 @@ $image_path: '/static/images/mdl';  // See: webpack.config.js CopyWebpackPlugin
 // 4. Internal Components
 
 // 5. Layout-related sections
-@import 'stylesheets/mdl/themes/light-theme';
-@import 'stylesheets/mdl/themes/dark-theme';
 @import 'stylesheets/layout/app-layout';
 
 // 6. Page-specific styles
