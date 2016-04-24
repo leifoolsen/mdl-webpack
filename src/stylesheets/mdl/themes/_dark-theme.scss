@@ -736,6 +736,14 @@
   }
 }
 
+// mdl/src/card/_card.scss
+// ----------------------------------------
+.mdlext-dark-theme {
+  .mdl-card__supporting-text {
+    color: $mdlext-dark-card-supporting-text-color;
+  }
+}
+
 
 // mdlext/src/selectfield/_selectfield.scss
 // ----------------------------------------

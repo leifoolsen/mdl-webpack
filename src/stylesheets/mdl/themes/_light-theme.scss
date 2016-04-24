@@ -738,6 +738,15 @@
 }
 
 
+// mdl/src/card/_card.scss
+// ----------------------------------------
+.mdlext-light-theme {
+  .mdl-card__supporting-text {
+    color: $mdlext-light-card-supporting-text-color;
+  }
+}
+
+
 // mdlext/src/selectfield/_selectfield.scss
 // ----------------------------------------
 .mdlext-light-theme {
@@ -781,5 +790,5 @@
   .mdlext-selectfield__error {
     color: $mdlext-light-input-text-error-color;
   }
-
 }
+

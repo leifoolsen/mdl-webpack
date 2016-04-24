@@ -1,6 +1,7 @@
 // -------------------------------------------------------------
 // Palettes
 // -------------------------------------------------------------
+$mdlext-palette-amber-50:                      #FFF8E1 !default;
 $mdlext-palette-amber-100:                     #FFECB3 !default;
 $mdlext-palette-amber-500:                     #FFC107 !default;
 $mdlext-palette-amber-700:                     #FFA000 !default;
@@ -9,6 +10,7 @@ $mdlext-palette-deep-orange-500:               #FF5722 !default;
 $mdlext-palette-deep-purple-100:               #D1C4E9 !default;
 $mdlext-palette-deep-purple-500:               #512DA8 !default;
 $mdlext-palette-deep-purple-700:               #673AB7 !default;
+$mdlext-palette-green-50:                      #E8F5E9 !default;
 $mdlext-palette-green-100:                     #C8E6C9 !default;
 $mdlext-palette-green-500:                     #4CAF50 !default;
 $mdlext-palette-green-700:                     #388E3C !default;
@@ -40,7 +42,7 @@ $mdlext-color-white:                           #FFFFFF !default;
 $mdlext-light-color-primary:                   #4CAF50 !default;
 $mdlext-light-color-primary-dark:              #388E3C !default;
 $mdlext-light-color-primary-light:             #4CAF50 !default;  // Fallback color. Set to color-primary if fallback is not needed
-$mdlext-light-color-primary-contrast:          #C8E6C9 !default;  // text color on primary/primary dark background
+$mdlext-light-color-primary-contrast:          #E8F5E9 !default;  // text color on primary/primary dark background
 $mdlext-light-color-accent:                    #607D8B !default;
 $mdlext-light-color-accent-contrast:           #FFFFFF !default;
 
@@ -53,6 +55,9 @@ $mdlext-light-error-color:                     #D32F2F !default;
 
 // Anchor
 $mdlext-light-text-link-color:                 rgba($mdlext-light-color-accent, 0.87);
+
+// Card
+$mdlext-light-card-supporting-text-color:      rgba($mdlext-color-black, 0.54) !default;
 
 //  Item
 
@@ -176,7 +181,7 @@ $mdlext-light-data-table-dividers:                       1px solid $mdlext-light
 $mdlext-dark-color-primary:                    #FFC107 !default;
 $mdlext-dark-color-primary-dark:               #FFA000 !default;
 $mdlext-dark-color-primary-light:              #FFC107 !default;                  // Fallback color. Set to color-primary if fallback is not needed
-$mdlext-dark-color-primary-contrast:           #FFECB3 !default;                  // text color on primary/primary dark background
+$mdlext-dark-color-primary-contrast:           #FFF8E1 !default;                  // text color on primary/primary dark background
 $mdlext-dark-color-accent:                     #536DFE !default;
 $mdlext-dark-color-accent-contrast:            #FFFFFF !default;
 
@@ -187,9 +192,11 @@ $mdlext-dark-text-color-disabled:              rgba(#FFFFFF, 0.50) !default;    
 $mdlext-dark-divider-color:                    rgba(#FFFFFF, 0.12) !default;      // -> $card-border-color
 $mdlext-dark-error-color:                      #FF1744 !default;
 
-
 // Anchor
 $mdlext-dark-text-link-color:                  $mdlext-dark-color-accent;
+
+// Card
+$mdlext-dark-card-supporting-text-color:       rgba($mdlext-color-white, 0.70) !default;
 
 //  Item
 
@@ -203,11 +210,9 @@ $mdlext-dark-default-item-divider-color:       rgba($mdlext-color-white, 0.12) !
 
 // Disabled Button Colors
 $mdlext-dark-disabled-item-text-color:         $mdlext-palette-grey-500 !default;
-$mdlext-dark-disabled-item-text-color:         $mdlext-palette-grey-500 !default;
 
 // Dropdown menu
 $mdlext-dark-default-dropdown-bg-color:        $mdlext-color-black !default;
-
 
 // Badge
 $mdlext-dark-badge-color:                      $mdlext-dark-color-accent-contrast !default;
