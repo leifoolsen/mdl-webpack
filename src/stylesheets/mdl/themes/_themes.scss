@@ -1,39 +1,55 @@
+// -------------------------------------------------------------
 // Palettes
-$mdlext-palette-grey-50:   #FAFAFA;
-$mdlext-palette-grey-200:  #EEEEEE;
-$mdlext-palette-grey-300:  #E0E0E0;
-$mdlext-palette-grey-400:  #BDBDBD;
-$mdlext-palette-grey-500:  #9E9E9E;
-$mdlext-palette-grey-600:  #757575;
-$mdlext-palette-grey-700:  #616161;
-$mdlext-palette-grey-800:  #424242;
-$mdlext-palette-grey-900:  #212121;
+// -------------------------------------------------------------
+$mdlext-palette-amber-100:                     #FFECB3 !default;
+$mdlext-palette-amber-500:                     #FFC107 !default;
+$mdlext-palette-amber-700:                     #FFA000 !default;
+$mdlext-palette-blue-grey-500:                 #607D8B !default;
+$mdlext-palette-deep-orange-500:               #FF5722 !default;
+$mdlext-palette-deep-purple-100:               #D1C4E9 !default;
+$mdlext-palette-deep-purple-500:               #512DA8 !default;
+$mdlext-palette-deep-purple-700:               #673AB7 !default;
+$mdlext-palette-green-100:                     #C8E6C9 !default;
+$mdlext-palette-green-500:                     #4CAF50 !default;
+$mdlext-palette-green-700:                     #388E3C !default;
+$mdlext-palette-grey-50:                       #FAFAFA !default;
+$mdlext-palette-grey-100:                      #F5F5F5 !default;
+$mdlext-palette-grey-200:                      #EEEEEE !default;
+$mdlext-palette-grey-300:                      #E0E0E0 !default;
+$mdlext-palette-grey-400:                      #BDBDBD !default;
+$mdlext-palette-grey-500:                      #9E9E9E !default;
+$mdlext-palette-grey-600:                      #757575 !default;
+$mdlext-palette-grey-700:                      #616161 !default;
+$mdlext-palette-grey-800:                      #424242 !default;
+$mdlext-palette-grey-900:                      #212121 !default;
+$mdlext-palette-indigo-A200:                   #536DFE !default;
+$mdlext-palette-light-blue-500:                #03A9F4 !default;
+$mdlext-palette-light-green-500:               #8BC34A !default;
+$mdlext-palette-pink-500:                      #E91E63 !default;
+$mdlext-palette-pink-700:                      #C2185B !default;
+$mdlext-palette-pink-A400:                     #F50057 !default;
+$mdlext-palette-red-700:                       #D32F2F !default;
+$mdlext-palette-red-A200:                      #FF5252 !default;
+$mdlext-palette-red-A400:                      #FF1744 !default;
+$mdlext-color-black:                           #000000 !default;
+$mdlext-color-white:                           #FFFFFF !default;
 
-$mdlext-palette-pink-500:  #E91E63;
-$mdlext-palette-pink-700:  #C2185B;
-$mdlext-palette-pink-A400: #F50057;
-
-$mdlext-palette-red-700:   #D32F2F;
-$mdlext-palette-red-A400:  #FF1744;
-
-// -------------------------------------------
+// -------------------------------------------------------------
 // Light Palette.
-// -------------------------------------------
-$mdlext-light-color-black:                     #000000 !default;
-$mdlext-light-color-white:                     #FFFFFF !default;
+// -------------------------------------------------------------
+$mdlext-light-color-primary:                   #4CAF50 !default;
+$mdlext-light-color-primary-dark:              #388E3C !default;
+$mdlext-light-color-primary-light:             #4CAF50 !default;  // Fallback color. Set to color-primary if fallback is not needed
+$mdlext-light-color-primary-contrast:          #C8E6C9 !default;  // text color on primary/primary dark background
+$mdlext-light-color-accent:                    #607D8B !default;
+$mdlext-light-color-accent-contrast:           #FFFFFF !default;
 
-$mdlext-light-color-primary:                   #F5F5F5 !default;
-$mdlext-light-color-primary-dark:              #E0E0E0 !default;
-$mdlext-light-color-primary-light:             #8BC34A !default;                                // Fallback color. Set to color-primary if fallback is not needed
-$mdlext-light-color-primary-contrast:          #000000 !default;                                // text color on primary/primary dark background
-$mdlext-light-color-accent:                    #FFC107 !default;
-$mdlext-light-color-accent-contrast:           $mdlext-light-color-white !default;
-
-$mdlext-light-content-background-color:        #FAFAFA !default;                                // background color on content (paper/card) background
-$mdlext-light-text-color-primary:              rgba($mdlext-light-color-black, 0.87) !default;  // text color on content (paper/card) background
-$mdlext-light-text-color-secondary:            rgba($mdlext-light-color-black, 0.54) !default;  // text color on content (paper/card) background
-$mdlext-light-text-color-disabled:             rgba($mdlext-light-color-black, 0.38) !default;  // disabled text, hint text, and icons
-$mdlext-light-divider-color:                   rgba($mdlext-light-color-black, 0.12) !default;  // -> $card-border-color
+$mdlext-light-content-background-color:        #FAFAFA !default;                           // background color on content (paper/card) background
+$mdlext-light-text-color-primary:              rgba($mdlext-color-black, 0.87) !default;   // text color on content (paper/card) background
+$mdlext-light-text-color-secondary:            rgba($mdlext-color-black, 0.54) !default;   // text color on content (paper/card) background
+$mdlext-light-text-color-disabled:             rgba($mdlext-color-black, 0.38) !default;   // disabled text, hint text, and icons
+$mdlext-light-divider-color:                   rgba($mdlext-color-black, 0.12) !default;   // -> $card-border-color
+$mdlext-light-error-color:                     #D32F2F !default;
 
 // Anchor
 $mdlext-light-text-link-color:                 rgba($mdlext-light-color-accent, 0.87);
@@ -41,18 +57,18 @@ $mdlext-light-text-link-color:                 rgba($mdlext-light-color-accent, 
 //  Item
 
 // Default Item Colors
-$mdlext-light-default-item-text-color:         rgba($mdlext-light-color-black, 0.87) !default;
+$mdlext-light-default-item-text-color:         rgba($mdlext-color-black, 0.87) !default;
 $mdlext-light-default-item-outline-color:      $mdlext-palette-grey-400 !default;
 $mdlext-light-default-item-hover-bg-color:     $mdlext-palette-grey-200 !default;
 $mdlext-light-default-item-focus-bg-color:     $mdlext-palette-grey-200 !default;
 $mdlext-light-default-item-active-bg-color:    $mdlext-palette-grey-300 !default;
-$mdlext-light-default-item-divider-color:      rgba($mdlext-light-color-black, 0.12) !default;
+$mdlext-light-default-item-divider-color:      rgba($mdlext-color-black, 0.12) !default;
 
 // Disabled Button Colors
 $mdlext-light-disabled-item-text-color:        $mdlext-palette-grey-400 !default;
 
 // Dropdown menu
-$mdlext-light-default-dropdown-bg-color:       $mdlext-light-color-white !default;
+$mdlext-light-default-dropdown-bg-color: $mdlext-color-white !default;
 
 
 // Badge
@@ -62,25 +78,25 @@ $mdlext-light-badge-background:                $mdlext-light-color-accent !defau
 $mdlext-light-badge-background-inverse:        $mdlext-light-color-accent-contrast !default;
 
 // Default button colors.
-$mdlext-light-button-primary-color:            rgba($mdlext-palette-grey-500, 0.20) !default; // Grey-500
-$mdlext-light-button-secondary-color:          $mdlext-light-color-black !default;
+$mdlext-light-button-primary-color:            rgba($mdlext-palette-grey-500, 0.20) !default;
+$mdlext-light-button-secondary-color:          $mdlext-color-black !default;
 $mdlext-light-button-hover-color:              $mdlext-light-button-primary-color !default;
 $mdlext-light-button-active-color:             rgba($mdlext-palette-grey-500, 0.40) !default;
-$mdlext-light-button-focus-color:              rgba($mdlext-light-color-black, 0.12) !default;
+$mdlext-light-button-focus-color:              rgba($mdlext-color-black, 0.12) !default;
 
 // Colored button colors.
-$mdlext-light-button-primary-color-alt:        $mdlext-light-color-primary-light !default; //$mdlext-light-color-primary-contrast !default; //$mdlext-light-color-primary !default;
-$mdlext-light-button-secondary-color-alt:      $mdlext-light-color-primary !default; //$mdlext-light-color-primary-contrast !default;
-$mdlext-light-button-hover-color-alt:          darken($mdlext-light-color-primary-light, 10%) !default; //$mdlext-light-color-primary !default;
-$mdlext-light-button-active-color-alt:         darken($mdlext-light-color-primary-light, 10%) !default; //$mdlext-light-color-primary !default;
+$mdlext-light-button-primary-color-alt:        $mdlext-light-color-primary-light !default;
+$mdlext-light-button-secondary-color-alt:      $mdlext-light-color-primary-contrast !default;
+$mdlext-light-button-hover-color-alt:          darken($mdlext-light-color-primary-light, 10%) !default;
+$mdlext-light-button-active-color-alt:         darken($mdlext-light-color-primary-light, 10%) !default;
 $mdlext-light-button-focus-color-alt:          $mdlext-light-button-focus-color !default;
 
 // Ripple color for colored raised buttons.
 $mdlext-light-button-ripple-color-alt:         $mdlext-light-color-primary-contrast !default;
 
 // Disabled button colors.
-$mdlext-light-button-primary-color-disabled:   rgba($mdlext-light-color-black, 0.12) !default;
-$mdlext-light-button-secondary-color-disabled: rgba($mdlext-light-color-black, 0.26) !default;
+$mdlext-light-button-primary-color-disabled:   rgba($mdlext-color-black, 0.12) !default;
+$mdlext-light-button-secondary-color-disabled: rgba($mdlext-color-black, 0.26) !default;
 
 // FAB colors and sizes.
 $mdlext-light-button-fab-color-alt:            $mdlext-light-color-accent !default;
@@ -91,27 +107,26 @@ $mdlext-light-button-fab-ripple-color-alt:     $mdlext-light-color-accent-contra
 
 
 // Slider
-$mdlext-light-range-bg-color:                  rgba($mdlext-light-color-black, 0.26) !default;
+$mdlext-light-range-bg-color:                  rgba($mdlext-color-black, 0.26) !default;
 $mdlext-light-range-color:                     $mdlext-light-color-primary-light !default;
 $mdlext-light-range-faded-color:               rgba($mdlext-light-color-primary-light, 0.26) !default;
-$mdlext-light-range-bg-focus-color:            rgba($mdlext-light-color-black, 0.12) !default;
+$mdlext-light-range-bg-focus-color:            rgba($mdlext-color-black, 0.12) !default;
 
 // Textfields
 $mdlext-light-input-text-background-color:     transparent !default;
-$mdlext-light-input-text-label-color:          rgba($mdlext-light-color-black, 0.26) !default;
-$mdlext-light-input-text-bottom-border-color:  rgba($mdlext-light-color-black, 0.12) !default;
+$mdlext-light-input-text-label-color:          rgba($mdlext-color-black, 0.26) !default;
+$mdlext-light-input-text-bottom-border-color:  rgba($mdlext-color-black, 0.12) !default;
 $mdlext-light-input-text-highlight-color:      $mdlext-light-color-primary-light !default;
 $mdlext-light-input-text-disabled-color:       $mdlext-light-input-text-bottom-border-color !default;
 $mdlext-light-input-text-disabled-text-color:  $mdlext-light-input-text-label-color !default;
-$mdlext-light-input-text-error-color:          $mdlext-palette-red-700 !default;
+$mdlext-light-input-text-error-color:          $mdlext-light-error-color !default;
 
 
 // Checkboxes
 $mdlext-light-checkbox-color:                  $mdlext-light-color-primary-light !default;
-$mdlext-light-checkbox-off-color:              rgba($mdlext-light-color-black, 0.54) !default;
-$mdlext-light-checkbox-disabled-color:         rgba($mdlext-light-color-black, 0.26) !default;
+$mdlext-light-checkbox-off-color:              rgba($mdlext-color-black, 0.54) !default;
+$mdlext-light-checkbox-disabled-color:         rgba($mdlext-color-black, 0.26) !default;
 $mdlext-light-checkbox-focus-color:            rgba($mdlext-light-color-primary-light, 0.26) !default;
-//$mdlext-light-checkbox-image-path:             $image_path;
 
 
 // Icon Toggles
@@ -119,12 +134,12 @@ $mdlext-light-icon-toggle-color:               $mdlext-palette-grey-700 !default
 $mdlext-light-icon-toggle-focus-color:         $mdlext-light-button-focus-color !default;
 $mdlext-light-icon-toggle-checked-color:       $mdlext-light-color-primary-light !default;
 $mdlext-light-icon-toggle-checked-focus-color: rgba($mdlext-light-color-primary-light, 0.26) !default;
-$mdlext-light-icon-toggle-disabled-color:      rgba($mdlext-light-color-black, 0.26) !default;
+$mdlext-light-icon-toggle-disabled-color:      rgba($mdlext-color-black, 0.26) !default;
 
 // Radio Buttons
 $mdlext-light-radio-color:                     $mdlext-light-color-primary-light !default;
-$mdlext-light-radio-off-color:                 rgba($mdlext-light-color-black, 0.54) !default;
-$mdlext-light-radio-disabled-color:            rgba($mdlext-light-color-black, 0.26) !default;
+$mdlext-light-radio-off-color:                 rgba($mdlext-color-black, 0.54) !default;
+$mdlext-light-radio-disabled-color:            rgba($mdlext-color-black, 0.26) !default;
 
 
 // Switches
@@ -134,19 +149,19 @@ $mdlext-light-switch-thumb-color:              $mdlext-light-switch-color !defau
 $mdlext-light-switch-track-color:              rgba($mdlext-light-color-primary-light, 0.54) !default;
 
 $mdlext-light-switch-off-thumb-color:          $mdlext-palette-grey-50 !default;
-$mdlext-light-switch-off-track-color:          rgba($mdlext-light-color-black, 0.26) !default;
+$mdlext-light-switch-off-track-color:          rgba($mdlext-color-black, 0.26) !default;
 $mdlext-light-switch-disabled-thumb-color:     $mdlext-palette-grey-400 !default;
-$mdlext-light-switch-disabled-track-color:     rgba($mdlext-light-color-black, 0.12) !default;
+$mdlext-light-switch-disabled-track-color:     rgba($mdlext-color-black, 0.12) !default;
 
 
 // Data table
 $mdlext-light-data-table-background-color:               $mdlext-light-content-background-color !default;
-$mdlext-light-data-table-header-color:                   rgba($mdlext-light-color-black, 0.54) !default;
-$mdlext-light-data-table-header-sorted-color:            rgba($mdlext-light-color-black, 0.87) !default;
-$mdlext-light-data-table-header-sorted-icon-hover-color: rgba($mdlext-light-color-black, 0.26) !default;
+$mdlext-light-data-table-header-color:                   rgba($mdlext-color-black, 0.54) !default;
+$mdlext-light-data-table-header-sorted-color:            rgba($mdlext-color-black, 0.87) !default;
+$mdlext-light-data-table-header-sorted-icon-hover-color: rgba($mdlext-color-black, 0.26) !default;
 $mdlext-light-data-table-hover-color:                    $mdlext-palette-grey-200 !default;
 $mdlext-light-data-table-selection-color:                $mdlext-palette-grey-200 !default;
-$mdlext-light-data-table-divider-color:                  rgba($mdlext-light-color-black, 0.12) !default;
+$mdlext-light-data-table-divider-color:                  rgba($mdlext-color-black, 0.12) !default;
 $mdlext-light-data-table-dividers:                       1px solid $mdlext-light-data-table-divider-color !default;
 
 
@@ -155,17 +170,14 @@ $mdlext-light-data-table-dividers:                       1px solid $mdlext-light
 
 
 
-// -------------------------------------------
+// -------------------------------------------------------------
 // Dark Palette.
-// -------------------------------------------
-$mdlext-dark-color-black:                      #000000 !default;
-$mdlext-dark-color-white:                      #FFFFFF !default;
-
-$mdlext-dark-color-primary:                    #212121 !default;
-$mdlext-dark-color-primary-dark:               #000000 !default;
-$mdlext-dark-color-primary-light:              #607D8B !default;                  // Fallback color. Set to color-primary if fallback is not needed
-$mdlext-dark-color-primary-contrast:           #FFFFFF !default;                  // text color on primary/primary dark background
-$mdlext-dark-color-accent:                     #FF5722 !default;
+// -------------------------------------------------------------
+$mdlext-dark-color-primary:                    #FFC107 !default;
+$mdlext-dark-color-primary-dark:               #FFA000 !default;
+$mdlext-dark-color-primary-light:              #FFC107 !default;                  // Fallback color. Set to color-primary if fallback is not needed
+$mdlext-dark-color-primary-contrast:           #FFECB3 !default;                  // text color on primary/primary dark background
+$mdlext-dark-color-accent:                     #536DFE !default;
 $mdlext-dark-color-accent-contrast:            #FFFFFF !default;
 
 $mdlext-dark-content-background-color:         #303030 !default;                  // #424242 or #303030, background color on content (paper/card) background
@@ -173,6 +185,7 @@ $mdlext-dark-text-color-primary:               rgba(#FFFFFF, 1.00) !default;    
 $mdlext-dark-text-color-secondary:             rgba(#FFFFFF, 0.70) !default;      // text color on content (paper/card) background
 $mdlext-dark-text-color-disabled:              rgba(#FFFFFF, 0.50) !default;      // disabled text, hint text, and icons
 $mdlext-dark-divider-color:                    rgba(#FFFFFF, 0.12) !default;      // -> $card-border-color
+$mdlext-dark-error-color:                      #FF1744 !default;
 
 
 // Anchor
@@ -181,18 +194,19 @@ $mdlext-dark-text-link-color:                  $mdlext-dark-color-accent;
 //  Item
 
 // Default Item Colors
-$mdlext-dark-default-item-text-color:          rgba($mdlext-dark-color-white, 0.87) !default;
+$mdlext-dark-default-item-text-color:          rgba($mdlext-color-white, 0.87) !default;
 $mdlext-dark-default-item-outline-color:       $mdlext-palette-grey-700 !default;
 $mdlext-dark-default-item-hover-bg-color:      $mdlext-palette-grey-900 !default;
 $mdlext-dark-default-item-focus-bg-color:      $mdlext-palette-grey-900 !default;
 $mdlext-dark-default-item-active-bg-color:     $mdlext-palette-grey-800 !default;
-$mdlext-dark-default-item-divider-color:       rgba($mdlext-dark-color-white, 0.12) !default;
+$mdlext-dark-default-item-divider-color:       rgba($mdlext-color-white, 0.12) !default;
 
 // Disabled Button Colors
-$mdlext-dark-disabled-item-text-color:        $mdlext-palette-grey-500 !default;
+$mdlext-dark-disabled-item-text-color:         $mdlext-palette-grey-500 !default;
+$mdlext-dark-disabled-item-text-color:         $mdlext-palette-grey-500 !default;
 
 // Dropdown menu
-$mdlext-dark-default-dropdown-bg-color:       $mdlext-light-color-black !default;
+$mdlext-dark-default-dropdown-bg-color:        $mdlext-color-black !default;
 
 
 // Badge
@@ -203,24 +217,24 @@ $mdlext-dark-badge-background-inverse:         $mdlext-dark-color-accent-contras
 
 // Default button colors.
 $mdlext-dark-button-primary-color:             rgba($mdlext-palette-grey-500, 0.20) !default; // Grey-500
-$mdlext-dark-button-secondary-color:           $mdlext-dark-color-white !default;
+$mdlext-dark-button-secondary-color:           $mdlext-color-white !default;
 $mdlext-dark-button-hover-color:               $mdlext-dark-button-primary-color !default;
 $mdlext-dark-button-active-color:              rgba($mdlext-palette-grey-500, 0.40) !default;
-$mdlext-dark-button-focus-color:               rgba($mdlext-dark-color-black, 0.12) !default;
+$mdlext-dark-button-focus-color:               rgba($mdlext-color-black, 0.12) !default;
 
 // Colored button colors.
-$mdlext-dark-button-primary-color-alt:         $mdlext-dark-color-primary-light !default; //$mdlext-dark-color-primary !default;
+$mdlext-dark-button-primary-color-alt:         $mdlext-dark-color-primary-light !default;
 $mdlext-dark-button-secondary-color-alt:       $mdlext-dark-color-primary-contrast !default;
-$mdlext-dark-button-hover-color-alt:           darken($mdlext-dark-color-primary-light, 10%) !default; //$mdlext-dark-color-primary !default;
-$mdlext-dark-button-active-color-alt:          darken($mdlext-dark-color-primary-light, 10%) !default; //$mdlext-dark-color-primary !default;
+$mdlext-dark-button-hover-color-alt:           darken($mdlext-dark-color-primary-light, 10%) !default;
+$mdlext-dark-button-active-color-alt:          darken($mdlext-dark-color-primary-light, 10%) !default;
 $mdlext-dark-button-focus-color-alt:           $mdlext-dark-button-focus-color !default;
 
 // Ripple color for colored raised buttons.
 $mdlext-dark-button-ripple-color-alt:          $mdlext-dark-color-primary-contrast !default;
 
 // Disabled button colors.
-$mdlext-dark-button-primary-color-disabled:    rgba($mdlext-dark-color-white, 0.12) !default;
-$mdlext-dark-button-secondary-color-disabled:  rgba($mdlext-dark-color-white, 0.26) !default;
+$mdlext-dark-button-primary-color-disabled:    rgba($mdlext-color-white, 0.12) !default;
+$mdlext-dark-button-secondary-color-disabled:  rgba($mdlext-color-white, 0.26) !default;
 
 // FAB colors and sizes.
 $mdlext-dark-button-fab-color-alt:             $mdlext-dark-color-accent !default;
@@ -231,26 +245,26 @@ $mdlext-dark-button-fab-ripple-color-alt:      $mdlext-dark-color-accent-contras
 
 
 // Slider
-$mdlext-dark-range-bg-color:                   rgba($mdlext-dark-color-white, 0.87) !default;
+$mdlext-dark-range-bg-color:                   rgba($mdlext-color-white, 0.87) !default;
 $mdlext-dark-range-color:                      $mdlext-dark-color-primary-light !default;
 $mdlext-dark-range-faded-color:                rgba($mdlext-dark-color-primary-light, 0.50) !default;
-$mdlext-dark-range-bg-focus-color:             rgba($mdlext-dark-color-white, 0.50) !default;
+$mdlext-dark-range-bg-focus-color:             rgba($mdlext-color-white, 0.50) !default;
 
 
 // Textfields
 $mdlext-dark-input-text-background-color:      transparent !default;
-$mdlext-dark-input-text-label-color:           rgba($mdlext-dark-color-white, 0.50) !default;
-$mdlext-dark-input-text-bottom-border-color:   rgba($mdlext-dark-color-white, 0.26) !default;
+$mdlext-dark-input-text-label-color:           rgba($mdlext-color-white, 0.50) !default;
+$mdlext-dark-input-text-bottom-border-color:   rgba($mdlext-color-white, 0.26) !default;
 $mdlext-dark-input-text-highlight-color:       $mdlext-dark-color-primary-light !default;
 $mdlext-dark-input-text-disabled-color:        $mdlext-dark-input-text-bottom-border-color !default;
 $mdlext-dark-input-text-disabled-text-color:   $mdlext-dark-input-text-label-color !default;
-$mdlext-dark-input-text-error-color:           $mdlext-palette-red-A400 !default;
+$mdlext-dark-input-text-error-color:           $mdlext-dark-error-color !default;
 
 
 // Checkboxes
 $mdlext-dark-checkbox-color:                   $mdlext-dark-color-primary-light !default;
-$mdlext-dark-checkbox-off-color:               rgba($mdlext-dark-color-white, 0.50) !default;
-$mdlext-dark-checkbox-disabled-color:          rgba($mdlext-dark-color-white, 0.26) !default;
+$mdlext-dark-checkbox-off-color:               rgba($mdlext-color-white, 0.50) !default;
+$mdlext-dark-checkbox-disabled-color:          rgba($mdlext-color-white, 0.26) !default;
 $mdlext-dark-checkbox-focus-color:             rgba($mdlext-dark-color-primary-light, 0.26) !default;
 
 
@@ -259,12 +273,12 @@ $mdlext-dark-icon-toggle-color:                $mdlext-palette-grey-700 !default
 $mdlext-dark-icon-toggle-focus-color:          $mdlext-dark-button-focus-color !default;
 $mdlext-dark-icon-toggle-checked-color:        $mdlext-dark-color-primary-light !default;
 $mdlext-dark-icon-toggle-checked-focus-color:  rgba($mdlext-dark-color-primary-light, 0.26) !default;
-$mdlext-dark-icon-toggle-disabled-color:       rgba($mdlext-dark-color-white, 0.50) !default;
+$mdlext-dark-icon-toggle-disabled-color:       rgba($mdlext-color-white, 0.50) !default;
 
 // Radio Buttons
 $mdlext-dark-radio-color:                      $mdlext-dark-color-primary-light !default;
-$mdlext-dark-radio-off-color:                  rgba($mdlext-dark-color-white, 0.50) !default;
-$mdlext-dark-radio-disabled-color:             rgba($mdlext-dark-color-white, 0.26) !default;
+$mdlext-dark-radio-off-color:                  rgba($mdlext-color-white, 0.50) !default;
+$mdlext-dark-radio-disabled-color:             rgba($mdlext-color-white, 0.26) !default;
 
 
 // Switches
@@ -274,20 +288,68 @@ $mdlext-dark-switch-thumb-color:               $mdlext-dark-switch-color !defaul
 $mdlext-dark-switch-track-color:               rgba($mdlext-dark-color-primary-light, 0.5) !default;
 
 $mdlext-dark-switch-off-thumb-color:           $mdlext-palette-grey-50 !default;
-$mdlext-dark-switch-off-track-color:           rgba($mdlext-dark-color-white, 0.26) !default;
+$mdlext-dark-switch-off-track-color:           rgba($mdlext-color-white, 0.26) !default;
 $mdlext-dark-switch-disabled-thumb-color:      $mdlext-palette-grey-50 !default;
-$mdlext-dark-switch-disabled-track-color:      rgba($mdlext-dark-color-white, 0.12) !default;
+$mdlext-dark-switch-disabled-track-color:      rgba($mdlext-color-white, 0.12) !default;
 
 
 // Data table
 $mdlext-dark-data-table-background-color:               $mdlext-dark-content-background-color !default;
-$mdlext-dark-data-table-header-color:                   rgba($mdlext-dark-color-white, 0.87) !default;
-$mdlext-dark-data-table-header-sorted-color:            rgba($mdlext-dark-color-white, 0.87) !default;
-$mdlext-dark-data-table-header-sorted-icon-hover-color: rgba($mdlext-dark-color-white, 0.26) !default;
+$mdlext-dark-data-table-header-color:                   rgba($mdlext-color-white, 0.87) !default;
+$mdlext-dark-data-table-header-sorted-color:            rgba($mdlext-color-white, 0.87) !default;
+$mdlext-dark-data-table-header-sorted-icon-hover-color: rgba($mdlext-color-white, 0.26) !default;
 $mdlext-dark-data-table-hover-color:                    $mdlext-dark-default-item-hover-bg-color !default;
 $mdlext-dark-data-table-selection-color:                $mdlext-dark-default-item-active-bg-color !default;
-$mdlext-dark-data-table-divider-color:                  rgba($mdlext-light-color-white, 0.12) !default;
+$mdlext-dark-data-table-divider-color:                  rgba($mdlext-color-white, 0.12) !default;
 $mdlext-dark-data-table-dividers:                       1px solid $mdlext-dark-data-table-divider-color !default;
 
 // Selectfield
 // Uses variables from textfield
+
+
+
+
+/* -------------------------------------------------------------
+ * Palette samples
+ * -------------------------------------------------------------
+
+$mdlext-light-color-primary:                   #F5F5F5 !default;
+$mdlext-light-color-primary-dark:              #E0E0E0 !default;
+$mdlext-light-color-primary-light:             #8BC34A !default;  // Fallback color. Set to color-primary if fallback is not needed
+$mdlext-light-color-primary-contrast:          #000000 !default;  // text color on primary/primary dark background
+$mdlext-light-color-accent:                    #FFC107 !default;
+$mdlext-light-color-accent-contrast:           #FFFFFF !default;
+
+
+$mdlext-light-color-primary:                   #673AB7 !default;
+$mdlext-light-color-primary-dark:              #512DA8 !default;
+$mdlext-light-color-primary-light:             #673AB7 !default;   // Fallback color. Set to color-primary if fallback is not needed
+$mdlext-light-color-primary-contrast:          #D1C4E9 !default;   // text color on primary/primary dark background
+$mdlext-light-color-accent:                    #4CAF50 !default;
+$mdlext-light-color-accent-contrast:           #FFFFFF !default;
+
+
+$mdlext-light-color-primary:                   #4CAF50 !default;
+$mdlext-light-color-primary-dark:              #388E3C !default;
+$mdlext-light-color-primary-light:             #4CAF50 !default;  // Fallback color. Set to color-primary if fallback is not needed
+$mdlext-light-color-primary-contrast:          #C8E6C9 !default;  // text color on primary/primary dark background
+$mdlext-light-color-accent:                    #FF5252 !default;
+$mdlext-light-color-accent-contrast:           #FFFFFF !default;
+
+
+$mdlext-light-color-primary:                   #4CAF50 !default;
+$mdlext-light-color-primary-dark:              #388E3C !default;
+$mdlext-light-color-primary-light:             #4CAF50 !default;  // Fallback color. Set to color-primary if fallback is not needed
+$mdlext-light-color-primary-contrast:          #C8E6C9 !default;  // text color on primary/primary dark background
+$mdlext-light-color-accent:                    #03A9F4 !default;
+$mdlext-light-color-accent-contrast:           #FFFFFF !default;
+
+
+$mdlext-dark-color-primary:                    #212121 !default;
+$mdlext-dark-color-primary-dark:               #000000 !default;
+$mdlext-dark-color-primary-light:              #607D8B !default;  // Fallback color. Set to color-primary if fallback is not needed
+$mdlext-dark-color-primary-contrast:           #FFFFFF !default;  // text color on primary/primary dark background
+$mdlext-dark-color-accent:                     #FF5722 !default;
+$mdlext-dark-color-accent-contrast:            #FFFFFF !default;
+
+*/
