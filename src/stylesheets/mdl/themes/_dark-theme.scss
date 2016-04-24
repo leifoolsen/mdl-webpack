@@ -735,3 +735,49 @@
     }
   }
 }
+
+
+// mdlext/src/selectfield/_selectfield.scss
+// ----------------------------------------
+.mdlext-dark-theme {
+
+  .mdlext-selectfield.is-disabled:after {
+    color: $mdlext-dark-input-text-disabled-color;
+  }
+
+  .mdlext-selectfield__select {
+    border-bottom-color: $mdlext-dark-input-text-bottom-border-color;
+    color: inherit;
+  }
+  .mdlext-selectfield.is-invalid .mdlext-selectfield__select {
+    border-color: $mdlext-dark-input-text-error-color;
+  }
+  fieldset[disabled] .mdlext-selectfield .mdlext-selectfield__select, .mdlext-selectfield.is-disabled .mdlext-selectfield__select {
+    background-color: transparent;
+    border-bottom-color: $mdlext-dark-input-text-disabled-color;
+    color: $mdlext-dark-input-text-disabled-text-color;
+  }
+
+  .mdlext-selectfield__label {
+    color: $mdlext-dark-input-text-label-color;
+  }
+  fieldset[disabled] .mdlext-selectfield .mdlext-selectfield__label, .mdlext-selectfield.is-disabled.is-disabled .mdlext-selectfield__label {
+    color: $mdlext-dark-input-text-disabled-text-color;
+  }
+  .mdlext-selectfield--floating-label.is-focused .mdlext-selectfield__label, .mdlext-selectfield--floating-label.is-dirty .mdlext-selectfield__label, .mdlext-selectfield--floating-label.is-dirty.is-dirty .mdlext-selectfield__label, .mdlext-selectfield--floating-label.has-placeholder .mdlext-selectfield__label {
+    color: $mdlext-dark-input-text-highlight-color;
+  }
+  .mdlext-selectfield--floating-label.is-invalid .mdlext-selectfield__label {
+    color: $mdlext-dark-input-text-error-color;
+  }
+  .mdlext-selectfield__label:after {
+    background-color: $mdlext-dark-input-text-highlight-color;
+  }
+  .mdlext-selectfield.is-invalid .mdlext-selectfield__label:after {
+    background-color: $mdlext-dark-input-text-error-color;
+  }
+
+  .mdlext-selectfield__error {
+    color: $mdlext-dark-input-text-error-color;
+  }
+}
