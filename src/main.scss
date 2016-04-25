@@ -23,18 +23,12 @@ $material-design-iconfont-path: '../node_modules/material-design-icons/iconfont'
 $zmdi-font-path : '../node_modules/material-design-iconic-font/dist/fonts';
 
 
-/* ==========  TYPOGRAPHY  ========== */
-$preferred_font: 'Roboto-Light', 'Helvetica', 'Arial', sans-serif;
-$performance_font: 'Helvetica', 'Arial', sans-serif !default;
-
-
 /* ==========  IMAGES  ========== */
 $image_path: '/static/images/mdl';  // See: webpack.config.js CopyWebpackPlugin
 
 
 // 1. Configuration and helpers
-@import '../node_modules/material-design-lite/src/color-definitions';
-@import 'stylesheets/mdl/variables';
+@import 'variables';
 @import '../node_modules/material-design-lite/src/variables';
 @import 'stylesheets/utils/mixins';
 
@@ -45,10 +39,10 @@ $image_path: '/static/images/mdl';  // See: webpack.config.js CopyWebpackPlugin
 @import '../node_modules/roboto-fontface/css/roboto-fontface.css';
 @import '../node_modules/dialog-polyfill/dialog-polyfill.css';
 @import '../node_modules/material-design-lite/src/material-design-lite';
+@import 'stylesheets/vendors/mdl-overrides';
 @import '../node_modules/mdl-ext/src/mdl-ext-eqjs';
 
 // 3. Base stuff
-@import 'stylesheets/mdl/mdl';
 @import 'stylesheets/base/base';
 
 // 4. Internal Components

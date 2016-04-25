@@ -1,0 +1,162 @@
+/**
+ * Override MDL
+ */
+
+// -----------------------------------------
+// material-design-lite/src/card/_card.scss
+// -----------------------------------------
+.mdl-card {
+}
+.mdl-card__title {
+}
+.mdl-card__media {
+  margin: 0;
+  text-align: center;
+
+  > img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+.mdl-card__supporting-text {
+  width: auto;
+}
+.mdl-card__actions {
+  display: flex;
+}
+
+// -----------------------------------------------------
+// material-design-lite/src/progress/_progress.scss
+// -----------------------------------------------------
+.mdl-progress {
+  > .bufferbar {
+    background: {
+      image: none;
+      color: $progress-secondary-color;
+    }
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+// -----------------------------------------------------
+// material-design-lite/src/data-table/_data-table.scss
+// -----------------------------------------------------
+.mdl-data-table {
+  border: none;
+  tr:last-child td {
+    border: none;
+  }
+  td, th {
+    &:first-of-type {
+      padding-left: 16px;
+    }
+    &:last-of-type {
+      padding-right: 16px;
+    }
+  }
+  tr:hover {
+    background-clip: padding-box;
+  }
+}
+
+// --------------------------------------------------
+// material-design-lite/src/footer/_mini_footer.scss
+// --------------------------------------------------
+.mdl-mini-footer {
+  margin: $padding*2 0 $padding 0;
+  padding: 0 $padding;
+  align-items: center;
+
+  & .mdl-logo {
+    color: inherit;
+    line-height: 1;
+    margin: 0;
+    padding-right: 8px;
+  }
+
+}
+.mdl-mini-footer--link-list,
+.mdl-mini-footer__link-list {
+
+  align-items: center;
+
+  & li {
+    margin-bottom: 0;
+    margin-right: $padding;
+
+    @media screen and (min-width: 760px) {
+      line-height: 1;
+    }
+  }
+}
+.mdl-mini-footer--left-section,
+.mdl-mini-footer__left-section {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+.mdl-mini-footer--right-section,
+.mdl-mini-footer__right-section {
+  display: flex;
+  align-items: center;
+}
+
+// -----------------------------------------
+// material-design-lite/src/list/_list.scss
+// -----------------------------------------
+.mdl-list {
+  .list__item--border-top {
+    background-clip: padding-box;
+  }
+}
+
+// ---------------------------------------------
+// material-design-lite/src/layout/_layout.scss
+// ---------------------------------------------
+.mdl-layout {
+}
+
+// Drawer.
+.mdl-layout__drawer {
+
+  & .mdl-navigation {
+
+    & .mdl-navigation__link {
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        background-color: $layout-nav-color;
+      }
+
+      &--current {
+        background-color: $layout-drawer-navigation-link-active-background;
+        color: $layout-drawer-navigation-link-active-color;
+
+        &:hover {
+          background-color: $layout-drawer-navigation-link-active-background;
+          color: $layout-drawer-navigation-link-active-color;
+        }
+      }
+    }
+  }
+}
+
+.mdl-layout__drawer-button {
+  // Remove the "annoying" focus ring
+  outline: none;
+
+  // Mozilla, remove focusring
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
+}
+.mdl-layout__content {
+  // Change the layout__content class to Flex (instead of inline-block) to allow spacer to work.
+  // See: https://github.com/google/material-design-lite/issues/913
+  display: flex;
+  flex-flow: column nowrap;
+}
