@@ -41,8 +41,10 @@ $image_path: '/static/images/mdl';  // See: webpack.config.js CopyWebpackPlugin
 @import '../node_modules/material-design-lite/src/material-design-lite';
 @import 'stylesheets/vendors/mdl-overrides';
 @import '../node_modules/mdl-ext/src/mdl-ext-eqjs';
+@import '../node_modules/modularscale-sass/stylesheets/modular-scale';
 
 // 3. Base stuff
+//@import 'stylesheets/typography/typography';
 @import 'stylesheets/base/base';
 
 // 4. Internal Components

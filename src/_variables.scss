@@ -7,16 +7,14 @@ $_mdlapp-divider-color:           rgba(#000000, 0.12) !default;  // -> $card-bor
 $_mdlapp-color-primary:           #2196F3 !default;
 $_mdlapp-color-primary-dark:      #1976D2 !default;
 $_mdlapp-color-primary-contrast:  #FFFFFF !default;  // text color on primary/primary dark background
-$_mdlapp-color-accent:            #03A9F4 !default;
+$_mdlapp-color-accent:            #607D8B !default;
 $_mdlapp-color-accent-contrast:   #FFFFFF !default;
 
-$mdlapp-color-black:              "0,0,0"       !default;
-$mdlapp-color-white:              "255,255,255" !default;
 $mdlapp-text-color-primary:       "0,0,0"       !default;
 $mdlapp-color-primary:            "33,150,243"  !default;
 $mdlapp-color-primary-dark:       "25,118,210"  !default;
 $mdlapp-color-primary-contrast:   "255,255,255" !default;
-$mdlapp-color-accent:             "3,169,244"   !default;
+$mdlapp-color-accent:             "96,125,139"  !default;
 $mdlapp-color-accent-contrast:    "255,255,255" !default;
 
 /* -----------------------------------------------
@@ -24,8 +22,6 @@ $mdlapp-color-accent-contrast:    "255,255,255" !default;
  * ----------------------------------------------- */
 
 /* ==========  TYPOGRAPHY  ========== */
-$preferred_font: 'Roboto', 'Helvetica', 'Arial', sans-serif !default;
-$performance_font: 'Helvetica', 'Arial', sans-serif !default;
 
 /* ==========  IMAGES  ========== */
 
@@ -50,30 +46,41 @@ $text-link-color: unquote("rgb(#{$color-accent})");
 /* ==========  Standard Buttons  ========== */
 
 /* ==========  Icon Toggles  ========== */
+$icon-toggle-checked-color: unquote("rgb(#{$color-accent})") !default;
+$icon-toggle-checked-focus-color: unquote("rgba(#{$color-accent}, 0.26)") !default;
 
 /* ==========  Radio Buttons  ========== */
+$radio-color: unquote("rgb(#{$color-accent})") !default;
 
 /* ==========  Ripple effect  ========== */
+
 
 /* ==========  Layout  ========== */
 
 // Drawer
-$layout-drawer-navigation-link-active-background: unquote("rgba(#{$mdlapp-color-black}, 0.25)");
+$layout-drawer-navigation-link-active-background: rgba(0, 0, 0, 0.25);
 $layout-drawer-navigation-link-active-color: unquote("rgb(#{$color-primary-dark})");
 
 // Header
-$layout-header-text-color: unquote("rgba(#{$mdlapp-color-black}, 0.9)");
+$layout-header-text-color: rgba(0, 0, 0, 0.9);
 
 
 /* ==========  Content Tabs  ========== */
 
 /* ==========  Checkboxes  ========== */
+$checkbox-color: unquote("rgb(#{$color-accent})") !default;
+$checkbox-focus-color: unquote("rgba(#{$color-accent}, 0.26)") !default;
 
 /* ==========  Switches  ========== */
+$switch-color: unquote("rgb(#{$color-accent})") !default;
+$switch-faded-color: unquote("rgba(#{$color-accent}, 0.26)") !default;
+$switch-track-color: unquote("rgba(#{$color-accent}, 0.5)") !default;
+
 
 /* ==========  Spinner  ========== */
 
 /* ==========  Text fields  ========== */
+$input-text-highlight-color: unquote("rgb(#{$color-accent})") !default;
 
 /* ==========  Card  ========== */
 $card-image-placeholder-color: rgba(255, 255, 255, 0);
@@ -82,8 +89,13 @@ $card-image-placeholder-color: rgba(255, 255, 255, 0);
 // Other text colors are inherited
 
 /* ==========  Sliders ========== */
+$range-color: unquote("rgb(#{$color-accent})") !default;
+$range-faded-color: unquote("rgba(#{$color-accent}, 0.26)") !default;
 
 /* ========== Progress ========== */
+$progress-main-color: unquote("rgb(#{$color-accent})") !default;
+$progress-secondary-color: unquote("rgba(#{$color-accent-contrast}, 0.7)") !default;
+$progress-fallback-buffer-color: unquote("rgba(#{$color-accent-contrast}, 0.9)") !default;
 
 /* ==========  List ========== */
 

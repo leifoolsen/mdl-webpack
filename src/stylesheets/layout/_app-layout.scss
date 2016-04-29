@@ -3,11 +3,10 @@
  * ---------------------------------------------------------- */
 
 // colors
-$app_white: unquote("rgb(#{$color-white})");
-$app_white_0: $app_white;
-$app_white_10: unquote("rgba(#{$color-white}, 0.1)");
-$app_white_30: unquote("rgba(#{$color-white}, 0.3)");
-$app_white_96: unquote("rgba(#{$color-white}, 0.96)");
+$app_white   : #FFFFFF;
+$app_white_10: rgba($app-white, 0.1);
+$app_white_30: rgba($app-white, 0.3);
+$app_white_96: rgba($app-white, 0.96) ;
 
 //urls
 $app_bg_url: url(transparent.jpg);
@@ -27,7 +26,7 @@ body {
   background: linear-gradient(to bottom, $app_white_30 0, $app_white_10 100%);
 
   &.is-scroll {
-    background: linear-gradient(to bottom, $app_white_96 100%, $app_white_0 100%);
+    background: linear-gradient(to bottom, $app_white_96 100%, $app_white 100%);
   }
 
   .mdl-layout__drawer-button {
