@@ -28,45 +28,12 @@ class Header {
   constructor(selector = '#header') {
     this.selector = selector;
     this.headerEl = qs(this.selector);
-    this.prevContentScrollTop = 0;
   }
 
   stickToElement(event) {
-    let element = event.detail.element;
-    let currentContentScrollTop = element.scrollTop;
-    let scrollDiff = this.prevContentScrollTop - currentContentScrollTop;
-    let headerTop = (parseInt( window.getComputedStyle( this.headerEl ).getPropertyValue( 'top' ) ) || 0) + scrollDiff;
-
-    if(currentContentScrollTop <= 0) {
-      // Scrolled to the top. Header sticks to the top
-      this.headerEl.style.top = '0';
-      this.headerEl.classList.remove('is-scroll');
-    }
-    else if(scrollDiff > 0) {
-      // Scrolled up. Header slides in
-      this.headerEl.style.top = ( headerTop > 0 ? 0 : headerTop ) + 'px';
-      this.headerEl.classList.add('is-scroll');
-    }
-    else if(scrollDiff < 0) {
-      // Scrolled down
-      this.headerEl.classList.add('is-scroll');
-
-      if (element.scrollHeight - element.scrollTop <= element.offsetHeight) {
-        // Bottom of content
-        this.headerEl.style.top = '0';
-      }
-      else {
-        let offsetHeight = this.headerEl.offsetHeight;
-        this.headerEl.style.top = ( Math.abs( headerTop ) > offsetHeight ? -offsetHeight : headerTop ) + 'px';
-      }
-    }
-
-    this.prevContentScrollTop = currentContentScrollTop;
   }
 
   adjustWidthToElement(event) {
-    let element = event.detail.element;
-    this.headerEl.style.width = element.clientWidth + 'px';
   }
 
   updateTitle(event) {
@@ -184,6 +151,10 @@ class Content {
     if(this.notifications.contentchange) {
       this.notifications.contentchange( { element: this.contentEl } );
     }
+
+    const header = document.querySelector('header');
+    var event = new CustomEvent('updateposition');
+    header.dispatchEvent(event);
   }
 
   @throttle
