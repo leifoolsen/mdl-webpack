@@ -46,11 +46,11 @@ $text-link-color: unquote("rgb(#{$color-accent})");
 /* ==========  Standard Buttons  ========== */
 
 /* ==========  Icon Toggles  ========== */
-$icon-toggle-checked-color: unquote("rgb(#{$color-accent})") !default;
-$icon-toggle-checked-focus-color: unquote("rgba(#{$color-accent}, 0.26)") !default;
+$icon-toggle-checked-color: unquote("rgb(#{$color-accent})");
+$icon-toggle-checked-focus-color: unquote("rgba(#{$color-accent}, 0.26)");
 
 /* ==========  Radio Buttons  ========== */
-$radio-color: unquote("rgb(#{$color-accent})") !default;
+$radio-color: unquote("rgb(#{$color-accent})");
 
 /* ==========  Ripple effect  ========== */
 
@@ -68,19 +68,20 @@ $layout-header-text-color: rgba(0, 0, 0, 0.9);
 /* ==========  Content Tabs  ========== */
 
 /* ==========  Checkboxes  ========== */
-$checkbox-color: unquote("rgb(#{$color-accent})") !default;
-$checkbox-focus-color: unquote("rgba(#{$color-accent}, 0.26)") !default;
+$checkbox-color: unquote("rgb(#{$color-accent})");
+$checkbox-focus-color: unquote("rgba(#{$color-accent}, 0.26)");
 
 /* ==========  Switches  ========== */
-$switch-color: unquote("rgb(#{$color-accent})") !default;
-$switch-faded-color: unquote("rgba(#{$color-accent}, 0.26)") !default;
-$switch-track-color: unquote("rgba(#{$color-accent}, 0.5)") !default;
+$switch-color: unquote("rgb(#{$color-accent})");
+$switch-faded-color: unquote("rgba(#{$color-accent}, 0.26)");
+$switch-thumb-color: $switch-color;
+$switch-track-color: unquote("rgba(#{$color-accent}, 0.5)");
 
 
 /* ==========  Spinner  ========== */
 
 /* ==========  Text fields  ========== */
-$input-text-highlight-color: unquote("rgb(#{$color-accent})") !default;
+$input-text-highlight-color: unquote("rgb(#{$color-accent})");
 
 /* ==========  Card  ========== */
 $card-image-placeholder-color: rgba(255, 255, 255, 0);
@@ -89,13 +90,13 @@ $card-image-placeholder-color: rgba(255, 255, 255, 0);
 // Other text colors are inherited
 
 /* ==========  Sliders ========== */
-$range-color: unquote("rgb(#{$color-accent})") !default;
-$range-faded-color: unquote("rgba(#{$color-accent}, 0.26)") !default;
+$range-color: unquote("rgb(#{$color-accent})");
+$range-faded-color: unquote("rgba(#{$color-accent}, 0.26)");
 
 /* ========== Progress ========== */
-$progress-main-color: unquote("rgb(#{$color-accent})") !default;
-$progress-secondary-color: unquote("rgba(#{$color-accent-contrast}, 0.7)") !default;
-$progress-fallback-buffer-color: unquote("rgba(#{$color-accent-contrast}, 0.9)") !default;
+$progress-main-color: unquote("rgb(#{$color-accent})");
+$progress-secondary-color: unquote("rgba(#{$color-accent-contrast}, 0.7)");
+$progress-fallback-buffer-color: unquote("rgba(#{$color-accent-contrast}, 0.9)");
 
 /* ==========  List ========== */
 
@@ -178,3 +179,7 @@ $data-table-column-spacing: 16px;
 
 /* TOOLTIP */
 $tooltip-font-size: 12px;
+
+/* -----------------------------------------------
+ * END: Override Material Design Lite variables
+ * ----------------------------------------------- */
