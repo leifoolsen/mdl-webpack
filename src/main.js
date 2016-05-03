@@ -151,10 +151,6 @@ class Content {
     if(this.notifications.contentchange) {
       this.notifications.contentchange( { element: this.contentEl } );
     }
-
-    const header = document.querySelector('header');
-    var event = new CustomEvent('updateposition');
-    header.dispatchEvent(event);
   }
 
   @throttle
