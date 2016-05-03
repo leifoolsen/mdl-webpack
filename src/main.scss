@@ -15,21 +15,17 @@
 // A list of available icon font names can be found here: https://www.google.com/design/icons/
 $material-design-iconfont-path: '../node_modules/material-design-icons/iconfont';
 
-
 /* -----------------------------------------------
  * Override Material Design Iconic Font variables
  * ----------------------------------------------- */
 // A list of available icons can be found here: http://zavoloklom.github.io/material-design-iconic-font/
 $zmdi-font-path : '../node_modules/material-design-iconic-font/dist/fonts';
 
-
 /* ==========  IMAGES  ========== */
 $image_path: '/static/images/mdl';  // See: webpack.config.js CopyWebpackPlugin
 
-
 // 1. Configuration and helpers
 @import 'variables';
-@import '../node_modules/material-design-lite/src/variables';
 @import 'stylesheets/utils/mixins';
 
 // 2. Vendors

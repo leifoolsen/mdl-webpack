@@ -181,5 +181,22 @@ $data-table-column-spacing: 16px;
 $tooltip-font-size: 12px;
 
 /* -----------------------------------------------
- * END: Override Material Design Lite variables
+ * Override Color Themes variables
  * ----------------------------------------------- */
+$mdlext-light-color-primary:          #9E9E9E;
+$mdlext-light-color-primary-dark:     #616161;
+$mdlext-light-color-primary-light:    #9E9E9E;  // Fallback color. Set to color-primary if fallback is not needed
+$mdlext-light-color-primary-contrast: #F5F5F5;  // text color on primary/primary dark background
+$mdlext-light-color-accent:           #FF5722;
+$mdlext-light-color-accent-light:     #FF5722;  // Fallback color. Set to color-accent if fallback is not needed
+$mdlext-light-color-accent-contrast:  #FFFFFF;
+
+
+$mdlext-dark-color-primary:           #673AB7;
+$mdlext-dark-color-primary-dark:      #512DA8;
+$mdlext-dark-color-primary-light:     #673AB7;
+$mdlext-dark-color-primary-light:     #D1C4E9;
+$mdlext-dark-color-primary-contrast:  #FFFFFF;
+$mdlext-dark-color-accent:            #4CAF50;
+$mdlext-dark-color-accent-light:      #4CAF50;
+$mdlext-dark-color-accent-contrast:   #FFFFFF;

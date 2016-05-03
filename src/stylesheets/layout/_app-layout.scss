@@ -16,40 +16,6 @@ body {
   overflow:hidden;
 }
 
-
-/* ---------------------
- * Sticky header
- * --------------------- */
-/*
-*:not(.is-small-screen) .app-layout__sticky-header {
-  position: absolute;
-  overflow: visible;
-  background: linear-gradient(to bottom, $app_white_30 0, $app_white_10 100%);
-
-  &.is-scroll {
-    background: linear-gradient(to bottom, $app_white_96 100%, $app_white 100%);
-  }
-
-  .mdl-layout__drawer-button {
-    visibility: hidden;
-  }
-
-  .mdl-layout__header-row {
-    padding-left: $padding;
-  }
-}
-
-.is-small-screen .app-layout__sticky-header {
-  .mdl-layout__drawer-button {
-    visibility: visible;
-  }
-  .mdl-layout__header-row {
-    padding-left: $padding + $layout-drawer-button-mobile-size;
-  }
-}
-*/
-
-
 /* ---------------------
  * Drawer
  * --------------------- */
