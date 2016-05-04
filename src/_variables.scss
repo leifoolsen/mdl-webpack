@@ -180,9 +180,16 @@ $data-table-column-spacing: 16px;
 /* TOOLTIP */
 $tooltip-font-size: 12px;
 
-/* -----------------------------------------------
- * Override Color Themes variables
- * ----------------------------------------------- */
+
+// -----------------------------------------------
+// Override Bordered fields variables.
+// -----------------------------------------------
+$mdlext-bordered-field-focus-border-color   : unquote("rgb(#{$color-accent})") !default;
+$mdlext-bordered-field-required-border-color: unquote("rgba(#{$color-primary}, 0.8)") !default;
+
+// -----------------------------------------------
+// Override Color Themes variables
+// -----------------------------------------------
 $mdlext-light-color-primary:          #9E9E9E;
 $mdlext-light-color-primary-dark:     #616161;
 $mdlext-light-color-primary-light:    #9E9E9E;  // Fallback color. Set to color-primary if fallback is not needed
