@@ -1,5 +1,5 @@
 {
-  "name": "mdl-webpack",
+  "name"   : "mdl-webpack",
   "version": "0.0.1",
   "description": "Google Material Design Lite with webpack",
   "main": "webpack.config.js",
