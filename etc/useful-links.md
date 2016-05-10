@@ -21,7 +21,6 @@
 * [Sass Variables for Material Design's Colour Palette](http://www.himpfen.com/sass-variables-material-design/)
 * [Social Sharing Buttons for Material Design Lite using Font Awesome and Sass](http://www.himpfen.com/social-sharing-buttons-material-design-lite-font-awesome-sass/)
 * [A Mixin Approach to Material Design Lite Using Sass](http://markbirbeck.com/2015/10/14/a-mixin-approach-to-material-design-lite-using-sass/)
-* [Tutorial: Pinterest Type Layout with Material Design Lite and Masonry.js](http://www.pixelatingbits.com/tutorial-pinterest-type-layout-with-material-design-lite-and-masonry-js/)
 * [Material Design Lite WIKI](https://github.com/google/material-design-lite/wiki)
 * [Material Design Lite - Concise Style Guide](http://www.softwareapprentice.com/mdl-concise-styleguide/)
 * [Material Design Lite Encapsulated](https://github.com/genadis/encapsulated-mdl)
@@ -83,6 +82,9 @@
 * [Flexbox adventures: Flexbox calculations](https://chriswrightdesign.com/experiments/flexbox-adventures/)
 * [THE ULTIMATE FLEXBOX CHEAT SHEET](http://www.sketchingwithcss.com/samplechapter/cheatsheet.html)
 * [Flexy boxes - flexbox code generator](http://the-echoplex.net/flexyboxes/)
+* [Everyday i'm flexboxing](https://github.com/ZiggyV/flexbox)
+* [Solved by Flexbox](https://github.com/philipwalton/solved-by-flexbox)
+
 
 ### WAI-ARIA
 * [WAI-ARIA 1.1 Authoring Practices](https://www.w3.org/TR/wai-aria-practices-1.1/)
@@ -535,7 +537,7 @@
 * [Using webpack: How to build and distribute libraries via NPM using WebPack bundler](https://glebbahmutov.com/blog/using-webpack/)
 * [Sample wepack config](https://github.com/colindresj/sample-webpack-config)
 * [Webpack Declarative](http://alexfedoseev.com/post/66/webpack-declarative-way)
-
+* [Webpack — The Confusing Parts](https://medium.com/@rajaraodv/webpack-the-confusing-parts-58712f8fcad9#.ludhbcylg)
 
 ## Lint
 * [Configuring ESLint](http://eslint.org/docs/user-guide/configuring.html)
@@ -678,12 +680,63 @@
 * [How to forget about jQuery and start using native JavaScript APIs](http://blog.romanliutikov.com/post/63383858003/how-to-forget-about-jquery-and-start-using-native)
 * [You Don't Need jQuery!](http://blog.garstasio.com/you-dont-need-jquery/selectors/)
 * [Native JavaScript Equivalents of jQuery Methods: the DOM and Forms](http://www.sitepoint.com/jquery-vs-raw-javascript-1-dom-forms/)
+* [Vanilla JavaScript for building powerful web applications](https://plainjs.com/)
 
 ## Books
 * [Exploring es6](http://exploringjs.com/es6/), free book
 * [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read), free book
 * [You Don't Know JS (book series)](https://github.com/getify/You-Dont-Know-JS)
 * [Learning JavaScript Design Patterns](https://github.com/addyosmani/essential-js-design-patterns)
+
+## Image
+* [gm - GraphicsMagick and ImageMagick for node](https://github.com/aheckmann/gm)
+* [imagemin - Minify images seamlessly](https://github.com/imagemin/imagemin)
+* [gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin)
+* [Using Responsive Images](http://alistapart.com/article/using-responsive-images-now)
+* [lazysizes - High performance and SEO friendly lazy loader for images](https://github.com/aFarkas/lazysizes)
+* [lazysizes respimg polyfill extension](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/respimg)
+* [Picturefill - A responsive image polyfill](https://github.com/scottjehl/picturefill)
+
+
+## Carousel
+* [CSS3 Flexbox Carousel](http://www.andismith.com/blog/2012/05/css3-flexbox-carousel/)
+* [The Order Property: Flexbox Carousels](http://madewithenvy.com/ecosystem/articles/2015/exploring-order-flexbox-carousel/)
+* [Pure CSS infinite scrolling image marquee](http://log.vieron.net/articles/pure-css-infinite-scrolling-image-marquee/)
+* [Infinite Carousel](http://codepen.io/denoteit/pen/mEhtK)
+* [Catousel](http://codepen.io/AgtLucas/pen/KVLyQL)
+* [Responsive Carousels](http://codepen.io/lucamug/pen/MyVrqN)
+* [Overflow Carousel](http://codepen.io/bradfrost/pen/Kdeoi)
+* [Spread of cards - responsive carousel - 3.0](http://codepen.io/pixelthing/pen/OPmWrE)
+* [lexbox Carousel, Final](http://codepen.io/wprater/pen/MaWNBK)
+* [CSS3 Flexbox Carousel](http://www.andismith.com/blog/2012/05/css3-flexbox-carousel/)
+* [flexbox-carousel, CSS3 Animated Carousel with Flexbox](https://github.com/andismith/flexbox-carousel)
+* [The Order Property: Flexbox Carousels](http://madewithenvy.com/ecosystem/articles/2015/exploring-order-flexbox-carousel/)
+* [Everyday i'm flexboxing](https://github.com/ZiggyV/flexbox)
+
+## Bin packaging / Masonry
+* [Binary Tree Algorithm for 2D Bin Packing](https://github.com/jakesgordon/bin-packing)
+* [Binary Tree Bin Packing Algorithm](http://codeincomplete.com/posts/2011/5/7/bin_packing/)
+* [Bin Packing Algorithm Visualization](http://codepen.io/briangonzalez/pen/juGfr)
+* [Packery](http://packery.metafizzy.co/)
+* [Bin Packing](http://codepen.io/gyopiazza/pen/vNgbVB)
+* [Masonry Gallery](http://codepen.io/alexdevero/pen/epMywW)
+* [Responsive post grid with Masonry](http://codepen.io/maadmax/pen/bVXMBR)
+* [Masonry - columnWidth](http://codepen.io/desandro/pen/osFxj)
+* [Packery vs. Masonry](http://codepen.io/desandro/pen/KVrpxM)
+* [Cascading Grid Layouts - With Masonry.js](http://codepen.io/epam-codepen/pen/MKyQrb)
+* [Smart Content / Image Placer](http://codepen.io/jasonmayes/pen/nmhAt)
+* [Smart-Content-Placer - github](https://github.com/jasonmayes/Smart-Content-Placer)
+* [Flexbox Masonry](http://codepen.io/lukejacksonn/pen/QyPPmK)
+* [Pure CSS Masonry Grid](http://codepen.io/jgunnison/pen/xwGqXZ)
+* [Random tiles](http://codepen.io/Sphinxxxx/pen/PZvdMq)
+* [CSS MASONRY LAYOUT](http://codepen.io/safiullahahamed/pen/KVeOap)
+* [HOW TO: Pure CSS masonry layouts](https://medium.com/@_jh3y/how-to-pure-css-masonry-layouts-a8ede07ba31a#.nloyd8r9u)
+* [Shuffle - Categorize, sort, and filter a responsive grid of items](https://github.com/Vestride/Shuffle)
+* [Horizontal grid packing](https://github.com/jonathanong/horizontal-grid-packing)
+* [Masonic.js - Simple flex-based Masonry-alike](https://github.com/tomgrek/masonic)
+* [Google Grid Gallery](http://tympanus.net/codrops/2014/03/21/google-grid-gallery/)
+* [Modern Masonry with Flexbox and JavaScript](http://thenewcode.com/929/Modern-Masonry-with-Flexbox-and-JavaScript)
+
 
 ## CodePens
 * [MDL transparent header turns opaque](http://codepen.io/peiche/pen/PPPRgz)
@@ -724,7 +777,6 @@
 * [Pops Form UI](http://codepen.io/prajwal-mis/pen/LVJZXz)
 * [3D Line Chart](http://codepen.io/yizzreel/pen/MaOwMg)
 * [The way to embed SVG](http://codepen.io/fecoder/pen/ogLbbN)
-* [Tutorial: Pinterest Type Layout with Material Design Lite and Masonry.js](http://www.pixelatingbits.com/tutorial-pinterest-type-layout-with-material-design-lite-and-masonry-js/)
 * [moduloColumns layout mode for Isotope 2](https://github.com/michieldewit/isotope-modulo-columns)
 * [Auto Hide Sticky Header - Snappy](http://codepen.io/macmengerink/pen/RPZwEB)
 * [ES2015 (ES6) pubsub](http://codepen.io/stevenbenisek/pen/qOmRye)
