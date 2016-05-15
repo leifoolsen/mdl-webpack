@@ -44,6 +44,7 @@
 * [New to Material Design? 12 Principles You Need to Know](http://blogs.adobe.com/dreamweaver/2015/05/new-to-material-design-12-principles-you-need-to-know.html)
 * [Material design in the 2014 Google I/O app](http://android-developers.blogspot.se/2014/08/material-design-in-2014-google-io-app.html)
 * [Google's transforming material icons Deconstruction](http://cloudcannon.com/deconstructions/2014/12/05/material-design-delightful-details.html)
+* [Angular Material](https://material.angularjs.org/latest/)
 
 ### Font
 * [Roboto @font-face kit](https://github.com/FontFaceKit/roboto)
@@ -287,6 +288,7 @@
 * [Lightweight ES6 Features That Pack A Punch](http://colintoh.com/blog/lightweight-es6-features)
 * [Top 10 ES6 Features Every Busy JavaScript Developer Must Know](http://webapplog.com/es6/)
 * [Learning ES2015 : Getting Started](http://abdulapopoola.com/category/learning-2/)
+* [ECMAScript 2015 - Let’s talk about ES6](https://medium.com/ecmascript-2015)
 
 ### String template
 * [HTML templating with ES6 template strings](http://www.2ality.com/2015/01/template-strings-html.html)
@@ -443,6 +445,7 @@
 * [Building Apps with Riot, ES6 and Webpack](http://blog.srackham.com/posts/riot-es6-webpack-apps/)
 * [ES6 Single Page App](https://github.com/dondido/es6-single-page-app)
 * [incremental-dom - An in-place DOM diffing library](https://github.com/google/incremental-dom)
+* [How to Implement Smooth Scrolling in Vanilla JavaScript](http://www.sitepoint.com/smooth-scrolling-vanilla-javascript/)
 
 ## NoeJS, Express
 * [Running scripts with npm](http://www.jayway.com/2014/03/28/running-scripts-with-npm/)
@@ -736,6 +739,8 @@
 * [Masonic.js - Simple flex-based Masonry-alike](https://github.com/tomgrek/masonic)
 * [Google Grid Gallery](http://tympanus.net/codrops/2014/03/21/google-grid-gallery/)
 * [Modern Masonry with Flexbox and JavaScript](http://thenewcode.com/929/Modern-Masonry-with-Flexbox-and-JavaScript)
+* [Masonry Effect with Flexbox](http://codepen.io/fabienb/pen/jlKtB)
+* [Masonry/Pinterest-style Grid with Flexbox](http://codepen.io/kattixie/pen/bEYyZb)
 
 
 ## CodePens

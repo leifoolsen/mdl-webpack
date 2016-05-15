@@ -62,7 +62,7 @@ export function parent(element, tagName) {
 
 /**
  * Remove child element(s)
- * element.innerHTNL = '' has a performance penality!
+ * element.innerHTML = '' has a performance penality!
  * @see http://jsperf.com/empty-an-element/16
  * @see http://jsperf.com/force-reflow
  * @param element

@@ -20,6 +20,8 @@ import moment from 'moment';
 import 'material-design-lite/material';
 import 'mdl-ext';
 
+import MaterialExtCarousel from './js/carousel/carousel'
+
 import {qs, qsa, removeChilds} from './js/utils/domHelpers';
 
 class Header {
@@ -144,8 +146,13 @@ class Content {
     }
   }
 
+
+  /** ************************** */
+
   contentChange() {
-    componentHandler.upgradeDom();
+    //componentHandler.upgradeDom();
+    componentHandler.upgradeElements(document.querySelector('#content'));
+
     this.contentEl.scrollTop = 0;
 
     if(this.notifications.contentchange) {

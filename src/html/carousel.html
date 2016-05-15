@@ -1,9 +1,12 @@
 <h5>Carousel</h5>
 
 <style>
+  .carousel-cmd-button {
+    min-width: 100px;
+  }
 </style>
 
-<ul class="mdlext-carousel">
+<ul id="mdlext-carousel" class="mdlext-carousel mdlext-js-carousel">
   <li class="mdlext-carousel__slide">
       <figure>
         <img src="/images/snippets/_D802141.jpg" title="Northern goshawk with prey"/>
@@ -105,3 +108,49 @@
       </figure>
   </li>
 </ul>
+
+
+<section style="margin-top: 16px">
+  <button id="carousel-btn-first" class="carousel-cmd-button mdl-button mdl-js-button mdl-button--raised">
+    First
+  </button>
+  <button id="carousel-btn-prev" class="carousel-cmd-button mdl-button mdl-js-button mdl-button--raised">
+    Scroll Previous
+  </button>
+  <button id="carousel-btn-next" class="carousel-cmd-button mdl-button mdl-js-button mdl-button--raised">
+    Scroll Next
+  </button>
+  <button id="carousel-btn-last" class="carousel-cmd-button mdl-button mdl-js-button mdl-button--raised">
+    Last
+  </button>
+</section>
+
+
+<script>
+  (function() {
+    'use strict';
+
+
+    document.querySelector('#carousel-btn-first').addEventListener('click', function(e) {
+      var ev = new CustomEvent('command', { detail: { action : 'first' } });
+      document.querySelector('#mdlext-carousel').dispatchEvent(ev);
+    });
+
+    document.querySelector('#carousel-btn-prev').addEventListener('click', function(e) {
+      var ev = new CustomEvent('command', { detail: { action : 'scroll-prev' } });
+      document.querySelector('#mdlext-carousel').dispatchEvent(ev);
+    });
+
+    document.querySelector('#carousel-btn-next').addEventListener('click', function(e) {
+      var ev = new CustomEvent('command', { detail: { action : 'scroll-next' } });
+      document.querySelector('#mdlext-carousel').dispatchEvent(ev);
+    });
+
+    document.querySelector('#carousel-btn-last').addEventListener('click', function(e) {
+      var ev = new CustomEvent('command', { detail: { action : 'last' } });
+      document.querySelector('#mdlext-carousel').dispatchEvent(ev);
+    });
+
+  }());
+
+</script>
