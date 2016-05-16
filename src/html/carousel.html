@@ -4,11 +4,75 @@
   .carousel-cmd-button {
     min-width: 100px;
   }
+
+  #imgviewer {
+    text-align: center;
+  }
+
+  #imgviewer figure {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+
+    position: relative;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #imgviewer figure img {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    border: 0;
+    outline: 0;
+  }
+
+  #carousel-container {
+    overflow: hidden;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 479px) {
+    #imgviewer {
+      height: 250px;
+    }
+    #carousel-container {
+      height: 80px;
+      margin-top: 4px;
+    }
+  }
+
+  @media (min-width: 480px) and (max-width: 839px) {
+    #imgviewer {
+      height: 400px;
+    }
+    #carousel-container {
+      height: 100px;
+    }
+  }
+
+  @media (min-width: 840px) {
+    #imgviewer {
+      height: 500px;
+    }
+    #carousel-container {
+      height: 120px;
+    }
+  }
 </style>
 
-<section style="height: 120px; overflow:hidden;">
+<section id="imgviewer">
+  <figure>
+    <img src="/images/snippets/_D802141.jpg" alt="" title=""/>
+  </figure>
+</section>
+
+<section id="carousel-container">
 <ul id="mdlext-carousel" class="mdlext-carousel mdlext-js-carousel  mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events">
-  <li class="mdlext-carousel__slide">
+  <li class="mdlext-carousel__slide" aria-selected>
       <figure>
         <img src="/images/snippets/_D802141.jpg" title="Northern goshawk with prey"/>
         <figcaption>_D802141.jpg</figcaption>
@@ -122,18 +186,24 @@
 </ul>
 </section>
 
-<section style="margin-top: 16px">
-  <button id="carousel-btn-first" class="carousel-cmd-button mdl-button mdl-js-button mdl-button--raised">
-    First
+<section style="margin-top: 8px; text-align: right;">
+  <button id="carousel-btn-first" class="mdl-button mdl-button--icon mdl-js-button" title="Scroll First">
+    <i class="material-icons md-24">first_page</i>
   </button>
-  <button id="carousel-btn-prev" class="carousel-cmd-button mdl-button mdl-js-button mdl-button--raised">
-    Scroll Previous
+  <button id="carousel-btn-scroll-prev" class="mdl-button mdl-button--icon mdl-js-button" title="Scroll Previous">
+    <i class="material-icons md-24">fast_rewind</i>
   </button>
-  <button id="carousel-btn-next" class="carousel-cmd-button mdl-button mdl-js-button mdl-button--raised">
-    Scroll Next
+  <button id="carousel-btn-prev" class="mdl-button mdl-button--icon mdl-js-button" title="Previous">
+    <i class="material-icons md-24">navigate_before</i>
   </button>
-  <button id="carousel-btn-last" class="carousel-cmd-button mdl-button mdl-js-button mdl-button--raised">
-    Last
+  <button id="carousel-btn-next" class="mdl-button mdl-button--icon mdl-js-button" title="Next">
+    <i class="material-icons md-24">navigate_next</i>
+  </button>
+  <button id="carousel-btn-scroll-next" class="mdl-button mdl-button--icon mdl-js-button" title="Scroll Next">
+    <i class="material-icons md-24">fast_forward</i>
+  </button>
+  <button id="carousel-btn-last" class="mdl-button mdl-button--icon mdl-js-button" title="Scroll Last">
+    <i class="material-icons md-24">last_page</i>
   </button>
 </section>
 
@@ -142,18 +212,27 @@
   (function() {
     'use strict';
 
-
     document.querySelector('#carousel-btn-first').addEventListener('click', function(e) {
       var ev = new CustomEvent('command', { detail: { action : 'first' } });
       document.querySelector('#mdlext-carousel').dispatchEvent(ev);
     });
 
-    document.querySelector('#carousel-btn-prev').addEventListener('click', function(e) {
+    document.querySelector('#carousel-btn-scroll-prev').addEventListener('click', function(e) {
       var ev = new CustomEvent('command', { detail: { action : 'scroll-prev' } });
       document.querySelector('#mdlext-carousel').dispatchEvent(ev);
     });
 
+    document.querySelector('#carousel-btn-prev').addEventListener('click', function(e) {
+      var ev = new CustomEvent('command', { detail: { action : 'prev' } });
+      document.querySelector('#mdlext-carousel').dispatchEvent(ev);
+    });
+
     document.querySelector('#carousel-btn-next').addEventListener('click', function(e) {
+      var ev = new CustomEvent('command', { detail: { action : 'next' } });
+      document.querySelector('#mdlext-carousel').dispatchEvent(ev);
+    });
+
+    document.querySelector('#carousel-btn-scroll-next').addEventListener('click', function(e) {
       var ev = new CustomEvent('command', { detail: { action : 'scroll-next' } });
       document.querySelector('#mdlext-carousel').dispatchEvent(ev);
     });
@@ -164,9 +243,10 @@
     });
 
     document.querySelector('#mdlext-carousel').addEventListener('select', function(e) {
-      console.log('*****', e.detail);
+      var target   = document.querySelector('#imgviewer');
+      var selected = e.detail.source;
+      target.querySelector('img').src = selected.querySelector('img').src;
     });
-
 
   }());
 

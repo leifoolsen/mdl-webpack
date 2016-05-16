@@ -129,10 +129,11 @@
    */
   MaterialExtCarousel.prototype.command_ = function( action ) {
     let x = 0;
+    let slide = null;
+    const a = action.toLowerCase();
 
     /*
     // This behaviour can be a bit confusing??
-    let a = action.toLowerCase();
     switch (action.toLowerCase()) {
       case 'first':
       case 'scroll-prev':
@@ -149,18 +150,32 @@
     }
     */
 
-    switch (action.toLowerCase()) {
+    switch (a) {
       case 'first':
         break;
+
       case 'last':
         x = this.element_.scrollWidth - this.element_.clientWidth;
         break;
+
       case 'scroll-prev':
         x = Math.max(this.element_.scrollLeft - this.element_.clientWidth, 0);
         break;
+
       case 'scroll-next':
         x = Math.min(this.element_.scrollLeft + this.element_.clientWidth, this.element_.scrollWidth - this.element_.clientWidth);
         break;
+
+      case 'next':
+      case 'prev':
+        slide = this.element_.querySelector(`.${SLIDE}[aria-selected]`);
+        if(slide) {
+          slide = a === 'next' ? slide.nextElementSibling : slide.previousElementSibling;
+          setFocus(slide);
+          this.emitSelectEvent_(a, null,  slide);
+        }
+        return;
+
       default:
         return;
     }
@@ -256,7 +271,7 @@
             break;
         }
 
-        this.selectEmitter_(action, event.keyCode,  slide);
+        this.emitSelectEvent_(action, event.keyCode,  slide);
       }
     }
   };
@@ -319,7 +334,7 @@
       if(Math.abs(startX-x) < 2) {
         const slide = getSlide(e.target);
         setFocus(slide);
-        this.selectEmitter_('click', null,  slide);
+        this.emitSelectEvent_('click', null,  slide);
       }
     };
 
@@ -366,7 +381,7 @@
    * @param slide
    * @private
    */
-  MaterialExtCarousel.prototype.selectEmitter_ = function(command, keyCode, slide) {
+  MaterialExtCarousel.prototype.emitSelectEvent_ = function(command, keyCode, slide) {
     if(slide) {
       /*
       const evt = createCustomEvent('select', {
@@ -381,17 +396,7 @@
       */
 
 
-      // Check if slide is in viewport
-      const carouselRect = this.element_.getBoundingClientRect();
-      const slideRect = slide.getBoundingClientRect();
-      if(slideRect.left < carouselRect.left) {
-        const x = this.element_.scrollLeft - (carouselRect.left - slideRect.left);
-        this.animateScroll_(x);
-      }
-      else if(slideRect.right > carouselRect.right) {
-        const x = this.element_.scrollLeft - (carouselRect.right - slideRect.right);
-        this.animateScroll_(x);
-      }
+      this.moveSlideIntoViewport_(slide);
 
       const evt = new window.CustomEvent('select', {
         bubbles: true,
@@ -406,6 +411,26 @@
       this.element_.dispatchEvent(evt);
     }
   };
+
+  /**
+   * Move slide into viewport - if needed
+   * @param slide
+   * @private
+   */
+  MaterialExtCarousel.prototype.moveSlideIntoViewport_ = function(slide) {
+    const carouselRect = this.element_.getBoundingClientRect();
+    const slideRect = slide.getBoundingClientRect();
+
+    if(slideRect.left < carouselRect.left) {
+      const x = this.element_.scrollLeft - (carouselRect.left - slideRect.left);
+      this.animateScroll_(x);
+    }
+    else if(slideRect.right > carouselRect.right) {
+      const x = this.element_.scrollLeft - (carouselRect.right - slideRect.right);
+      this.animateScroll_(x);
+    }
+  };
+
 
   // Helpers
   const getSlide = element => {
@@ -495,7 +520,7 @@
    * Note: There is a bug i material component container; downgrade is never called!
    * Disables method temporarly to keep code coverage at 100% for functions.
    *
-   MaterialExtStickyHeader.prototype.mdlDowngrade_ = function() {
+   MaterialExtCarousel.prototype.mdlDowngrade_ = function() {
      'use strict';
    };
    */

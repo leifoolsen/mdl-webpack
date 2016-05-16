@@ -69,6 +69,11 @@ Demonstrates how you can create your own theme of MDL text fields.
 
 Credits: The Bordered Fields Theme component is based on this [CodePen](http://codepen.io/prajwal078/pen/LVJZXz)
 
+### Image Carousel
+![Palette](./etc/carousel.png)
+
+Image carousel.
+
 
 ### Select Element Component
 <img src="./etc/select-element.png" style="width:100%; max-width: 800px; margin: 0 auto;" />
