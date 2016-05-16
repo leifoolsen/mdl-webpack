@@ -35,29 +35,44 @@ ul.mdlext-carousel {
   padding: 0;
   overflow: hidden;
 
-  height: 110px;
+  height: 100%;  // Use a container to constrain height and width
   width: 100% ;
   display: flex;
   align-items: center;
   background-color: transparent;
 }
 
-
 .mdlext-carousel__slide {
   box-sizing: border-box;
-  height: 100%; //110px;
-
   position: relative;
   display: block;
   outline: 0;
   margin: 0;
   padding: 0;
+  height: 100%;
+  outline: 0;
 
   &:focus {
-    transform: scale(1.1);
+    outline: 1px solid$mdlext-accordion-header-focus-outline-color;
+    outline-offset: -1px;
+
+    figure {
+      img {
+        transform: scale(0.96);
+      }
+    }
+    figcaption {
+      // As far as I can see there is no way to darken/lighten a text color
+      // defined by MDL, due to the "unqote" functions.
+      // So this is a hack
+      color: rgba(0,0,0, 1) !important;
+      background-color: rgba(255,255,255, 0.25);
+    }
   }
 
   figure {
+    box-sizing: border-box;
+    position: relative;
     display: flex;
     align-items: center;
 
@@ -67,8 +82,49 @@ ul.mdlext-carousel {
 
     img {
       max-height: 100%;
-      max-width: 300px;
+      //max-width: 300px;
+    }
+
+    figcaption {
+      @include typo-caption($colorContrast: false, $usePreferred: true);
+      color: $mdlext-lightboard-figcaption-text-color;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 100%;
+      width: 100%;
+      text-align: center;
+      text-overflow: ellipsis;
+      padding: 4px 0;
+    }
+    &:hover {
+      figcaption {
+        // As far as I can see there is no way to darken/lighten a text color
+        // defined by MDL, due to the "unqote" functions.
+        // So this is a hack
+        color: rgba(0,0,0, 1) !important;
+        background-color: rgba(255,255,255, 0.25);
+      }
+    }
+  }
+
+  .mdlext-carousel__slide__ripple-container {
+    text-decoration: none;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    outline: 0;
+
+    & .mdl-ripple {
+      background: $mdlext-lightboard-ripple-color;
     }
   }
 }
+
 

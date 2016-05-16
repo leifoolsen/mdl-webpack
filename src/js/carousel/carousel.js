@@ -1,9 +1,34 @@
+/**
+ * @license
+ * Copyright 2016 Leif Olsen. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * This code is built with Google Material Design Lite,
+ * which is Licensed under the Apache License, Version 2.0
+ */
+
+/**
+ * Image carousel
+ */
 (function() {
   'use strict';
 
   const VK_TAB         = 9;
   const VK_ENTER       = 13;
   const VK_SPACE       = 32;
+  const VK_PAGE_UP     = 33;
+  const VK_PAGE_DOWN   = 34;
   const VK_END         = 35;
   const VK_HOME        = 36;
   const VK_ARROW_LEFT  = 37;
@@ -12,16 +37,17 @@
   const VK_ARROW_DOWN  = 40;
 
   const IS_UPGRADED    = 'is-upgraded';
+  const IS_FOCUSED     = 'is-focused';
   const CAROUSEL       = 'mdlext-carousel';
   const SLIDE          = 'mdlext-carousel__slide';
   const ROLE           = 'list';
   const SLIDE_ROLE     = 'listitem';
 
-  //const SLIDE_TABSTOP  = 'mdlext-carousel__slide__frame';
-  //const RIPPLE_COMPONENT = 'MaterialRipple';
-  //const RIPPLE_CONTAINER = 'mdlext-carousel__slide__ripple-container';
-  //const RIPPLE_EFFECT = 'mdl-js-ripple-effect';
-  //const RIPPLE_EFFECT_IGNORE_EVENTS = 'mdl-js-ripple-effect--ignore-events';
+  const RIPPLE = 'mdl-ripple';
+  const RIPPLE_COMPONENT = 'MaterialRipple';
+  const RIPPLE_CONTAINER = 'mdlext-carousel__slide__ripple-container';
+  const RIPPLE_EFFECT = 'mdl-js-ripple-effect';
+  const RIPPLE_EFFECT_IGNORE_EVENTS = 'mdl-js-ripple-effect--ignore-events';
 
 
   /**
@@ -46,14 +72,14 @@
   MaterialExtCarousel.prototype.animateScroll_ = function( newPosition ) {
 
     /*
-    const easeInOutQuad = (t, b, c, d) => {
-      // See: http://robertpenner.com/easing/
-      t /= d / 2;
-      if(t < 1) return c / 2 * t * t + b;
-      t--;
-      return -c / 2 * (t * (t - 2) - 1) + b;
-    };
-    */
+     const easeInOutQuad = (t, b, c, d) => {
+       // See: http://robertpenner.com/easing/
+       t /= d / 2;
+       if(t < 1) return c / 2 * t * t + b;
+       t--;
+       return -c / 2 * (t * (t - 2) - 1) + b;
+     };
+     */
 
     const inOutQuintic = (t, b, c, d) => {
       // See: http://robertpenner.com/easing/
@@ -80,7 +106,7 @@
 
     const start = this.element_.scrollLeft;
     const distance = newPosition - this.element_.scrollLeft;
-    const duration = 300;
+    const duration = Math.max(Math.min(Math.abs(distance), 300), 100); // duration is between 100 an 300ms
 
     if(distance !== 0) {
       runAanimation((timeElapsed /*, deltaT */) => {
@@ -96,7 +122,6 @@
     }
   };
 
-
   /**
    * Execute commend
    * @param action
@@ -104,10 +129,10 @@
    */
   MaterialExtCarousel.prototype.command_ = function( action ) {
     let x = 0;
-    const a = action.toLowerCase();
 
     /*
-    // Maybe a bit confusing??
+    // This behaviour can be a bit confusing??
+    let a = action.toLowerCase();
     switch (action.toLowerCase()) {
       case 'first':
       case 'scroll-prev':
@@ -124,7 +149,7 @@
     }
     */
 
-    switch (a) {
+    switch (action.toLowerCase()) {
       case 'first':
         break;
       case 'last':
@@ -163,34 +188,75 @@
   MaterialExtCarousel.prototype.keyDownHandler_ = function(event) {
 
     if (event && event.target && event.target !== this.element_) {
-      if ( event.keyCode === VK_TAB
-        || event.keyCode === VK_ENTER      || event.keyCode === VK_SPACE
-        || event.keyCode === VK_HOME       || event.keyCode === VK_END
-        || event.keyCode === VK_ARROW_UP   || event.keyCode === VK_ARROW_LEFT
-        || event.keyCode === VK_ARROW_DOWN || event.keyCode === VK_ARROW_RIGHT) {
 
-        let action = 'first';
+      let action = 'first';
+
+      if ( event.keyCode === VK_HOME    || event.keyCode === VK_END
+        || event.keyCode === VK_PAGE_UP || event.keyCode === VK_PAGE_DOWN) {
+
+        event.preventDefault();
         if (event.keyCode === VK_END) {
           action = 'last';
         }
-        else if (event.keyCode === VK_ARROW_UP || event.keyCode === VK_ARROW_LEFT) {
-          action = 'prev';
+        else if (event.keyCode === VK_PAGE_UP) {
+          action = 'scroll-prev';
         }
-        else if (event.keyCode === VK_ARROW_DOWN || event.keyCode === VK_ARROW_RIGHT) {
-          action = 'next';
+        else if (event.keyCode === VK_PAGE_DOWN) {
+          action = 'scroll-next';
         }
-        else if (event.keyCode === VK_TAB) {
-          action = 'next';
-          if (event.shiftKey) {
+        this.command_(action);
+      }
+      else if ( event.keyCode === VK_TAB
+        || event.keyCode === VK_ENTER      || event.keyCode === VK_SPACE
+        || event.keyCode === VK_ARROW_UP   || event.keyCode === VK_ARROW_LEFT
+        || event.keyCode === VK_ARROW_DOWN || event.keyCode === VK_ARROW_RIGHT) {
+
+        let slide = getSlide(event.target);
+
+        switch (event.keyCode) {
+          case VK_ARROW_UP:
+          case VK_ARROW_LEFT:
+            event.preventDefault();
             action = 'prev';
-          }
-        }
-        else if (event.keyCode === VK_SPACE || event.keyCode === VK_ENTER) {
-          action = 'select';
+            if(slide) {
+              slide = slide.previousElementSibling;
+              setFocus(slide);
+            }
+            break;
+
+          case VK_ARROW_DOWN:
+          case VK_ARROW_RIGHT:
+            event.preventDefault();
+            action = 'next';
+            if(slide) {
+              slide = slide.nextElementSibling;
+              setFocus(slide);
+            }
+            break;
+
+          case VK_TAB:
+            if (event.shiftKey) {
+              action = 'prev';
+              if(slide) {
+                slide = slide.previousElementSibling;
+              }
+            }
+            else {
+              action = 'next';
+              if(slide) {
+                slide = slide.nextElementSibling;
+              }
+            }
+            break;
+
+          case VK_SPACE:
+          case VK_ENTER:
+            event.preventDefault();
+            action = 'select';
+            break;
         }
 
-        // TODO
-        console.log('keydown', action,  event, event.target);
+        this.selectEmitter_(action, event.keyCode,  slide);
       }
     }
   };
@@ -208,7 +274,7 @@
     const startX = event.clientX || (event.touches !== undefined ? event.touches[0].clientX : 0);
     let prevX = startX;
 
-    console.log('begindrag', startX);
+    //console.log('begindrag', startX);
 
     const update = e => {
       const currentX = (e.clientX || (e.touches !== undefined ? e.touches[0].clientX : 0));
@@ -237,11 +303,9 @@
     // end drag handler
     const endDrag = e => {
       e.preventDefault();
-
       const x = e.clientX || (e.touches !== undefined ? e.touches[0].clientX : 0);
 
-
-      console.log('enddrag', x, startX-x, e, e.target);
+      //console.log('enddrag', x, startX-x, e, e.target);
 
       window.removeEventListener('mousemove', drag);
       window.removeEventListener('touchmove', drag);
@@ -251,10 +315,11 @@
       // cancel any existing rAF, see: http://www.html5rocks.com/en/tutorials/speed/animations/
       cancelAnimationFrame(rAFIndex);
 
-      // TODO
       // If mouse did not move, trigger custom select event
       if(Math.abs(startX-x) < 2) {
-        focus( getSlide(e.target) );
+        const slide = getSlide(e.target);
+        setFocus(slide);
+        this.selectEmitter_('click', null,  slide);
       }
     };
 
@@ -265,26 +330,120 @@
   };
 
 
-  function getSlide(element) {
-    if (!element  || element.classList.contains(CAROUSEL)) {
+  /**
+   * Handle focus
+   * @param event
+   * @private
+   */
+  MaterialExtCarousel.prototype.focusHandler_ = function(event) {
+    const slide = getSlide(event.target);
+    if(slide) {
+      // The last focused slide has 'aria-selected', even if focus is lost
+      [...this.element_.querySelectorAll(`.${SLIDE}[aria-selected]`)].forEach(
+        slide => slide.removeAttribute('aria-selected')
+      );
+      slide.setAttribute('aria-selected', '');
+      slide.classList.add(IS_FOCUSED);
+    }
+  };
+
+  /**
+   * Handle blur
+   * @param event
+   * @private
+   */
+  MaterialExtCarousel.prototype.blurHandler_ = function(event) {
+    const slide = getSlide(event.target);
+    if(slide) {
+      slide.classList.remove(IS_FOCUSED);
+    }
+  };
+
+  /**
+   * Emits a custeom 'select' event
+   * @param command
+   * @param keyboardKey
+   * @param slide
+   * @private
+   */
+  MaterialExtCarousel.prototype.selectEmitter_ = function(command, keyCode, slide) {
+    if(slide) {
+      /*
+      const evt = createCustomEvent('select', {
+        bubbles: true,
+        cancelable: true,
+        detail: {
+          command: command,
+          keyCode: keyCode,
+          source: slide
+        }
+      });
+      */
+
+
+      // Check if slide is in viewport
+      const carouselRect = this.element_.getBoundingClientRect();
+      const slideRect = slide.getBoundingClientRect();
+      if(slideRect.left < carouselRect.left) {
+        const x = this.element_.scrollLeft - (carouselRect.left - slideRect.left);
+        this.animateScroll_(x);
+      }
+      else if(slideRect.right > carouselRect.right) {
+        const x = this.element_.scrollLeft - (carouselRect.right - slideRect.right);
+        this.animateScroll_(x);
+      }
+
+      const evt = new window.CustomEvent('select', {
+        bubbles: true,
+        cancelable: true,
+        detail: {
+          command: command,
+          keyCode: keyCode,
+          source: slide
+        }
+      });
+
+      this.element_.dispatchEvent(evt);
+    }
+  };
+
+  // Helpers
+  const getSlide = element => {
+    if (!element  || element.parentNode.tagName === undefined || element.classList.contains(CAROUSEL)) {
       return null;
     }
     return element.classList.contains(SLIDE) ? element : getSlide(element.parentNode);
-  }
+  };
 
-  function focus(slide) {
+  const setFocus = slide => {
     if(slide) {
-      slide.scrollIntoView();
       slide.focus();
     }
-  }
+  };
 
+  const addRipple = slide => {
+    const rippleContainer = document.createElement('span');
+    rippleContainer.classList.add(RIPPLE_CONTAINER);
+    rippleContainer.classList.add(RIPPLE_EFFECT);
+    const ripple = document.createElement('span');
+    ripple.classList.add(RIPPLE);
+    rippleContainer.appendChild(ripple);
+
+    const img = slide.querySelector('img');
+    if(img) {
+      // rippleContainer blocks image title
+      rippleContainer.title = img.title;
+    }
+
+    slide.appendChild(rippleContainer);
+    componentHandler.upgradeElement(rippleContainer, RIPPLE_COMPONENT);
+  };
+  // End helpers
 
   /**
    * Initialize component
    */
   MaterialExtCarousel.prototype.init = function() {
-    //console.log('***** MaterialExtCarousel.init', this.element_.classList, 'data-upgraded', this.element_.getAttribute('data-upgraded'));
 
     if (this.element_) {
       this.element_.setAttribute('role', ROLE);
@@ -292,25 +451,37 @@
         this.element_.setAttribute('tabindex', -1);
       }
 
+      const hasRippleEffect = this.element_.classList.contains(RIPPLE_EFFECT);
+      if (hasRippleEffect) {
+        this.element_.classList.add(RIPPLE_EFFECT_IGNORE_EVENTS);
+      }
+
       [...this.element_.querySelectorAll(`.${SLIDE}`)].forEach( slide => {
         slide.setAttribute('role', SLIDE_ROLE);
         if(!Number.isInteger(slide.getAttribute('tabindex'))) {
           slide.setAttribute('tabindex', 0);
         }
+        if(hasRippleEffect) {
+          addRipple(slide);
+        }
       });
+
+      // Listen to focus/blur events
+      this.element_.addEventListener('focus', this.focusHandler_.bind(this), true);
+      this.element_.addEventListener('blur',  this.blurHandler_.bind(this), true);
 
       // Listen to keyboard events
       this.element_.addEventListener('keydown', this.keyDownHandler_.bind(this), true);
 
-      // Listen to custom event
-      this.element_.addEventListener('command', this.commandHandler_.bind(this), false);
-
-      // Listen to drag event
+      // Listen to drag events
       this.element_.addEventListener('mousedown' , this.dragHandler_.bind(this), true);
       this.element_.addEventListener('touchstart', this.dragHandler_.bind(this), true);
 
       // Click is handled by drag
-      this.element_.addEventListener('click'     , e => e.preventDefault(), true);
+      this.element_.addEventListener('click', e => e.preventDefault(), true);
+
+      // Listen to custom event
+      this.element_.addEventListener('command', this.commandHandler_.bind(this), false);
 
       // Set upgraded flag
       this.element_.classList.add(IS_UPGRADED);

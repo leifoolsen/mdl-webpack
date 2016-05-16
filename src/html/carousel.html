@@ -6,60 +6,72 @@
   }
 </style>
 
-<ul id="mdlext-carousel" class="mdlext-carousel mdlext-js-carousel">
+<section style="height: 120px; overflow:hidden;">
+<ul id="mdlext-carousel" class="mdlext-carousel mdlext-js-carousel  mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events">
   <li class="mdlext-carousel__slide">
       <figure>
         <img src="/images/snippets/_D802141.jpg" title="Northern goshawk with prey"/>
+        <figcaption>_D802141.jpg</figcaption>
       </figure>
   </li>
   <li class="mdlext-carousel__slide">
       <figure>
         <img src="/images/snippets/_D802591.jpg" title="Whooper swans in flight"/>
+        <figcaption>_D802591.jpg</figcaption>
       </figure>
   </li>
   <li class="mdlext-carousel__slide">
       <figure>
         <img src="/images/snippets/_D804370-3.jpg" title="European green woodpecker"/>
+        <figcaption>_D804370-3.jpg</figcaption>
       </figure>
   </li>
   <li class="mdlext-carousel__slide">
       <figure>
         <img src="/images/snippets/_D808689.jpg" title="The bridge"/>
+        <figcaption>_D808689.jpg</figcaption>
       </figure>
   </li>
   <li class="mdlext-carousel__slide">
       <figure>
         <img src="/images/snippets/_D802181.jpg" title="Landscape in blue pastel"/>
+        <figcaption>_D802181.jpg</figcaption>
       </figure>
   </li>
   <li class="mdlext-carousel__slide">
       <figure>
         <img src="/images/snippets/_D800912.jpg" title="Hiking the mountains of Dovre"/>
+        <figcaption>_D800912.jpg</figcaption>
       </figure>
   </li>
   <li class="mdlext-carousel__slide">
       <figure>
-        <img src="/images/snippets/_D809453-_D809457-4.jpg" title="Train to nowhwere. Ny Aalesund, Spitsbergen." />
+        <img src="/images/snippets/_D809453-_D809457-4.jpg" title="The polar express. Ny Aalesund, Spitsbergen." />
+        <figcaption>_D809453-_D809457-4.jpg</figcaption>
       </figure>
   </li>
   <li class="mdlext-carousel__slide">
       <figure>
-        <img src="/images/snippets/_DSC8214.jpg" />
+        <img src="/images/snippets/_DSC8214.jpg" title="Still got the Blues"/>
+        <figcaption>_DSC8214.jpg</figcaption>
       </figure>
   </li>
   <li class="mdlext-carousel__slide">
       <figure>
         <img src="/images/snippets/_D800017.jpg" />
+        <figcaption>_D800017.jpg</figcaption>
       </figure>
   </li>
   <li class="mdlext-carousel__slide">
       <figure>
         <img src="/images/snippets/_D800023.jpg" />
+        <figcaption>_D800023.jpg</figcaption>
       </figure>
   </li>
   <li class="mdlext-carousel__slide">
       <figure>
         <img src="/images/snippets/_D800851.jpg" />
+        <figcaption>_D800851.jpg</figcaption>
       </figure>
   </li>
   <li class="mdlext-carousel__slide">
@@ -108,7 +120,7 @@
       </figure>
   </li>
 </ul>
-
+</section>
 
 <section style="margin-top: 16px">
   <button id="carousel-btn-first" class="carousel-cmd-button mdl-button mdl-js-button mdl-button--raised">
@@ -150,6 +162,11 @@
       var ev = new CustomEvent('command', { detail: { action : 'last' } });
       document.querySelector('#mdlext-carousel').dispatchEvent(ev);
     });
+
+    document.querySelector('#mdlext-carousel').addEventListener('select', function(e) {
+      console.log('*****', e.detail);
+    });
+
 
   }());
 
