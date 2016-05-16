@@ -1,20 +1,27 @@
 (function() {
   'use strict';
 
-  const VK_TAB = 9;
-  const VK_ENTER = 13;
-  const VK_SPACE = 32;
-  const VK_END = 35;
-  const VK_HOME = 36;
-  const VK_ARROW_LEFT = 37;
-  const VK_ARROW_UP = 38;
+  const VK_TAB         = 9;
+  const VK_ENTER       = 13;
+  const VK_SPACE       = 32;
+  const VK_END         = 35;
+  const VK_HOME        = 36;
+  const VK_ARROW_LEFT  = 37;
+  const VK_ARROW_UP    = 38;
   const VK_ARROW_RIGHT = 39;
-  const VK_ARROW_DOWN = 40;
+  const VK_ARROW_DOWN  = 40;
 
-  const IS_UPGRADED = 'is-upgraded';
-  const SLIDE = 'mdlext-carousel__slide';
-  const ROLE = 'list';
-  const SLIDE_ROLE = 'listitem';
+  const IS_UPGRADED    = 'is-upgraded';
+  const CAROUSEL       = 'mdlext-carousel';
+  const SLIDE          = 'mdlext-carousel__slide';
+  const ROLE           = 'list';
+  const SLIDE_ROLE     = 'listitem';
+
+  //const SLIDE_TABSTOP  = 'mdlext-carousel__slide__frame';
+  //const RIPPLE_COMPONENT = 'MaterialRipple';
+  //const RIPPLE_CONTAINER = 'mdlext-carousel__slide__ripple-container';
+  //const RIPPLE_EFFECT = 'mdl-js-ripple-effect';
+  //const RIPPLE_EFFECT_IGNORE_EVENTS = 'mdl-js-ripple-effect--ignore-events';
 
 
   /**
@@ -100,7 +107,7 @@
     const a = action.toLowerCase();
 
     /*
-    // Maybe a bit cunfusing??
+    // Maybe a bit confusing??
     switch (action.toLowerCase()) {
       case 'first':
       case 'scroll-prev':
@@ -155,7 +162,7 @@
    */
   MaterialExtCarousel.prototype.keyDownHandler_ = function(event) {
 
-    if (event) {
+    if (event && event.target && event.target !== this.element_) {
       if ( event.keyCode === VK_TAB
         || event.keyCode === VK_ENTER      || event.keyCode === VK_SPACE
         || event.keyCode === VK_HOME       || event.keyCode === VK_END
@@ -183,7 +190,7 @@
         }
 
         // TODO
-        return action; //dispatchAction_(action, this);
+        console.log('keydown', action,  event, event.target);
       }
     }
   };
@@ -232,6 +239,8 @@
       e.preventDefault();
 
       const x = e.clientX || (e.touches !== undefined ? e.touches[0].clientX : 0);
+
+
       console.log('enddrag', x, startX-x, e, e.target);
 
       window.removeEventListener('mousemove', drag);
@@ -244,8 +253,9 @@
 
       // TODO
       // If mouse did not move, trigger custom select event
-      //if(Math.abs(startX-x) < 2) {
-      //}
+      if(Math.abs(startX-x) < 2) {
+        focus( getSlide(e.target) );
+      }
     };
 
     window.addEventListener('mousemove', drag);
@@ -253,6 +263,21 @@
     window.addEventListener('mouseup', endDrag); // .bind(this) does not work here
     window.addEventListener('touchend',endDrag);
   };
+
+
+  function getSlide(element) {
+    if (!element  || element.classList.contains(CAROUSEL)) {
+      return null;
+    }
+    return element.classList.contains(SLIDE) ? element : getSlide(element.parentNode);
+  }
+
+  function focus(slide) {
+    if(slide) {
+      slide.scrollIntoView();
+      slide.focus();
+    }
+  }
 
 
   /**
@@ -263,13 +288,19 @@
 
     if (this.element_) {
       this.element_.setAttribute('role', ROLE);
+      if(!Number.isInteger(this.element_.getAttribute('tabindex'))) {
+        this.element_.setAttribute('tabindex', -1);
+      }
 
-      [...this.element_.querySelectorAll(`.${SLIDE}`)].forEach(
-        slide => slide.setAttribute('role', SLIDE_ROLE)
-      );
+      [...this.element_.querySelectorAll(`.${SLIDE}`)].forEach( slide => {
+        slide.setAttribute('role', SLIDE_ROLE);
+        if(!Number.isInteger(slide.getAttribute('tabindex'))) {
+          slide.setAttribute('tabindex', 0);
+        }
+      });
 
       // Listen to keyboard events
-      this.element_.addEventListener('keydown', this.keyDownHandler_.bind(this.element_), true);
+      this.element_.addEventListener('keydown', this.keyDownHandler_.bind(this), true);
 
       // Listen to custom event
       this.element_.addEventListener('command', this.commandHandler_.bind(this), false);

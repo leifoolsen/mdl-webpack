@@ -53,6 +53,10 @@ ul.mdlext-carousel {
   margin: 0;
   padding: 0;
 
+  &:focus {
+    transform: scale(1.1);
+  }
+
   figure {
     display: flex;
     align-items: center;
