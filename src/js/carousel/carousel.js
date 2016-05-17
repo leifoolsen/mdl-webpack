@@ -21,11 +21,15 @@
 /**
  * Image carousel
  */
+
+//import { createCustomEvent } from '../utils/custom-event';
+
 (function() {
   'use strict';
 
   const VK_TAB         = 9;
   const VK_ENTER       = 13;
+  const VK_ESC         = 27;
   const VK_SPACE       = 32;
   const VK_PAGE_UP     = 33;
   const VK_PAGE_DOWN   = 34;
@@ -58,11 +62,87 @@
     // Stores the element.
     this.element_ = element;
 
+    // Handle to animation loop
+    this.rAFId_ = 0;
+
+    // Animation interval for slideshow, default 1000ms
+    // Value can be set via 'data-interval' attribute
+    this.interval_ = 1000;
+
     // Initialize instance.
     this.init();
   };
 
   window['MaterialExtCarousel'] = MaterialExtCarousel;
+
+
+  /**
+   * Start slideshow animation
+   * @param action
+   * @private
+   */
+  MaterialExtCarousel.prototype.startSlideShow_ = function() {
+
+    const self = this;
+    const interval = this.interval_;
+
+    const runAanimation = tick => {
+      let timeStart   = Date.now();
+      let timeElapsed = 0;
+      let running     = true;
+
+      function loop( now ) {
+        if (running) {
+          self.rAFId_ = requestAnimationFrame( () => loop( Date.now() ));
+          timeElapsed += now - timeStart;
+          if(timeElapsed >= interval) {
+            running = tick( timeElapsed );
+            timeElapsed = 0;
+          }
+          timeStart = now;
+        }
+      }
+      loop(timeStart);
+    };
+
+    const nextSlide = () => {
+      let slide = this.element_.querySelector(`.${SLIDE}[aria-selected]`).nextElementSibling;
+      if(!slide) {
+        slide = this.element_.querySelector(`.${SLIDE}:first-child`);
+        this.animateScroll_(0);
+      }
+      if(slide) {
+        this.moveSlideIntoViewport_(slide);
+        setFocus(slide);
+        this.emitSelectEvent_('next', null, slide);
+        return true;
+      }
+      return false;
+    };
+
+    cancelAnimationFrame(this.rAFId_);
+    this.rAFId_ = 0;
+    nextSlide();
+
+    runAanimation( ( /*timeElapsed*/ ) => {
+      // Will runs until cancelSlideShow_ is triggered
+      return nextSlide();
+    });
+
+    // TODO: Pause animation when carousel is outside browser viewport
+  };
+
+  /**
+   * Cancel slideshow if running. Emmits a 'pause' event
+   * @private
+   */
+  MaterialExtCarousel.prototype.cancelSlideShow_ = function() {
+    if(this.rAFId_ !== 0) {
+      cancelAnimationFrame(this.rAFId_);
+      this.rAFId_ = 0;
+      this.emitSelectEvent_('pause', VK_ESC,  this.element_.querySelector(`.${SLIDE}[aria-selected]`));  // TODO
+    }
+  };
 
   /**
    * Animate scroll
@@ -105,11 +185,12 @@
     };
 
     const start = this.element_.scrollLeft;
-    const distance = newPosition - this.element_.scrollLeft;
-    const duration = Math.max(Math.min(Math.abs(distance), 300), 100); // duration is between 100 an 300ms
+    const distance = newPosition - start;
 
     if(distance !== 0) {
-      runAanimation((timeElapsed /*, deltaT */) => {
+      const duration = Math.max(Math.min(Math.abs(distance), 400), 100); // duration is between 100 an 400ms
+
+      runAanimation( (timeElapsed /*, deltaT */) => {
         if(timeElapsed < duration) {
           this.element_.scrollLeft = inOutQuintic(timeElapsed, start, distance, duration);
           return true;
@@ -150,6 +231,9 @@
     }
     */
 
+    // Cancel slideshow if running
+    this.cancelSlideShow_();
+
     switch (a) {
       case 'first':
         break;
@@ -176,14 +260,23 @@
         }
         return;
 
+      case 'play':
+        this.startSlideShow_();
+        return;
+
+      case 'pause':
+        this.cancelSlideShow_();
+        return;
+
       default:
         return;
     }
+
     this.animateScroll_(x);
   };
 
   /**
-   * Handles custom command event, 'scroll-prev', 'scroll-next', 'first', 'last'
+   * Handles custom command event, 'scroll-prev', 'scroll-next', 'first', 'last', next, prev, play, pause
    * @param event. A custom event
    * @private
    */
@@ -227,6 +320,9 @@
         || event.keyCode === VK_ARROW_DOWN || event.keyCode === VK_ARROW_RIGHT) {
 
         let slide = getSlide(event.target);
+
+        // Cancel slideshow if running
+        this.cancelSlideShow_();
 
         switch (event.keyCode) {
           case VK_ARROW_UP:
@@ -284,8 +380,11 @@
   MaterialExtCarousel.prototype.dragHandler_ = function(event ) {
     event.preventDefault();
 
+    // Cancel slideshow if running
+    this.cancelSlideShow_();
+
     let updating = false;
-    let rAFIndex = 0;
+    let rAFDragId = 0;
     const startX = event.clientX || (event.touches !== undefined ? event.touches[0].clientX : 0);
     let prevX = startX;
 
@@ -310,7 +409,7 @@
     const drag = e => {
       e.preventDefault();
       if(!updating) {
-        rAFIndex = requestAnimationFrame( () => update(e));
+        rAFDragId = requestAnimationFrame( () => update(e));
         updating = true;
       }
     };
@@ -327,8 +426,8 @@
       window.removeEventListener('mouseup', endDrag);
       window.removeEventListener('touchend', endDrag);
 
-      // cancel any existing rAF, see: http://www.html5rocks.com/en/tutorials/speed/animations/
-      cancelAnimationFrame(rAFIndex);
+      // cancel any existing drag rAF, see: http://www.html5rocks.com/en/tutorials/speed/animations/
+      cancelAnimationFrame(rAFDragId);
 
       // If mouse did not move, trigger custom select event
       if(Math.abs(startX-x) < 2) {
@@ -343,7 +442,6 @@
     window.addEventListener('mouseup', endDrag); // .bind(this) does not work here
     window.addEventListener('touchend',endDrag);
   };
-
 
   /**
    * Handle focus
@@ -383,19 +481,6 @@
    */
   MaterialExtCarousel.prototype.emitSelectEvent_ = function(command, keyCode, slide) {
     if(slide) {
-      /*
-      const evt = createCustomEvent('select', {
-        bubbles: true,
-        cancelable: true,
-        detail: {
-          command: command,
-          keyCode: keyCode,
-          source: slide
-        }
-      });
-      */
-
-
       this.moveSlideIntoViewport_(slide);
 
       const evt = new window.CustomEvent('select', {
@@ -407,6 +492,19 @@
           source: slide
         }
       });
+
+      /* TODO: use this in mdl-ext
+       const evt = createCustomEvent('select', {
+       bubbles: true,
+       cancelable: true,
+       detail: {
+       command: command,
+       keyCode: keyCode,
+       source: slide
+       }
+       });
+       */
+
 
       this.element_.dispatchEvent(evt);
     }
@@ -465,6 +563,23 @@
   };
   // End helpers
 
+
+  // Public methods.
+
+  /**
+   * Cancel animation - if running.
+   *
+   * @public
+   */
+  MaterialExtCarousel.prototype.stopAnimation = function() {
+    if(this.rAFId_ !== 0) {
+      cancelAnimationFrame(this.rAFId_);
+      this.rAFId_ = 0;
+    }
+  };
+  MaterialExtCarousel.prototype['stopAnimation'] = MaterialExtCarousel.prototype.stopAnimation;
+
+
   /**
    * Initialize component
    */
@@ -508,6 +623,9 @@
       // Listen to custom event
       this.element_.addEventListener('command', this.commandHandler_.bind(this), false);
 
+      // Slideshow interval
+      this.interval_ = Math.max(parseInt(this.element_.getAttribute('data-interval')) || this.interval_, 200);
+
       // Set upgraded flag
       this.element_.classList.add(IS_UPGRADED);
     }
@@ -520,9 +638,10 @@
    * Note: There is a bug i material component container; downgrade is never called!
    * Disables method temporarly to keep code coverage at 100% for functions.
    *
-   MaterialExtCarousel.prototype.mdlDowngrade_ = function() {
-     'use strict';
-   };
+  MaterialExtCarousel.prototype.mdlDowngrade_ = function() {
+    'use strict';
+    console.log('***** MaterialExtCarousel.mdlDowngrade');
+  };
    */
 
   // The component registers itself. It can assume componentHandler is available
@@ -531,6 +650,8 @@
   componentHandler.register({
     constructor: MaterialExtCarousel,
     classAsString: 'MaterialExtCarousel',
-    cssClass: 'mdlext-js-carousel'
+    cssClass: 'mdlext-js-carousel',
+    widget: true
   });
+
 })();

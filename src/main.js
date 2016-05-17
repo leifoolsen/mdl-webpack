@@ -127,6 +127,18 @@ class Content {
       window.fetch(href, {method: 'get'})
         .then(response => response.text())
         .then(text => {
+
+          // Clean up
+          const mdl = contentPanelEl.querySelectorAll('.is-upgraded');
+          componentHandler.downgradeElements([...mdl]);
+
+          // Stop animation - if any
+          [...document.querySelectorAll('.mdlext-carousel')].forEach( carousel => {
+            carousel.MaterialExtCarousel.stopAnimation();
+          });
+
+
+
           removeChilds(contentPanelEl);
           contentPanelEl.insertAdjacentHTML('afterbegin', text);
 
