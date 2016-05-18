@@ -66,7 +66,7 @@
     this.rAFId_ = 0;
 
     // Animation interval for slideshow, default 1000ms
-    // Value can be set via 'data-interval' attribute
+    // Value can be set via 'data-interval' attribute or cia custom event detail.interval
     this.interval_ = 1000;
 
     // Initialize instance.
@@ -113,7 +113,7 @@
       }
       if(slide) {
         this.moveSlideIntoViewport_(slide);
-        setFocus(slide);
+        setFocus(slide); // Can't do this if we do not stop animation if carousel is outside viewport
         this.emitSelectEvent_('next', null, slide);
         return true;
       }
@@ -208,10 +208,10 @@
    * @param action
    * @private
    */
-  MaterialExtCarousel.prototype.command_ = function( action ) {
+  MaterialExtCarousel.prototype.command_ = function( event ) {
     let x = 0;
     let slide = null;
-    const a = action.toLowerCase();
+    const a = event.detail.action.toLowerCase();
 
     /*
     // This behaviour can be a bit confusing??
@@ -261,6 +261,7 @@
         return;
 
       case 'play':
+        this.interval_ = Math.max(parseInt(event.detail.interval) || this.interval_, 200);
         this.startSlideShow_();
         return;
 
@@ -284,7 +285,7 @@
     event.preventDefault();
     event.stopPropagation();
     if(event.detail && event.detail.action) {
-      this.command_(event.detail.action);
+      this.command_(event);
     }
   };
 
