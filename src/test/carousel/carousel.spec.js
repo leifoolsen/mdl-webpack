@@ -64,18 +64,18 @@ describe('MaterialExtCarousel', () => {
 </html>`;
 
   const fragment = `
-    <ul id="carousel-2" class="mdlext-carousel mdlext-js-carousel mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events">
-      <li class="mdlext-carousel__slide">
-        <figure>
-          <img src="./smiley.jpg" alt="smiley" title="Smile :-)"/>
-        </figure>
-      </li>
-      <li class="mdlext-carousel__slide">
-        <figure>
-          <img src="./smiley.jpg" alt="smiley" title="Smile :-)"/>
-        </figure>
-      </li>
-    </ul>`;
+<ul id="carousel-2" class="mdlext-carousel mdlext-js-carousel mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events">
+  <li class="mdlext-carousel__slide">
+    <figure>
+      <img src="./smiley.jpg" alt="smiley" title="Smile :-)"/>
+    </figure>
+  </li>
+  <li class="mdlext-carousel__slide">
+    <figure>
+      <img src="./smiley.jpg" alt="smiley" title="Smile :-)"/>
+    </figure>
+  </li>
+</ul>`;
 
   before ( () => {
     jsdomify.create(fixture);
@@ -360,6 +360,8 @@ describe('MaterialExtCarousel', () => {
     }
     assert.isTrue(spy.called, 'Expected "select" event to fire');
   });
+
+
 
   /* TBD
    it('emits events', () => {

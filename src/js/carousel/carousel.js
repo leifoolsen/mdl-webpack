@@ -129,7 +129,7 @@
       return nextSlide();
     });
 
-    // TODO: Pause animation when carousel is outside browser viewport
+    // TODO: Pause animation when carousel is not in browser viewport
   };
 
   /**
@@ -140,7 +140,7 @@
     if(this.rAFId_ !== 0) {
       cancelAnimationFrame(this.rAFId_);
       this.rAFId_ = 0;
-      this.emitSelectEvent_('pause', VK_ESC,  this.element_.querySelector(`.${SLIDE}[aria-selected]`));  // TODO
+      this.emitSelectEvent_('pause', VK_ESC,  this.element_.querySelector(`.${SLIDE}[aria-selected]`));
     }
   };
 
