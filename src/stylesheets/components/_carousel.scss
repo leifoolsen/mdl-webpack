@@ -52,7 +52,8 @@ ul.mdlext-carousel {
   height: 100%;
   outline: 0;
 
-  &:focus {
+  &:focus,
+  &[aria-selected] {
     outline: 1px solid$mdlext-accordion-header-focus-outline-color;
     outline-offset: -1px;
 

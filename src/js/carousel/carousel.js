@@ -106,17 +106,24 @@
     };
 
     const nextSlide = () => {
-      let slide = this.element_.querySelector(`.${SLIDE}[aria-selected]`).nextElementSibling;
+      let slide = this.element_.querySelector(`.${SLIDE}[aria-selected]`);
+
+      if(slide) {
+        slide.removeAttribute('aria-selected');
+      }
+      slide = slide.nextElementSibling; // Use option to animate previousElementSibling??
       if(!slide) {
         slide = this.element_.querySelector(`.${SLIDE}:first-child`);
         this.animateScroll_(0);
       }
       if(slide) {
         this.moveSlideIntoViewport_(slide);
-        setFocus(slide); // Can't do this if we do not stop animation if carousel is outside viewport
+        //setFocus(slide); // Can't do this. Carousel will scroll into view if it is outside viewport
+        slide.setAttribute('aria-selected', '');
         this.emitSelectEvent_('next', null, slide);
         return true;
       }
+
       return false;
     };
 

@@ -337,7 +337,7 @@
       var action = i.innerText === 'play_circle_outline' ? 'play' : 'pause';
       i.textContent = action === 'play' ? 'pause_circle_outline' : 'play_circle_outline';
 
-      var ev = new CustomEvent('command', { detail: { action : action, interval: 1000 } });
+      var ev = new CustomEvent('command', { detail: { action : action, interval: 2000 } });
       document.querySelector('#mdlext-carousel').dispatchEvent(ev);
     });
 
