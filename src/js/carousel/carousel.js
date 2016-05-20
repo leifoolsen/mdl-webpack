@@ -24,6 +24,8 @@
 
 //import { createCustomEvent } from '../utils/custom-event';
 
+import MdlExtAnimationLoop from './animationloop';
+
 (function() {
   'use strict';
 
@@ -62,12 +64,10 @@
     // Stores the element.
     this.element_ = element;
 
-    // Handle to animation loop
-    this.rAFId_ = 0;
-
+    // Handle to slide animation loop
     // Animation interval for slideshow, default 1000ms
-    // Value can be set via 'data-interval' attribute or cia custom event detail.interval
-    this.interval_ = 1000;
+    // Interval can be modified via 'data-interval' attribute or cia custom event detail.interval
+    this.slideAnimation_ = new MdlExtAnimationLoop(1000);
 
     // Initialize instance.
     this.init();
@@ -78,32 +78,9 @@
 
   /**
    * Start slideshow animation
-   * @param action
    * @private
    */
   MaterialExtCarousel.prototype.startSlideShow_ = function() {
-
-    const self = this;
-    const interval = this.interval_;
-
-    const runAanimation = tick => {
-      let timeStart   = Date.now();
-      let timeElapsed = 0;
-      let running     = true;
-
-      function loop( now ) {
-        if (running) {
-          self.rAFId_ = requestAnimationFrame( () => loop( Date.now() ));
-          timeElapsed += now - timeStart;
-          if(timeElapsed >= interval) {
-            running = tick( timeElapsed );
-            timeElapsed = 0;
-          }
-          timeStart = now;
-        }
-      }
-      loop(timeStart);
-    };
 
     const nextSlide = () => {
       let slide = this.element_.querySelector(`.${SLIDE}[aria-selected]`);
@@ -111,30 +88,26 @@
       if(slide) {
         slide.removeAttribute('aria-selected');
       }
-      slide = slide.nextElementSibling; // Use option to animate previousElementSibling??
+      slide = slide.nextElementSibling; // animate previousElementSibling as well??
       if(!slide) {
         slide = this.element_.querySelector(`.${SLIDE}:first-child`);
         this.animateScroll_(0);
       }
       if(slide) {
         this.moveSlideIntoViewport_(slide);
-        //setFocus(slide); // Can't do this. Carousel will scroll into view if it is outside viewport
         slide.setAttribute('aria-selected', '');
         this.emitSelectEvent_('next', null, slide);
         return true;
       }
-
       return false;
     };
 
-    cancelAnimationFrame(this.rAFId_);
-    this.rAFId_ = 0;
-    nextSlide();
-
-    runAanimation( ( /*timeElapsed*/ ) => {
-      // Will runs until cancelSlideShow_ is triggered
-      return nextSlide();
-    });
+    if(!this.slideAnimation_.running) {
+      nextSlide();
+      this.slideAnimation_.start(() => {
+        return nextSlide(); // Will runs until cancelSlideShow_ is triggered
+      });
+    }
 
     // TODO: Pause animation when carousel is not in browser viewport
   };
@@ -144,16 +117,15 @@
    * @private
    */
   MaterialExtCarousel.prototype.cancelSlideShow_ = function() {
-    if(this.rAFId_ !== 0) {
-      cancelAnimationFrame(this.rAFId_);
-      this.rAFId_ = 0;
-      this.emitSelectEvent_('pause', VK_ESC,  this.element_.querySelector(`.${SLIDE}[aria-selected]`));
+    if(this.slideAnimation_.running) {
+      this.slideAnimation_.stop();
+      this.emitSelectEvent_('pause', VK_ESC, this.element_.querySelector(`.${SLIDE}[aria-selected]`));
     }
   };
 
   /**
    * Animate scroll
-   * @param action
+   * @param newPosition
    * @private
    */
   MaterialExtCarousel.prototype.animateScroll_ = function( newPosition ) {
@@ -175,31 +147,17 @@
       return b+c*(6*tc*ts + -15*ts*ts + 10*tc);
     };
 
-    const runAanimation = tick => {
-      let timeStart   = Date.now();
-      let timeElapsed = 0;
-      let running     = true;
-
-      function loop( now ) {
-        if (running) {
-          requestAnimationFrame( () => loop( Date.now() ));
-          timeElapsed += now - timeStart;
-          running = tick( timeElapsed, now-timeStart );
-          timeStart = now;
-        }
-      }
-      loop(timeStart);
-    };
-
     const start = this.element_.scrollLeft;
     const distance = newPosition - start;
 
     if(distance !== 0) {
       const duration = Math.max(Math.min(Math.abs(distance), 400), 100); // duration is between 100 an 400ms
+      let t = 0;
 
-      runAanimation( (timeElapsed /*, deltaT */) => {
-        if(timeElapsed < duration) {
-          this.element_.scrollLeft = inOutQuintic(timeElapsed, start, distance, duration);
+      new MdlExtAnimationLoop(33).start( timeElapsed => {
+        t += timeElapsed;
+        if(t < duration) {
+          this.element_.scrollLeft = inOutQuintic(t, start, distance, duration);
           return true;
         }
         else {
@@ -212,7 +170,7 @@
 
   /**
    * Execute commend
-   * @param action
+   * @param event
    * @private
    */
   MaterialExtCarousel.prototype.command_ = function( event ) {
@@ -268,7 +226,9 @@
         return;
 
       case 'play':
-        this.interval_ = Math.max(parseInt(event.detail.interval) || this.interval_, 200);
+        if(event.detail.interval) {
+          this.slideAnimation_.interval_ = Math.max(parseInt(event.detail.interval), 200);
+        }
         this.startSlideShow_();
         return;
 
@@ -480,10 +440,11 @@
     }
   };
 
+
   /**
    * Emits a custeom 'select' event
    * @param command
-   * @param keyboardKey
+   * @param keyCode
    * @param slide
    * @private
    */
@@ -632,7 +593,9 @@
       this.element_.addEventListener('command', this.commandHandler_.bind(this), false);
 
       // Slideshow interval
-      this.interval_ = Math.max(parseInt(this.element_.getAttribute('data-interval')) || this.interval_, 200);
+      if(this.element_.hasAttribute('data-interval')) {
+        this.slideAnimation_.interval = Math.max(parseInt(this.element_.getAttribute('data-interval')), 200);
+      }
 
       // Set upgraded flag
       this.element_.classList.add(IS_UPGRADED);
