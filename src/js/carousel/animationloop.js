@@ -36,12 +36,15 @@ class MdlExtAnimationLoop {
 
         if(this.timeElapsed_ >= this.interval_) {
           this.running_ = tick( this.timeElapsed_ );
-          this.timeElapsed_ -= this.interval_;
+          if( (this.timeElapsed_ -= this.interval_) > this.interval_) {
+            // time elapsed - interval > interval , indicates inactivity
+            // Could be due to browser minimized, tab changed, screen saver started, computer sleep, and so on
+            this.timeElapsed_ = 0;
+          }
         }
         timeStart = now;
       }
     };
-
     loop(timeStart);
   }
 

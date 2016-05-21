@@ -25,6 +25,7 @@
 //import { createCustomEvent } from '../utils/custom-event';
 
 import MdlExtAnimationLoop from './animationloop';
+import { inOutQuintic } from './easing';
 
 (function() {
   'use strict';
@@ -64,9 +65,8 @@ import MdlExtAnimationLoop from './animationloop';
     // Stores the element.
     this.element_ = element;
 
-    // Handle to slide animation loop
     // Animation interval for slideshow, default 1000ms
-    // Interval can be modified via 'data-interval' attribute or cia custom event detail.interval
+    // Interval can be modified via 'data-interval' attribute or via custom event detail.interval
     this.slideAnimation_ = new MdlExtAnimationLoop(1000);
 
     // Initialize instance.
@@ -80,15 +80,14 @@ import MdlExtAnimationLoop from './animationloop';
    * Start slideshow animation
    * @private
    */
-  MaterialExtCarousel.prototype.startSlideShow_ = function() {
+  MaterialExtCarousel.prototype.startSlideShow_ = function(interval=1000, type='slide') {
 
     const nextSlide = () => {
       let slide = this.element_.querySelector(`.${SLIDE}[aria-selected]`);
-
       if(slide) {
         slide.removeAttribute('aria-selected');
+        slide = slide.nextElementSibling;
       }
-      slide = slide.nextElementSibling; // animate previousElementSibling as well??
       if(!slide) {
         slide = this.element_.querySelector(`.${SLIDE}:first-child`);
         this.animateScroll_(0);
@@ -102,14 +101,46 @@ import MdlExtAnimationLoop from './animationloop';
       return false;
     };
 
+    const nextScroll = direction => {
+      let nextDirection = direction;
+
+      if('next' === direction &&  this.element_.scrollLeft === this.element_.scrollWidth - this.element_.clientWidth) {
+        nextDirection = 'prev';
+      }
+      else if(this.element_.scrollLeft === 0) {
+        nextDirection = 'next';
+      }
+      const x = 'next' === nextDirection
+        ?  Math.min(this.element_.scrollLeft + this.element_.clientWidth, this.element_.scrollWidth - this.element_.clientWidth)
+        :  Math.max(this.element_.scrollLeft - this.element_.clientWidth, 0);
+
+      this.animateScroll_(x, 1000);
+      return nextDirection;
+    };
+
+
     if(!this.slideAnimation_.running) {
-      nextSlide();
-      this.slideAnimation_.start(() => {
-        return nextSlide(); // Will runs until cancelSlideShow_ is triggered
-      });
+      if(interval) {
+        this.slideAnimation_.interval = Math.max(parseInt(interval), 200);
+      }
+
+      let direction = 'next';
+
+      if('scroll' === type) {
+        this.slideAnimation_.start(() => {
+          direction = nextScroll(direction);
+          return true; // Will runs until cancelSlideShow_ is triggered
+        });
+      }
+      else {
+        nextSlide();
+        this.slideAnimation_.start(() => {
+          return nextSlide(); // Will runs until cancelSlideShow_ is triggered
+        });
+      }
     }
 
-    // TODO: Pause animation when carousel is not in browser viewport
+    // TODO: Pause animation when carousel is not in browser viewport or user changes tab
   };
 
   /**
@@ -128,32 +159,14 @@ import MdlExtAnimationLoop from './animationloop';
    * @param newPosition
    * @private
    */
-  MaterialExtCarousel.prototype.animateScroll_ = function( newPosition ) {
-
-    /*
-     const easeInOutQuad = (t, b, c, d) => {
-       // See: http://robertpenner.com/easing/
-       t /= d / 2;
-       if(t < 1) return c / 2 * t * t + b;
-       t--;
-       return -c / 2 * (t * (t - 2) - 1) + b;
-     };
-     */
-
-    const inOutQuintic = (t, b, c, d) => {
-      // See: http://robertpenner.com/easing/
-      const ts = (t/=d)*t;
-      const tc = ts*t;
-      return b+c*(6*tc*ts + -15*ts*ts + 10*tc);
-    };
+  MaterialExtCarousel.prototype.animateScroll_ = function( newPosition, newDuration ) {
 
     const start = this.element_.scrollLeft;
     const distance = newPosition - start;
 
     if(distance !== 0) {
-      const duration = Math.max(Math.min(Math.abs(distance), 400), 100); // duration is between 100 an 400ms
+      const duration = Math.max(Math.min(Math.abs(distance), newDuration||400), 100); // duration is between 100 and newDuration||400ms||distance
       let t = 0;
-
       new MdlExtAnimationLoop(33).start( timeElapsed => {
         t += timeElapsed;
         if(t < duration) {
@@ -226,10 +239,7 @@ import MdlExtAnimationLoop from './animationloop';
         return;
 
       case 'play':
-        if(event.detail.interval) {
-          this.slideAnimation_.interval_ = Math.max(parseInt(event.detail.interval), 200);
-        }
-        this.startSlideShow_();
+        this.startSlideShow_(event.detail ? event.detail.interval : undefined, event.detail ? event.detail.type : undefined);
         return;
 
       case 'pause':
@@ -356,8 +366,6 @@ import MdlExtAnimationLoop from './animationloop';
     const startX = event.clientX || (event.touches !== undefined ? event.touches[0].clientX : 0);
     let prevX = startX;
 
-    //console.log('begindrag', startX);
-
     const update = e => {
       const currentX = (e.clientX || (e.touches !== undefined ? e.touches[0].clientX : 0));
       const dx = prevX - currentX;
@@ -386,8 +394,6 @@ import MdlExtAnimationLoop from './animationloop';
     const endDrag = e => {
       e.preventDefault();
       const x = e.clientX || (e.touches !== undefined ? e.touches[0].clientX : 0);
-
-      //console.log('enddrag', x, startX-x, e, e.target);
 
       window.removeEventListener('mousemove', drag);
       window.removeEventListener('touchmove', drag);
@@ -541,10 +547,7 @@ import MdlExtAnimationLoop from './animationloop';
    * @public
    */
   MaterialExtCarousel.prototype.stopAnimation = function() {
-    if(this.rAFId_ !== 0) {
-      cancelAnimationFrame(this.rAFId_);
-      this.rAFId_ = 0;
-    }
+    this.slideAnimation_.stop();
   };
   MaterialExtCarousel.prototype['stopAnimation'] = MaterialExtCarousel.prototype.stopAnimation;
 

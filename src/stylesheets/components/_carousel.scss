@@ -54,13 +54,9 @@ ul.mdlext-carousel {
 
   &:focus,
   &[aria-selected] {
-    outline: 1px solid$mdlext-accordion-header-focus-outline-color;
-    outline-offset: -1px;
 
     figure {
-      img {
-        transform: scale(0.96);
-      }
+      border-top: 3px solid $_mdlapp-color-primary-dark;
     }
     figcaption {
       // As far as I can see there is no way to darken/lighten a text color
@@ -109,6 +105,10 @@ ul.mdlext-carousel {
         background-color: rgba(255,255,255, 0.25);
       }
     }
+  }
+
+  a {
+    text-decoration: none;
   }
 
   .mdlext-carousel__slide__ripple-container {
