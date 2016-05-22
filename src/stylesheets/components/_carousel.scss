@@ -33,30 +33,30 @@ ul.mdlext-carousel {
 
   margin: 0;
   padding: 0;
-  overflow: hidden;
-
+  overflow-x: hidden;
   height: 100%;  // Use a container to constrain height and width
   width: 100% ;
-  display: flex;
-  align-items: center;
+  display: block;
+  white-space: nowrap;
+  font-size: 0;
   background-color: transparent;
 }
 
 .mdlext-carousel__slide {
+  display: inline-block;
   box-sizing: border-box;
   position: relative;
-  display: block;
   outline: 0;
   margin: 0;
   padding: 0;
   height: 100%;
-  outline: 0;
+  border-top: 3px solid transparent;
 
-  &:focus,
+  //&:focus,
   &[aria-selected] {
+    border-top-color: $_mdlapp-color-primary-dark;
 
     figure {
-      border-top: 3px solid $_mdlapp-color-primary-dark;
     }
     figcaption {
       // As far as I can see there is no way to darken/lighten a text color
@@ -67,19 +67,19 @@ ul.mdlext-carousel {
     }
   }
 
+  a {
+    text-decoration: none;
+  }
+
   figure {
     box-sizing: border-box;
     position: relative;
-    display: flex;
-    align-items: center;
-
     height: 100%;
     margin: 0;
     padding: 0;
 
     img {
       max-height: 100%;
-      //max-width: 300px;
     }
 
     figcaption {
@@ -105,10 +105,6 @@ ul.mdlext-carousel {
         background-color: rgba(255,255,255, 0.25);
       }
     }
-  }
-
-  a {
-    text-decoration: none;
   }
 
   .mdlext-carousel__slide__ripple-container {

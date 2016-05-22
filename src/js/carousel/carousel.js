@@ -42,20 +42,17 @@ import { inOutQuintic } from './easing';
   const VK_ARROW_UP    = 38;
   const VK_ARROW_RIGHT = 39;
   const VK_ARROW_DOWN  = 40;
-
   const IS_UPGRADED    = 'is-upgraded';
   const IS_FOCUSED     = 'is-focused';
   const CAROUSEL       = 'mdlext-carousel';
   const SLIDE          = 'mdlext-carousel__slide';
   const ROLE           = 'list';
   const SLIDE_ROLE     = 'listitem';
-
   const RIPPLE = 'mdl-ripple';
   const RIPPLE_COMPONENT = 'MaterialRipple';
   const RIPPLE_CONTAINER = 'mdlext-carousel__slide__ripple-container';
   const RIPPLE_EFFECT = 'mdl-js-ripple-effect';
   const RIPPLE_EFFECT_IGNORE_EVENTS = 'mdl-js-ripple-effect--ignore-events';
-
 
   /**
    * @constructor
@@ -65,9 +62,15 @@ import { inOutQuintic } from './easing';
     // Stores the element.
     this.element_ = element;
 
-    // Animation interval for slideshow, default 1000ms
-    // Interval can be modified via 'data-interval' attribute or via custom event detail.interval
-    this.slideAnimation_ = new MdlExtAnimationLoop(1000);
+    // Default config
+    this.config_ = {
+      interactive  : true,
+      run          : false,
+      type         : 'slide',
+      interval     : 1000,
+      animationLoop: new MdlExtAnimationLoop(1000),
+      exception    : null
+    };
 
     // Initialize instance.
     this.init();
@@ -80,7 +83,7 @@ import { inOutQuintic } from './easing';
    * Start slideshow animation
    * @private
    */
-  MaterialExtCarousel.prototype.startSlideShow_ = function(interval=1000, type='slide') {
+  MaterialExtCarousel.prototype.startSlideShow_ = function() {
 
     const nextSlide = () => {
       let slide = this.element_.querySelector(`.${SLIDE}[aria-selected]`);
@@ -119,22 +122,19 @@ import { inOutQuintic } from './easing';
     };
 
 
-    if(!this.slideAnimation_.running) {
-      if(interval) {
-        this.slideAnimation_.interval = Math.max(parseInt(interval), 200);
-      }
-
+    if(!this.config_.animationLoop.running) {
+      this.config_.animationLoop.interval = this.config_.interval;
       let direction = 'next';
 
-      if('scroll' === type) {
-        this.slideAnimation_.start(() => {
+      if('scroll' === this.config_.type) {
+        this.config_.animationLoop.start(() => {
           direction = nextScroll(direction);
           return true; // Will runs until cancelSlideShow_ is triggered
         });
       }
       else {
         nextSlide();
-        this.slideAnimation_.start(() => {
+        this.config_.animationLoop.start(() => {
           return nextSlide(); // Will runs until cancelSlideShow_ is triggered
         });
       }
@@ -148,8 +148,8 @@ import { inOutQuintic } from './easing';
    * @private
    */
   MaterialExtCarousel.prototype.cancelSlideShow_ = function() {
-    if(this.slideAnimation_.running) {
-      this.slideAnimation_.stop();
+    if(this.config_.animationLoop.running) {
+      this.config_.animationLoop.stop();
       this.emitSelectEvent_('pause', VK_ESC, this.element_.querySelector(`.${SLIDE}[aria-selected]`));
     }
   };
@@ -157,6 +157,7 @@ import { inOutQuintic } from './easing';
   /**
    * Animate scroll
    * @param newPosition
+   * @param newDuration
    * @private
    */
   MaterialExtCarousel.prototype.animateScroll_ = function( newPosition, newDuration ) {
@@ -191,24 +192,6 @@ import { inOutQuintic } from './easing';
     let slide = null;
     const a = event.detail.action.toLowerCase();
 
-    /*
-    // This behaviour can be a bit confusing??
-    switch (action.toLowerCase()) {
-      case 'first':
-      case 'scroll-prev':
-        if(this.element_.scrollLeft === 0) {
-          a = 'last';
-        }
-        break;
-      case 'last':
-      case 'scroll-next':
-        if(this.element_.scrollLeft === this.element_.scrollWidth - this.element_.clientWidth) {
-          a = 'first';
-        }
-        break;
-    }
-    */
-
     // Cancel slideshow if running
     this.cancelSlideShow_();
 
@@ -239,7 +222,8 @@ import { inOutQuintic } from './easing';
         return;
 
       case 'play':
-        this.startSlideShow_(event.detail ? event.detail.interval : undefined, event.detail ? event.detail.type : undefined);
+        Object.assign(this.config_, event.detail);
+        this.startSlideShow_();
         return;
 
       case 'pause':
@@ -446,7 +430,6 @@ import { inOutQuintic } from './easing';
     }
   };
 
-
   /**
    * Emits a custeom 'select' event
    * @param command
@@ -486,7 +469,7 @@ import { inOutQuintic } from './easing';
   };
 
   /**
-   * Move slide into viewport - if needed
+   * Move slide into component viewport - if needed
    * @param slide
    * @private
    */
@@ -547,10 +530,48 @@ import { inOutQuintic } from './easing';
    * @public
    */
   MaterialExtCarousel.prototype.stopAnimation = function() {
-    this.slideAnimation_.stop();
+    this.config_.animationLoop.stop();
   };
   MaterialExtCarousel.prototype['stopAnimation'] = MaterialExtCarousel.prototype.stopAnimation;
 
+
+  /**
+   * Upgrade slides
+   *
+   * @public
+   */
+  MaterialExtCarousel.prototype.upgradeSlides = function() {
+    const hasRippleEffect = this.element_.classList.contains(RIPPLE_EFFECT);
+
+    [...this.element_.querySelectorAll(`.${SLIDE}`)].forEach( slide => {
+
+      slide.setAttribute('role', SLIDE_ROLE);
+
+      if(this.config_.interactive) {
+        if (!Number.isInteger(slide.getAttribute('tabindex'))) {
+          slide.setAttribute('tabindex', 0);
+        }
+        if (hasRippleEffect) {
+          addRipple(slide);
+        }
+      }
+      else {
+        slide.setAttribute('tabindex', -1);
+      }
+    });
+  };
+  MaterialExtCarousel.prototype['upgradeSlides'] = MaterialExtCarousel.prototype.upgradeSlides;
+
+
+  /**
+   * Get config object
+   *
+   * @public
+   */
+  MaterialExtCarousel.prototype.getConfig = function() {
+    return this.config_;
+  };
+  MaterialExtCarousel.prototype['getConfig'] = MaterialExtCarousel.prototype.getConfig;
 
   /**
    * Initialize component
@@ -558,50 +579,60 @@ import { inOutQuintic } from './easing';
   MaterialExtCarousel.prototype.init = function() {
 
     if (this.element_) {
+      // Config
+      if(this.element_.hasAttribute('data-config')) {
+        try {
+          const c = JSON.parse(this.element_.getAttribute('data-config').replace(/'/g, '"'));
+          Object.assign(this.config_, c);
+        }
+        catch (e) {
+          this.config_.exception = e;
+        }
+      }
+
+      // Wai-Aria
       this.element_.setAttribute('role', ROLE);
+
+      // Prefer tabindex -1
       if(!Number.isInteger(this.element_.getAttribute('tabindex'))) {
         this.element_.setAttribute('tabindex', -1);
       }
 
+      // Ripple
       const hasRippleEffect = this.element_.classList.contains(RIPPLE_EFFECT);
       if (hasRippleEffect) {
         this.element_.classList.add(RIPPLE_EFFECT_IGNORE_EVENTS);
       }
 
-      [...this.element_.querySelectorAll(`.${SLIDE}`)].forEach( slide => {
-        slide.setAttribute('role', SLIDE_ROLE);
-        if(!Number.isInteger(slide.getAttribute('tabindex'))) {
-          slide.setAttribute('tabindex', 0);
-        }
-        if(hasRippleEffect) {
-          addRipple(slide);
-        }
-      });
+      // Slides collection
+      this.upgradeSlides();
 
-      // Listen to focus/blur events
-      this.element_.addEventListener('focus', this.focusHandler_.bind(this), true);
-      this.element_.addEventListener('blur',  this.blurHandler_.bind(this), true);
+      if(this.config_.interactive) {
+        // Listen to focus/blur events
+        this.element_.addEventListener('focus', this.focusHandler_.bind(this), true);
+        this.element_.addEventListener('blur', this.blurHandler_.bind(this), true);
 
-      // Listen to keyboard events
-      this.element_.addEventListener('keydown', this.keyDownHandler_.bind(this), true);
+        // Listen to keyboard events
+        this.element_.addEventListener('keydown', this.keyDownHandler_.bind(this), true);
 
-      // Listen to drag events
-      this.element_.addEventListener('mousedown' , this.dragHandler_.bind(this), true);
-      this.element_.addEventListener('touchstart', this.dragHandler_.bind(this), true);
+        // Listen to drag events
+        this.element_.addEventListener('mousedown', this.dragHandler_.bind(this), true);
+        this.element_.addEventListener('touchstart', this.dragHandler_.bind(this), true);
 
-      // Click is handled by drag
-      this.element_.addEventListener('click', e => e.preventDefault(), true);
+        // Click is handled by drag
+        this.element_.addEventListener('click', e => e.preventDefault(), true);
 
-      // Listen to custom event
-      this.element_.addEventListener('command', this.commandHandler_.bind(this), false);
-
-      // Slideshow interval
-      if(this.element_.hasAttribute('data-interval')) {
-        this.slideAnimation_.interval = Math.max(parseInt(this.element_.getAttribute('data-interval')), 200);
+        // Listen to custom event
+        this.element_.addEventListener('command', this.commandHandler_.bind(this), false);
       }
 
       // Set upgraded flag
       this.element_.classList.add(IS_UPGRADED);
+
+      if(this.config_.run) {
+        // Start slideshow
+        this.startSlideShow_();
+      }
     }
   };
 

@@ -185,7 +185,9 @@ describe('MaterialExtCarousel', () => {
   it('should have public methods available via widget', () => {
     const el = document.querySelector('.mdlext-carousel');
     const methods = [
-      'stopAnimation'
+      'stopAnimation',
+      'upgradeSlides',
+      'getConfig'
     ];
     methods.forEach((method) => {
       expect(el.MaterialExtCarousel[method]).to.be.a('function');
@@ -195,6 +197,8 @@ describe('MaterialExtCarousel', () => {
   it('can call public methodes', () => {
     const el = document.querySelector('.mdlext-carousel');
     el.MaterialExtCarousel.stopAnimation();
+    el.MaterialExtCarousel.upgradeSlides();
+    el.MaterialExtCarousel.getConfig();
   });
 
   it('has ripple effect', () => {
