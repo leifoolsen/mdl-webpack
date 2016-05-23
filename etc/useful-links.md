@@ -147,6 +147,7 @@
 * [Move.js - CSS3 JavaScript animation framework.](https://github.com/visionmedia/move.js)
 * [Fancy FAQ page using CSS3 only](http://red-team-design.com/fancy-faq-page-using-css3-only/)
 * [CSS Tips For Better Web Typography](http://css-max.com/css-tips-for-better-web-typography/)
+* [Off canvas navigation for responsive website](https://www.smashingmagazine.com/2013/01/off-canvas-navigation-for-responsive-website/)
 
 ### Accordion
 * [css accordion using flexbox](http://stackoverflow.com/questions/25691500/css-accordion-using-flexbox)
@@ -744,6 +745,20 @@
 * [Masonry Effect with Flexbox](http://codepen.io/fabienb/pen/jlKtB)
 * [Masonry/Pinterest-style Grid with Flexbox](http://codepen.io/kattixie/pen/bEYyZb)
 
+## Responsive table
+* [DataTables JSON sample using Material Design](http://codepen.io/heiswayi/pen/VvpmaE)
+* [Accordion table](http://codepen.io/adahei/pen/Kzfpu)
+* [DataTables with expanding row details](http://codepen.io/vseppala/pen/zxdeYo)
+* [CSS Responsive Table](http://codepen.io/streck/pen/IhBEg)
+* [Responsive Table](http://codepen.io/itsMeAra/pen/zbsBv)
+* [Mobile First Responsive Tables](http://codepen.io/scarrington/pen/KdBVYL)
+* [Responsive & Accessible Data Table](http://codepen.io/pixelchar/pen/rfuqK)
+* [Accessible, Simple, Responsive Tables](https://css-tricks.com/accessible-simple-responsive-tables/)
+* [Pure CSS Responsive Tables](https://webdesignerhut.com/pure-css-responsive-tables/)
+* [Data Table with Collapsible Table Rows](https://webdesignerhut.com/data-table-with-collapsible-table-rows/)
+* [Pure CSS Responsive Accordion Table](https://codepen.io/CSS3fx/pen/FteDi)
+* [CSS only Responsive Tables](http://dbushell.com/2016/03/04/css-only-responsive-tables/)
+* [CSS only Responsive Tables](http://codepen.io/dbushell/full/8e6a1ee85418f3c5abe839647dbcdec5/)
 
 ## CodePens
 * [MDL transparent header turns opaque](http://codepen.io/peiche/pen/PPPRgz)
