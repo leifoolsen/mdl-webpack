@@ -486,7 +486,7 @@ describe('MaterialExtCarousel', () => {
       window.requestAnimationFrame = realRaf;
       window.cancelAnimationFrame = realCaf;
     }
-    assert.isAtLeast(spy.callCount, 2, 'Expected "select" event to moe than once');
+    assert.isAtLeast(spy.callCount, 2, 'Expected "select" event to fire more than once');
     const c = carousel.MaterialExtCarousel.getConfig();
     expect(c.interval).to.equal(100);
   });
