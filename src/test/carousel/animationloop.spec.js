@@ -12,25 +12,22 @@ describe('MdlExtAnimationLoop', () => {
   let realRaf;
   let realCaf;
   let mockRaf;
+  let stub;
 
   before ( () => {
     jsdomify.create('<!doctype html><html><body><div id="mount"></div></body></html>');
-
     realRaf = window.requestAnimationFrame;
     realCaf = window.cancelAnimationFrame;
-
     mockRaf = createMockRaf();
-
     window.requestAnimationFrame = mockRaf.raf;
     window.cancelAnimationFrame = mockRaf.raf.cancel;
-
-    sinon.stub(window, 'requestAnimationFrame', mockRaf.raf);
+    stub = sinon.stub(window, 'requestAnimationFrame', mockRaf.raf);
   });
 
   after ( () => {
+    stub.restore();
     window.requestAnimationFrame = realRaf;
     window.cancelAnimationFrame = realCaf;
-
     jsdomify.destroy();
   });
 

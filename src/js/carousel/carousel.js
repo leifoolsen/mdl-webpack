@@ -67,11 +67,10 @@ import { inOutQuintic } from './easing';
     // Default config
     this.config_ = {
       interactive  : true,
-      run          : false,
+      autostart    : false,
       type         : 'slide',
       interval     : 1000,
-      animationLoop: new MdlExtAnimationLoop(1000),
-      exception    : null
+      animationLoop: new MdlExtAnimationLoop(1000)
     };
 
     // Initialize instance.
@@ -218,7 +217,7 @@ import { inOutQuintic } from './easing';
         slide = this.element_.querySelector(`.${SLIDE}[aria-selected]`);
         if(slide) {
           slide = a === 'next' ? slide.nextElementSibling : slide.previousElementSibling;
-          setFocus(slide);
+          setFocus_(slide);
           this.emitSelectEvent_(a, null,  slide);
         }
         return;
@@ -229,7 +228,6 @@ import { inOutQuintic } from './easing';
         return;
 
       case 'pause':
-        this.cancelSlideShow_();
         return;
 
       default:
@@ -283,7 +281,7 @@ import { inOutQuintic } from './easing';
         || event.keyCode === VK_ARROW_UP   || event.keyCode === VK_ARROW_LEFT
         || event.keyCode === VK_ARROW_DOWN || event.keyCode === VK_ARROW_RIGHT) {
 
-        let slide = getSlide(event.target);
+        let slide = getSlide_(event.target);
 
         // Cancel slideshow if running
         this.cancelSlideShow_();
@@ -295,7 +293,7 @@ import { inOutQuintic } from './easing';
             action = 'prev';
             if(slide) {
               slide = slide.previousElementSibling;
-              setFocus(slide);
+              setFocus_(slide);
             }
             break;
 
@@ -305,7 +303,7 @@ import { inOutQuintic } from './easing';
             action = 'next';
             if(slide) {
               slide = slide.nextElementSibling;
-              setFocus(slide);
+              setFocus_(slide);
             }
             break;
 
@@ -391,8 +389,8 @@ import { inOutQuintic } from './easing';
 
       // If mouse did not move, trigger custom select event
       if(Math.abs(startX-x) < 2) {
-        const slide = getSlide(e.target);
-        setFocus(slide);
+        const slide = getSlide_(e.target);
+        setFocus_(slide);
         this.emitSelectEvent_('click', null,  slide);
       }
     };
@@ -409,7 +407,7 @@ import { inOutQuintic } from './easing';
    * @private
    */
   MaterialExtCarousel.prototype.focusHandler_ = function(event) {
-    const slide = getSlide(event.target);
+    const slide = getSlide_(event.target);
     if(slide) {
       // The last focused slide has 'aria-selected', even if focus is lost
       [...this.element_.querySelectorAll(`.${SLIDE}[aria-selected]`)].forEach(
@@ -426,7 +424,7 @@ import { inOutQuintic } from './easing';
    * @private
    */
   MaterialExtCarousel.prototype.blurHandler_ = function(event) {
-    const slide = getSlide(event.target);
+    const slide = getSlide_(event.target);
     if(slide) {
       slide.classList.remove(IS_FOCUSED);
     }
@@ -491,20 +489,20 @@ import { inOutQuintic } from './easing';
 
 
   // Helpers
-  const getSlide = element => {
+  const getSlide_ = element => {
     if (!element  || element.parentNode.tagName === undefined || element.classList.contains(CAROUSEL)) {
       return null;
     }
-    return element.classList.contains(SLIDE) ? element : getSlide(element.parentNode);
+    return element.classList.contains(SLIDE) ? element : getSlide_(element.parentNode);
   };
 
-  const setFocus = slide => {
+  const setFocus_ = slide => {
     if(slide) {
       slide.focus();
     }
   };
 
-  const addRipple = slide => {
+  const addRipple_ = slide => {
     const rippleContainer = document.createElement('span');
     rippleContainer.classList.add(RIPPLE_CONTAINER);
     rippleContainer.classList.add(RIPPLE_EFFECT);
@@ -539,6 +537,7 @@ import { inOutQuintic } from './easing';
 
   /**
    * Upgrade slides
+   * Use if more list elements are added later (dynamically)
    *
    * @public
    */
@@ -554,7 +553,7 @@ import { inOutQuintic } from './easing';
           slide.setAttribute('tabindex', 0);
         }
         if (hasRippleEffect) {
-          addRipple(slide);
+          addRipple_(slide);
         }
       }
       else {
@@ -583,12 +582,13 @@ import { inOutQuintic } from './easing';
     if (this.element_) {
       // Config
       if(this.element_.hasAttribute('data-config')) {
+        const s = this.element_.getAttribute('data-config').replace(/'/g, '"');
         try {
-          const c = JSON.parse(this.element_.getAttribute('data-config').replace(/'/g, '"'));
+          const c = JSON.parse(s);
           Object.assign(this.config_, c);
         }
         catch (e) {
-          this.config_.exception = e;
+          throw new Error(`Failed to parse "data-config = ${s}". Error: ${e.message}`);
         }
       }
 
@@ -631,7 +631,7 @@ import { inOutQuintic } from './easing';
       // Set upgraded flag
       this.element_.classList.add(IS_UPGRADED);
 
-      if(this.config_.run) {
+      if(this.config_.autostart) {
         // Start slideshow
         this.startSlideShow_();
       }

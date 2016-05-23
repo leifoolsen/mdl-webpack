@@ -134,7 +134,9 @@ class Content {
 
           // Stop animation - if any
           [...document.querySelectorAll('.mdlext-carousel')].forEach( carousel => {
-            carousel.MaterialExtCarousel.stopAnimation();
+            if(carousel.MaterialExtCarousel) {
+              carousel.MaterialExtCarousel.stopAnimation();
+            }
           });
 
 

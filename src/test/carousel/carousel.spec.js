@@ -5,6 +5,7 @@ import jsdomify from 'jsdomify';
 import { expect, assert } from 'chai';
 import sinon from 'sinon';
 import { removeChilds } from '../../js/utils/domHelpers';
+import createMockRaf from './mock-raf';
 
 describe('MaterialExtCarousel', () => {
 
@@ -65,6 +66,36 @@ describe('MaterialExtCarousel', () => {
 
   const fragment = `
 <ul id="carousel-2" class="mdlext-carousel mdlext-js-carousel mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events">
+  <li class="mdlext-carousel__slide">
+    <figure>
+      <img src="./smiley.jpg" alt="smiley" title="Smile :-)"/>
+    </figure>
+  </li>
+  <li class="mdlext-carousel__slide">
+    <figure>
+      <img src="./smiley.jpg" alt="smiley" title="Smile :-)"/>
+    </figure>
+  </li>
+</ul>`;
+
+  const data_config_fragment = `
+<ul id="carousel-3" class="mdlext-carousel mdlext-js-carousel mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" 
+  data-config="{ 'interactive': true, 'autostart': false, 'type': 'scroll', 'interval': 5000 }">
+  <li class="mdlext-carousel__slide">
+    <figure>
+      <img src="./smiley.jpg" alt="smiley" title="Smile :-)"/>
+    </figure>
+  </li>
+  <li class="mdlext-carousel__slide">
+    <figure>
+      <img src="./smiley.jpg" alt="smiley" title="Smile :-)"/>
+    </figure>
+  </li>
+</ul>`;
+
+  const data_config_with_malformed_format_fragment = `
+<ul id="carousel-4" class="mdlext-carousel mdlext-js-carousel mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" 
+  data-config="{ 'interactive: false, 'autostart': true, 'type': 'scroll', 'interval': 5000 }">
   <li class="mdlext-carousel__slide">
     <figure>
       <img src="./smiley.jpg" alt="smiley" title="Smile :-)"/>
@@ -326,7 +357,7 @@ describe('MaterialExtCarousel', () => {
 
   it('has attribute "aria-selected" when selected', () => {
     const carousel = document.querySelector('#carousel-1');
-    assert.isNotNull(carousel, 'Expected handle to lightboard');
+    assert.isNotNull(carousel, 'Expected handle to carousel');
 
     const slide = carousel.querySelector('.mdlext-carousel__slide:nth-child(2)');
     assert.isNotNull(slide, 'Expected handle to slide');
@@ -334,7 +365,6 @@ describe('MaterialExtCarousel', () => {
 
     const spy = sinon.spy();
     carousel.addEventListener('select', spy);
-
 
     const selectListener = ( event ) => {
       assert.isNotNull(event.detail.source.getAttribute('aria-selected'), 'Expected slide to have attribute "aria-selected"');
@@ -366,11 +396,100 @@ describe('MaterialExtCarousel', () => {
   });
 
 
+  it('listens to "command" custom event and answers with a "select" custom event', () => {
+    const carousel = document.querySelector('#carousel-1');
+    const slide = carousel.querySelector('.mdlext-carousel__slide:nth-child(1)');
+    slide.setAttribute('aria-selected', '');
 
-  /* TBD
-   it('emits events', () => {
-   });
-   */
+    const spy = sinon.spy();
+    carousel.addEventListener('select', spy);
+
+    const selectListener = ( event ) => {
+    };
+    carousel.addEventListener('select', selectListener);
+
+    try {
+      const ev = new CustomEvent('command', { detail: { action : 'next' } } );
+      carousel.dispatchEvent(ev);
+    }
+    finally {
+      carousel.removeEventListener('select', selectListener);
+      carousel.removeEventListener('select', spy);
+    }
+    assert.isTrue(spy.called, 'Expected "select" event to fire');
+  });
+
+
+  it('reads "data-config" attribute and stores config data', () => {
+    const container = document.querySelector('#mount-2');
+    container.insertAdjacentHTML('beforeend', data_config_fragment);
+
+    try {
+      const element = document.querySelector('#carousel-3');
+      expect(() => {
+        componentHandler.upgradeElement(element, 'MaterialExtCarousel');
+      }).to.not.throw(Error);
+
+      const c = element.MaterialExtCarousel.getConfig();
+      expect(c.interactive).to.be.true;
+      expect(c.autostart).to.be.false;
+      expect(c.type).to.equal('scroll');
+      expect(c.interval).to.equal(5000);
+      expect(c.animationLoop).to.not.be.null;
+    }
+    finally {
+      removeChilds(container);
+    }
+  });
+
+  it('throws an error if "data-config" attribute is malformed', () => {
+    const container = document.querySelector('#mount-2');
+    container.insertAdjacentHTML('beforeend', data_config_with_malformed_format_fragment);
+
+    try {
+      const element = document.querySelector('#carousel-4');
+      expect(() => {
+        componentHandler.upgradeElement(element, 'MaterialExtCarousel');
+      }).to.throw(Error);
+    }
+    finally {
+      removeChilds(container);
+    }
+  });
+
+  it('can play slides', () => {
+    const carousel = document.querySelector('#carousel-1');
+    const realRaf = window.requestAnimationFrame;
+    const realCaf = window.cancelAnimationFrame;
+    const mockRaf = createMockRaf();
+    window.requestAnimationFrame = mockRaf.raf;
+    window.cancelAnimationFrame = mockRaf.raf.cancel;
+    const stub = sinon.stub(window, 'requestAnimationFrame', mockRaf.raf);
+
+    const spy = sinon.spy();
+    carousel.addEventListener('select', spy);
+
+    /*
+    const selectListener = ( event ) => {
+      console.log('*****', event);
+    };
+    carousel.addEventListener('select', selectListener);
+    */
+
+    try {
+      const ev = new CustomEvent('command', { detail: { action : 'play', interval: 100 } } );
+      carousel.dispatchEvent(ev);
+      mockRaf.step(100);
+    }
+    finally {
+      stub.restore();
+      window.requestAnimationFrame = realRaf;
+      window.cancelAnimationFrame = realCaf;
+    }
+    assert.isAtLeast(spy.callCount, 2, 'Expected "select" event to moe than once');
+    const c = carousel.MaterialExtCarousel.getConfig();
+    expect(c.interval).to.equal(100);
+  });
 
 
   function spyOnKeyboardEvent(target, keyCode, shiftKey=false) {
@@ -393,6 +512,5 @@ describe('MaterialExtCarousel', () => {
 
     assert.isTrue(spy.calledOnce, `Expected "keydown" event to fire once for key code ${keyCode}`);
   }
-
 
 });
