@@ -18,7 +18,7 @@ class MdlExtAnimationLoop {
 
   cancelRAF() {
     if(this.rAFId_ !== 0) {
-      cancelAnimationFrame(this.rAFId_);
+      window.cancelAnimationFrame(this.rAFId_);
       this.rAFId_ = 0;
     }
     this.running_     = false;
@@ -31,7 +31,7 @@ class MdlExtAnimationLoop {
 
     const loop = now => {
       if (this.running_) {
-        this.rAFId_ = requestAnimationFrame( () => loop( Date.now() ));
+        this.rAFId_ = window.requestAnimationFrame( () => loop( Date.now() ));
         this.timeElapsed_ += now - timeStart;
 
         if(this.timeElapsed_ >= this.interval_) {
@@ -46,6 +46,7 @@ class MdlExtAnimationLoop {
       }
     };
     loop(timeStart);
+    return this;
   }
 
   stop() {

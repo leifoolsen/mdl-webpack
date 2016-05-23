@@ -487,6 +487,7 @@
 * [Creating RESTful APIs with Express 4](http://www.sitepoint.com/creating-restful-apis-express-4/)
 * [Simple Webpack React Starter](https://github.com/cgreening/simple-webpack-react-starter)
 * [Node Safe Config](https://github.com/hartbenjar12/nodeSafeConfig)
+* [Node Hero - Getting Started With Node.js](https://blog.risingstack.com/node-hero-tutorial-getting-started-with-node-js/)
 
 ## Babel
 * [babel-plugin-handbook](https://github.com/thejameskyle/babel-plugin-handbook)
@@ -603,6 +604,7 @@
 * [MAKE YOUR NODE.JS API BULLETPROOF: HOW TO TEST WITH MOCHA, CHAI, AND SUPERTEST](https://developmentnow.com/2015/02/05/make-your-node-js-api-bulletproof-how-to-test-with-mocha-chai-and-supertest/)
 * [WRITING, TESTING AND PUBLISHING JAVASCRIPT MODULES](http://tech.vg.no/2015/01/20/writing-testing-and-publishing-javascript-modules/)
 * [My node test strategy - Tape](https://remysharp.com/2015/12/14/my-node-test-strategy)
+* [Test Automation](http://www.zsoltnagy.eu/category/test-automation/)
 
 ### RxJS
 * [ReactiveX - The Observer pattern done right](http://reactivex.io/)

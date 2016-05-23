@@ -42,16 +42,18 @@ import { inOutQuintic } from './easing';
   const VK_ARROW_UP    = 38;
   const VK_ARROW_RIGHT = 39;
   const VK_ARROW_DOWN  = 40;
+
   const IS_UPGRADED    = 'is-upgraded';
   const IS_FOCUSED     = 'is-focused';
   const CAROUSEL       = 'mdlext-carousel';
   const SLIDE          = 'mdlext-carousel__slide';
   const ROLE           = 'list';
   const SLIDE_ROLE     = 'listitem';
-  const RIPPLE = 'mdl-ripple';
+
+  const RIPPLE           = 'mdl-ripple';
   const RIPPLE_COMPONENT = 'MaterialRipple';
   const RIPPLE_CONTAINER = 'mdlext-carousel__slide__ripple-container';
-  const RIPPLE_EFFECT = 'mdl-js-ripple-effect';
+  const RIPPLE_EFFECT    = 'mdl-js-ripple-effect';
   const RIPPLE_EFFECT_IGNORE_EVENTS = 'mdl-js-ripple-effect--ignore-events';
 
   /**
