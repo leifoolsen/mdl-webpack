@@ -702,7 +702,8 @@
 * [lazysizes - High performance and SEO friendly lazy loader for images](https://github.com/aFarkas/lazysizes)
 * [lazysizes respimg polyfill extension](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/respimg)
 * [Picturefill - A responsive image polyfill](https://github.com/scottjehl/picturefill)
-
+* [Create a Pure CSS Image Lightbox](https://webdesignerhut.com/pure-css-image-lightbox/)
+* [Modern HTML5 Lightbox in 12 Lines of JavaScript](http://codepen.io/dudleystorey/pen/bNdvym)
 
 ## Carousel
 * [CSS3 Flexbox Carousel](http://www.andismith.com/blog/2012/05/css3-flexbox-carousel/)
@@ -713,7 +714,7 @@
 * [Responsive Carousels](http://codepen.io/lucamug/pen/MyVrqN)
 * [Overflow Carousel](http://codepen.io/bradfrost/pen/Kdeoi)
 * [Spread of cards - responsive carousel - 3.0](http://codepen.io/pixelthing/pen/OPmWrE)
-* [lexbox Carousel, Final](http://codepen.io/wprater/pen/MaWNBK)
+* [Flexbox Carousel, Final](http://codepen.io/wprater/pen/MaWNBK)
 * [CSS3 Flexbox Carousel](http://www.andismith.com/blog/2012/05/css3-flexbox-carousel/)
 * [flexbox-carousel, CSS3 Animated Carousel with Flexbox](https://github.com/andismith/flexbox-carousel)
 * [The Order Property: Flexbox Carousels](http://madewithenvy.com/ecosystem/articles/2015/exploring-order-flexbox-carousel/)
@@ -759,6 +760,8 @@
 * [Pure CSS Responsive Accordion Table](https://codepen.io/CSS3fx/pen/FteDi)
 * [CSS only Responsive Tables](http://dbushell.com/2016/03/04/css-only-responsive-tables/)
 * [CSS only Responsive Tables](http://codepen.io/dbushell/full/8e6a1ee85418f3c5abe839647dbcdec5/)
+* [Display Flex & HTML5 Table with sticky headers](https://codepen.io/tfzvang/full/WQBwVo/)
+* [Sticky Table Headers & Columns](http://tympanus.net/codrops/2014/01/09/sticky-table-headers-columns/)
 
 ## CodePens
 * [MDL transparent header turns opaque](http://codepen.io/peiche/pen/PPPRgz)
