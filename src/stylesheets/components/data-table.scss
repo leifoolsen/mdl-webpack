@@ -1,0 +1,267 @@
+@charset "UTF-8";
+
+/*!
+// Responsive Tables
+// Based on:
+//   http://dbushell.com/2016/03/04/css-only-responsive-tables/
+*/
+
+.mdlext-data-table {
+  /*!
+  // IE needs inline-block to position scrolling shadows otherwise use:
+  // display: block;
+  // max-width: min-content;
+  */
+
+  display: inline-block;
+  vertical-align: top;
+  max-width: 100%;
+  overflow-x: auto;
+
+  // optional - looks better for small cell values
+  white-space: nowrap;
+
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  font-size: $data-table-font-size;
+
+  &,
+  &--flip tbody {
+    // optional - enable iOS momentum scrolling
+    -webkit-overflow-scrolling: touch;
+
+    // scrolling shadows
+    background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center,
+    radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
+    background-size: 10px 100%, 10px 100%;
+    background-attachment: scroll, scroll;
+    background-repeat: no-repeat;
+  }
+
+  // change these gradients from white to your background colour if it differs
+  // gradient on the first cells to hide the left shadow
+  td:first-child,
+  &--flip tbody tr:first-child {
+    background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+    background-repeat: no-repeat;
+    background-size: 20px 100%;
+  }
+
+  // gradient on the last cells to hide the right shadow
+  td:last-child,
+  &--flip tbody tr:last-child {
+    background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    background-size: 20px 100%;
+  }
+
+  th {
+    text-align: left;
+    text-transform: none;
+    background-color: rgba(#EEEEEE, 0.3);
+    text-overflow: ellipsis;
+    @include typo-body-2();
+  }
+
+  td {
+    @include typo-body-1();
+  }
+
+  th,
+  td {
+    position: relative;
+    padding: 8px $data-table-column-padding 8px $data-table-column-padding; // padding: 6px 12px;
+    border-top: $data-table-dividers; //1px solid #d9d7ce;
+  }
+
+}
+
+//// Details group
+
+.mdlext-data-table {
+
+  &__group {
+    display: none;
+    padding: 0;
+
+    > td:first-child {
+      padding: 0;
+    }
+
+    table {
+      max-width: 100%;
+      width: 100%;
+      white-space: nowrap;
+      border-collapse: collapse;
+      border-spacing: 0;
+      border: 0;
+      font-size: $data-table-font-size;
+
+      th,
+      td {
+        border: 0;
+      }
+    }
+  }
+
+  tbody tr[open] + .mdlext-data-table__group {
+    display: table-row;
+  }
+
+
+}
+
+
+///// Hack for Safir project
+.mdlext-data-table {
+
+  .mdl-data-table thead tr :first-child,
+  .mdl-data-table tbody tr :first-child {
+    max-width: 36px;
+    width: 36px;
+  }
+
+
+  &__toggle-details-column button {
+    transform: rotate(90deg);
+  }
+
+  tbody tr[open] &__toggle-details-column button {
+    transform: rotate(-90deg);
+  }
+
+  .mdl-button--icon {
+    background-color: transparent;
+    box-shadow: 0 0 0 rgba(#FFFFFF, 0);
+    color: unquote("rgb(#{$color-accent})");
+
+    .material-icons {
+      font-size: 20px;
+    }
+
+    &:hover {
+      box-shadow: 0 0 0 rgba(#FFFFFF, 0);
+    }
+
+  }
+
+  tr th:first-child,
+  tr td:first-child {
+    padding: 0;
+    min-width: 32px;
+  }
+
+  tr td:nth-child(5) {
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
+
+    .mdlext-selectfield {
+      padding-top: 0;
+      padding-bottom: 0;
+      &:after {
+        bottom: .5em;
+      }
+    }
+    .mdlext-selectfield__select {
+      font-size: 14px;
+    }
+    .mdlext-selectfield__label {
+      font-size: 14px;
+      top: 3px;
+      &:after {
+        bottom: 0;
+      }
+    }
+  }
+
+
+
+  &__group {
+
+    td {
+      @include typo-body-1();
+      font-size: 12px;
+    }
+
+    td:nth-child(2) {
+      padding-left: 16px;
+    }
+
+    td:nth-child(3) {
+      text-align: right;
+    }
+
+    table {
+      th,
+      td {
+        @include typo-body-1();
+        font-size: 12px;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      .mdl-button--icon {
+        height: 28px;
+        transform: scale(0.9);
+      }
+
+    }
+  }
+
+}
+
+
+
+
+
+
+
+//// Flipped axis
+
+.mdlext-data-table {
+  &--flip {
+    display: inline-flex; //display: flex;
+    overflow: hidden;
+    background: none;
+
+    thead {
+      display: flex;
+      flex-shrink: 0;
+      min-width: min-content;
+    }
+
+    tbody {
+      display: flex;
+      position: relative;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+    tr {
+      display: flex;
+      flex-direction: column;
+      min-width: min-content;
+      flex-shrink: 0;
+    }
+
+    td,
+    th {
+      display: block;
+    }
+
+    td {
+      background-image: none !important;
+      // border-collapse is no longer active
+      border-left: 0;
+    }
+
+    // border-collapse is no longer active
+    th:not(:last-child),
+    td:not(:last-child) {
+      border-bottom: 0;
+    }
+  }
+}

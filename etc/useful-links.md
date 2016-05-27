@@ -366,6 +366,8 @@
 * [Dissection of Flux architecture or how to write your own](http://krasimirtsonev.com/blog/article/dissection-of-flux-architecture-or-how-to-write-your-own-react)
 * [rxjs-pubsub](https://github.com/richardanaya/rxjs-pubsub)
 * [dual-emitter - EventEmitter done right and no dependencies. For nodejs and the browser (>= IE8). Can emit custom or DOM events.](https://github.com/tunnckoCore/dual-emitter)
+* [MutationObserver polyfill](https://github.com/megawac/MutationObserver.js)
+* [MutationObserver polyfill](https://coderwall.com/p/oo7i_g/mutationobserver-polyfill)
 
 
 ### Animation
