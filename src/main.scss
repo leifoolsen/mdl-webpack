@@ -44,7 +44,6 @@ $image_path: '/static/images/mdl';  // See: webpack.config.js CopyWebpackPlugin
 @import 'stylesheets/base/base';
 
 // 4. Internal Components
-@import 'stylesheets/components/carousel';
 
 // 5. Layout-related sections
 @import 'stylesheets/layout/app-layout';
