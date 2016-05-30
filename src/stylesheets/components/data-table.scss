@@ -1,4 +1,6 @@
 @charset "UTF-8";
+$ske-pdf-ikon-url: '/static/images/pdf.svg';
+
 
 /*!
 // Responsive Tables
@@ -6,7 +8,8 @@
 //   http://dbushell.com/2016/03/04/css-only-responsive-tables/
 */
 
-.mdlext-data-table {
+.mdlext-table {
+
   /*!
   // IE needs inline-block to position scrolling shadows otherwise use:
   // display: block;
@@ -57,18 +60,6 @@
     background-size: 20px 100%;
   }
 
-  th {
-    text-align: left;
-    text-transform: none;
-    background-color: rgba(#EEEEEE, 0.3);
-    text-overflow: ellipsis;
-    @include typo-body-2();
-  }
-
-  td {
-    @include typo-body-1();
-  }
-
   th,
   td {
     position: relative;
@@ -76,11 +67,24 @@
     border-top: $data-table-dividers; //1px solid #d9d7ce;
   }
 
+  th {
+    text-align: left;
+    text-transform: none;
+    //background-color: rgba(#EEEEEE, 0.3);
+    text-overflow: ellipsis;
+    @include typo-body-2();
+    border-top: 1px solid transparent;
+  }
+
+  td {
+    @include typo-body-1();
+  }
+
 }
 
-//// Details group
+//// Group / Sub row
 
-.mdlext-data-table {
+.mdlext-table {
 
   &__group {
     display: none;
@@ -106,36 +110,47 @@
     }
   }
 
-  tbody tr[open] + .mdlext-data-table__group {
+  tbody tr[open] + .mdlext-table__group,
+  .mdlext-table__group-visible {
     display: table-row;
   }
-
 
 }
 
 
 ///// Hack for Safir project
-.mdlext-data-table {
+.mdlext-table {
 
-  .mdl-data-table thead tr :first-child,
-  .mdl-data-table tbody tr :first-child {
-    max-width: 36px;
-    width: 36px;
+  &__toggle-group {
+    max-width: 32px;
+    width: 32px;
+    min-width: 32px;
+    text-align: center;
+
+    button {
+      transform: rotate(90deg);
+    }
   }
 
+  tbody tr[open] {
+    td:nth-child(2) {
+      color: unquote("rgb(#{$color-accent})");
+    }
 
-  &__toggle-details-column button {
-    transform: rotate(90deg);
+    &__toggle-group button {
+      transform: rotate(-90deg);
+    }
   }
 
-  tbody tr[open] &__toggle-details-column button {
-    transform: rotate(-90deg);
-  }
 
   .mdl-button--icon {
     background-color: transparent;
     box-shadow: 0 0 0 rgba(#FFFFFF, 0);
     color: unquote("rgb(#{$color-accent})");
+
+    width: 28px;
+    min-width: 28px;
+    height: 28px;
 
     .material-icons {
       font-size: 20px;
@@ -147,10 +162,8 @@
 
   }
 
-  tr th:first-child,
-  tr td:first-child {
-    padding: 0;
-    min-width: 32px;
+  tr td:nth-child(2) {
+    font-weight: 600;
   }
 
   tr td:nth-child(5) {
@@ -187,7 +200,8 @@
     }
 
     td:nth-child(2) {
-      padding-left: 16px;
+      padding-left: 24px;
+      font-weight: 400 !important;
     }
 
     td:nth-child(3) {
@@ -213,17 +227,27 @@
 
 }
 
+.ske-pdf-ikon {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-image: url($ske-pdf-ikon-url);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 64%;
+  filter: brightness(100%);
 
-
-
-
-
+  &:hover {
+    filter: brightness(90%);
+    transition: filter .5s ease;
+  }
+}
 
 
 
 //// Flipped axis
 
-.mdlext-data-table {
+.mdlext-table {
   &--flip {
     display: inline-flex; //display: flex;
     overflow: hidden;
