@@ -447,59 +447,56 @@
   (function() {
     'use strict';
 
-    window.addEventListener('load', function() {
+    var table = document.querySelector('#leverte-meldinger');
+    var togglers = table.querySelectorAll('.mdlext-table__toggle-group');
 
-      var table = document.querySelector('#leverte-meldinger');
-      var togglers = table.querySelectorAll('.mdlext-table__toggle-group');
+    for (var i = 0; i < togglers.length; i++) {
+      var toggleBtn = togglers[i].querySelector('button');
 
-      for (var i = 0; i < togglers.length; i++) {
-        var toggleBtn = togglers[i].querySelector('button');
+      toggleBtn.addEventListener('click', function( /*event*/ ) {
 
-        toggleBtn.addEventListener('click', function( /*event*/ ) {
+        setTimeout(function(){
+          toggle(this.parentNode);
+        }.bind(this), 0);
 
-          setTimeout(function(){
-            toggle(this.parentNode);
-          }.bind(this), 0);
+      }.bind(togglers[i]));
 
-        }.bind(togglers[i]));
+    }
 
+    function toggle(toggleRow) {
+
+      if(toggleRow.hasAttribute('open')) {
+        toggleRow.removeAttribute('open');
+      }
+      else {
+        toggleRow.setAttribute('open', '');
       }
 
-      function toggle(toggleRow) {
-
-        if(toggleRow.hasAttribute('open')) {
-          toggleRow.removeAttribute('open');
-        }
-        else {
-          toggleRow.setAttribute('open', '');
-        }
-
-        var rowsToToggle = getRowGroups(toggleRow);
-        for (var i = 0; i < rowsToToggle.length; i++) {
-          rowsToToggle[i].classList.toggle('mdlext-table__group-visible');
-        }
+      var rowsToToggle = getRowGroups(toggleRow);
+      for (var i = 0; i < rowsToToggle.length; i++) {
+        rowsToToggle[i].classList.toggle('mdlext-table__group-visible');
       }
+    }
 
-      function getRowGroups(toggleRow) {
-        var result = [];
-        var table = parent(toggleRow, 'table');
-        var rows = table.querySelectorAll('tbody tr');
-        for (var i = 0; i < rows.length; i++) {
-          if(rows[i] == toggleRow) {
-            // Found toggleRow.
-            for (var j = i+1; j < rows.length; j++) {
-              if(rows[j].classList.contains('mdlext-table__group')) {
-                result.push(rows[j]);
-              }
-              else {
-                return result;
-              }
+    function getRowGroups(toggleRow) {
+      var result = [];
+      var table = parent(toggleRow, 'table');
+      var rows = table.querySelectorAll('tbody tr');
+      for (var i = 0; i < rows.length; i++) {
+        if(rows[i] == toggleRow) {
+          // Found toggleRow.
+          for (var j = i+1; j < rows.length; j++) {
+            if(rows[j].classList.contains('mdlext-table__group')) {
+              result.push(rows[j]);
+            }
+            else {
+              return result;
             }
           }
         }
-        return result;
       }
-    });
+      return result;
+    }
 
 
     /**

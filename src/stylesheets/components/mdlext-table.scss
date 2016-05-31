@@ -1,5 +1,4 @@
 @charset "UTF-8";
-$ske-pdf-ikon-url: '/static/images/pdf.svg';
 
 
 /*!
@@ -137,7 +136,7 @@ $ske-pdf-ikon-url: '/static/images/pdf.svg';
       color: unquote("rgb(#{$color-accent})");
     }
 
-    &__toggle-group button {
+    .mdlext-table__toggle-group button {
       transform: rotate(-90deg);
     }
   }
@@ -227,6 +226,7 @@ $ske-pdf-ikon-url: '/static/images/pdf.svg';
 
 }
 
+$ske-pdf-ikon-url: '/images/pdf.svg';
 .ske-pdf-ikon {
   display: inline-block;
   width: 100%;
