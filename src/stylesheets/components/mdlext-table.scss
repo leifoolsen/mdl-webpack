@@ -298,6 +298,16 @@ $ske-pdf-ikon-url: '/images/pdf.svg';
 
 /*
 
+.mdl-layout.is-small-screen {
+  .ske-application-header {
+    display: flex; // Header skal alltid vises
+  }
+  .mdl-layout__content {
+    flex-shrink: 0;
+  }
+}
+
+
 .mdlext-table {
 
   // IE needs inline-block to position scrolling shadows otherwise use:
