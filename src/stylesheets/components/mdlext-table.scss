@@ -300,69 +300,48 @@ $ske-pdf-ikon-url: '/images/pdf.svg';
 
 .mdlext-table {
 
-  display: inline-block;
-  vertical-align: top;
-  max-width: 100%;
-  overflow-x: auto;
+  // IE needs inline-block to position scrolling shadows otherwise use:
+  // display: block;
+  // max-width: min-content;
 
-  // optional - looks better for small cell values
-  white-space: nowrap;
+display: block;
+vertical-align: top;
+max-width: 100%;
+              overflow-x: auto;
 
-  border-collapse: collapse;
-  border-spacing: 0;
+// optional - looks better for small cell values
+white-space: nowrap;
 
-  font-size: $data-table-font-size;
+border-collapse: collapse;
+border-spacing: 0;
 
-  &,
-  &--flip tbody {
-    // optional - enable iOS momentum scrolling
-    -webkit-overflow-scrolling: touch;
+font-size: $data-table-font-size;
 
-    // scrolling shadows
-    background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center,
-    radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
-    background-size: 10px 100%, 10px 100%;
-    background-attachment: scroll, scroll;
-    background-repeat: no-repeat;
-  }
+&,
+&--flip tbody {
+  // optional - enable iOS momentum scrolling
+  -webkit-overflow-scrolling: touch;
+}
 
-  // change these gradients from white to your background colour if it differs
-  // gradient on the first cells to hide the left shadow
-  td:first-child,
-  &--flip tbody tr:first-child {
-    background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
-    background-repeat: no-repeat;
-    background-size: 20px 100%;
-  }
+th,
+td {
+  position: relative;
+  padding: 8px $data-table-column-padding 8px $data-table-column-padding; // padding: 6px 12px;
+  border-top: $data-table-dividers; //1px solid #d9d7ce;
+}
 
-  // gradient on the last cells to hide the right shadow
-  td:last-child,
-  &--flip tbody tr:last-child {
-    background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
-    background-repeat: no-repeat;
-    background-position: 100% 0;
-    background-size: 20px 100%;
-  }
+th {
+  text-align: left;
+  text-transform: none;
+  //background-color: rgba(#EEEEEE, 0.3);
+  text-overflow: ellipsis;
+  @include typo-body-2();
+  border-top: 1px solid transparent;
+}
 
-  th,
-  td {
-    position: relative;
-    padding: 8px $data-table-column-padding 8px $data-table-column-padding; // padding: 6px 12px;
-    border-top: $data-table-dividers; //1px solid #d9d7ce;
-  }
-
-  th {
-    text-align: left;
-    text-transform: none;
-    //background-color: rgba(#EEEEEE, 0.3);
-    text-overflow: ellipsis;
-    @include typo-body-2();
-    border-top: 1px solid transparent;
-  }
-
-  td {
-    @include typo-body-1();
-  }
+td {
+  @include typo-body-1();
+}
 
 }
 
@@ -446,7 +425,7 @@ $ske-pdf-ikon-url: '/images/pdf.svg';
 
   tr td:nth-child(2) {
     font-weight: 600;
-    width: 100%;
+    width: 1000px;
   }
 
   tr td:nth-child(5) {
@@ -477,7 +456,7 @@ $ske-pdf-ikon-url: '/images/pdf.svg';
     td {
       @include typo-body-1();
       font-size: 14px;
-      border-top: 1px solid transparent;
+      border-top: 0;
       padding-top: 0;
       padding-bottom: 0;
     }
@@ -493,5 +472,7 @@ $ske-pdf-ikon-url: '/images/pdf.svg';
     }
   }
 }
+
+
 
 */
