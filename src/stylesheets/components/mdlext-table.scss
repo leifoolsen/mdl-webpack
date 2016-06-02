@@ -308,85 +308,59 @@ $ske-pdf-ikon-url: '/images/pdf.svg';
 }
 
 
+@charset "UTF-8";
+
+/*!
+// Responsive Tables
+// Based on:
+//   http://dbushell.com/2016/03/04/css-only-responsive-tables/
+*/
+
 .mdlext-table {
 
   // IE needs inline-block to position scrolling shadows otherwise use:
   // display: block;
   // max-width: min-content;
+  display: inline-block;
+  max-width: 100%;
 
-display: block;
-vertical-align: top;
-max-width: 100%;
-              overflow-x: auto;
+  vertical-align: top;
+  overflow-x: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: $data-table-font-size;
 
-// optional - looks better for small cell values
-white-space: nowrap;
+  -webkit-overflow-scrolling: touch; // optional - enable iOS momentum scrolling
+  white-space: nowrap;               // optional - looks better for small cell values
 
-border-collapse: collapse;
-border-spacing: 0;
+  tr th,
+  tr td {
+    position: relative;
+    padding: 8px $data-table-column-padding 8px $data-table-column-padding;
+    border-top: $data-table-dividers;
+    @include typo-body-1();
+  }
 
-font-size: $data-table-font-size;
-
-&,
-&--flip tbody {
-  // optional - enable iOS momentum scrolling
-  -webkit-overflow-scrolling: touch;
-}
-
-th,
-td {
-  position: relative;
-  padding: 8px $data-table-column-padding 8px $data-table-column-padding; // padding: 6px 12px;
-  border-top: $data-table-dividers; //1px solid #d9d7ce;
-}
-
-th {
-  text-align: left;
-  text-transform: none;
-  //background-color: rgba(#EEEEEE, 0.3);
-  text-overflow: ellipsis;
-  @include typo-body-2();
-  border-top: 1px solid transparent;
-}
-
-td {
-  @include typo-body-1();
-}
-
+  tr th {
+    text-transform: none;
+    text-align: left;
+    text-overflow: ellipsis;
+    border-top: 0;
+  }
 }
 
 //// Group / Sub row
 
 .mdlext-table {
 
-  &__group {
+  &__row-group {
     display: none;
-    padding: 0;
 
-    > td:first-child {
-      padding: 0;
-    }
-
-    table {
-      max-width: 100%;
-      width: 100%;
-      white-space: nowrap;
-      border-collapse: collapse;
-      border-spacing: 0;
-      border: 0;
-      font-size: $data-table-font-size;
-
-      th,
-      td {
-        border: 0;
-      }
+    &[aria-expanded=''],
+    &[aria-expanded=true] {
+      display: table-row;
     }
   }
-
-  .mdlext-table__group-visible {
-    display: table-row;
-  }
-
 }
 
 ///// Hack for Safir project
@@ -403,11 +377,11 @@ td {
     }
   }
 
-  tbody tr[data-open=true] {
+  tr[aria-expanded=''],
+  tr[aria-expanded=true] {
     td:nth-child(2) {
       color: unquote("rgb(#{$color-accent})");
     }
-
     .mdlext-table__toggle-group button {
       transform: rotate(-90deg);
     }
@@ -436,6 +410,16 @@ td {
   tr td:nth-child(2) {
     font-weight: 600;
     width: 1000px;
+
+    a {
+      color: inherit;
+      font-weight: 600;
+      text-decoration: none;
+
+      &:hover {
+        color: unquote("rgb(#{$color-accent})");
+      }
+    }
   }
 
   tr td:nth-child(5) {
@@ -462,10 +446,10 @@ td {
     }
   }
 
-  &__group {
+  &__row-group {
     td {
       @include typo-body-1();
-      font-size: 14px;
+      font-size: 14px !important;
       border-top: 0;
       padding-top: 0;
       padding-bottom: 0;
