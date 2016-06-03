@@ -308,40 +308,32 @@ $ske-pdf-ikon-url: '/images/pdf.svg';
 }
 
 
-@charset "UTF-8";
-
-/*!
-// Responsive Tables
-// Based on:
-//   http://dbushell.com/2016/03/04/css-only-responsive-tables/
-*/
-
 .mdlext-table {
 
   // IE needs inline-block to position scrolling shadows otherwise use:
   // display: block;
   // max-width: min-content;
+  position: relative;
   display: inline-block;
   max-width: 100%;
-
   vertical-align: top;
   overflow-x: auto;
   border-collapse: collapse;
   border-spacing: 0;
   font-size: $data-table-font-size;
-
   -webkit-overflow-scrolling: touch; // optional - enable iOS momentum scrolling
   white-space: nowrap;               // optional - looks better for small cell values
 
-  tr th,
-  tr td {
+  th,
+  td {
     position: relative;
     padding: 8px $data-table-column-padding 8px $data-table-column-padding;
     border-top: $data-table-dividers;
     @include typo-body-1();
   }
 
-  tr th {
+  th {
+    font-weight: 600;
     text-transform: none;
     text-align: left;
     text-overflow: ellipsis;
@@ -363,14 +355,17 @@ $ske-pdf-ikon-url: '/images/pdf.svg';
   }
 }
 
-///// Hack for Safir project
-.mdlext-table {
 
-  &__toggle-group {
+
+///// Innsendinger tabell benyttes sammen med mdlext-table klassen
+.saf-innsendinger-table {
+
+  td:first-child {
+    min-width: 32px;
     max-width: 32px;
     width: 32px;
-    min-width: 32px;
     text-align: center;
+    vertical-align: middle;
 
     button {
       transform: rotate(90deg);
@@ -379,11 +374,56 @@ $ske-pdf-ikon-url: '/images/pdf.svg';
 
   tr[aria-expanded=''],
   tr[aria-expanded=true] {
+    td:first-child button {
+      transform: rotate(-90deg);
+    }
     td:nth-child(2) {
       color: unquote("rgb(#{$color-accent})");
     }
-    .mdlext-table__toggle-group button {
-      transform: rotate(-90deg);
+  }
+
+  td:nth-child(2) {
+    font-weight: 600;
+    width: 1000px;
+
+    a {
+      color: inherit;
+      font-weight: 600;
+      text-decoration: none;
+
+      &:hover {
+        color: unquote("rgb(#{$color-accent})");
+      }
+    }
+  }
+
+  td:nth-child(4) {
+    vertical-align: middle;
+  }
+
+  td:nth-child(5) {
+    width: 230px;
+    min-width: 230px;
+    max-width: 230px;
+  }
+
+
+  .mdlext-table__row-group {
+    td {
+      font-size: 14px;
+      border-top: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    td:nth-child(2) {
+      padding-left: 24px;
+      font-weight: 400;
+      color: inherit !important;
+    }
+
+    td:nth-child(3) {
+      text-align: right;
     }
   }
 
@@ -404,69 +444,8 @@ $ske-pdf-ikon-url: '/images/pdf.svg';
     &:hover {
       box-shadow: 0 0 0 rgba(#FFFFFF, 0);
     }
-
-  }
-
-  tr td:nth-child(2) {
-    font-weight: 600;
-    width: 1000px;
-
-    a {
-      color: inherit;
-      font-weight: 600;
-      text-decoration: none;
-
-      &:hover {
-        color: unquote("rgb(#{$color-accent})");
-      }
-    }
-  }
-
-  tr td:nth-child(5) {
-    width: 230px;
-    min-width: 230px;
-    max-width: 230px;
-
-    .mdlext-selectfield {
-      padding-top: 0;
-      padding-bottom: 0;
-      &:after {
-        bottom: .5em;
-      }
-    }
-    .mdlext-selectfield__select {
-      font-size: 14px;
-    }
-    .mdlext-selectfield__label {
-      font-size: 14px;
-      top: 3px;
-      &:after {
-        bottom: 0;
-      }
-    }
-  }
-
-  &__row-group {
-    td {
-      @include typo-body-1();
-      font-size: 14px !important;
-      border-top: 0;
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-
-    td:nth-child(2) {
-      padding-left: 24px;
-      font-weight: 400 !important;
-      color: inherit !important;
-    }
-
-    td:nth-child(3) {
-      text-align: right;
-    }
   }
 }
-
 
 
 */
