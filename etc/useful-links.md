@@ -915,3 +915,4 @@
 * [Choosing Vanilla JavaScript in 2016](https://medium.com/vanilla-javascript/choosing-vanilla-javascript-in-2016-6f38a8302ee5#.ifkk49tto)
 * [Better world by better software](https://glebbahmutov.com/blog/)
 * [ponyfoo.com](https://ponyfoo.com/)
+* [50+ Awesome CSS3 Techniques for Better Designs](http://www.webdesignerdepot.com/2011/01/50-awesome-css3-techniques-for-better-designs/)
