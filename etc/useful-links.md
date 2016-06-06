@@ -748,6 +748,7 @@
 * [Masonry Effect with Flexbox](http://codepen.io/fabienb/pen/jlKtB)
 * [Masonry/Pinterest-style Grid with Flexbox](http://codepen.io/kattixie/pen/bEYyZb)
 
+
 ## Responsive table
 * [DataTables JSON sample using Material Design](http://codepen.io/heiswayi/pen/VvpmaE)
 * [Accordion table](http://codepen.io/adahei/pen/Kzfpu)
@@ -772,6 +773,7 @@
 * [Terrific Tables](https://codepen.io/collection/nhowz/)
 * [Mobile Accordion Table](http://codepen.io/jacobhonigford/pen/GgjKBG)
 * [sticky-header.js](https://github.com/Tyriar/sticky-header.js)
+
 
 ## CodePens
 * [MDL transparent header turns opaque](http://codepen.io/peiche/pen/PPPRgz)
