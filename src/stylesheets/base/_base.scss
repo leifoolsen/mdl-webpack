@@ -1,3 +1,9 @@
 *, *::before, *::after, input[type="search"] {
   box-sizing: border-box;
 }
+
+.clearfix:after {
+  content:" ";
+  display:table;
+  clear:both;
+}

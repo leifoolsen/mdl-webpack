@@ -7,95 +7,94 @@
 //   http://dbushell.com/2016/03/04/css-only-responsive-tables/
 */
 
+
+@charset "UTF-8";
+
+// Responsive Tables
+// Based on:
+//   http://dbushell.com/2016/03/04/css-only-responsive-tables/
+
 .mdlext-table {
 
-  /*!
   // IE needs inline-block to position scrolling shadows otherwise use:
   // display: block;
   // max-width: min-content;
-  */
-
   display: inline-block;
-  vertical-align: top;
   max-width: 100%;
+
+  vertical-align: top;
   overflow-x: auto;
-
-  // optional - looks better for small cell values
-  white-space: nowrap;
-
   border-collapse: collapse;
   border-spacing: 0;
-
   font-size: $data-table-font-size;
 
-  &,
-  &--flip tbody {
-    // optional - enable iOS momentum scrolling
-    -webkit-overflow-scrolling: touch;
+  cursor: default;
 
-    // scrolling shadows
-    background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center,
-    radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
-    background-size: 10px 100%, 10px 100%;
-    background-attachment: scroll, scroll;
-    background-repeat: no-repeat;
-  }
-
-  // change these gradients from white to your background colour if it differs
-  // gradient on the first cells to hide the left shadow
-  td:first-child,
-  &--flip tbody tr:first-child {
-    background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
-    background-repeat: no-repeat;
-    background-size: 20px 100%;
-  }
-
-  // gradient on the last cells to hide the right shadow
-  td:last-child,
-  &--flip tbody tr:last-child {
-    background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
-    background-repeat: no-repeat;
-    background-position: 100% 0;
-    background-size: 20px 100%;
-  }
+  -webkit-overflow-scrolling: touch; // optional - enable iOS momentum scrolling
+  white-space: nowrap;               // optional - looks better for small cell values
 
   th,
   td {
     position: relative;
-    padding: 8px $data-table-column-padding 8px $data-table-column-padding; // padding: 6px 12px;
-    border-top: $data-table-dividers; //1px solid #d9d7ce;
-  }
-
-  th {
-    text-align: left;
-    text-transform: none;
-    //background-color: rgba(#EEEEEE, 0.3);
-    text-overflow: ellipsis;
-    @include typo-body-2();
-    border-top: 1px solid transparent;
-  }
-
-  td {
+    padding: 8px $data-table-column-padding 8px $data-table-column-padding;
+    border-top: $data-table-dividers;
     @include typo-body-1();
   }
 
+  th {
+    text-transform: uppercase;
+    text-align: left;
+    text-overflow: ellipsis;
+    border-top: 0;
+    font-weight: 600;
+    vertical-align: bottom;
+  }
+
+  tbody > tr {
+
+    &[hidden=''],
+    &[hidden=true] {
+      display: none;
+    }
+
+    &.is-selected {
+      background-color: rgba($data-table-selection-color, 0.8);
+    }
+
+    &:hover {
+      background-color: rgba($data-table-hover-color, 0.5);
+    }
+  }
+
+  .mdlext-table__align-right.mdlext-table__align-left {
+    text-align: left;
+  }
+
+  .mdlext-table__align-right.mdlext-table__align-right {
+    text-align: right;
+  }
+
+  .mdlext-table__align-center.mdlext-table__align-center {
+    text-align: center;
+  }
 }
 
 //// Group / Sub row
-
 .mdlext-table {
 
-  &__group {
-    display: none;
-    padding: 0;
+  tr(&__summary-row) {
+  }
 
-    > td:first-child {
-      padding: 0;
+  tr:not(&__summary-row) {
+    // i.e. __detail-row
+    td {
+      border-top: 0;
+      padding-top: 4px;
+      padding-bottom: 4px;
     }
 
     table {
       max-width: 100%;
-      width: 100%;
       white-space: nowrap;
       border-collapse: collapse;
       border-spacing: 0;
@@ -104,142 +103,24 @@
 
       th,
       td {
-        border: 0;
+        //border: 0;
       }
     }
-  }
 
-  tbody tr[open] + .mdlext-table__group,
-  .mdlext-table__group-visible {
-    display: table-row;
   }
-
 }
 
-
-///// Hack for Safir project
-.mdlext-table {
-
-  &__toggle-group {
-    max-width: 32px;
-    width: 32px;
-    min-width: 32px;
-    text-align: center;
-
-    button {
-      transform: rotate(90deg);
-    }
+//// Toggle
+.mdlext-aria-toggle {
+  &:after {
+    content: 'expand_more';
   }
-
-  tbody tr[open] {
-    td:nth-child(2) {
-      color: unquote("rgb(#{$color-accent})");
-    }
-
-    .mdlext-table__toggle-group button {
-      transform: rotate(-90deg);
-    }
-  }
-
-
-  .mdl-button--icon {
-    background-color: transparent;
-    box-shadow: 0 0 0 rgba(#FFFFFF, 0);
-    color: unquote("rgb(#{$color-accent})");
-
-    width: 28px;
-    min-width: 28px;
-    height: 28px;
-
-    .material-icons {
-      font-size: 20px;
-    }
-
-    &:hover {
-      box-shadow: 0 0 0 rgba(#FFFFFF, 0);
-    }
-
-  }
-
-  tr td:nth-child(2) {
-    font-weight: 600;
-  }
-
-  tr td:nth-child(5) {
-    width: 120px;
-    min-width: 120px;
-    max-width: 120px;
-
-    .mdlext-selectfield {
-      padding-top: 0;
-      padding-bottom: 0;
-      &:after {
-        bottom: .5em;
-      }
-    }
-    .mdlext-selectfield__select {
-      font-size: 14px;
-    }
-    .mdlext-selectfield__label {
-      font-size: 14px;
-      top: 3px;
-      &:after {
-        bottom: 0;
-      }
-    }
-  }
-
-
-
-  &__group {
-
-    td {
-      @include typo-body-1();
-      font-size: 12px;
-    }
-
-    td:nth-child(2) {
-      padding-left: 24px;
-      font-weight: 400 !important;
-    }
-
-    td:nth-child(3) {
-      text-align: right;
-    }
-
-    table {
-      th,
-      td {
-        @include typo-body-1();
-        font-size: 12px;
-        padding-top: 0;
-        padding-bottom: 0;
-      }
-
-      .mdl-button--icon {
-        height: 28px;
-        transform: scale(0.9);
-      }
-
-    }
-  }
-
 }
 
-$ske-pdf-ikon-url: '/images/pdf.svg';
-.ske-pdf-ikon {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  background-image: url($ske-pdf-ikon-url);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 64%;
-  filter: brightness(100%);
-
-  &:hover {
-    filter: brightness(90%);
-    transition: filter .5s ease;
+&[aria-expanded=''] .mdlext-aria-toggle,
+&[aria-expanded=true] .mdlext-aria-toggle {
+  &:after {
+    content: 'expand_less';
   }
 }
 
@@ -260,6 +141,7 @@ $ske-pdf-ikon-url: '/images/pdf.svg';
     }
 
     tbody {
+      -webkit-overflow-scrolling: touch; // optional - enable iOS momentum scrolling
       display: flex;
       position: relative;
       overflow-x: auto;
@@ -293,11 +175,7 @@ $ske-pdf-ikon-url: '/images/pdf.svg';
 }
 
 
-
-
-
 /*
-
 .mdl-layout.is-small-screen {
   .ske-application-header {
     display: flex; // Header skal alltid vises
@@ -306,146 +184,4 @@ $ske-pdf-ikon-url: '/images/pdf.svg';
     flex-shrink: 0;
   }
 }
-
-
-.mdlext-table {
-
-  // IE needs inline-block to position scrolling shadows otherwise use:
-  // display: block;
-  // max-width: min-content;
-  position: relative;
-  display: inline-block;
-  max-width: 100%;
-  vertical-align: top;
-  overflow-x: auto;
-  border-collapse: collapse;
-  border-spacing: 0;
-  font-size: $data-table-font-size;
-  -webkit-overflow-scrolling: touch; // optional - enable iOS momentum scrolling
-  white-space: nowrap;               // optional - looks better for small cell values
-
-  th,
-  td {
-    position: relative;
-    padding: 8px $data-table-column-padding 8px $data-table-column-padding;
-    border-top: $data-table-dividers;
-    @include typo-body-1();
-  }
-
-  th {
-    font-weight: 600;
-    text-transform: none;
-    text-align: left;
-    text-overflow: ellipsis;
-    border-top: 0;
-  }
-}
-
-//// Group / Sub row
-
-.mdlext-table {
-
-  &__row-group {
-    display: none;
-
-    &[aria-expanded=''],
-    &[aria-expanded=true] {
-      display: table-row;
-    }
-  }
-}
-
-
-
-///// Innsendinger tabell benyttes sammen med mdlext-table klassen
-.saf-innsendinger-table {
-
-  td:first-child {
-    min-width: 32px;
-    max-width: 32px;
-    width: 32px;
-    text-align: center;
-    vertical-align: middle;
-
-    button {
-      transform: rotate(90deg);
-    }
-  }
-
-  tr[aria-expanded=''],
-  tr[aria-expanded=true] {
-    td:first-child button {
-      transform: rotate(-90deg);
-    }
-    td:nth-child(2) {
-      color: unquote("rgb(#{$color-accent})");
-    }
-  }
-
-  td:nth-child(2) {
-    font-weight: 600;
-    width: 1000px;
-
-    a {
-      color: inherit;
-      font-weight: 600;
-      text-decoration: none;
-
-      &:hover {
-        color: unquote("rgb(#{$color-accent})");
-      }
-    }
-  }
-
-  td:nth-child(4) {
-    vertical-align: middle;
-  }
-
-  td:nth-child(5) {
-    width: 230px;
-    min-width: 230px;
-    max-width: 230px;
-  }
-
-
-  .mdlext-table__row-group {
-    td {
-      font-size: 14px;
-      border-top: 0;
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-
-    td:nth-child(2) {
-      padding-left: 24px;
-      font-weight: 400;
-      color: inherit !important;
-    }
-
-    td:nth-child(3) {
-      text-align: right;
-    }
-  }
-
-  .mdl-button--icon,
-  .mdl-button--fab {
-    background-color: transparent;
-    box-shadow: 0 0 0 rgba(#FFFFFF, 0);
-    color: unquote("rgb(#{$color-accent})");
-
-    width: 28px;
-    min-width: 28px;
-    height: 28px;
-
-    .material-icons {
-      font-size: 20px;
-    }
-
-    &:hover {
-      box-shadow: 0 0 0 rgba(#FFFFFF, 0);
-    }
-  }
-}
-
-
 */

@@ -763,7 +763,15 @@
 * [CSS only Responsive Tables](http://dbushell.com/2016/03/04/css-only-responsive-tables/)
 * [CSS only Responsive Tables](http://codepen.io/dbushell/full/8e6a1ee85418f3c5abe839647dbcdec5/)
 * [Display Flex & HTML5 Table with sticky headers](https://codepen.io/tfzvang/full/WQBwVo/)
+* [Sticky Table Headers & Columns](https://codepen.io/MadeByMike/pen/XmPNpm)
+* [Sticky Table Headers](https://codepen.io/vulchivijay/pen/zrKBaa)
+* [Table with fixed header on scroll](https://codepen.io/jgx/pen/wiIGc)
 * [Sticky Table Headers & Columns](http://tympanus.net/codrops/2014/01/09/sticky-table-headers-columns/)
+* [RWD List to Table](http://codepen.io/geoffyuen/details/FCBEg/)
+* [RWD List to Table](https://gist.github.com/mcky/9610006)
+* [Terrific Tables](https://codepen.io/collection/nhowz/)
+* [Mobile Accordion Table](http://codepen.io/jacobhonigford/pen/GgjKBG)
+* [sticky-header.js](https://github.com/Tyriar/sticky-header.js)
 
 ## CodePens
 * [MDL transparent header turns opaque](http://codepen.io/peiche/pen/PPPRgz)

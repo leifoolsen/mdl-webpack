@@ -1,330 +1,1222 @@
 <h1>Responsive Tables</h1>
-<h2>Basic overflow:</h2>
 
-<table id="leverte-meldinger" class="mdlext-table">
+<h4>Summary and Multiple Details</h4>
+<style>
+  .browser-statistics td:first-child,
+  .browser-statistics td:last-child {
+    width: 16px;
+  }
+
+  .browser-statistics th,
+  .browser-statistics td {
+    text-align: right;
+  }
+
+  .browser-statistics td:nth-child(2) {
+    min-width: 90px;
+    text-align: left;
+  }
+
+  .browser-statistics tr[aria-expanded=''] td:nth-child(2) {
+    font-weight: 600;
+  }
+
+  .pdf-icon {
+    background-image: url('/images/pdf.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 74%;
+  }
+</style>
+
+<table class="mdlext-table browser-statistics">
   <thead>
   <tr>
     <th></th>
-    <th>Oppgave</th>
-    <th>Levert</th>
-    <th></td>
+    <th></th>
+    <th>Chrome</th>
+    <th>IE</th>
+    <th>Firefox</th>
+    <th>Safari</th>
+    <th>Opera</th>
     <th></th>
   </tr>
   </thead>
 
   <tbody>
-
-  <!-- Detalj -->
-  <tr>
-    <td class="mdlext-table__toggle-group">
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="material-icons">play_circle_outline</i>
-      </button>
-    </td>
-    <td>Særavgifter 2016/ 1</td>
-    <td>18.01.2016, 17:45</td>
+  <!-- 2016 -->
+  <tr class="mdlext-table__summary-row" aria-expanded="">
     <td>
       <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="ske-pdf-ikon"></i>
+        <i class="material-icons mdlext-aria-toggle"></i>
       </button>
     </td>
+    <td>2016</td>
+    <td>69.4 %</td>
+    <td>6.1 %</td>
+    <td>18.2 %</td>
+    <td>3.7 %</td>
+    <td>1.3 %</td>
     <td>
-      <div class="mdlext-selectfield mdlext-js-selectfield">
-        <select class="mdlext-selectfield__select">
-          <option value=""></option>
-          <option value="option1">option 1</option>
-          <option value="option2">option 2</option>
-          <option value="option2">option 23456789012</option>
-        </select>
-        <label class="mdlext-selectfield__label">Endre</label>
-      </div>
+      <button class="mdl-button mdl-button--icon mdl-js-button">
+        <i class="material-icons pdf-icon"></i>
+      </button>
     </td>
   </tr>
 
-  <tr class="mdlext-table__group">
+  <tr>
     <td></td>
-    <td>Særavgifter 2016-1/3</td>
-    <td>18.01.2016, 17:45</td>
-    <td>
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="ske-pdf-ikon"></i>
-      </button>
-    </td>
+    <td>April</td>
+    <td>70.4 %</td>
+    <td>5.8 %</td>
+    <td>17.5 %</td>
+    <td>3.7 %</td>
+    <td>1.3 %</td>
     <td></td>
   </tr>
-  <tr class="mdlext-table__group">
+  <tr>
     <td></td>
-    <td>Særavgifter 2016-2/3</td>
-    <td>18.01.2016, 17:45</td>
-    <td>
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="ske-pdf-ikon"></i>
-      </button>
-    </td>
-    <td></td>
-  </tr>
-  <tr class="mdlext-table__group">
-    <td></td>
-    <td>Særavgifter 2016-3/3</td>
-    <td>18.01.2016, 17:45</td>
-    <td>
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="ske-pdf-ikon"></i>
-      </button>
-    </td>
+    <td>March</td>
+    <td>69.9 %</td>
+    <td>6.1 %</td>
+    <td>17.8 %</td>
+    <td>3.6 %</td>
+    <td>1.3 %</td>
     <td></td>
   </tr>
-
-
-
-  <!-- Neste detalj -->
+  <tr hidden>
+    <td></td>
+    <td>February</td>
+    <td>69.0 %</td>
+    <td>6.2 %</td>
+    <td>18.6 %</td>
+    <td>3.7 %</td>
+    <td>1.3 %</td>
+    <td></td>
+  </tr>
   <tr>
-    <td class="mdlext-table__toggle-group">
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="material-icons">play_circle_outline</i>
-      </button>
-    </td>
-    <td>Særavgift Elkraft 2015/10-12</td>
-    <td>18.01.2016, 17:45</td>
-    <td>
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="ske-pdf-ikon"></i>
-      </button>
-    </td>
-    <td>
-      <div class="mdlext-selectfield mdlext-js-selectfield">
-        <select class="mdlext-selectfield__select">
-          <option value=""></option>
-          <option value="option1">option 1</option>
-          <option value="option2">option 2</option>
-        </select>
-        <label class="mdlext-selectfield__label">Endre</label>
-      </div>
-    </td>
+    <td></td>
+    <td>January</td>
+    <td>68.4 %</td>
+    <td>6.2 %</td>
+    <td>18.8 %</td>
+    <td>3.7 %</td>
+    <td>1.4 %</td>
+    <td></td>
   </tr>
 
 
-  <!-- Neste detalj -->
+  <!-- 2015 -->
+  <tr class="mdlext-table__summary-row">
+    <td>
+      <button class="mdl-button mdl-button--icon mdl-js-button">
+        <i class="material-icons mdlext-aria-toggle"></i>
+      </button>
+    </td>
+    <td>2015</td>
+    <td>64.7 %</td>
+    <td>7.2 %</td>
+    <td>21.2 %</td>
+    <td>3.9 %</td>
+    <td>1.7 %</td>
+    <td>
+      <button class="mdl-button mdl-button--icon mdl-js-button">
+        <i class="material-icons pdf-icon"></i>
+      </button>
+    </td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>December</td>
+    <td>68.0 %</td>
+    <td>6.3 %</td>
+    <td>19.1 %</td>
+    <td>3.7 %</td>
+    <td>1.5 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>November</td>
+    <td>67.4 %</td>
+    <td>6.8 %</td>
+    <td>19.2 %</td>
+    <td>3.9 %</td>
+    <td>1.5 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>October</td>
+    <td>66.5 %</td>
+    <td>6.9 %</td>
+    <td>20.0 %</td>
+    <td>3.8 %</td>
+    <td>1.4 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>September</td>
+    <td>65.9 %</td>
+    <td>7.2 %</td>
+    <td>20.6 %</td>
+    <td>3.6 %</td>
+    <td>1.4 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>August</td>
+    <td>64.0 %</td>
+    <td>6.6 %</td>
+    <td>21.2 %</td>
+    <td>4.5 %</td>
+    <td>2.2 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>July</td>
+    <td>63.3 %</td>
+    <td>6.5 %</td>
+    <td>21.6 %</td>
+    <td>4.9 %</td>
+    <td>2.5 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>June</td>
+    <td>64.8 %</td>
+    <td>7.1 %</td>
+    <td>21.3 %</td>
+    <td>3.8 %</td>
+    <td>1.8 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>May</td>
+    <td>64.9 %</td>
+    <td>7.1 %</td>
+    <td>21.5 %</td>
+    <td>3.8 %</td>
+    <td>1.6 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>April</td>
+    <td>63.9 %</td>
+    <td>8.0 %</td>
+    <td>21.6 %</td>
+    <td>3.8 %</td>
+    <td>1.5 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>March</td>
+    <td>63.7 %</td>
+    <td>7.7 %</td>
+    <td>22.1 %</td>
+    <td>3.9 %</td>
+    <td>1.5 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>February</td>
+    <td>62.5 %</td>
+    <td>22.9 %</td>
+    <td>8.0 %</td>
+    <td>3.9 %</td>
+    <td>1.5 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>January</td>
+    <td>61.9 %</td>
+    <td>7.8 %</td>
+    <td>23.4 %</td>
+    <td>3.8 %</td>
+    <td>1.6 %</td>
+    <td></td>
+  </tr>
+
+  <!-- 2014 -->
+  <tr class="mdlext-table__summary-row">
+    <td>
+      <button class="mdl-button mdl-button--icon mdl-js-button">
+        <i class="material-icons mdlext-aria-toggle"></i>
+      </button>
+    </td>
+    <td>2014</td>
+    <td>59.0 %</td>
+    <td>9.2 %</td>
+    <td>24.8 %</td>
+    <td>3.8 %</td>
+    <td>1.7 %</td>
+    <td>
+      <button class="mdl-button mdl-button--icon mdl-js-button">
+        <i class="material-icons pdf-icon"></i>
+      </button>
+    </td>
+  </tr>
+
+  <tr hidden>
+    <td></td>
+    <td>December</td>
+    <td>61.6 %</td>
+    <td>8.0 %</td>
+    <td>23.6 %</td>
+    <td>3.7 %</td>
+    <td>1.6 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>November</td>
+    <td>60.1 %</td>
+    <td>9.8 %</td>
+    <td>23.4 %</td>
+    <td>3.7 %</td>
+    <td>1.6 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>October</td>
+    <td>60.4 %</td>
+    <td>9.5 %</td>
+    <td>23.4 %</td>
+    <td>3.9 %</td>
+    <td>1.6 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>September</td>
+    <td>59.6 %</td>
+    <td>9.9 %</td>
+    <td>24.0 %</td>
+    <td>3.6 %</td>
+    <td>1.6 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>August</td>
+    <td>60.1 %</td>
+    <td>8.3 %</td>
+    <td>24.7 %</td>
+    <td>3.7 %</td>
+    <td>1.8 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>July</td>
+    <td>59.8 %</td>
+    <td>8.5 %</td>
+    <td>24.9 %</td>
+    <td>3.5 %</td>
+    <td>1.7 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>June</td>
+    <td>59.3 %</td>
+    <td>8.8 %</td>
+    <td>25.1 %</td>
+    <td>3.7 %</td>
+    <td>1.8 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>May</td>
+    <td>59.2 %</td>
+    <td>8.9 %</td>
+    <td>24.9 %</td>
+    <td>3.8 %</td>
+    <td>1.8 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>April</td>
+    <td>58.4 %</td>
+    <td>9.4 %</td>
+    <td>25.0 %</td>
+    <td>4.0 %</td>
+    <td>1.8 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>March</td>
+    <td>57.5 %</td>
+    <td>9.7 %</td>
+    <td>25.6 %</td>
+    <td>3.9 %</td>
+    <td>1.8 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>February</td>
+    <td>56.4 %</td>
+    <td>9.8 %</td>
+    <td>26.4 %</td>
+    <td>4.0 %</td>
+    <td>1.9 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>January</td>
+    <td>55.7 %</td>
+    <td>10.2 %</td>
+    <td>26.9 %</td>
+    <td>3.9 %</td>
+    <td>1.8 %</td>
+    <td></td>
+  </tr>
+
+  <!-- 2013 -->
+  <tr class="mdlext-table__summary-row">
+    <td>
+      <button class="mdl-button mdl-button--icon mdl-js-button">
+        <i class="material-icons mdlext-aria-toggle"></i>
+      </button>
+    </td>
+    <td>2013</td>
+    <td>52.6 %</td>
+    <td>12.1 %</td>
+    <td>28.2 %</td>
+    <td>3.9 %</td>
+    <td>1.7 %</td>
+    <td>
+      <button class="mdl-button mdl-button--icon mdl-js-button">
+        <i class="material-icons pdf-icon"></i>
+      </button>
+    </td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>December</td>
+    <td>55.8 %</td>
+    <td>9.0 %</td>
+    <td>26.8 %</td>
+    <td>3.8 %</td>
+    <td>1.9 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>November</td>
+    <td>54.8 %</td>
+    <td>10.5 %</td>
+    <td>26.8 %</td>
+    <td>4.0 %</td>
+    <td>1.8 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>October</td>
+    <td>54.1 %</td>
+    <td>11.7 %</td>
+    <td>27.2 %</td>
+    <td>3.8 %</td>
+    <td>1.7 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>September</td>
+    <td>53.2 %</td>
+    <td>12.1 %</td>
+    <td>27.8 %</td>
+    <td>3.9 %</td>
+    <td>1.7 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>August</td>
+    <td>52.9 %</td>
+    <td>11.8 %</td>
+    <td>28.2 %</td>
+    <td>3.9 %</td>
+    <td>1.8 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>July</td>
+    <td>52.8 %</td>
+    <td>11.8 %</td>
+    <td>28.9 %</td>
+    <td>3.6 %</td>
+    <td>1.6 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>June</td>
+    <td>52.1 %</td>
+    <td>12.0 %</td>
+    <td>28.9 %</td>
+    <td>3.9 %</td>
+    <td>1.7 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>May</td>
+    <td>52.9 %</td>
+    <td>12.6 %</td>
+    <td>27.7 %</td>
+    <td>4.0 %</td>
+    <td>1.6 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>April</td>
+    <td>52.7 %</td>
+    <td>12.7 %</td>
+    <td>27.9 %</td>
+    <td>4.0 %</td>
+    <td>1.7 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>March</td>
+    <td>51.7 %</td>
+    <td>13.0 %</td>
+    <td>28.5 %</td>
+    <td>4.1 %</td>
+    <td>1.8 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>February</td>
+    <td>50.0 %</td>
+    <td>13.5 %</td>
+    <td>29.6 %</td>
+    <td>4.1 %</td>
+    <td>1.8 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>January</td>
+    <td>48.4 %</td>
+    <td>14.3 %</td>
+    <td>30.2 %</td>
+    <td>4.2 %</td>
+    <td>1.9 %</td>
+    <td></td>
+  </tr>
+
+  <!-- 2012 -->
+  <tr class="mdlext-table__summary-row">
+    <td>
+      <button class="mdl-button mdl-button--icon mdl-js-button">
+        <i class="material-icons mdlext-aria-toggle"></i>
+      </button>
+    </td>
+    <td>2012</td>
+    <td>41.4 %</td>
+    <td>17.2 %</td>
+    <td>34.1 %</td>
+    <td>4.3 %</td>
+    <td>2.2 %</td>
+    <td>
+      <button class="mdl-button mdl-button--icon mdl-js-button">
+        <i class="material-icons pdf-icon"></i>
+      </button>
+    </td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>December</td>
+    <td>46.9 %</td>
+    <td>14.7 %</td>
+    <td>31.1 %</td>
+    <td>4.2 %</td>
+    <td>2.1 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>November</td>
+    <td>46.3 %</td>
+    <td>15.1 %</td>
+    <td>31.2 %</td>
+    <td>4.4 %</td>
+    <td>2.0 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>October</td>
+    <td>44.9 %</td>
+    <td>16.1 %</td>
+    <td>31.8 %</td>
+    <td>4.3 %</td>
+    <td>2.0 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>September</td>
+    <td>44.1 %</td>
+    <td>16.4 %</td>
+    <td>32.2 %</td>
+    <td>4.2 %</td>
+    <td>2.1 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>August</td>
+    <td>43.7 %</td>
+    <td>16.2 %</td>
+    <td>32.8 %</td>
+    <td>4.0 %</td>
+    <td>2.2 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>July</td>
+    <td>42.9 %</td>
+    <td>16.3 %</td>
+    <td>33.7 %</td>
+    <td>3.9 %</td>
+    <td>2.1 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>June</td>
+    <td>41.7 %</td>
+    <td>16.7 %</td>
+    <td>34.4 %</td>
+    <td>4.1 %</td>
+    <td>2.2 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>May</td>
+    <td>39.3 %</td>
+    <td>18.1 %</td>
+    <td>35.2 %</td>
+    <td>4.3 %</td>
+    <td>2.2 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>April</td>
+    <td>38.3 %</td>
+    <td>18.3 %</td>
+    <td>35.8 %</td>
+    <td>4.5 %</td>
+    <td>2.3 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>March</td>
+    <td>37.3 %</td>
+    <td>18.9 %</td>
+    <td>36.3 %</td>
+    <td>4.4 %</td>
+    <td>2.3 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>February</td>
+    <td>36.3 %</td>
+    <td>19.5 %</td>
+    <td>37.1 %</td>
+    <td>4.5 %</td>
+    <td>2.3 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>January</td>
+    <td>35.3 %</td>
+    <td>20.1 %</td>
+    <td>37.2 %</td>
+    <td>4.3 %</td>
+    <td>2.4 %</td>
+    <td></td>
+  </tr>
+
+  <!-- 2011 -->
+  <tr class="mdlext-table__summary-row">
+    <td>
+      <button class="mdl-button mdl-button--icon mdl-js-button">
+        <i class="material-icons mdlext-aria-toggle"></i>
+      </button>
+    </td>
+    <td>2011</td>
+    <td>28.6 %</td>
+    <td>23.5 %</td>
+    <td>41.0 %</td>
+    <td>4.0 %</td>
+    <td>2.4 %</td>
+    <td>
+      <button class="mdl-button mdl-button--icon mdl-js-button">
+        <i class="material-icons pdf-icon"></i>
+      </button>
+    </td>
+  </tr>
+
+  <tr hidden>
+    <td></td>
+    <td>December</td>
+    <td>34.6 %</td>
+    <td>20.2 %</td>
+    <td>37.7 %</td>
+    <td>4.2 %</td>
+    <td>2.5 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>November</td>
+    <td>33.4 %</td>
+    <td>21.2 %</td>
+    <td>38.1 %</td>
+    <td>4.2 %</td>
+    <td>2.4 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>October</td>
+    <td>32.3 %</td>
+    <td>21.7 %</td>
+    <td>38.7 %</td>
+    <td>4.2 %</td>
+    <td>2.4 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>September</td>
+    <td>30.5 %</td>
+    <td>22.9 %</td>
+    <td>39.7 %</td>
+    <td>4.0 %</td>
+    <td>2.2 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>August</td>
+    <td>30.3 %</td>
+    <td>22.4 %</td>
+    <td>40.6 %</td>
+    <td>3.8 %</td>
+    <td>2.3 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>July</td>
+    <td>29.4 %</td>
+    <td>22.0 %</td>
+    <td>42.0 %</td>
+    <td>3.6 %</td>
+    <td>2.4 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>June</td>
+    <td>27.9 %</td>
+    <td>23.2 %</td>
+    <td>42.2 %</td>
+    <td>3.7 %</td>
+    <td>2.4 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>May</td>
+    <td>25.9 %</td>
+    <td>24.9 %</td>
+    <td>42.4 %</td>
+    <td>4.0 %</td>
+    <td>2.4 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>April</td>
+    <td>25.6 %</td>
+    <td>24.3 %</td>
+    <td>42.9 %</td>
+    <td>4.1 %</td>
+    <td>2.6 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>March</td>
+    <td>25.0 %</td>
+    <td>25.8 %</td>
+    <td>42.2 %</td>
+    <td>4.0 %</td>
+    <td>2.5 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>February</td>
+    <td>24.1 %</td>
+    <td>26.5 %</td>
+    <td>42.4 %</td>
+    <td>4.1 %</td>
+    <td>2.5 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>January</td>
+    <td>23.8 %</td>
+    <td>26.6 %</td>
+    <td>42.8 %</td>
+    <td>4.0 %</td>
+    <td>2.5 %</td>
+    <td></td>
+  </tr>
+
+  <!-- 2010 -->
+  <tr class="mdlext-table__summary-row">
+    <td>
+      <button class="mdl-button mdl-button--icon mdl-js-button">
+        <i class="material-icons mdlext-aria-toggle"></i>
+      </button>
+    </td>
+    <td>2010</td>
+    <td>16.0 %</td>
+    <td>31.7 %</td>
+    <td>45.7 %</td>
+    <td>3.7 %</td>
+    <td>2.2 %</td>
+    <td>
+      <button class="mdl-button mdl-button--icon mdl-js-button">
+        <i class="material-icons pdf-icon"></i>
+      </button>
+    </td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>December</td>
+    <td>22.4 %</td>
+    <td>27.5 %</td>
+    <td>43.5 %</td>
+    <td>3.8 %</td>
+    <td>2.2 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>November</td>
+    <td>20.5 %</td>
+    <td>28.6 %</td>
+    <td>44.0 %</td>
+    <td>4.0 %</td>
+    <td>2.3 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>October</td>
+    <td>19.2 %</td>
+    <td>29.7 %</td>
+    <td>44.1 %</td>
+    <td>3.9 %</td>
+    <td>2.2 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>September</td>
+    <td>17.3 %</td>
+    <td>31.1 %</td>
+    <td>45.1 %</td>
+    <td>3.7 %</td>
+    <td>2.2 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>August</td>
+    <td>17.0 %</td>
+    <td>30.7 %</td>
+    <td>45.8 %</td>
+    <td>3.5 %</td>
+    <td>2.3 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>July</td>
+    <td>16.7 %</td>
+    <td>30.4 %</td>
+    <td>46.4 %</td>
+    <td>3.4 %</td>
+    <td>2.3 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>June</td>
+    <td>15.9 %</td>
+    <td>31.0 %</td>
+    <td>46.6 %</td>
+    <td>3.6 %</td>
+    <td>2.1 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>May</td>
+    <td>14.5 %</td>
+    <td>32.2 %</td>
+    <td>46.9 %</td>
+    <td>3.5 %</td>
+    <td>2.2 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>April</td>
+    <td>13.6 %</td>
+    <td>33.4 %</td>
+    <td>46.4 %</td>
+    <td>3.7 %</td>
+    <td>2.2 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>March</td>
+    <td>12.3 %</td>
+    <td>34.9 %</td>
+    <td>46.2 %</td>
+    <td>3.7 %</td>
+    <td>2.2 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>February</td>
+    <td>11.6 %</td>
+    <td>35.3 %</td>
+    <td>46.5 %</td>
+    <td>3.8 %</td>
+    <td>2.1 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>January</td>
+    <td>10.8 %</td>
+    <td>36.2 %</td>
+    <td>46.3 %</td>
+    <td>3.7 %</td>
+    <td>2.2 %</td>
+    <td></td>
+  </tr>
+
+  <!-- 2009 -->
+  <tr class="mdlext-table__summary-row">
+    <td>
+      <button class="mdl-button mdl-button--icon mdl-js-button">
+        <i class="material-icons mdlext-aria-toggle"></i>
+      </button>
+    </td>
+    <td>2009</td>
+    <td>6.3 %</td>
+    <td>40.5 %</td>
+    <td>46.9 %</td>
+    <td>3.3 %</td>
+    <td>2.2 %</td>
+    <td>
+      <button class="mdl-button mdl-button--icon mdl-js-button">
+        <i class="material-icons pdf-icon"></i>
+      </button>
+    </td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>December</td>
+    <td>9.8 %</td>
+    <td>37.2 %</td>
+    <td>46.4 %</td>
+    <td>3.6 %</td>
+    <td>2.3 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>November</td>
+    <td>8.5 %</td>
+    <td>37.7 %</td>
+    <td>47.0 %</td>
+    <td>3.8 %</td>
+    <td>2.3 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>October</td>
+    <td>8.0 %</td>
+    <td>37.5 %</td>
+    <td>47.5 %</td>
+    <td>3.8 %</td>
+    <td>2.3 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>September</td>
+    <td>7.1 %</td>
+    <td>39.6 %</td>
+    <td>46.6 %</td>
+    <td>3.6 %</td>
+    <td>2.2 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>August</td>
+    <td>7.0 %</td>
+    <td>39.3 %</td>
+    <td>47.4 %</td>
+    <td>3.3 %</td>
+    <td>2.1 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>July</td>
+    <td>6.5 %</td>
+    <td>39.4 %</td>
+    <td>47.9 %</td>
+    <td>3.3 %</td>
+    <td>2.1 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>June</td>
+    <td>6.0 %</td>
+    <td>40.7 %</td>
+    <td>47.3 %</td>
+    <td>3.1 %</td>
+    <td>2.1 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>May</td>
+    <td>5.5 %</td>
+    <td>41.0 %</td>
+    <td>47.7 %</td>
+    <td>3.0 %</td>
+    <td>2.2 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>April</td>
+    <td>4.9 %</td>
+    <td>42.1 %</td>
+    <td>47.1 %</td>
+    <td>3.0 %</td>
+    <td>2.2 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>March</td>
+    <td>4.2 %</td>
+    <td>43.3 %</td>
+    <td>46.5 %</td>
+    <td>3.1 %</td>
+    <td>2.3 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>February</td>
+    <td>4.0 %</td>
+    <td>43.6 %</td>
+    <td>46.4 %</td>
+    <td>3.0 %</td>
+    <td>2.2 %</td>
+    <td></td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td>January</td>
+    <td>3.9 %</td>
+    <td>44.8 %</td>
+    <td>45.5 %</td>
+    <td>3.0 %</td>
+    <td>2.3 %</td>
+    <td></td>
+  </tr>
+
+  </tbody>
+</table>
+
+
+
+
+
+<h4>Summary / Detail</h4>
+
+<style>
+  .demo-card-square.mdl-card {
+    width: 320px;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 320px;
+  }
+  .demo-card-square > .mdl-card__title {
+    color: #fff;
+    background:
+      url('../images/demo/dog.png') bottom right 15% no-repeat #46B6AC;
+  }
+
+</style>
+
+<table class="mdlext-table one-detail">
+  <thead>
   <tr>
-    <td class="mdlext-table__toggle-group">
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="material-icons">play_circle_outline</i>
-      </button>
-    </td>
-    <td>Særavgift Elkraft 2010/10-12 TBODY</td>
-    <td>18.01.2016, 19:45</td>
+    <th></th>
+    <th></th>
+    <th>Chrome</th>
+    <th>IE</th>
+    <th>Firefox</th>
+    <th>Safari</th>
+    <th>Opera</th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <!-- 2016 -->
+  <tr class="mdlext-table__summary-row">
     <td>
       <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="ske-pdf-ikon"></i>
+        <i class="material-icons mdlext-aria-toggle"></i>
       </button>
     </td>
+    <td>2016</td>
+    <td>69.4 %</td>
+    <td>6.1 %</td>
+    <td>18.2 %</td>
+    <td>3.7 %</td>
+    <td>1.3 %</td>
     <td>
-      <div class="mdlext-selectfield mdlext-js-selectfield">
-        <select class="mdlext-selectfield__select">
-          <option value=""></option>
-          <option value="option1">option 1</option>
-          <option value="option2">option 2</option>
-        </select>
-        <label class="mdlext-selectfield__label">Endre</label>
-      </div>
+      <button class="mdl-button mdl-button--icon mdl-js-button">
+        <i class="material-icons pdf-icon"></i>
+      </button>
+    </td>
+  </tr>
+  <tr hidden>
+    <td></td>
+    <td colspan="7">
+      <h5>Table inside detail</h5>
+      <table class="mdl-data-table mdl-shadow--2dp">
+        <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">Component</th>
+          <th>Quantity</th>
+          <th>Unit Cost</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">Keyboard(backlit)</td>
+          <td>10</td>
+          <td>$50</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">Mouse(wireless)</td>
+          <td>22</td>
+          <td>$25</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">LED Display(1080p)</td>
+          <td>56</td>
+          <td>$113</td>
+        </tr>
+        </tbody>
+      </table>
     </td>
   </tr>
 
-  <tr class="mdlext-table__group">
-    <td>
-    </td>
-    <td>tbody, Særavgift Elkraft 2010 Detalj 1</td>
-    <td>18.01.2016, 17:45</td>
+  <!-- 2015 -->
+  <tr class="mdlext-table__summary-row" aria-expanded>
     <td>
       <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="ske-pdf-ikon"></i>
+        <i class="material-icons mdlext-aria-toggle"></i>
       </button>
     </td>
-    <td>
-    </td>
-  </tr>
-  <tr class="mdlext-table__group">
-    <td>
-    </td>
-    <td>tbody, Særavgift Elkraft 2010 Detalj 2</td>
-    <td>18.01.2016, 17:45</td>
+    <td>2015</td>
+    <td>64.7 %</td>
+    <td>7.2 %</td>
+    <td>21.2 %</td>
+    <td>3.9 %</td>
+    <td>1.7 %</td>
     <td>
       <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="ske-pdf-ikon"></i>
+        <i class="material-icons pdf-icon"></i>
       </button>
     </td>
-    <td>
-    </td>
   </tr>
-  <tr class="mdlext-table__group">
-    <td>
-    </td>
-    <td>tbody, Særavgift Elkraft 2010 Detalj 3</td>
-    <td>18.01.2016, 17:45</td>
-    <td>
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="ske-pdf-ikon"></i>
-      </button>
-    </td>
-    <td>
-    </td>
-  </tr>
-
-
-  <!-- Neste detalj -->
   <tr>
-    <td class="mdlext-table__toggle-group">
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="material-icons">play_circle_outline</i>
-      </button>
-    </td>
-    <td>Særavgift Elkraft 2015/10-12 YYY</td>
-    <td>18.01.2016, 17:45</td>
-    <td>
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="ske-pdf-ikon"></i>
-      </button>
-    </td>
-    <td>
-      <div class="mdlext-selectfield mdlext-js-selectfield">
-        <select class="mdlext-selectfield__select">
-          <option value=""></option>
-          <option value="option1">option 1</option>
-          <option value="option2">option 2</option>
-        </select>
-        <label class="mdlext-selectfield__label">Endre</label>
+    <td colspan="8">
+      <h5>Card inside detail</h5>
+
+      <div class="demo-card-square mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title mdl-card--expand">
+          <h2 class="mdl-card__title-text">Square card</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Aenan convallis.
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            View Updates
+          </a>
+        </div>
       </div>
-    </td>
-  </tr>
-  <tr class="mdlext-table__group">
-    <td>
-    </td>
-    <td>Særavgift Elkraft 2015/10-12 - YYY-#D1</td>
-    <td>18.01.2016, 17:45</td>
-    <td>
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="ske-pdf-ikon"></i>
-      </button>
-    </td>
-    <td>
-    </td>
-  </tr>
-  <tr class="mdlext-table__group">
-    <td>
-    </td>
-    <td>Særavgift Elkraft 2015/10-12 - YYY-#D2</td>
-    <td>18.01.2016, 17:45</td>
-    <td>
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="ske-pdf-ikon"></i>
-      </button>
-    </td>
-    <td>
-    </td>
-  </tr>
 
-  <!-- Neste detalj -->
-  <tr>
-    <td class="mdlext-table__toggle-group">
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="material-icons">play_circle_outline</i>
-      </button>
-    </td>
-    <td>Særavgifter 2016/ 1</td>
-    <td>18.01.2016, 17:45</td>
-    <td>
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="ske-pdf-ikon"></i>
-      </button>
-    </td>
-    <td>
-      <div class="mdlext-selectfield mdlext-js-selectfield">
-        <select class="mdlext-selectfield__select">
-          <option value=""></option>
-          <option value="option1">option 1</option>
-          <option value="option2">option 2</option>
-        </select>
-        <label class="mdlext-selectfield__label">Endre</label>
-      </div>
-    </td>
-  </tr>
-
-  <!-- Neste detalj -->
-  <tr>
-    <td class="mdlext-table__toggle-group">
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="material-icons">play_circle_outline</i>
-      </button>
-    </td>
-    <td>Særavgifter 2016/ 1</td>
-    <td>18.01.2016, 17:45</td>
-    <td>
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="ske-pdf-ikon"></i>
-      </button>
-    </td>
-    <td>
-      <div class="mdlext-selectfield mdlext-js-selectfield">
-        <select class="mdlext-selectfield__select">
-          <option value=""></option>
-          <option value="option1">option 1</option>
-          <option value="option2">option 2</option>
-        </select>
-      </div>
-    </td>
-  </tr>
-
-  <!-- Neste detalj -->
-  <tr>
-    <td class="mdlext-table__toggle-group">
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="material-icons">play_circle_outline</i>
-      </button>
-    </td>
-    <td>Særavgifter 2016/ 1</td>
-    <td>18.01.2016, 17:45</td>
-    <td>
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="ske-pdf-ikon"></i>
-      </button>
-    </td>
-    <td>
-      <div class="mdlext-selectfield mdlext-js-selectfield">
-        <select class="mdlext-selectfield__select">
-          <option value=""></option>
-          <option value="option1">option 1</option>
-          <option value="option2">option 2</option>
-        </select>
-        <label class="mdlext-selectfield__label">Endre</label>
-      </div>
-    </td>
-  </tr>
-
-  <tr class="mdlext-table__group">
-    <td>
-    </td>
-    <td>Særavgifter 2016/ 1 - #D1</td>
-    <td>18.01.2016, 17:45</td>
-    <td>
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="ske-pdf-ikon"></i>
-      </button>
-    </td>
-    <td>
-    </td>
-  </tr>
-
-  <tr class="mdlext-table__group">
-    <td>
-    </td>
-    <td>Særavgifter 2016/ #D2</td>
-    <td>18.01.2016, 17:45</td>
-    <td>
-      <button class="mdl-button mdl-button--icon mdl-js-button">
-        <i class="ske-pdf-ikon"></i>
-      </button>
-    </td>
-    <td>
     </td>
   </tr>
 
@@ -334,14 +1226,15 @@
 
 
 
-<h2>Flipped axis and overflow:</h2>
 
-<table class="mdlext-table mdlext-table--flip mdl-shadow--2dp">
+<h4>Flipped axis and overflow:</h4>
+
+<table class="mdlext-table mdlext-table--flip">
   <thead>
   <tr>
     <th>Browser</th>
     <th>Sessions</th>
-    <th>Percentage</td>
+    <th>Percentage</th>
     <th>New Users</th>
     <th>Avg. Duration</th>
   </tr>
@@ -447,75 +1340,93 @@
   (function() {
     'use strict';
 
-    var table = document.querySelector('#leverte-meldinger');
-    var togglers = table.querySelectorAll('.mdlext-table__toggle-group');
+    addToggleListeners(document.querySelector('.browser-statistics'));
+    addToggleListeners(document.querySelector('.one-detail'));
 
-    for (var i = 0; i < togglers.length; i++) {
-      var toggleBtn = togglers[i].querySelector('button');
+    function addToggleListeners( table ) {
+      var togglers = table.querySelectorAll('.mdlext-aria-toggle');
 
-      toggleBtn.addEventListener('click', function( /*event*/ ) {
+      for (var i = 0; i < togglers.length; i++) {
+        var toggleBtn = togglers[i].closest('button');
 
-        setTimeout(function(){
-          toggle(this.parentNode);
-        }.bind(this), 0);
-
-      }.bind(togglers[i]));
-
+        toggleBtn.addEventListener('click', function( /*event*/ ) {
+          setTimeout(function() {
+            toggle(this.closest('tr'));
+          }.bind(this), 0);
+        });
+      }
     }
+
 
     function toggle(toggleRow) {
 
-      if(toggleRow.hasAttribute('open')) {
-        toggleRow.removeAttribute('open');
+      var expand = false;
+      if(toggleRow.hasAttribute('aria-expanded')) {
+        toggleRow.removeAttribute('aria-expanded');
       }
       else {
-        toggleRow.setAttribute('open', '');
+        toggleRow.setAttribute('aria-expanded', '');
+        expand = true;
       }
 
       var rowsToToggle = getRowGroups(toggleRow);
       for (var i = 0; i < rowsToToggle.length; i++) {
-        rowsToToggle[i].classList.toggle('mdlext-table__group-visible');
+        if(expand) {
+          rowsToToggle[i].removeAttribute('hidden');
+        }
+        else {
+          rowsToToggle[i].setAttribute('hidden', '');
+        }
       }
     }
 
-    function getRowGroups(toggleRow) {
+    function getRowGroups(summaryRow) {
       var result = [];
-      var table = parent(toggleRow, 'table');
-      var rows = table.querySelectorAll('tbody tr');
-      for (var i = 0; i < rows.length; i++) {
-        if(rows[i] == toggleRow) {
-          // Found toggleRow.
-          for (var j = i+1; j < rows.length; j++) {
-            if(rows[j].classList.contains('mdlext-table__group')) {
-              result.push(rows[j]);
-            }
-            else {
-              return result;
-            }
-          }
+      var r = summaryRow.nextElementSibling;
+      while(r) {
+        if(r.classList.contains('mdlext-table__summary-row')) {
+          r = null;
+        }
+        else {
+          result.push(r);
+          r = r.nextElementSibling
         }
       }
       return result;
     }
 
 
-    /**
-     * Find the element's parent with the given tag name:
-     * parent(qs('a'), 'div');
-     *
-     * @param element
-     * @param tagName
-     * @returns {null|Node}
+
+    /*
+    // browser-statistics
+    var browserStatistics =document.querySelector('.browser-statistics');
+    browserStatistics.addEventListener('click', function( event ) {
+      setTimeout(function() {
+        var target = event.target;
+
+        var tr = target.closest('tr');
+        var n = 0;
+        for (var k = 0; k < tr.children.length; k++) {
+          if(target === tr.children[k]) {
+            n = k+1;
+            break;
+          }
+        }
+        var cols = this.querySelectorAll('td:nth-child(' + n + ')');
+        for (var i = 0; i < cols.length; i++) {
+          if(target === cols[i]) {
+            var f = 0;
+            for (var j = 1; j < 13; j++) {
+              f +=  parseFloat(cols[i+j].innerText);
+            }
+            console.log('*****', f/12);
+            return;
+          }
+        }
+      }.bind(this), 0);
+    });
      */
-    function parent(element, tagName) {
-      if (!element.parentNode || element.parentNode.tagName === undefined) {
-        return null;
-      }
-      if (element.parentNode.tagName.toLowerCase() === tagName.toLowerCase()) {
-        return element.parentNode;
-      }
-      return parent(element.parentNode, tagName);
-    }
+
 
   }());
 
