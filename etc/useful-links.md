@@ -926,3 +926,7 @@
 * [Better world by better software](https://glebbahmutov.com/blog/)
 * [ponyfoo.com](https://ponyfoo.com/)
 * [50+ Awesome CSS3 Techniques for Better Designs](http://www.webdesignerdepot.com/2011/01/50-awesome-css3-techniques-for-better-designs/)
+* [CSS3 Stamp effect using radial gradients](http://thecodeplayer.com/walkthrough/css3-stamp)
+* [Frame Patterns](https://github.com/atelierbram/frame-patterns)
+* [Call–Out Boxes](http://codepen.io/reverendgeneral/pen/dqtJp)
+
