@@ -10,12 +10,12 @@ $_mdlapp-color-primary-contrast:  #FFFFFF !default;  // text color on primary/pr
 $_mdlapp-color-accent:            #607D8B !default;
 $_mdlapp-color-accent-contrast:   #FFFFFF !default;
 
-$mdlapp-text-color-primary:       "0,0,0"       !default;
-$mdlapp-color-primary:            "33,150,243"  !default;
-$mdlapp-color-primary-dark:       "25,118,210"  !default;
-$mdlapp-color-primary-contrast:   "255,255,255" !default;
-$mdlapp-color-accent:             "96,125,139"  !default;
-$mdlapp-color-accent-contrast:    "255,255,255" !default;
+$mdlapp-text-color-primary:       "0,0,0";
+$mdlapp-color-primary:            "33,150,243";
+$mdlapp-color-primary-dark:       "25,118,210";
+$mdlapp-color-primary-contrast:   "255,255,255";
+$mdlapp-color-accent:             "96,125,139";
+$mdlapp-color-accent-contrast:    "255,255,255";
 
 /* -----------------------------------------------
  * Override Material Design Lite variables
@@ -221,10 +221,10 @@ $mdlext-dark-color-accent-light:      #4CAF50;
 $mdlext-dark-color-accent-contrast:   #FFFFFF;
 */
 
-$mdlext-dark-color-primary:           #212121 !default;
-$mdlext-dark-color-primary-dark:      #000000 !default;
-$mdlext-dark-color-primary-light:     #607D8B !default;  // Fallback color. Set to color-primary if fallback is not needed
-$mdlext-dark-color-primary-contrast:  #FFFFFF !default;  // text color on primary/primary dark background
-$mdlext-dark-color-accent:            #FFC107 !default;
-$mdlext-dark-color-accent-light:      #FFC107 !default;  // Fallback color. Set to color-accent if fallback is not needed
-$mdlext-dark-color-accent-contrast:   #FFFFFF !default;
+$mdlext-dark-color-primary:           #212121;
+$mdlext-dark-color-primary-dark:      #000000;
+$mdlext-dark-color-primary-light:     rgb(30,136,229);  // Fallback color. Set to color-primary if fallback is not needed
+$mdlext-dark-color-primary-contrast:  #FFFFFF;  // text color on primary/primary dark background
+$mdlext-dark-color-accent:            #FFC107;
+$mdlext-dark-color-accent-light:      #FFC107;  // Fallback color. Set to color-accent if fallback is not needed
+$mdlext-dark-color-accent-contrast:   #FFFFFF;
