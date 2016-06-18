@@ -32,7 +32,7 @@ $image_path: '/static/images/mdl';  // See: webpack.config.js CopyWebpackPlugin
 @import '../node_modules/material-design-icons/iconfont/material-icons.css';
 @import 'stylesheets/vendors/material-design-icons';
 @import '../node_modules/material-design-iconic-font/dist/css/material-design-iconic-font.css';
-@import '../node_modules/roboto-fontface/css/roboto-fontface.css';
+@import '../node_modules/roboto-fontface/css/roboto/roboto-fontface.css';
 @import '../node_modules/dialog-polyfill/dialog-polyfill.css';
 @import '../node_modules/material-design-lite/src/material-design-lite';
 @import 'stylesheets/vendors/mdl-overrides';
