@@ -290,6 +290,9 @@
 * [Top 10 ES6 Features Every Busy JavaScript Developer Must Know](http://webapplog.com/es6/)
 * [Learning ES2015 : Getting Started](http://abdulapopoola.com/category/learning-2/)
 * [ECMAScript 2015 - Let’s talk about ES6](https://medium.com/ecmascript-2015)
+* [laracasts - What would you like to learn?](https://laracasts.com/series)
+* [EcmaScript 6 Crash Course](https://laracasts.com/series/es6-cliffsnotes)
+
 
 ### String template
 * [HTML templating with ES6 template strings](http://www.2ality.com/2015/01/template-strings-html.html)
@@ -545,6 +548,10 @@
 * [Sample wepack config](https://github.com/colindresj/sample-webpack-config)
 * [Webpack Declarative](http://alexfedoseev.com/post/66/webpack-declarative-way)
 * [Webpack — The Confusing Parts](https://medium.com/@rajaraodv/webpack-the-confusing-parts-58712f8fcad9#.ludhbcylg)
+
+## Webpack2
+* [Using Webpack for Production JavaScript Applications](https://egghead.io/lessons/tools-intro-to-the-production-webpack-course)
+* [Module Bundling With Webpack](https://laracasts.com/series/es6-cliffsnotes/episodes/12)
 
 ## Lint
 * [Configuring ESLint](http://eslint.org/docs/user-guide/configuring.html)
