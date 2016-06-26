@@ -292,6 +292,7 @@
 * [ECMAScript 2015 - Let’s talk about ES6](https://medium.com/ecmascript-2015)
 * [laracasts - What would you like to learn?](https://laracasts.com/series)
 * [EcmaScript 6 Crash Course](https://laracasts.com/series/es6-cliffsnotes)
+* [Clearing up the Babel 6 Ecosystem](https://medium.com/@jcse/clearing-up-the-babel-6-ecosystem-c7678a314bf3#.oz7xcnr5y)
 
 
 ### String template
@@ -615,6 +616,9 @@
 * [WRITING, TESTING AND PUBLISHING JAVASCRIPT MODULES](http://tech.vg.no/2015/01/20/writing-testing-and-publishing-javascript-modules/)
 * [My node test strategy - Tape](https://remysharp.com/2015/12/14/my-node-test-strategy)
 * [Test Automation](http://www.zsoltnagy.eu/category/test-automation/)
+* [Setting Up JavaScript Testing Tools for ES6](http://x-team.com/2016/05/setting-up-javascript-testing-tools-for-es6/)
+* [Promises in JavaScript Unit Tests: the Definitive Guide](https://www.sitepoint.com/promises-in-javascript-unit-tests-the-definitive-guide/)
+
 
 ### RxJS
 * [ReactiveX - The Observer pattern done right](http://reactivex.io/)
@@ -640,6 +644,8 @@
 * [Becoming fully reactive: an in-depth explanation of Mobservable](https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254#.i4ku2stuj)
 * [Testing reactive code](https://glebbahmutov.com/blog/testing-reactive-code/)
 * [rxjs-pubsub](https://github.com/richardanaya/rxjs-pubsub)
+* [Cycle.js Fundamentals](https://egghead.io/courses/cycle-js-fundamentals)
+* [Reactive Programming with Cycle.js](http://x-team.com/2016/06/reactive-programming-cycle-js/)
 
 
 ## i18n
