@@ -245,8 +245,6 @@
 * [Understanding ECMAScript 6 arrow functions](https://www.nczonline.net/blog/2013/09/10/understanding-ecmascript-6-arrow-functions/)
 * [Writing a CSS Parser in JavaScript](https://medium.com/jotform-form-builder/writing-a-css-parser-in-javascript-3ecaa1719a43#.bwpkdrlis)
 * [css.js - A lightweight, battle tested, fast, css parser in JavaScript](https://github.com/jotform/css.js)
-* [promise-cookbook](https://github.com/mattdesl/promise-cookbook)
-* [promise-cookbook](https://github.com/wbinnssmith/promise-cookbook)
 * [Can es6's module loader also load assets](http://stackoverflow.com/questions/24923479/can-es6s-module-loader-also-load-assets-html-css)
 * [xto6 modernizes your JavaScript code](http://xto6.js.org/)
 * [.map, .reduce & .filter, Oh My!](http://www.datchley.name/working-with-collections/)
@@ -392,6 +390,19 @@
 * [Animate.css - A cross-browser library of CSS animations.](https://github.com/daneden/animate.css)
 * [Move.js - CSS3 JavaScript animation framework.](https://github.com/visionmedia/move.js)
 * [3 stunning CSS animation effects that will captivate your users](http://www.webdesignerdepot.com/2014/04/3-stunning-css-animation-effects-that-will-captivate-your-users/)
+* [requestAnimationFrame polyfill library](https://github.com/chrisdickinson/raf)
+* [raf-loop](https://github.com/mattdesl/raf-loop)
+* [raf-throttle](https://github.com/wuct/raf-throttle)
+* [Animations pause when browser tab is not visible](http://greensock.com/forums/topic/10051-animations-pause-when-browser-tab-is-not-visible/)
+* [Page Visibility API](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API)
+* [Animation does not pause when switched between browser tabs](http://stackoverflow.com/questions/19939822/animation-does-not-pause-when-switched-between-browser-tabs)
+* [Using the PageVisibility API](http://www.html5rocks.com/en/tutorials/pagevisibility/intro/)
+* [requestAnimationFrame.js](https://gist.github.com/yohawing/421353014db67175a088)
+* [fake-raf - A fake requestAnimationFrame perfect for unit testing](https://github.com/paldepind/fake-raf)
+* [mock-raf](https://github.com/lukastaegert/mock-raf/blob/master/test/test.js)
+* [mock-raf](https://github.com/FormidableLabs/mock-raf/blob/master/index.js)
+* [react-motion](https://github.com/chenglou/react-motion/blob/85ca75c6de9ed85937d1c95646b6044a66981eee/test/Motion-test.js)
+* []
 
 ### Polyfills
 * [Polyfill.js: A library to make creating CSS polyfills much easier.](https://github.com/philipwalton/polyfill/)
@@ -618,6 +629,16 @@
 * [Test Automation](http://www.zsoltnagy.eu/category/test-automation/)
 * [Setting Up JavaScript Testing Tools for ES6](http://x-team.com/2016/05/setting-up-javascript-testing-tools-for-es6/)
 * [Promises in JavaScript Unit Tests: the Definitive Guide](https://www.sitepoint.com/promises-in-javascript-unit-tests-the-definitive-guide/)
+* [Fake Timers with SinonJs](http://www.zsoltnagy.eu/fake-timers-with-sinonjs/)
+* [sinon-chai-expect.md](https://gist.github.com/patocallaghan/6154663)
+* [Best Practices for Spies, Stubs and Mocks in Sinon.js](https://semaphoreci.com/community/tutorials/best-practices-for-spies-stubs-and-mocks-in-sinon-js)
+* [Sinon.js - Test spies](http://sinonjs.org/docs/)
+* [Sinon Tutorial: JavaScript Testing with Mocks, Spies & Stubs](https://www.sitepoint.com/sinon-tutorial-javascript-testing-mocks-spies-stubs/)
+* [Unit Test like a Secret Agent with Sinon.js](http://elijahmanor.com/unit-test-like-a-secret-agent-with-sinon-js/)
+* [How can I simulate the passing of time in Mocha tests so that setTimeout callbacks are called?](http://stackoverflow.com/questions/17446064/how-can-i-simulate-the-passing-of-time-in-mocha-tests-so-that-settimeout-callbac)
+* [Test Automation](http://www.zsoltnagy.eu/category/test-automation/)
+* [Lessons learned from unit testing with Sinon.JS](https://enterprisejs.io/lessons-learned-from-unit-testing-with-sinon-js/)
+* [Test async code using done() with Mocha](https://justinbellamy.com/testing-async-code-with-mocha/)
 
 
 ### RxJS
@@ -646,6 +667,7 @@
 * [rxjs-pubsub](https://github.com/richardanaya/rxjs-pubsub)
 * [Cycle.js Fundamentals](https://egghead.io/courses/cycle-js-fundamentals)
 * [Reactive Programming with Cycle.js](http://x-team.com/2016/06/reactive-programming-cycle-js/)
+* [Cyclejs + Material Design Lite](http://codepen.io/cem2ran/pen/xGKpBE)
 
 
 ## i18n
@@ -786,6 +808,8 @@
 * [Terrific Tables](https://codepen.io/collection/nhowz/)
 * [Mobile Accordion Table](http://codepen.io/jacobhonigford/pen/GgjKBG)
 * [sticky-header.js](https://github.com/Tyriar/sticky-header.js)
+* [Sticky Table Headers](https://codepen.io/vulchivijay/pen/zrKBaa)
+* [Table with fixed header on scroll](https://codepen.io/jgx/pen/wiIGc)
 
 
 ## CodePens
@@ -888,6 +912,7 @@
 * [CSS3 Animated Swipe Gallery](http://codepen.io/mattjburrows/pen/GFCKL)
 * [MDL-Table - Search and Sort using](http://codepen.io/ryanjgill/pen/ojRxXE)
 * [Pure CSS Parallax](http://codepen.io/keithclark/pen/JycFw)
+* [Making an Elastic Slider from Scratch](http://x-team.com/2016/06/making-elastic-slider-scratch/)
 
 ## Videos
 * [Creating a 3D Webpage Header with Material Design and Babylon](https://www.youtube.com/watch?v=IZ6fgcBkhg8)
@@ -942,4 +967,6 @@
 * [CSS3 Stamp effect using radial gradients](http://thecodeplayer.com/walkthrough/css3-stamp)
 * [Frame Patterns](https://github.com/atelierbram/frame-patterns)
 * [Call–Out Boxes](http://codepen.io/reverendgeneral/pen/dqtJp)
+* [How to tell if a DOM element is visible in the current viewport?](http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport/7557433#7557433)
+* [How to detect if DOM element is partially out of the viewport](http://stackoverflow.com/questions/21688590/how-to-detect-if-dom-element-is-partially-out-of-the-viewport)
 
