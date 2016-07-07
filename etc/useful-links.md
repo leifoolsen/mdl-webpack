@@ -28,7 +28,8 @@
 * [Gixx - mdl-components-ext](https://github.com/Gixx/mdl-components-ext)
 * [preact-mdl](https://github.com/developit/preact-mdl)
 * [mdl-webpack-boilerplate](https://github.com/shprink/mdl-webpack-boilerplate)
-* [http://www.sitepoint.com/practical-introduction-material-design-lite-google/](A Practical Introduction to Material Design Lite by Google)
+* [A Practical Introduction to Material Design Lite by Google](http://www.sitepoint.com/practical-introduction-material-design-lite-google/)
+* [Material Design Lite dropdown components demo](http://codepen.io/etcpe9/pen/PqyOye/)
 
 ### Material
 * [Google web starter kit](https://github.com/google/web-starter-kit)
