@@ -28,6 +28,8 @@ body {
   }
 
   .mdl-navigation a.mdl-navigation__link {
+    padding-top: 12px;
+    padding-bottom: 12px;
     padding-right: 0;
 
     i,
@@ -42,49 +44,49 @@ body {
       text-indent: -2px;
     }
   }
+}
 
-  #accordion {
-    .mdlext-accordion__panel {
+#accordion {
+  height: 100%;
 
-      .mdlext-accordion__panel__header {
+  .mdl-navigation {
+    padding: 4px 0;
+  }
 
-        .mdlext-accordion__panel__header__transform {
-          img {
-            width: 32px;
-          }
-        }
+  .mdlext-accordion__panel {
+
+    .mdlext-accordion__tab {
+      img {
+        width: 32px;
+        height: auto;
+        margin: 0;
+        padding: 0;
       }
-      &:nth-child(1) {
-        height: $layout-desktop-header-height;
-
-        .mdlext-accordion__panel__header {
-          height: $layout-desktop-header-height;
-          min-height: $layout-desktop-header-height;
-
-          .mdlext-accordion__panel__header__transform {
-            height: $layout-desktop-header-height;
-
-            img {
-              margin-top: -8px;
-            }
-          }
-        }
+      .mdlext-accordion__tab__caption {
+        font-size: 16px;
+        margin: 0;
       }
     }
 
-    .mdlext-accordion__panel__content {
+    &:first-child .mdlext-accordion__tab {
+      height: 64px;
+      min-height: 64px;
+      min-width: 64px;
+
+      .mdlext-accordion__tab__caption {
+        font-size: 20px;
+      }
+    }
+    .mdlext-accordion__tabanel {
       padding: 0;
     }
-
-    .mdlext-accordion__panel[open] .mdlext-accordion__panel__header {
-      background: rgba(144, 202, 249, 0.5);
-    }
   }
+}
 
-  .mdl-navigation a.mdl-navigation__link {
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
+.is-small-screen #accordion .mdlext-accordion__panel:first-child .mdlext-accordion__tab {
+  height: 56px;
+  min-height: 56px;
+  min-width: 56px;
 }
 
 /* ---------------------

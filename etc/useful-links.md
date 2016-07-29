@@ -403,7 +403,8 @@
 * [mock-raf](https://github.com/lukastaegert/mock-raf/blob/master/test/test.js)
 * [mock-raf](https://github.com/FormidableLabs/mock-raf/blob/master/index.js)
 * [react-motion](https://github.com/chenglou/react-motion/blob/85ca75c6de9ed85937d1c95646b6044a66981eee/test/Motion-test.js)
-* []
+* [A Collection of Pure CSS Animation Snippets & Demos](http://marketblog.envato.com/whats-hot/pure-css-animation-snippets/)
+* [Animating Flexboxes: The Lowdown](https://dev.opera.com/articles/animating-flexboxes-the-lowdown/)
 
 ### Polyfills
 * [Polyfill.js: A library to make creating CSS polyfills much easier.](https://github.com/philipwalton/polyfill/)
@@ -914,6 +915,9 @@
 * [MDL-Table - Search and Sort using](http://codepen.io/ryanjgill/pen/ojRxXE)
 * [Pure CSS Parallax](http://codepen.io/keithclark/pen/JycFw)
 * [Making an Elastic Slider from Scratch](http://x-team.com/2016/06/making-elastic-slider-scratch/)
+* [Elastic SVG Sidebar Material Design](http://codepen.io/suez/pen/emjwvP)
+* [Material Jelly sidebar menu](http://codepen.io/hrtzt/pen/qdWRXv)
+* [Material Design - Switches](http://codepen.io/GuiCavi/pen/dPRKXq)
 
 ## Videos
 * [Creating a 3D Webpage Header with Material Design and Babylon](https://www.youtube.com/watch?v=IZ6fgcBkhg8)

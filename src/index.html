@@ -77,15 +77,13 @@
       <span class="mdl-layout-title"><a href="/"><img src="images/demo/organizing.png"/>Components</a></span>
       -->
 
-      <ul id="accordion" class="mdlext-accordion mdlext-accordion--vertical mdlext-js-accordion" role="tablist" aria-multiselectable="false">
-        <li class="mdlext-accordion__panel" role="tabpanel" open>
-          <header class="mdlext-accordion__panel__header">
-            <div class="mdlext-accordion__panel__header__transform">
-              <img src="images/demo/organizing.png"/><h6>MDL Components</h6>
-            </div>
+      <ul id="accordion" class="mdlext-accordion mdlext-js-accordion mdlext-accordion--vertical mdlext-js-ripple-effect mdlext-js-animation-effect" aria-multiselectable="false">
+        <li class="mdlext-accordion__panel">
+          <header class="mdlext-accordion__tab" aria-expanded="true">
+            <img src="images/demo/organizing.png"/>
+            <span class="mdlext-accordion__tab__caption">MDL Components</span>
           </header>
-          <!-- TODO: Opera OSX and Safari OSX issues with styling of this. Need to look into it -->
-          <nav class="mdl-navigation mdlext-accordion__panel__content">
+          <nav class="mdl-navigation mdlext-accordion__tabpanel">
             <a class="mdl-navigation__link" href="html/badge-button-demo.html"><img src="images/demo/comp_badges.png"/>Badges and Buttons</a>
             <a class="mdl-navigation__link" href="html/card-demo.html"><img src="images/demo/comp_cards.png"/>Cards</a>
             <a class="mdl-navigation__link" href="html/dialog-demo.html"><img src="images/demo/comp_dialog.png"/>Dialogs</a>
@@ -104,12 +102,10 @@
           </nav>
         </li>
         <li class="mdlext-accordion__panel">
-          <header class="mdlext-accordion__panel__header">
-            <div class="mdlext-accordion__panel__header__transform">
-              <img src="images/demo/roundicons-26.png"/><h6>Custom Components</h6>
-            </div>
+          <header class="mdlext-accordion__tab">
+            <img src="images/demo/roundicons-26.png"/><span class="mdlext-accordion__tab__caption">Custom Components</span>
           </header>
-          <nav class="mdl-navigation mdlext-accordion__panel__content">
+          <nav class="mdl-navigation mdlext-accordion__tabpanel">
             <a class="mdl-navigation__link" href="html/accordion-demo.html"><i class="material-icons md-36">dns</i>Accordion</a>
             <a class="mdl-navigation__link" href="html/bordered-fields-demo.html"><i class="material-icons md-36">input</i>Bordered Fields Theme</a>
             <a class="mdl-navigation__link" href="html/carousel.html"><i class="material-icons md-36">view_carousel</i>Carousel</a>
@@ -122,10 +118,10 @@
           </nav>
         </li>
         <li class="mdlext-accordion__panel">
-          <header class="mdlext-accordion__panel__header">
-            <div class="mdlext-accordion__panel__header__transform"><img src="images/demo/essentials-23@2x.png"/><h6>Experiments</h6></div>
+          <header class="mdlext-accordion__tab">
+            <img src="images/demo/essentials-23@2x.png"/><span class="mdlext-accordion__tab__caption">Experiments</span>
           </header>
-          <nav class="mdl-navigation mdlext-accordion__panel__content">
+          <nav class="mdl-navigation mdlext-accordion__tabpanel">
             <a class="mdl-navigation__link" href="/#js"><img src="images/demo/js.svg"/>Render with JS</a>
             <a class="mdl-navigation__link" href="html/flexbox-experiments.html"><i class="material-icons md-36">dns</i>Flexbox</a>
             <a class="mdl-navigation__link" href="html/selector-experiments.html"><i class="material-icons md-36">device_hub</i>Selectors</a>
