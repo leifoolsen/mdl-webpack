@@ -1,0 +1,518 @@
+<h5 class="mdlext-demo-header">Menu Button</h5>
+<article>
+  <p>A menu button is a button that opens a menu. It is often styled as a typical push button with a
+    downward pointing arrow or triangle to hint that activating the button will display a menu.
+    The menu button has roles, attributes and behaviour as outlined in
+    <a href="https://www.w3.org/TR/wai-aria-practices/#menubutton" target="_blank">WAI-ARIA Authoring Practices</a>.
+  </p>
+</article>
+
+<style>
+  .size-22 {
+    font-size: 22px;
+    width: 22px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .mdl-cell p {
+    margin-bottom: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+
+  .mdl-textfield.mdlext-js-menu-button .mdl-textfield__input {
+    padding-right: 40px;
+  }
+
+  .mdl-textfield__icon {
+    width: 32px;
+    text-align: left;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .mdl-textfield.is-disabled .mdl-textfield__icon {
+    color: rgba(0, 0, 0, 0.26) !important;
+  }
+
+  .mdl-textfield.is-invalid .mdl-textfield__icon {
+    color: #de3226 !important;
+  }
+
+</style>
+
+<script>
+  function signedIn(sn) {
+    return 'Signed in with&nbsp;&nbsp;<i class="size-22 icon ion-social-' + sn + '"></i>&nbsp;';
+  }
+</script>
+
+<ul id="shared-social-menu" class="mdlext-menu" hidden >
+  <li class="mdlext-menu__item" data-value="twitter">
+    <span class="mdlext-menu__item__caption">Twitter</span>
+    <i class="icon ion-social-twitter-outline size-22"></i>
+  </li>
+  <li class="mdlext-menu__item" data-value="github">
+    <span class="mdlext-menu__item__caption">GitHub</span>
+    <i class="ion-social-github-outline size-22"></i>
+  </li>
+  <li class="mdlext-menu__item" data-value="googleplus">
+    <span class="mdlext-menu__item__caption">G+</span>
+    <i class="ion-social-googleplus-outline size-22"></i>
+  </li>
+  <li class="mdlext-menu__item" data-value="linkedin">
+    <span class="mdlext-menu__item__caption">LinkedIn</span>
+    <i class="icon ion-social-linkedin-outline size-22"></i>
+  </li>
+  <li class="mdlext-menu__item" data-value="facebook">
+    <span class="mdlext-menu__item__caption">Facebook</span>
+    <i class="icon ion-social-facebook-outline size-22"></i>
+  </li>
+</ul>
+
+<div class="mdl-grid mdl-grid--no-spacing">
+  <div class="mdl-cell mdl-cell--4-col">
+    <p><code>mdl-button</code></p>
+    <button id="btn-social-1" style="width:100%; max-width:300px; height:46px"
+            class="mdl-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect mdl-js-button mdlext-js-menu-button"
+            aria-controls="shared-social-menu" >
+      <i class="material-icons">person_outline</i>
+      <span class="mdlext-menu-button__caption">Sign in with ...</span>
+      <i class="material-icons mdlext-aria-expanded-more-less"></i>
+    </button>
+    <script>
+      document.querySelector('#btn-social-1').addEventListener('menuselect', function(event) {
+        this.querySelector('.mdlext-menu-button__caption').innerHTML = signedIn(event.detail.source.getAttribute('data-value'));
+      });
+    </script>
+  </div> <!--cell -->
+
+  <div class="mdl-cell mdl-cell--4-col">
+    <p><code>mdl-textfield</code></p>
+    <div id="btn-social-2"
+         class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdlext-js-menu-button"
+         aria-controls="shared-social-menu">
+      <input class="mdl-textfield__input" type="text" readonly>
+      <label class="mdl-textfield__label">Sign in with ...</label>
+      <i class="material-icons mdl-textfield__icon mdlext-aria-expanded-more-less"></i>
+    </div>
+    <script>
+      document.querySelector('#btn-social-2').addEventListener('menuselect', function(event) {
+        this.MaterialTextfield.change(event.detail.source.querySelector('span').innerHTML);
+      });
+    </script>
+  </div> <!--cell -->
+
+  <div class="mdl-cell mdl-cell--4-col mdlext-bordered-fields">
+    <p><code>mdlext-bordered-fields</code></p>
+    <div id="btn-social-3"
+         class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdlext-bordered-fields__icon-right mdlext-js-menu-button"
+         aria-controls="shared-social-menu">
+      <input class="mdl-textfield__input" type="text" readonly>
+      <label class="mdl-textfield__label">Sign in with ...</label>
+      <i class="material-icons mdlext-aria-expanded-more-less"></i>
+    </div>
+    <script>
+      document.querySelector('#btn-social-3').addEventListener('menuselect', function(event) {
+        this.MaterialTextfield.change(event.detail.source.querySelector('span').innerHTML);
+      });
+    </script>
+  </div> <!--cell -->
+
+  <div class="mdl-cell mdl-cell--4-col mdlext-bordered-fields">
+    <p>custom styled <code>&lt;div&gt;</code></p>
+    <div id="btn-social-4"
+         class="mdlext-menu-button mdlext-js-menu-button" style="width:300px; height:46px; max-width:100%;  border:1px solid green"
+         aria-controls="shared-social-menu">
+      <span class="mdlext-menu-button__caption">Sign in with ...</span>
+      <i class="material-icons mdlext-aria-expanded-more-less"></i>
+    </div>
+    <script>
+      document.querySelector('#btn-social-4').addEventListener('menuselect', function(event) {
+        this.querySelector('span').innerHTML = signedIn(event.detail.source.getAttribute('data-value')) + ', ' +
+          event.detail.source.querySelector('span').innerHTML;
+      });
+    </script>
+  </div> <!--cell -->
+
+
+  <div class="mdl-cell mdl-cell--4-col">
+    <p>MDL menu</p>
+
+    <button id="demo-menu-lower-left" style="height:46px; width:46px;"
+            class="mdl-button mdl-js-button mdl-button--icon">
+      <i class="material-icons">more_vert</i>
+    </button>
+
+    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+        for="demo-menu-lower-left">
+      <li class="mdl-menu__item">Some Action</li>
+      <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li>
+      <li disabled class="mdl-menu__item">Disabled Action</li>
+      <li class="mdl-menu__item">Yet Another Action</li>
+    </ul>
+  </div> <!--cell -->
+
+</div>
+
+<p style="margin-top: 16px;">Menu buttons positioned left, middle and right, using <code>textalign</code>.</p>
+<div role="presentation">
+  <button class="mdl-button mdl-button--raised mdl-js-ripple-effect mdl-js-button mdlext-js-menu-button">
+    <i class="material-icons">gesture</i>
+    <span class="mdlext-menu-button__caption">Select</span>
+    <i class="material-icons mdlext-aria-expanded-more-less"></i>
+  </button>
+  <ul class="mdlext-menu" hidden >
+    <li class="mdlext-menu__item">
+      <i class="material-icons md-18">info</i>
+      <span class="mdlext-menu__item__caption">Menu item #1</span>
+    </li>
+    <li class="mdlext-menu__item">
+      <i class="material-icons md-18">help_outline</i>
+      <span class="mdlext-menu__item__caption">Menu item #2. A long text to check ellipsis overflow 0123456789</span>
+      <i class="material-icons md-18">radio</i>
+    </li>
+    <li class="mdlext-menu__item-separator"></li>
+    <li class="mdlext-menu__item" disabled>
+      <span class="mdlext-menu__item__caption">Menu item #3, disabled</span>
+      <i class="material-icons md-18">accessibility</i>
+    </li>
+    <li class="mdlext-menu__item-separator"></li>
+    <li class="mdlext-menu__item">
+      <span class="mdlext-menu__item__caption">Menu item #IV</span>
+      <i class="material-icons md-18">build</i>
+    </li>
+    <li class="mdlext-menu__item">
+      <span class="mdlext-menu__item__caption">Menu item #V</span>
+      <i class="material-icons md-18">build</i>
+    </li>
+    <li class="mdlext-menu__item-separator"></li>
+    <li class="mdlext-menu__item">
+      <span class="mdlext-menu__item__caption">Menu item #VI</span>
+      <i class="material-icons md-18">build</i>
+    </li>
+    <li class="mdlext-menu__item">
+      <span class="mdlext-menu__item__caption">Menu item #VII</span>
+      <i class="material-icons md-18">build</i>
+    </li>
+    <li class="mdlext-menu__item">
+      Menu item #n
+    </li>
+  </ul>
+</div>
+
+
+<div role="presentation" style="text-align: center">
+  <button class="mdl-button mdl-button--raised mdl-js-ripple-effect mdl-js-button mdlext-js-menu-button">
+    <i class="material-icons">gesture</i>
+    <span class="mdlext-menu-button__caption">Select</span>
+    <i class="material-icons mdlext-aria-expanded-more-less"></i>
+  </button>
+  <ul class="mdlext-menu" hidden >
+    <li class="mdlext-menu__item">
+      <i class="material-icons md-18">info</i>
+      <span class="mdlext-menu__item__caption">Menu item #1</span>
+    </li>
+    <li class="mdlext-menu__item">
+      <i class="material-icons md-18">help_outline</i>
+      <span class="mdlext-menu__item__caption">Menu item #2</span>
+      <i class="material-icons md-18">radio</i>
+    </li>
+    <li class="mdlext-menu__item" disabled>
+      <span class="mdlext-menu__item__caption">Menu item #3, disabled</span>
+      <i class="material-icons md-18">accessibility</i>
+    </li>
+    <li class="mdlext-menu__item-separator"></li>
+    <li class="mdlext-menu__item">
+      <span class="mdlext-menu__item__caption">Menu item #IV</span>
+      <i class="material-icons md-18">build</i>
+    </li>
+    <li class="mdlext-menu__item">
+      <span class="mdlext-menu__item__caption">Menu item #V</span>
+      <i class="material-icons md-18">build</i>
+    </li>
+    <li class="mdlext-menu__item">
+      <span class="mdlext-menu__item__caption">Menu item #VI</span>
+      <i class="material-icons md-18">build</i>
+    </li>
+    <li class="mdlext-menu__item">
+      <span class="mdlext-menu__item__caption">Menu item #VII</span>
+      <i class="material-icons md-18">build</i>
+    </li>
+    <li class="mdlext-menu__item">
+      Menu item #n
+    </li>
+  </ul>
+</div>
+
+
+<div role="presentation" style="text-align: right">
+  <button class="mdl-button mdl-button--raised mdl-js-ripple-effect mdl-js-button mdlext-js-menu-button">
+    <i class="material-icons">gesture</i>
+    <span class="mdlext-menu-button__caption">Select</span>
+    <i class="material-icons mdlext-aria-expanded-more-less"></i>
+  </button>
+  <ul class="mdlext-menu" hidden >
+    <li class="mdlext-menu__item">
+      <i class="material-icons md-18">info</i>
+      <span class="mdlext-menu__item__caption">Menu item #1</span>
+    </li>
+    <li class="mdlext-menu__item">
+      <i class="material-icons md-18">help_outline</i>
+      <span class="mdlext-menu__item__caption">Menu item #2</span>
+      <i class="material-icons md-18">radio</i>
+    </li>
+    <li class="mdlext-menu__item" disabled>
+      <span class="mdlext-menu__item__caption">Menu item #3, disabled</span>
+      <i class="material-icons md-18">accessibility</i>
+    </li>
+    <li class="mdlext-menu__item">
+      <span class="mdlext-menu__item__caption">Menu item #IV</span>
+      <i class="material-icons md-18">build</i>
+    </li>
+    <li class="mdlext-menu__item-separator"></li>
+    <li class="mdlext-menu__item">
+      <span class="mdlext-menu__item__caption">Menu item #V</span>
+      <i class="material-icons md-18">build</i>
+    </li>
+    <li class="mdlext-menu__item">
+      <span class="mdlext-menu__item__caption">Menu item #VI</span>
+      <i class="material-icons md-18">build</i>
+    </li>
+    <li class="mdlext-menu__item">
+      <span class="mdlext-menu__item__caption">Menu item #VII</span>
+      <i class="material-icons md-18">build</i>
+    </li>
+    <li class="mdlext-menu__item">
+      Menu item #n
+    </li>
+  </ul>
+</div>
+
+
+<p style="margin-top: 16px">This menu button has WAIA roles and attributes coded in markup</p>
+<button id="aria-demo-button"
+        class="mdl-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect mdl-js-button mdlext-js-menu-button"
+        role="button"
+        aria-haspopup="true"
+        aria-controls="menu-example-dropdown"
+        aria-expanded="false"
+        tabindex="0">
+  <span class="mdlext-menu-button__caption">Select a size</span>
+  <i class="mdlext-aria-expanded-plus-minus"></i>
+</button>
+<script>
+  document.querySelector('#aria-demo-button').addEventListener('menuselect', function(event) {
+    this.querySelector('span').innerHTML = 'Size: ' + event.detail.source.innerHTML;
+  });
+</script>
+<ul id="menu-example-dropdown"
+    class="mdlext-menu"
+    role="menu"
+    hidden >
+  <li class="mdlext-menu__item" role="menuitem">X Small</li>
+  <li class="mdlext-menu__item-separator" role="separator"></li>
+  <li class="mdlext-menu__item" role="menuitem">Small</li>
+  <li class="mdlext-menu__item" role="menuitem">Medium</li>
+  <li class="mdlext-menu__item" role="menuitem">Large</li>
+  <li class="mdlext-menu__item-separator" role="separator"></li>
+  <li class="mdlext-menu__item" role="menuitem">X Large</li>
+  <li class="mdlext-menu__item" role="menuitem">XXX Large</li>
+</ul>
+
+<p style="margin-top: 16px">A disabled menu button should do nothing</p>
+<div role="presentation">
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdlext-js-menu-button" disabled>
+    <span class="mdlext-menu-button__caption">Disabled</span>
+    <i class="material-icons mdlext-aria-expanded-more-less"></i>
+  </button>
+  <ul class="mdlext-menu" hidden>
+    <li class="mdlext-menu__item">Menu item #1</li>
+  </ul>
+</div>
+
+
+<p style="margin-top: 16px">Menu buttons inside a table. Menus placed inside and after the table element to verify
+  that positioning works as expected.</p>
+
+<div style="position:relative; border:2px solid green; overflow: hidden;">
+  <p>The box with green borders has <code>overflow:hidden</code></p>
+  <div>
+
+    <table id="a-table-with-menu-buttons"
+           class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" style="width: 48%; float:left;">
+      <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">Material</th>
+        <th>Quantity</th>
+        <th>Unit price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+        <td>
+          <span style="width:40px; display: inline-block;"></span>
+          <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--primary mdlext-js-menu-button"
+                  aria-controls="table-menu-example">
+            <i class="mdlext-aria-expanded-more-less"></i>
+          </button>
+        </td>
+        <td>$2.90</td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+        <td>
+          <span style="width:40px; display: inline-block;"></span>
+          <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--primary mdlext-js-menu-button"
+                  aria-controls="table-menu-example">
+            <i class="mdlext-aria-expanded-more-less"></i>
+          </button>
+        </td>
+        <td>$1.25</td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+        <td>
+          <span style="width:40px; display: inline-block;"></span>
+          <button class="mdl-button mdl-button--icon mdl-button--primary mdl-js-button mdlext-js-menu-button"
+                  aria-controls="table-menu-example">
+            <i class="mdlext-aria-expanded-more-less"></i>
+          </button>
+        </td>
+        <td>$2.35</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <script>
+      document.querySelector('#a-table-with-menu-buttons').addEventListener('menuselect', function(event) {
+        var span = event.target.closest('td').querySelector('span');
+        span.innerHTML = event.detail.source.getAttribute('data-value');
+      });
+    </script>
+
+    <div role="presentation" style="width:48%; float:right;">
+      <p style="margin-top: 16px">This menu button has a menu with dark color theme, <code>mdlext-dark-color-theme</code> class</p>
+
+      <button class="mdl-button mdl-button--raised mdl-js-ripple-effect mdl-js-button mdlext-js-menu-button">
+        <i class="material-icons">gesture</i>
+        <span class="mdlext-menu-button__caption">Select</span>
+        <i class="material-icons mdlext-aria-expanded-more-less"></i>
+      </button>
+      <ul class="mdlext-menu mdlext-dark-color-theme" hidden >
+        <li class="mdlext-menu__item">
+          <i class="material-icons md-18">info</i>
+          <span class="mdlext-menu__item__caption">Menu item #1</span>
+        </li>
+        <li class="mdlext-menu__item">
+          <i class="material-icons md-18">help_outline</i>
+          <span class="mdlext-menu__item__caption">Menu item #2. A long text to check ellipsis overflow 0123456789</span>
+          <i class="material-icons md-18">radio</i>
+        </li>
+        <li class="mdlext-menu__item-separator"></li>
+        <li class="mdlext-menu__item" disabled>
+          <span class="mdlext-menu__item__caption">Menu item #3, disabled</span>
+          <i class="material-icons md-18">accessibility</i>
+        </li>
+        <li class="mdlext-menu__item-separator"></li>
+        <li class="mdlext-menu__item">
+          <span class="mdlext-menu__item__caption">Menu item #IV</span>
+          <i class="material-icons md-18">build</i>
+        </li>
+        <li class="mdlext-menu__item">
+          <span class="mdlext-menu__item__caption">Menu item #V</span>
+          <i class="material-icons md-18">build</i>
+        </li>
+        <li class="mdlext-menu__item-separator"></li>
+        <li class="mdlext-menu__item">
+          <span class="mdlext-menu__item__caption">Menu item #VI</span>
+          <i class="material-icons md-18">build</i>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<ul id="table-menu-example" class="mdlext-menu" hidden >
+  <li class="mdlext-menu__item" data-value="10">Ten</li>
+  <li class="mdlext-menu__item" data-value="25">Twentyfive</li>
+  <li class="mdlext-menu__item" data-value="50">Fifty</li>
+</ul>
+
+
+<style>
+  .demo-grid {
+    margin-top: 32px;
+  }
+  .demo-grid .mdl-cell {
+    background: rgb(63,81,181);
+    text-align: center;
+    color: white;
+    padding: 16px 8px;
+    border: 1px solid #aaaaaa;
+  }
+  .demo-grid .mdl-cell:nth-child(odd) {
+    background: rgb(33,150,243);
+  }
+</style>
+
+
+<div id="a-grid-with-menu-buttons" class="demo-grid">
+  <p>Menu buttons inside <code>mdl-grid</code></p>
+
+  <div id="menu-button-grid" class="mdl-grid mdl-grid--no-spacing">
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+      <button class="mdl-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect mdl-js-button mdlext-js-menu-button">
+        <span class="mdlext-menu-button__caption">Select a size</span>
+        <i class="mdlext-aria-expanded-plus-minus"></i>
+      </button>
+      <ul class="mdlext-menu"
+          role="menu"
+          hidden >
+        <li class="mdlext-menu__item" role="menuitem">Small</li>
+        <li class="mdlext-menu__item" role="menuitem">Medium</li>
+        <li class="mdlext-menu__item" role="menuitem">Large</li>
+      </ul>
+    </div>
+    <div class="mdl-cell mdl-cell--5-col mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+      <button class="mdl-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect mdl-js-button mdlext-js-menu-button">
+        <span class="mdlext-menu-button__caption">Select a size</span>
+        <i class="mdlext-aria-expanded-plus-minus"></i>
+      </button>
+      <ul class="mdlext-menu"
+          role="menu"
+          hidden >
+        <li class="mdlext-menu__item" role="menuitem">Small</li>
+        <li class="mdlext-menu__item" role="menuitem">Medium</li>
+        <li class="mdlext-menu__item" role="menuitem">Large</li>
+      </ul>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--hide-phone">
+      <button class="mdl-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect mdl-js-button mdlext-js-menu-button">
+        <span class="mdlext-menu-button__caption">Select a size</span>
+        <i class="mdlext-aria-expanded-plus-minus"></i>
+      </button>
+      <ul class="mdlext-menu"
+          role="menu"
+          hidden >
+        <li class="mdlext-menu__item" role="menuitem">Small</li>
+        <li class="mdlext-menu__item" role="menuitem">Medium</li>
+        <li class="mdlext-menu__item" role="menuitem">Large</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script>
+  document.querySelector('#a-grid-with-menu-buttons').addEventListener('menuselect', function(event) {
+    event.target.querySelector('span').innerHTML = 'Size: ' + event.detail.source.innerHTML;
+  });
+</script>
+
+<div style="margin-bottom:256px;"></div>
